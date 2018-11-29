@@ -1,17 +1,17 @@
 export const BACKOFFICE_DATA = {
     POSITION: {
-        TOP: 'ALTO',
-        MIDDLE: 'CENTRO',
         BOTTOM: 'BASSO',
-    },
-    VISIBILITY: {
-        LOGGED_IN: 'PRIVATO',
-        LOGGED_OUT: 'PUBBLICO',
-        ALL: 'PUBBLICO-PRIVATO',
+        MIDDLE: 'CENTRO',
+        TOP: 'ALTO',
     },
     TARGET: {
-        WEB: 'MSITE',
-        APP: 'APP',
         ALL: 'APP-MSITE',
-    }
+        APP: 'APP',
+        WEB: 'MSITE',
+    },
+    VISIBILITY: {
+        ALL: 'PUBBLICO-PRIVATO',
+        LOGGED_IN: 'PRIVATO',
+        LOGGED_OUT: 'PUBBLICO',
+    },
 };

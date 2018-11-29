@@ -1,7 +1,7 @@
 export default class Message {
 
-    id: string;
-    label: string;
+    public id: string;
+    public label: string;
 
     constructor(item: any) {
         this.id = item.id;

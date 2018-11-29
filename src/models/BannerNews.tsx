@@ -1,8 +1,8 @@
 import BackofficeBase, { BackofficeServerInterface } from './BackofficeBase';
 
 export default class BannerNews extends BackofficeBase {
-  public imageSrc: string;
-  public url: string;
+  public readonly imageSrc: string;
+  public readonly url: string;
 
   constructor(data: BackofficeServerInterface) {
     const { 

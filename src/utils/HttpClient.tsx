@@ -1,4 +1,4 @@
-import Axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
+import Axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { merge } from 'lodash';
 
 export const DEFAULT_AXIOS_REQUEST_CONFIG: AxiosRequestConfig = {

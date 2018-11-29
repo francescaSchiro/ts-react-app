@@ -3,12 +3,13 @@ import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import Hello from "./containers/Hello";
-import { enthusiasm } from "./reducers/index";
-import { StoreState } from "./types/index";
-import registerServiceWorker from "./registerServiceWorker";
 import "./index.css";
+import { enthusiasm } from "./reducers/index";
+import registerServiceWorker from "./registerServiceWorker";
+import { StoreState } from "./types/index";
+import { EnthusiasmAction } from './actions';
 
-const store = createStore<StoreState>(enthusiasm, {
+const store = createStore<StoreState, EnthusiasmAction, any, any>(enthusiasm, {
   enthusiasmLevel: 1,
   languageName: "TypeScript"
 });

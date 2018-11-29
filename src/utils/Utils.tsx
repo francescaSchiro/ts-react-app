@@ -3,7 +3,7 @@ import { WithId } from 'src/types/custom';
 
 export default class Utils {
 
-    static findById = (array: Array<WithId>, id: string) => {
+    public static findById = (array: WithId[], id: string) => {
         return find(array, (item: WithId) => item.id === id);
     };
 }

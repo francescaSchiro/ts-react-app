@@ -8,15 +8,18 @@ export interface BackofficeServerInterface {
   visibilita: string,
   destinazione: string,
   immagine?: string,
-  url?: string
+  url?: string,
+  testo?: string;
+  titolo1?: string;
+  titolo2?: string;
 };
 
 export default class BackofficeBase implements WithId {
   public readonly id: string;
-  private readonly order: string;
-  private readonly position: string;
-  private readonly visibility: string;
-  private readonly target: string;
+  protected readonly order: string;
+  protected readonly position: string;
+  protected readonly visibility: string;
+  protected readonly target: string;
 
   constructor(data: BackofficeServerInterface) {
     const {
