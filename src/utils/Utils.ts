@@ -1,8 +1,5 @@
 import { find } from 'lodash';
-
-interface WithId extends Object {
-    id: string | number;
-}
+import { WithId } from 'src/types/custom';
 
 export default class Utils {
 
