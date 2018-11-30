@@ -1,31 +1,37 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { Route, Switch } from 'react-router';
+import { ConnectedRouter } from 'connected-react-router';
+import { Store } from 'redux';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import Hello from './containers/Hello';
-import './index.css';
-import { enthusiasm } from './reducers/index';
-import registerServiceWorker from './registerServiceWorker';
-import { StoreState } from './types/index';
-import { EnthusiasmAction } from './actions';
+import { Persistor } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
+import { createBrowserHistory } from 'history';
 
-const store = createStore<StoreState, EnthusiasmAction, any, any>(enthusiasm, {
-  enthusiasmLevel: 1,
-  languageName: 'TypeScript',
-});
+import configure from 'src/core/store';
+import { StoreState } from 'src/types';
+import registerServiceWorker from './registerServiceWorker';
+import App from 'src/containers/App';
+
+const initialState: StoreState = {
+  languageName: '',
+  enthusiasmLevel: 0
+};
+const history = createBrowserHistory();
+const { store, persistor } = configure(initialState, history);
+const MOUNT_NODE = document.getElementById('root') as HTMLElement;
 
 ReactDOM.render(
   <Provider store={store}>
-    <Hello />
+    <PersistGate loading={null} persistor={persistor}>
+      <ConnectedRouter history={history}>
+        <Switch>
+          <Route exact={true} path='/' component={App} />
+        </Switch>
+      </ConnectedRouter>
+    </PersistGate>
   </Provider>,
-  document.getElementById('root') as HTMLElement,
+  MOUNT_NODE,
 );
-registerServiceWorker();
 
-// as HTMLElement. This syntax is called a type assertion, sometimes also called a cast.
-// This is a useful way of telling TypeScript what the real type of an expression is when you know better than the type checker.
-// The reason we need to do so in this case is that getElementById's return type is HTMLElement | null.
-// Put simply, getElementById returns null when it can't find an element with a given id.
-// We're assuming that getElementById will actually succeed, so we need to convince TypeScript of that using the as syntax.
-// TypeScript also has a trailing "bang" syntax (!), which removes null and undefined from the prior expression.
-// So we could have written document.getElementById('root')!, but in this case we wanted to be a bit more explicit.
+registerServiceWorker();
