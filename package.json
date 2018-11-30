@@ -9,7 +9,6 @@
     "axios": "^0.18.0",
     "lodash": "^4.17.11",
     "luxon": "^1.8.2",
-    "prettier": "^1.15.3",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-intl": "^2.7.2",
@@ -26,8 +25,7 @@
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
-    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' --fix",
-    "format": "prettier --write \"src/**/*.ts*\""
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' --fix"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.15",

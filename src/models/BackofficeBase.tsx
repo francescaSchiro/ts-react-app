@@ -2,17 +2,17 @@ import { BACKOFFICE_DATA } from 'src/maps/backoffice';
 import { WithId } from 'src/types/custom';
 
 export interface BackofficeServerInterface {
-  titolo: string,
-  ordinamento: string,
-  posizione: string,
-  visibilita: string,
-  destinazione: string,
-  immagine?: string,
-  url?: string,
+  titolo: string;
+  ordinamento: string;
+  posizione: string;
+  visibilita: string;
+  destinazione: string;
+  immagine?: string;
+  url?: string;
   testo?: string;
   titolo1?: string;
   titolo2?: string;
-};
+}
 
 export default class BackofficeBase implements WithId {
   public readonly id: string;

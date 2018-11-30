@@ -1,4 +1,4 @@
-import BackofficeBase, { BackofficeServerInterface } from "./BackofficeBase";
+import BackofficeBase, { BackofficeServerInterface } from './BackofficeBase';
 
 export default class BannerPromo extends BackofficeBase {
   public readonly text: string;
@@ -9,11 +9,11 @@ export default class BannerPromo extends BackofficeBase {
 
   constructor(data: BackofficeServerInterface) {
     const {
-      testo = "",
-      titolo1 = "",
-      titolo2 = "",
-      url = "",
-      immagine = ""
+      testo = '',
+      titolo1 = '',
+      titolo2 = '',
+      url = '',
+      immagine = '',
     } = data;
     super(data);
     this.text = testo;

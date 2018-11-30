@@ -3,9 +3,4 @@ import BannerPromo from './BannerPromo';
 import BannerShowcase from './BannerShowcase';
 import Message from './Message';
 
-export {
-    Message,
-    BannerNews,
-    BannerPromo,
-    BannerShowcase
-}
+export { Message, BannerNews, BannerPromo, BannerShowcase };
