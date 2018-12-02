@@ -33,3 +33,16 @@ ReactDOM.render(
 );
 
 registerServiceWorker();
+
+// // Hot reloading
+// if (module.hot) {
+//   // Reload components
+//   module.hot.accept('./App', () => {
+//     render()
+//   })
+
+//   // Reload reducers
+//   module.hot.accept('./reducers', () => {
+//     store.replaceReducer(rootReducer(history))
+//   })
+// }
