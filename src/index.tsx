@@ -2,22 +2,20 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
-import { Store } from 'redux';
 import { Provider } from 'react-redux';
-import { Persistor } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
-import { createBrowserHistory } from 'history';
+import { createBrowserHistory, History } from 'history';
 
 import configure from 'src/core/store';
-import { StoreState } from 'src/types';
+import { StoreState } from './types/states';
 import registerServiceWorker from './registerServiceWorker';
-import App from 'src/containers/App';
+// import App from 'src/containers/App';
 
 const initialState: StoreState = {
   languageName: '',
   enthusiasmLevel: 0
 };
-const history = createBrowserHistory();
+const history: History = createBrowserHistory();
 const { store, persistor } = configure(initialState, history);
 const MOUNT_NODE = document.getElementById('root') as HTMLElement;
 
@@ -26,7 +24,7 @@ ReactDOM.render(
     <PersistGate loading={null} persistor={persistor}>
       <ConnectedRouter history={history}>
         <Switch>
-          <Route exact={true} path='/' component={App} />
+          {/* <Route exact={true} path='/' component={App} /> */}
         </Switch>
       </ConnectedRouter>
     </PersistGate>

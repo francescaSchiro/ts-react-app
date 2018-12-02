@@ -1,15 +1,18 @@
-import { persistCombineReducers } from 'redux-persist';
-import { LOCATION_CHANGE } from 'connected-react-router';
+import { persistCombineReducers, PersistedState } from 'redux-persist';
+import { Reducer } from 'redux';
+import { LOCATION_CHANGE, RouterAction } from 'connected-react-router';
 import { merge } from 'lodash';
 
-import { config } from 'app/core/persist';
-import appReducer from 'app/containers/App/reducer';
+import { RouteState } from '../types/states';
+import { config } from 'src/core/persist';
+import { MssAction } from '../types/custom';
+// import appReducer from 'src/containers/App/reducer';
 
 
-const routeInitialState = {
+const routeInitialState: RouteState = {
   location: null,
 };
-function routeReducer(state = routeInitialState, action) {
+function routeReducer(state: RouteState = routeInitialState, action: RouterAction) {
   switch (action.type) {
     case LOCATION_CHANGE:
       return merge({}, state, action.payload);
@@ -18,9 +21,9 @@ function routeReducer(state = routeInitialState, action) {
   }
 }
 
-export default function getRootReducer() {
+export default function getRootReducer(): Reducer<PersistedState, RouterAction | MssAction> {
   return persistCombineReducers(config, {
     router: routeReducer,
-    app: appReducer,
+    // app: appReducer,
   });
 }
