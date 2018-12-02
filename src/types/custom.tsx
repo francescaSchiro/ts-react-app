@@ -5,7 +5,6 @@ export interface WithId extends Object {
 }
 
 // Msite Action object structure convention
-export interface MssAction<T = any> extends Action {
-  type: T;
+export interface MssAction extends Action {
   payload: any;
 }
