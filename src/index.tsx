@@ -7,8 +7,8 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { createBrowserHistory, History } from 'history';
 
 import configure from 'src/core/store';
-import registerServiceWorker from './registerServiceWorker';
 import App from 'src/containers/App';
+import registerServiceWorker from './registerServiceWorker';
 
 
 const history: History = createBrowserHistory();

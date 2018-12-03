@@ -1,16 +1,10 @@
-// import { 
-//     SET_MESSAGE,
-//     RESET_MESSAGE,
-//     REQUEST_MESSAGES_SUCCESS,
-//     REQUEST_MESSAGES_FAIL,
-//   } from './constants';
 import { Reducer } from 'redux';
 import { MssAction } from 'src/types/custom';
 
 
 export interface AppState {
-    languageName: string;
-    enthusiasmLevel: number;
+    readonly languageName: string;
+    readonly enthusiasmLevel: number;
 }
 
 const initialAppState: AppState = {
@@ -19,7 +13,7 @@ const initialAppState: AppState = {
 };
 
 const reducer: Reducer<AppState, MssAction> =
-    (state: AppState = initialAppState, action: MssAction): AppState => {
+    (state = initialAppState, action): AppState => {
         switch (action.type) {
             default: {
                 return state;
