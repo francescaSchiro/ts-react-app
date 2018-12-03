@@ -3,7 +3,6 @@ import { Dispatch } from 'redux';
 
 import * as actions from '../actions/';
 import Hello from '../components/Hello';
-import { StoreState } from '../types/states';
 
 /*
 connect will be able to actually take our original Hello component and turn it into a container using two functions:

@@ -1,16 +1,16 @@
-import { persistCombineReducers, PersistedState } from 'redux-persist';
+import { persistCombineReducers, PersistedState, PersistConfig } from 'redux-persist';
 import { RouterAction, connectRouter } from 'connected-react-router';
 import { History } from 'history';
-import { Reducer } from 'redux';
+import { Reducer, ReducersMapObject } from 'redux';
 
 import { config } from 'src/core/persist';
 import { MssAction } from 'src/types/custom';
-// import appReducer from 'src/containers/App/reducer';
-
+import appReducer from 'src/containers/App/reducer';
 
 export default function getRootReducer(history: History): Reducer<PersistedState, RouterAction | MssAction> {
-  return persistCombineReducers(config, {
+  const reducersMapObject: ReducersMapObject = {
     router: connectRouter(history),
-    // app: appReducer,
-  });
+    app: appReducer,
+  }
+  return persistCombineReducers<PersistConfig>(config, reducersMapObject);
 }

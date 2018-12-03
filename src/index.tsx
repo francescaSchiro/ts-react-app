@@ -7,16 +7,12 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { createBrowserHistory, History } from 'history';
 
 import configure from 'src/core/store';
-import { StoreState } from 'src/types/states';
 import registerServiceWorker from './registerServiceWorker';
-// import App from 'src/containers/App';
+import App from 'src/containers/App';
 
-const initialState: StoreState = {
-  languageName: '',
-  enthusiasmLevel: 0
-};
+
 const history: History = createBrowserHistory();
-const { store, persistor } = configure(initialState, history);
+const { store, persistor } = configure(history);
 const MOUNT_NODE = document.getElementById('root') as HTMLElement;
 
 ReactDOM.render(
@@ -24,7 +20,7 @@ ReactDOM.render(
     <PersistGate loading={null} persistor={persistor}>
       <ConnectedRouter history={history}>
         <Switch>
-          {/* <Route exact={true} path='/' component={App} /> */}
+          <Route exact={true} path='/' component={App} />
         </Switch>
       </ConnectedRouter>
     </PersistGate>
