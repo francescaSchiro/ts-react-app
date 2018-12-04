@@ -1,18 +1,22 @@
+import { merge } from 'lodash';
 import Axios, {
-  AxiosError,
   AxiosInstance,
   AxiosRequestConfig,
   AxiosResponse,
 } from 'axios';
-import { merge } from 'lodash';
-import CONFIG from 'src/config';
+import { 
+  ENV,
+  REQUEST_TIMEOUT,
+  REQUEST_HEADERS_ACCEPT,
+  REQUEST_HEADERS_CONTENTTYPE 
+} from 'src/config';
 
 const DEFAULT_AXIOS_REQUEST_CONFIG: AxiosRequestConfig = {
-  baseURL: CONFIG.HOSTNAME_MSS + CONFIG.MGP,
-  timeout: 15000,
+  baseURL: ENV.HOSTNAME_MSS + ENV.MGP,
+  timeout: REQUEST_TIMEOUT,
   headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
+    'Accept': REQUEST_HEADERS_ACCEPT,
+    'Content-Type': REQUEST_HEADERS_CONTENTTYPE,
   },
 };
 
@@ -25,20 +29,20 @@ export default class HttpClient {
 
   public get(
     url: string,
-    config?: AxiosRequestConfig,
-    doneCb = (res: AxiosResponse): any => res.data,
-    errorCb = (err: AxiosError): any => err,
+    config?: AxiosRequestConfig
   ): Promise<any> {
-    return this.axios.get(url, config).then(doneCb, errorCb);
+    return this.axios.get(url, config).then(
+      (res: AxiosResponse): any => res.data
+    );
   }
 
   public post(
     url: string,
     data?: object,
-    config?: AxiosRequestConfig,
-    doneCb = (res: AxiosResponse): any => res.data,
-    errorCb = (err: AxiosError): any => err,
+    config?: AxiosRequestConfig
   ): Promise<any> {
-    return this.axios.post(url, data, config).then(doneCb, errorCb);
+    return this.axios.post(url, data, config).then(
+      (res: AxiosResponse): any => res.data
+    );
   }
 }
