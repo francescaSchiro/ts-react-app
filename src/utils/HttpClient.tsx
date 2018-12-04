@@ -5,12 +5,13 @@ import Axios, {
   AxiosResponse,
 } from 'axios';
 import { merge } from 'lodash';
+import CONFIG from 'src/config';
 
-export const DEFAULT_AXIOS_REQUEST_CONFIG: AxiosRequestConfig = {
-  baseURL: '/app/fake/',
+const DEFAULT_AXIOS_REQUEST_CONFIG: AxiosRequestConfig = {
+  baseURL: CONFIG.HOSTNAME_MSS + CONFIG.MGP,
   timeout: 15000,
   headers: {
-    Accept: 'application/json',
+    'Accept': 'application/json',
     'Content-Type': 'application/json',
   },
 };

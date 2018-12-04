@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { MssAction } from 'src/types/custom';
+import Api from 'src/utils/Api';
+import { getBaseData, GetBaseDataAction } from './actions';
 
 /**
  * The type for the props provided by the parent component
@@ -12,7 +14,7 @@ import { MssAction } from 'src/types/custom';
  * so is the only one of the types that is exported from our module.
  */
 export interface OwnProps {
-    propFromParent: number;
+    api: Api;
 }
 
 interface StateProps {
@@ -20,12 +22,20 @@ interface StateProps {
 }
 
 interface DispatchProps {
-    onSomeEvent: () => void;
+    requestBaseData: () => GetBaseDataAction;
 }
 
 type Props = StateProps & DispatchProps & OwnProps;
 
 class App extends PureComponent<Props> {
+
+    constructor(props: Props) {
+        super(props);
+    }
+
+    public componentDidMount() {
+        this.props.requestBaseData();
+    }
 
     public render() {
         return 'App Container';
@@ -36,9 +46,13 @@ const mapStateToProps = createStructuredSelector<StateProps, any>({
 
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<MssAction>, ownProps: OwnProps): DispatchProps => {
+const mapDispatchToProps = (
+    dispatch: Dispatch<MssAction>,
+    ownProps: OwnProps
+): DispatchProps => {
+    const { api } = ownProps;
     return {
-        onSomeEvent: () => {/**/}
+        requestBaseData: () => dispatch(getBaseData(api))
     }
 }
 

@@ -1,18 +1,37 @@
 import { ActionCreator } from 'redux';
 import { MssAction } from 'src/types/custom';
-import { YOUR_ACTION_CONSTANT } from './constants';
+import Api from 'src/utils/Api';
+import { GET_BASE_DATA, GET_BASE_DATA_ERROR, GET_BASE_DATA_SUCCESS } from './constants';
 
 
-interface UsersListUpdatedAction extends MssAction {
-    type: YOUR_ACTION_CONSTANT;
+export interface GetBaseDataAction extends MssAction {
+    type: GET_BASE_DATA,
     payload: {
-        users: string[];
-    };
+        api: Api
+    }
 }
 
-export const updateUsersList: ActionCreator<UsersListUpdatedAction> = (users: string[]) => ({
-    type: YOUR_ACTION_CONSTANT,
+interface GetBaseDataSuccessAction extends MssAction {
+    type: GET_BASE_DATA_SUCCESS
+}
+
+interface GetBaseDataErrorAction extends MssAction {
+    type: GET_BASE_DATA_ERROR
+}
+
+export const getBaseData: ActionCreator<GetBaseDataAction> = (api: Api) => ({
+    type: GET_BASE_DATA,
     payload: {
-        users
-    }
+        api
+    },
+});
+
+export const getBaseDataSuccess: ActionCreator<GetBaseDataSuccessAction> = (res) => ({
+    type: GET_BASE_DATA_SUCCESS,
+    payload: {},
+});
+
+export const getBaseDataError: ActionCreator<GetBaseDataErrorAction> = (err) => ({
+    type: GET_BASE_DATA_ERROR,
+    payload: {},
 });

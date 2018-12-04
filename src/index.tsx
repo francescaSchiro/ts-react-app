@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Route, Switch } from 'react-router';
+// import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -8,20 +8,22 @@ import { createBrowserHistory, History } from 'history';
 
 import configure from 'src/core/store';
 import App from 'src/containers/App';
+import HttpClient from 'src/utils/HttpClient';
+import Api from 'src/utils/Api';
 import registerServiceWorker from './registerServiceWorker';
 
 
 const history: History = createBrowserHistory();
 const { store, persistor } = configure(history);
 const MOUNT_NODE = document.getElementById('root') as HTMLElement;
+const httpClient = new HttpClient();
+const api = new Api(httpClient);
 
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <ConnectedRouter history={history}>
-        <Switch>
-          <Route exact={true} path='/' component={App} />
-        </Switch>
+        <App api={api} />
       </ConnectedRouter>
     </PersistGate>
   </Provider>,

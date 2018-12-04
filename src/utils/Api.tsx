@@ -1,5 +1,5 @@
-import { map } from 'lodash';
-import { Message } from 'src/models';
+// import { map } from 'lodash';
+// import { Message } from 'src/models';
 import HttpClient from './HttpClient';
 
 export default class Api {
@@ -9,12 +9,8 @@ export default class Api {
     this.httpClient = httpClient;
   }
 
-  public fetchMessages(): Promise<Message[]> {
-    const url: string = '';
-    return this.httpClient.get(url).then(items =>
-      map(items, item => {
-        return new Message(item);
-      }),
-    );
+  public getBaseData(): Promise<any> {
+    const endpoint = 'getBaseData';
+    return this.httpClient.get(endpoint);
   }
 }
