@@ -12,6 +12,9 @@ import HttpClient from 'src/utils/HttpClient';
 import Api from 'src/utils/Api';
 import registerServiceWorker from './registerServiceWorker';
 
+import GlobalStyles from 'src/theme/GlobalStyle';
+import { ThemeProvider, DefaultTheme } from 'src/theme/default';
+
 
 const history: History = createBrowserHistory();
 const { store, persistor } = configure(history);
@@ -23,7 +26,12 @@ ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <ConnectedRouter history={history}>
-        <App api={api} />
+        <ThemeProvider theme={DefaultTheme}>
+          <React.Fragment>
+            <GlobalStyles />
+            <App api={api} />
+          </React.Fragment>
+        </ThemeProvider>
       </ConnectedRouter>
     </PersistGate>
   </Provider>,
