@@ -6,17 +6,15 @@ import Axios, {
 } from 'axios';
 import { 
   ENV,
-  REQUEST_TIMEOUT,
-  REQUEST_HEADERS_ACCEPT,
-  REQUEST_HEADERS_CONTENTTYPE 
+  REQUEST,
 } from 'src/config';
 
 const DEFAULT_AXIOS_REQUEST_CONFIG: AxiosRequestConfig = {
   baseURL: ENV.HOSTNAME_MSS + ENV.MGP,
-  timeout: REQUEST_TIMEOUT,
+  timeout: REQUEST.TIMEOUT,
   headers: {
-    'Accept': REQUEST_HEADERS_ACCEPT,
-    'Content-Type': REQUEST_HEADERS_CONTENTTYPE,
+    'Accept': REQUEST.HEADERS_ACCEPT,
+    'Content-Type': REQUEST.HEADERS_CONTENTTYPE,
   },
 };
 

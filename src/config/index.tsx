@@ -1,8 +1,9 @@
 import { merge } from 'lodash';
-import common from './env_common';
-import env from './env';
 
-export const ENV = merge({}, common, env[common.ENV]);
-export const REQUEST_TIMEOUT = 15000;
-export const REQUEST_HEADERS_ACCEPT = 'application/json';
-export const REQUEST_HEADERS_CONTENTTYPE = 'application/json';
+import ENV_COMMON_ from './env_common';
+import ENV_ from './env';
+
+import REQUEST_COMMON_ from './request_common';
+
+export const ENV = merge({}, ENV_COMMON_, ENV_[ENV_COMMON_.ENV]);
+export const REQUEST = merge({}, REQUEST_COMMON_);
