@@ -3,36 +3,40 @@ import * as ReactDOM from 'react-dom';
 // import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
 import { Provider } from 'react-redux';
+import { IntlProvider } from 'react-intl';
 import { PersistGate } from 'redux-persist/integration/react';
 import { createBrowserHistory, History } from 'history';
 
 import configure from 'src/core/store';
+import getRootReducer from 'src/core/reducers';
 import App from 'src/containers/App';
 import HttpClient from 'src/utils/HttpClient';
 import Api from 'src/utils/Api';
-import registerServiceWorker from './registerServiceWorker';
-
 import GlobalStyles from 'src/theme/GlobalStyle';
 import { ThemeProvider, DefaultTheme } from 'src/theme/default';
+import { LOCALE, MOUNT_NODE_ID } from 'src/config';
+import registerServiceWorker from 'src/registerServiceWorker';
 
 
 const history: History = createBrowserHistory();
 const { store, persistor } = configure(history);
-const MOUNT_NODE = document.getElementById('root') as HTMLElement;
+const MOUNT_NODE = document.getElementById(MOUNT_NODE_ID) as HTMLElement;
 const httpClient = new HttpClient();
 const api = new Api(httpClient);
 
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <ConnectedRouter history={history}>
-        <ThemeProvider theme={DefaultTheme}>
-          <React.Fragment>
-            <GlobalStyles />
-            <App api={api} />
-          </React.Fragment>
-        </ThemeProvider>
-      </ConnectedRouter>
+      <IntlProvider locale={LOCALE}>
+        <ConnectedRouter history={history}>
+          <ThemeProvider theme={DefaultTheme}>
+            <React.Fragment>
+              <GlobalStyles />
+              <App api={api} />
+            </React.Fragment>
+          </ThemeProvider>
+        </ConnectedRouter>
+      </IntlProvider>
     </PersistGate>
   </Provider>,
   MOUNT_NODE,
@@ -40,15 +44,16 @@ ReactDOM.render(
 
 registerServiceWorker();
 
-// // Hot reloading
-// if (module.hot) {
-//   // Reload components
-//   module.hot.accept('./App', () => {
-//     render()
-//   })
+// Hot reloading
+const MODULE = module as any;
+if (MODULE.hot) {
+  // Reload components
+  MODULE.hot.accept('src/containers/App', () => {
+    ReactDOM.render(<App api={api} />, MOUNT_NODE);
+  });
 
-//   // Reload reducers
-//   module.hot.accept('./reducers', () => {
-//     store.replaceReducer(rootReducer(history))
-//   })
-// }
+  // Reload reducers
+  MODULE.hot.accept('src/core/reducers', () => {
+    store.replaceReducer(getRootReducer(history));
+  })
+}

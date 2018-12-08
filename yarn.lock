@@ -128,6 +128,11 @@
     "@types/node" "*"
     "@types/react" "*"
 
+"@types/react-intl@^2.3.14":
+  version "2.3.14"
+  resolved "https://registry.yarnpkg.com/@types/react-intl/-/react-intl-2.3.14.tgz#dbb973c20908a8e7468974a329df35c256cb459d"
+  integrity sha512-NPj7mYJ6LjKZOxknobs9t3FKJto6btG9KSP9K7kSIzEhkWoA/2i+RAcHRqs3/6cMMflnt2FxajyIdmkl71B2VA==
+
 "@types/react-redux@^6.0.10":
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-6.0.10.tgz#80a3003a7d50112c65692a8b41752f623217a17c"
