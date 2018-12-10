@@ -1,4 +1,5 @@
 import { PureComponent } from 'react';
+import * as React from 'react';
 import { Dispatch, compose } from 'redux';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -6,6 +7,15 @@ import { createStructuredSelector } from 'reselect';
 import { MssAction } from 'src/types/custom';
 import Api from 'src/utils/Api';
 import { getBaseData, GetBaseDataAction } from './actions';
+
+import AppWrapper from './Wrapper';
+import HeaderNav from '../../components/HeaderNav/index';
+import SportList from 'src/components/SportList';
+import HomePage from 'src/components/HomePage';
+import AppFooter from 'src/components/AppFooter';
+import Banners from 'src/components/Banners';
+import AppSeo from 'src/components/AppSeo';
+
 
 /**
  * The type for the props provided by the parent component
@@ -38,7 +48,16 @@ class App extends PureComponent<Props> {
     }
 
     public render() {
-        return 'App Container';
+        return(
+        <AppWrapper id='AppWrapper'>
+            <HeaderNav/>           
+            <SportList/>
+            <HomePage/>
+            <Banners/>
+            <AppSeo />
+            <AppFooter />
+        </AppWrapper>
+        );
     }
 }
 
