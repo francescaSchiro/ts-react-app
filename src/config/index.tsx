@@ -7,5 +7,8 @@ import REQUEST_COMMON_ from './request_common';
 
 export const ENV = merge({}, ENV_COMMON_, ENV_[ENV_COMMON_.ENV]);
 export const REQUEST = merge({}, REQUEST_COMMON_);
-export const LOCALE = 'it';
 export const MOUNT_NODE_ID = 'root';
+export const DEFAULT_LOCALE = 'it';
+export const APP_LOCALES = [
+    'it'
+];

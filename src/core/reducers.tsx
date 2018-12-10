@@ -6,11 +6,14 @@ import { Reducer, ReducersMapObject } from 'redux';
 import { config } from 'src/core/persist';
 import { MssAction } from 'src/types/custom';
 import appReducer from 'src/containers/App/reducer';
+import languageReducer from 'src/containers/LanguageProvider/reducer';
+
 
 export default function getRootReducer(history: History): Reducer<PersistedState, RouterAction | MssAction> {
   const reducersMapObject: ReducersMapObject = {
     router: connectRouter(history),
-    app: appReducer,
+    language: languageReducer,
+    app: appReducer
   }
   return persistCombineReducers<PersistConfig>(config, reducersMapObject);
 }

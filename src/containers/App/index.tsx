@@ -1,11 +1,14 @@
+import * as React from 'react';
 import { PureComponent } from 'react';
 import { Dispatch, compose } from 'redux';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import { FormattedMessage } from 'react-intl';
 
 import { MssAction } from 'src/types/custom';
 import Api from 'src/utils/Api';
 import { getBaseData, GetBaseDataAction } from './actions';
+import messages from './messages';
 
 /**
  * The type for the props provided by the parent component
@@ -38,7 +41,7 @@ class App extends PureComponent<Props> {
     }
 
     public render() {
-        return 'App Container';
+        return <FormattedMessage {...messages.example} />;
     }
 }
 
