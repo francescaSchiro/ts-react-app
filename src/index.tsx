@@ -11,8 +11,6 @@ import getRootReducer from 'src/core/reducers';
 import { TranslationMessages, translationMessages } from 'src/core/i18n';
 import App from 'src/containers/App';
 import LanguageProvider from 'src/containers/LanguageProvider';
-import HttpClient from 'src/shared/HttpClient';
-import Api from 'src/shared/Api';
 import GlobalStyles from 'src/theme/GlobalStyle';
 import { ThemeProvider, DefaultTheme } from 'src/theme/default';
 import { MOUNT_NODE_ID } from 'src/config';
@@ -22,8 +20,6 @@ import registerServiceWorker from 'src/registerServiceWorker';
 const history: History = createBrowserHistory();
 const { store, persistor } = configure(history);
 const MOUNT_NODE = document.getElementById(MOUNT_NODE_ID) as HTMLElement;
-const httpClient = new HttpClient();
-const api = new Api(httpClient);
 
 const render = (messages: TranslationMessages) => ReactDOM.render(
   <Provider store={store}>
@@ -33,7 +29,7 @@ const render = (messages: TranslationMessages) => ReactDOM.render(
         <ThemeProvider theme={DefaultTheme}>
           <React.Fragment>
             <GlobalStyles />
-            <App api={api} />
+            <App />
           </React.Fragment>
         </ThemeProvider>
       </ConnectedRouter>

@@ -6,7 +6,6 @@ import { createStructuredSelector } from 'reselect';
 import { FormattedMessage } from 'react-intl';
 
 import { MssAction } from 'src/types/custom';
-import Api from 'src/shared/Api';
 import { getBaseData, GetBaseDataAction } from './actions';
 import messages from './messages';
 
@@ -16,13 +15,12 @@ import messages from './messages';
  * OwnProps is essentially the public interface of our component,
  * so is the only one of the types that is exported from our module.
  */
-export interface OwnProps {
-    api: Api;
-}
 
-interface StateProps {
-    propFromReduxStore: string;
-}
+// tslint:disable-next-line:no-empty-interface
+export interface OwnProps {}
+
+// tslint:disable-next-line:no-empty-interface
+interface StateProps {}
 
 interface DispatchProps {
     requestBaseData: () => GetBaseDataAction;
@@ -53,9 +51,8 @@ const mapDispatchToProps = (
     dispatch: Dispatch<MssAction>,
     ownProps: OwnProps
 ): DispatchProps => {
-    const { api } = ownProps;
     return {
-        requestBaseData: () => dispatch(getBaseData(api))
+        requestBaseData: () => dispatch(getBaseData())
     }
 }
 

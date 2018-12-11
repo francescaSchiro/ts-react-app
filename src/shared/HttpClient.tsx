@@ -1,15 +1,7 @@
-import { merge } from 'lodash';
-import Axios, {
-  AxiosInstance,
-  AxiosRequestConfig,
-  AxiosResponse,
-} from 'axios';
-import { 
-  ENV,
-  REQUEST,
-} from 'src/config';
+import Axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError} from 'axios';
+import { ENV, REQUEST } from 'src/config';
 
-const DEFAULT_AXIOS_REQUEST_CONFIG: AxiosRequestConfig = {
+const AXIOS_CONFIG: AxiosRequestConfig = {
   baseURL: ENV.HOSTNAME_MSS + ENV.MGP,
   timeout: REQUEST.TIMEOUT,
   headers: {
@@ -18,29 +10,24 @@ const DEFAULT_AXIOS_REQUEST_CONFIG: AxiosRequestConfig = {
   },
 };
 
-export default class HttpClient {
-  private axios: AxiosInstance;
+const axios: AxiosInstance = Axios.create(AXIOS_CONFIG);
 
-  constructor(config?: AxiosRequestConfig) {
-    this.axios = Axios.create(merge({}, DEFAULT_AXIOS_REQUEST_CONFIG, config));
-  }
+function errorHandler(error: AxiosError): AxiosError {
+  // tslint:disable-next-line:no-console
+  console.error(`${error.name}: ${error.message}`);
+  return error;
+}
 
-  public get(
-    url: string,
-    config?: AxiosRequestConfig
-  ): Promise<any> {
-    return this.axios.get(url, config).then(
-      (res: AxiosResponse): any => res.data
-    );
-  }
+export function get(url: string, config?: AxiosRequestConfig): Promise<any> {
+  return axios.get(url, config).then(
+    (res: AxiosResponse): any => res.data,
+    errorHandler
+  );
+}
 
-  public post(
-    url: string,
-    data?: object,
-    config?: AxiosRequestConfig
-  ): Promise<any> {
-    return this.axios.post(url, data, config).then(
-      (res: AxiosResponse): any => res.data
-    );
-  }
+export function post(url: string, data?: object, config?: AxiosRequestConfig): Promise<any> {
+  return axios.post(url, data, config).then(
+    (res: AxiosResponse): any => res.data,
+    errorHandler
+  );
 }

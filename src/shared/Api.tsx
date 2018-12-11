@@ -1,16 +1,10 @@
-// import { map } from 'lodash';
-// import { Message } from 'src/models';
-import HttpClient from './HttpClient';
+import { get } from './httpClient';
 
-export default class Api {
-  private httpClient: HttpClient;
+function getBaseData(): Promise<any> {
+  const endpoint = 'getBaseData';
+  return get(endpoint);
+}
 
-  constructor(httpClient: HttpClient) {
-    this.httpClient = httpClient;
-  }
-
-  public getBaseData(): Promise<any> {
-    const endpoint = 'getBaseData';
-    return this.httpClient.get(endpoint);
-  }
+export {
+  getBaseData
 }

@@ -1,14 +1,11 @@
 import { ActionCreator } from 'redux';
 import { MssAction } from 'src/types/custom';
-import Api from 'src/shared/Api';
 import { GET_BASE_DATA, GET_BASE_DATA_ERROR, GET_BASE_DATA_SUCCESS } from './constants';
 
 
 export interface GetBaseDataAction extends MssAction {
     type: GET_BASE_DATA,
-    payload: {
-        api: Api
-    }
+    payload: {}
 }
 
 interface GetBaseDataSuccessAction extends MssAction {
@@ -19,11 +16,9 @@ interface GetBaseDataErrorAction extends MssAction {
     type: GET_BASE_DATA_ERROR
 }
 
-export const getBaseData: ActionCreator<GetBaseDataAction> = (api: Api) => ({
+export const getBaseData: ActionCreator<GetBaseDataAction> = () => ({
     type: GET_BASE_DATA,
-    payload: {
-        api
-    },
+    payload: {},
 });
 
 export const getBaseDataSuccess: ActionCreator<GetBaseDataSuccessAction> = (res) => ({
