@@ -1,6 +1,6 @@
 import { ActionCreator } from 'redux';
 import { MssAction } from 'src/types/custom';
-import Api from 'src/utils/Api';
+import Api from 'src/shared/Api';
 import { GET_BASE_DATA, GET_BASE_DATA_ERROR, GET_BASE_DATA_SUCCESS } from './constants';
 
 

@@ -6,7 +6,7 @@ import { createStructuredSelector } from 'reselect';
 import { FormattedMessage } from 'react-intl';
 
 import { MssAction } from 'src/types/custom';
-import Api from 'src/utils/Api';
+import Api from 'src/shared/Api';
 import { getBaseData, GetBaseDataAction } from './actions';
 import messages from './messages';
 
