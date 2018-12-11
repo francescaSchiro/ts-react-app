@@ -16,7 +16,9 @@ interface Reducers extends ReducersMapObject {
   user: Reducer<UserState, MssAction>
 }
 
-export default function getRootReducer(history: History): Reducer<PersistedState, RouterAction | MssAction> {
+export type RootReducerAction = RouterAction | MssAction;
+
+export default function getRootReducer(history: History): Reducer<PersistedState, RootReducerAction> {
 
   const reducers: Reducers = {
     router: connectRouter(history),

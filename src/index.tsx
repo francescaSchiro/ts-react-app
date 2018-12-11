@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-// import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'connected-react-router';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -8,8 +7,8 @@ import { createBrowserHistory, History } from 'history';
 
 import configure from 'src/core/store';
 import getRootReducer from 'src/core/reducers';
+import Routes from 'src/core/routes';
 import { TranslationMessages, translationMessages } from 'src/core/i18n';
-import App from 'src/containers/App';
 import LanguageProvider from 'src/containers/LanguageProvider';
 import GlobalStyles from 'src/theme/GlobalStyle';
 import { ThemeProvider, DefaultTheme } from 'src/theme/default';
@@ -24,15 +23,15 @@ const MOUNT_NODE = document.getElementById(MOUNT_NODE_ID) as HTMLElement;
 const render = (messages: TranslationMessages) => ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-    <LanguageProvider messages={messages}>
-      <ConnectedRouter history={history}>
-        <ThemeProvider theme={DefaultTheme}>
-          <React.Fragment>
-            <GlobalStyles />
-            <App />
-          </React.Fragment>
-        </ThemeProvider>
-      </ConnectedRouter>
+      <LanguageProvider messages={messages}>
+        <ConnectedRouter history={history}>
+          <ThemeProvider theme={DefaultTheme}>
+            <React.Fragment>
+              <GlobalStyles />
+              <Routes />
+            </React.Fragment>
+          </ThemeProvider>
+        </ConnectedRouter>
       </LanguageProvider>
     </PersistGate>
   </Provider>,

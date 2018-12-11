@@ -39,13 +39,13 @@ class App extends PureComponent<Props> {
     }
 
     public render() {
-        return <FormattedMessage {...messages.example} />;
+        return (
+            <FormattedMessage {...messages.example} />
+        );
     }
 }
 
-const mapStateToProps = createStructuredSelector<StateProps, any>({
-
-});
+const mapStateToProps = createStructuredSelector<StateProps, any>({});
 
 const mapDispatchToProps = (
     dispatch: Dispatch<MssAction>,
