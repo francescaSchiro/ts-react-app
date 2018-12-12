@@ -7,6 +7,6 @@ I followed the starter template set up following the steps described here. [Type
 
 [react-scripts-ts](https://www.npmjs.com/package/react-scripts-ts) is a set of adjustments to take the standard create-react-app project pipeline and bring TypeScript into the mix.
 
-- git init,
-- enzyme
-- redux
+## FIX
+
+- currentDay in _sportListItems.tsx_
