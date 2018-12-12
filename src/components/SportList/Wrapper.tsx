@@ -3,6 +3,8 @@ import styled from '../../theme/default/index';
 const Wrapper = styled.div`
   top: 44px;
   position: fixed;
+  display:flex;
+  
   width: 100%;
   height: 52px;
   background-color: #222;

@@ -48,4 +48,9 @@ export default createGlobalStyle`
      border-collapse: collapse;
      border-spacing: 0;
     }
+/*----------- End of reset style -----------*/
+     body {
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+} 
 `;

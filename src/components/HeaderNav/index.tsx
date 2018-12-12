@@ -5,13 +5,16 @@ import Logo from './Logo';
 import DropDownLogin from './DropDownLogin';
 import BigliettoNav from './BigliettoNav';
 import HamburgerNav from './HamburgerNav';
+import NavActionsWrapper from './NavActionsWrapper';
 
 const HeaderNav = () => (
   <HeaderNavWrapper>
-    <Logo>Logo</Logo>
-    <DropDownLogin>Drop &darr;</DropDownLogin>
-    <BigliettoNav>Bigl </BigliettoNav>
-    <HamburgerNav>/ / /</HamburgerNav>
+    <Logo src='https://m.sisal.it/scommesse-matchpoint/content/img/logo.png?v=2.5.5' />
+    <NavActionsWrapper>
+      <DropDownLogin>Accedi</DropDownLogin>
+      <BigliettoNav />
+      <HamburgerNav/>
+  </NavActionsWrapper>
     {/* <Sidebar /> */}
   </HeaderNavWrapper>
 );
