@@ -7,11 +7,9 @@ import { createBrowserHistory, History } from 'history';
 
 import configure from 'src/core/store';
 import getRootReducer from 'src/core/reducers';
-import Routes from 'src/core/routes';
 import { TranslationMessages, translationMessages } from 'src/core/i18n';
 import LanguageProvider from 'src/containers/LanguageProvider';
-import GlobalStyles from 'src/theme/GlobalStyle';
-import { ThemeProvider, DefaultTheme } from 'src/theme/default';
+import App from 'src/containers/App';
 import { MOUNT_NODE_ID } from 'src/config';
 import registerServiceWorker from 'src/registerServiceWorker';
 
@@ -25,12 +23,7 @@ const render = (messages: TranslationMessages) => ReactDOM.render(
     <PersistGate loading={null} persistor={persistor}>
       <LanguageProvider messages={messages}>
         <ConnectedRouter history={history}>
-          <ThemeProvider theme={DefaultTheme}>
-            <React.Fragment>
-              <GlobalStyles />
-              <Routes />
-            </React.Fragment>
-          </ThemeProvider>
+          <App />
         </ConnectedRouter>
       </LanguageProvider>
     </PersistGate>

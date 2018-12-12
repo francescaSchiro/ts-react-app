@@ -6,10 +6,14 @@
 import { defineMessages, Messages } from 'react-intl';
 
 const messages: Messages = defineMessages({
-  example: {
-    id: 'src.containers.App.welcome',
-    defaultMessage: 'Benvenuto!!!',
+  switchToDark: {
+    id: 'src.containers.App.switchToDark',
+    defaultMessage: 'NOT SET',
   },
+  goToLives: {
+    id: 'src.containers.App.goToLives',
+    defaultMessage: 'NOT SET',
+  }
 });
 
 export default messages;

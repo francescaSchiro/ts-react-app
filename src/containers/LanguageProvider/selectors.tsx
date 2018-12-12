@@ -9,6 +9,5 @@ const makeSelectLocale = () =>
     createSelector(selectLanguage, (languageState: LanguageProviderState) => languageState.locale);
 
 export {
-    selectLanguage,
     makeSelectLocale
 };

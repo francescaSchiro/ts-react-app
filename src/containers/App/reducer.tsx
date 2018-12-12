@@ -1,20 +1,23 @@
 import { Reducer } from 'redux';
 import { MssAction } from 'src/types/custom';
+import { SWITCH_THEME } from './constants';
 
 
 export interface AppState {
-    readonly languageName: string;
-    readonly enthusiasmLevel: number;
+    readonly themeName: string;
 }
 
 const initialAppState: AppState = {
-    languageName: '',
-    enthusiasmLevel: 0,
+    themeName: 'DefaultTheme'
 };
 
 const reducer: Reducer<AppState, MssAction> =
     (state = initialAppState, action): AppState => {
         switch (action.type) {
+            case SWITCH_THEME: {
+                const { themeName } = action.payload;
+                return { ...state, themeName }
+            }
             default: {
                 return state;
             }

@@ -18,16 +18,21 @@ function errorHandler(error: AxiosError): AxiosError {
   return error;
 }
 
-export function get(url: string, config?: AxiosRequestConfig): Promise<any> {
+const get = (url: string, config?: AxiosRequestConfig): Promise<any> => {
   return axios.get(url, config).then(
     (res: AxiosResponse): any => res.data,
     errorHandler
   );
 }
 
-export function post(url: string, data?: object, config?: AxiosRequestConfig): Promise<any> {
+const post = (url: string, data?: object, config?: AxiosRequestConfig): Promise<any> => {
   return axios.post(url, data, config).then(
     (res: AxiosResponse): any => res.data,
     errorHandler
   );
+}
+
+export {
+  get,
+  post
 }

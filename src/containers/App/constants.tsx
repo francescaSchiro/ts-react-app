@@ -1,3 +1,6 @@
+export const SWITCH_THEME = 'mss/App/SWITCH_THEME';
+export type SWITCH_THEME = typeof SWITCH_THEME;
+
 export const GET_BASE_DATA = 'mss/App/GET_BASE_DATA';
 export type GET_BASE_DATA = typeof GET_BASE_DATA;
 
