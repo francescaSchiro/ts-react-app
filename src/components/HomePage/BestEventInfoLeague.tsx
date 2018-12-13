@@ -7,7 +7,7 @@ const BestEventInfoLeague = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 1em;
+  padding: 0 .5em;
   color: white;
   background-color: #222;
 

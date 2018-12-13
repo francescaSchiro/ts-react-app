@@ -12,6 +12,7 @@ const SecondWinValue = styled.div`
   color: #222;
   font-weight: 700;
   font-size: .9em;
+  padding: .5em;
 `;
 
 export default SecondWinValue;

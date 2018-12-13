@@ -10,6 +10,7 @@ const FirstWinValue = styled.div`
   justify-content: center;
   align-items: center;
   color: #222;
+  padding: .5em;
   font-weight: 700;
   font-size: .9em;
 

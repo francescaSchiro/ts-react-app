@@ -7,7 +7,7 @@ const Icon = styled.div`
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  margin-right: .7em;
+  margin-right: .5em;
 `;
 
 export default Icon;

@@ -10,7 +10,7 @@ const BestEventTime = styled.div`
   justify-content: space-around;
   align-items: center;
   font-size: .8em;
-  padding: 1em;
+  padding: .5em;
   color: white;
   background-color: #186cb5;
 `;

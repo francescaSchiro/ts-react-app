@@ -9,7 +9,7 @@ const BestEventData = styled.div`
   border-right: 1px solid rgba(225,225,225, .4);
   justify-content: flex-start;
   align-items: center;
-  padding: 1em;
+  padding: .5em;
   color: #222;
 `;
 
