@@ -1,6 +1,6 @@
 {
-  "name": "ts-react-app",
-  "version": "0.1.0",
+  "name": "sisal-matchpoint-mobile",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@types/history": "^4.7.2",
