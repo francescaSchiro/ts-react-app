@@ -5,6 +5,7 @@ const DropDownLogin = styled.div`
   height: 45px;
   display: flex;
   align-items: center;
+  font-size: 14px;
 
   &::after {
     content: '';

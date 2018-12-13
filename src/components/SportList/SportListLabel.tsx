@@ -17,7 +17,7 @@ const SportListLabel = styled('div')<MyProps>`
             width: 100%;
             height: 3px;
             left: 50%;
-            bottom: -3px;
+            bottom: -6px;
             background: #b9d531;
             -moz-transform: translate(-50%, 0);
             -ms-transform: translate(-50%, 0);

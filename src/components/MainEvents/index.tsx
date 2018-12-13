@@ -5,11 +5,14 @@ import Redirect from '../Redirect';
 import TabsContainer from './TabsContainer';
 import TabLive from './TabLive';
 import TabPrematch from './TabPrematch';
-import EventContainer from './EventContainer';
+import EventsContainer from './EventsContainer';
 import SportsContainer from './SportsContainer';
 import SportsTab from './SportsTab';
 
 import sportTabItems from './sportsTabItems';
+import EventLeague from './EventLeague';
+import EventContent from './EventContent';
+import LiveScore from './LiveScore';
 
 const MainEvents = () => (
   <MainEventsWrapper>
@@ -17,18 +20,23 @@ const MainEvents = () => (
       <TabLive>LIVE</TabLive>
       <TabPrematch>PRE MATCH</TabPrematch>
     </TabsContainer>
-
     {/* Sports Tabs */}
     <SportsContainer>
-      {sportTabItems.map((el, i) => (
+      {
+        sportTabItems.map((el, i) => (
         <SportsTab key={i} active={el.active}>
           {el.label}
         </SportsTab>
       ))}
     </SportsContainer>
-   {/* Sports Tabs */}
-    <MainEventsWrapper>
-      <EventContainer />
+    {/*Main-Events-Body*/}
+    <MainEventsWrapper id='Main-Events-body'>
+      <EventsContainer>
+        <EventLeague>ITA Serie C</EventLeague>
+        <EventContent>
+          <LiveScore>1-0</LiveScore>
+        </EventContent>
+      </EventsContainer>  
     </MainEventsWrapper>
 
     <Redirect />

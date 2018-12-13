@@ -5,7 +5,8 @@
     "object-literal-sort-keys": false,
     "ordered-imports": false,
     "quotemark": [true, "single"],
-    "jsx-no-multiline-js": false
+    "jsx-no-multiline-js": false,
+    "no-console": false
   },
   "linterOptions": {
     "exclude": [
