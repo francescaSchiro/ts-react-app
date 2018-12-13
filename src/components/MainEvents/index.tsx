@@ -17,14 +17,21 @@ const MainEvents = () => (
       <TabLive>LIVE</TabLive>
       <TabPrematch>PRE MATCH</TabPrematch>
     </TabsContainer>
-    <EventContainer>
-      <SportsContainer>
-        {sportTabItems.map((el,i) => (
-          <SportsTab key={i} active={el.active}>{el.label}</SportsTab>
-        ))}
-      </SportsContainer>
-    </EventContainer>  
-  <Redirect/>
+
+    {/* Sports Tabs */}
+    <SportsContainer>
+      {sportTabItems.map((el, i) => (
+        <SportsTab key={i} active={el.active}>
+          {el.label}
+        </SportsTab>
+      ))}
+    </SportsContainer>
+   {/* Sports Tabs */}
+    <MainEventsWrapper>
+      <EventContainer />
+    </MainEventsWrapper>
+
+    <Redirect />
   </MainEventsWrapper>
 );
 

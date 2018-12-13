@@ -8,15 +8,11 @@ import OtherEvents from '../OtherEvents';
 import TitleWrapper from './TitleWrapper';
 import BestEventWrapper from './BestEventWrapper';
 import BestEventInfoLeague from './BestEventInfoLeague';
-import FirstWin from './FirstWin';
-import Tie from './Tie';
-import SecondWin from './SecondWin';
 import BestEventTime from './BestEventTime';
 import BestEventData from './BestEventData';
 import Icon from './Icon';
-import FirstWinValue from './FirstWinValue';
-import TieValue from './TieValue';
-import SecondWinValue from './SecondWinValue';
+import BestEventGameItemLabel from './BestEventGameItemLabel';
+import BestEventGameItemValue from './BestEventGameItemValue';
 
 const HomePage = () => (
   <HomePageWrapper id='HomePageWrapper'>
@@ -30,17 +26,17 @@ const HomePage = () => (
           <Icon />
           INT Champions League{' '}
         </BestEventInfoLeague>
-        <FirstWin>1</FirstWin>
-        <Tie>X</Tie>
-        <SecondWin>2</SecondWin>
+        <BestEventGameItemLabel gridColumn={[7, 8]} rightBorder={true}>1</BestEventGameItemLabel>
+        <BestEventGameItemLabel gridColumn={[8, 9]} rightBorder={true}>X</BestEventGameItemLabel>
+        <BestEventGameItemLabel gridColumn={[9, 10]} rightBorder={false}>2</BestEventGameItemLabel>
         <BestEventTime>
-          <div style={{ fontWeight: 700 }}>Mer</div>
+          <div style={{  fontWeight: 700, paddingBottom: '2px'  }}>Mer</div>
           <div>18:55</div>
         </BestEventTime>
         <BestEventData>Real Madrid - CSKA Mosca</BestEventData>
-        <FirstWinValue>1,25</FirstWinValue>
-        <TieValue>5,90</TieValue>
-        <SecondWinValue>12,50</SecondWinValue>
+        <BestEventGameItemValue gridColumn={[7, 8]} rightBorder={true}>1,25</BestEventGameItemValue>
+        <BestEventGameItemValue gridColumn={[8, 9]} rightBorder={true}>5,90</BestEventGameItemValue>
+        <BestEventGameItemValue gridColumn={[9, 10]} rightBorder={false}>12,50</BestEventGameItemValue>
       </BestEventWrapper>
       {/* 2nd card */}
       <BestEventWrapper>
@@ -48,35 +44,35 @@ const HomePage = () => (
           <Icon />
           INT Champions League{' '}
         </BestEventInfoLeague>
-        <FirstWin>1</FirstWin>
-        <Tie>X</Tie>
-        <SecondWin>2</SecondWin>
+        <BestEventGameItemLabel gridColumn={[7, 8]} rightBorder={true}>1</BestEventGameItemLabel>
+        <BestEventGameItemLabel gridColumn={[8, 9]} rightBorder={true}>X</BestEventGameItemLabel>
+        <BestEventGameItemLabel gridColumn={[9, 10]} rightBorder={false}>2</BestEventGameItemLabel>
         <BestEventTime>
-          <div style={{ fontWeight: 700 }}>Mer</div>
+          <div style={{ fontWeight: 700, paddingBottom: '2px' }}>Mer</div>
           <div>18:55</div>
         </BestEventTime>
         <BestEventData>Real Madrid - CSKA Mosca</BestEventData>
-        <FirstWinValue>1,25</FirstWinValue>
-        <TieValue>5,90</TieValue>
-        <SecondWinValue>12,50</SecondWinValue>
+        <BestEventGameItemValue gridColumn={[7, 8]} rightBorder={true}>1,25</BestEventGameItemValue>
+        <BestEventGameItemValue gridColumn={[8, 9]} rightBorder={true}>5,90</BestEventGameItemValue>
+        <BestEventGameItemValue gridColumn={[9, 10]} rightBorder={false}>12,50</BestEventGameItemValue>
       </BestEventWrapper>
       {/* 3d card */}
       <BestEventWrapper>
         <BestEventInfoLeague>
           <Icon />
-          INT Champions League
+          INT Champions League{' '}
         </BestEventInfoLeague>
-        <FirstWin>1</FirstWin>
-        <Tie>X</Tie>
-        <SecondWin>2</SecondWin>
+        <BestEventGameItemLabel gridColumn={[7, 8]} rightBorder={true}>1</BestEventGameItemLabel>
+        <BestEventGameItemLabel gridColumn={[8, 9]} rightBorder={true}>X</BestEventGameItemLabel>
+        <BestEventGameItemLabel gridColumn={[9, 10]} rightBorder={false}>2</BestEventGameItemLabel>
         <BestEventTime>
-          <div style={{ fontWeight: 700 }}>Mer</div>
+          <div style={{  fontWeight: 700, paddingBottom: '2px' }}>Mer</div>
           <div>18:55</div>
         </BestEventTime>
         <BestEventData>Real Madrid - CSKA Mosca</BestEventData>
-        <FirstWinValue>1,25</FirstWinValue>
-        <TieValue>5,90</TieValue>
-        <SecondWinValue>12,50</SecondWinValue>
+        <BestEventGameItemValue gridColumn={[7, 8]} rightBorder={true}>1,25</BestEventGameItemValue>
+        <BestEventGameItemValue gridColumn={[8, 9]} rightBorder={true}>5,90</BestEventGameItemValue>
+        <BestEventGameItemValue gridColumn={[9, 10]} rightBorder={false}>12,50</BestEventGameItemValue>
       </BestEventWrapper>
     </BestEventsWrapper>
     <MainEvents />

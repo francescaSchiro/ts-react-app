@@ -7,9 +7,9 @@ const BestEventTime = styled.div`
   display: flex;
   flex-direction: column;
   border-right: 1px solid rgba(225,225,225, .4);
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  font-size: .8em;
+  font-size: .9em;
   padding: .5em;
   color: white;
   background-color: #186cb5;

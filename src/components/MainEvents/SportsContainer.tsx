@@ -8,6 +8,7 @@ const SportsContainer = styled.div`
   align-items: center;
   min-height: 30px;
   height: 30px;
+  background-color: white;
 
 `;
 
