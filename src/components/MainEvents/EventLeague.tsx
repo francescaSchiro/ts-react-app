@@ -8,6 +8,7 @@ const EventLeague = styled.div`
   height: 25px;
   width: 100%;
   padding: 0 .5em;
+  
 
   /* border: 2px solid #f6a81e; */
   background-color: #989898;
@@ -21,6 +22,7 @@ const EventLeague = styled.div`
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+    
     margin-right: 0.5em;
   }
 `;

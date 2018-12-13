@@ -1,12 +1,12 @@
 import styled from '../../theme/default/index';
 
 interface MyProps {
-  gridColumn: [number, number],
+  gridColumn: string,
   rightBorder: boolean
 }
 
 const BestEventGameItemLabel = styled.div`
-  grid-column: ${(props: MyProps) => `${props.gridColumn[0] / props.gridColumn[1]}`};
+  grid-column: ${(props: MyProps) => props.gridColumn};
   grid-row: 1 / 2;
 
   display: flex;
