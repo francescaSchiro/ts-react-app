@@ -6,7 +6,6 @@ const EventLeague = styled.div`
   justify-content: flex-start;
   align-items: center;
   height: 25px;
-  width: 100%;
   padding: 0 .5em;
   
 

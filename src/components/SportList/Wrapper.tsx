@@ -4,6 +4,8 @@ const Wrapper = styled.div`
   top: 44px;
   position: fixed;
   display:flex;
+  z-index:10;
+
   
   width: 100%;
   height: 52px;
