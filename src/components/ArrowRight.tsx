@@ -1,13 +1,12 @@
 import styled from '../theme/default/index';
 
 interface MyProps {
-  width: string,
-  height: string,
-  margin: string
+  width: string;
+  height: string;
+  margin: string;
 }
 
 const ArrowRight = styled.div`
-
   width: ${(props: MyProps) => props.width};
   height: ${(props: MyProps) => props.height};
   border-right: 2px solid #4a4a4a;

@@ -5,7 +5,7 @@ import Title from '../Title';
 import BestEventsWrapper from './BestEventsWrapper';
 import MainEvents from '../MainEvents';
 import OtherEvents from '../OtherEvents';
-import TitleWrapper from './TitleWrapper';
+import TitleWrapper from '../TitleWrapper';
 import BestEventWrapper from './BestEventWrapper';
 import BestEventInfoLeague from './BestEventInfoLeague';
 import BestEventTime from './BestEventTime';

@@ -45,7 +45,7 @@ const MainEvents = () => (
       {/* 1st league */}
       <EventsContainer id='Event-Container'>
         <EventLeague id='Event-League'>ITA Serie C</EventLeague>
-        <EventContent />  
+        <EventContent />
         <HR id='HR' />
         {/* second event */}
         <EventContent />
@@ -53,7 +53,7 @@ const MainEvents = () => (
       {/* 2nd league */}
       <EventsContainer id='Event-Container'>
         <EventLeague id='Event-League'>ITA Serie B</EventLeague>
-        <EventContent />  
+        <EventContent />
         <HR id='HR' />
         {/* second event */}
         <EventContent />

@@ -1,7 +1,7 @@
-import styled from '../../theme/default/index';
+import styled from '../theme/default/index';
 
 const TitleWrapper = styled.div`
-   width: auto;
+  width: auto;
   height: 20px;
   padding: 10px 0 5px 0;
   text-align: center;

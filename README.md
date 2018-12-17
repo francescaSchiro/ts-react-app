@@ -14,3 +14,5 @@ I followed the starter template set up following the steps described here. [Type
 [styledcomponents babel plugin docs](https://www.styled-components.com/docs/tooling#babel-plugin)
 - in cards game name goes on 2 lines not expanding card
 - grid gap adds 4 px to 1st winner odds area
+- transform gridColumn and gridRow passed props to just gridArea
+- make mainevnts tabs same from reusable components Tab and TabsContainer as in OtherEvents
