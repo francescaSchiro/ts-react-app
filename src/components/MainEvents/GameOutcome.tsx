@@ -1,10 +1,10 @@
 import styled from '../../theme/default/index';
 
 interface MyProps {
-  gridColumn: string,
+  gridColumn: string;
 }
 const GameOutcome = styled.div`
-  grid-column:  ${(props: MyProps) => props.gridColumn};
+  grid-column: ${(props: MyProps) => props.gridColumn};
   grid-row: 3 / 4;
 
   display: flex;
@@ -12,11 +12,11 @@ const GameOutcome = styled.div`
   justify-content: flex-start;
   align-items: center;
   color: black;
+  padding: 3px 0;
   background-color: #eaeaea;
-  font-weight: bold;
-  font-size: 1.2em;
-  line-height: 1.5em;
 
+  box-shadow: inset 0 -1px rgba(0,0,0,.05);
+  border-radius: 2px;
 `;
 
 export default GameOutcome;

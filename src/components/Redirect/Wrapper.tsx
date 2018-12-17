@@ -1,11 +1,16 @@
 import styled from '../../theme/default/index';
 
 const Wrapper = styled.div`
-  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   color: black;
   height: 35px;
-  border-bottom: 2px solid #0C468D;
-
+  background-color: white;
+  border-bottom: 2px solid #0c468d;
+  font-size: 1.2em;
+  border-bottom: 5px solid #f6a81e;
 `;
 
 export default Wrapper;

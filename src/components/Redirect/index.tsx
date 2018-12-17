@@ -1,13 +1,16 @@
 import * as React from 'react';
 
 import RedirectWrapper from './Wrapper';
+import P from '../P';
+import B from '../B';
+import ArrowRight from '../ArrowRight';
 
 
 
 
 const Redirect = () => (
     <RedirectWrapper>
-      <div> Redirect </div>    
+      <P>TUTTO <B>&nbsp;CALCIO&nbsp;</B> LIVE</P><ArrowRight width={'6px'} height={'6px'} margin={'0 0 0 5px'}/>    
     </RedirectWrapper>
 );
 
