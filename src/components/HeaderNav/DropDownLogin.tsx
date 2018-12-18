@@ -1,12 +1,12 @@
 import styled from '../../theme/default/index';
 
-const DropDownLogin = styled.div`
+const DropDownLogin = styled.button`
   margin: 0 8px 0 8px;
   height: 45px;
   display: flex;
   align-items: center;
   font-size: 14px;
-
+  all: unset;
   &::after {
     content: '';
     display: inline-block;

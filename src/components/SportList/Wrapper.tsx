@@ -5,8 +5,6 @@ const Wrapper = styled.div`
   position: fixed;
   display:flex;
   z-index:10;
-
-  
   width: 100%;
   height: 52px;
   background-color: #222;

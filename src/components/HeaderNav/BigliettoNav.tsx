@@ -1,5 +1,6 @@
 import styled from '../../theme/default/index';
 
+
 const BigliettoNav = styled.div`
   margin: 0 8px 0 8px;
   width: 45px;

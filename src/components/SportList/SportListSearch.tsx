@@ -17,7 +17,7 @@ const SportListSearch = styled.div`
     left: 0;
     transform: translateX(45px);
     width: 45px;
-    height:45px;
+    height:100%;
     min-width: 45px;
     box-shadow: inset 20px 0px 11px 1px rgba(0, 0, 0, 0.5);
   }

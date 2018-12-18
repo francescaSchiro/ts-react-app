@@ -18,9 +18,9 @@ const OtherEvents = () => (
     </TitleWrapper>
 
     <TabsContainer>
-      <Tab>Calcio</Tab>
-      <Tab>Tennis</Tab>
-      <Tab>Basket</Tab>
+      <Tab active={true}>Calcio</Tab>
+      <Tab active={false}>Tennis</Tab>
+      <Tab active={false}>Basket</Tab>
     </TabsContainer>
 
     <LeagueContainer>

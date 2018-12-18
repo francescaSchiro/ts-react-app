@@ -6,17 +6,38 @@ import DropDownLogin from './DropDownLogin';
 import BigliettoNav from './BigliettoNav';
 import HamburgerNav from './HamburgerNav';
 import NavActionsWrapper from './NavActionsWrapper';
+import LoginModal from './LoginModal';
 
-const HeaderNav = () => (
-  <HeaderNavWrapper>
-    <Logo src='https://m.sisal.it/scommesse-matchpoint/content/img/logo.png?v=2.5.5' />
-    <NavActionsWrapper>
-      <DropDownLogin>Accedi</DropDownLogin>
-      <BigliettoNav />
-      <HamburgerNav/>
-  </NavActionsWrapper>
-    {/* <Sidebar /> */}
-  </HeaderNavWrapper>
-);
+class HeaderNav extends React.Component<any, any> {
+  constructor(props: any) {
+    super(props);
+    this.state = { showLoginModal: false };
+  }
+
+  public render() {
+    return (
+      <HeaderNavWrapper>
+        <Logo src='https://m.sisal.it/scommesse-matchpoint/content/img/logo.png?v=2.5.5' />
+        <NavActionsWrapper>
+          <DropDownLogin
+            name='toggleLoginModal'
+            onClick={this.toggleShowLoginModal}
+          >
+            Accedi
+          </DropDownLogin>
+          
+          <BigliettoNav />
+          <HamburgerNav />
+        </NavActionsWrapper>
+        <LoginModal id={'login-modal'} showModal={this.state.showLoginModal} />
+        {/* <Sidebar /> */}
+      </HeaderNavWrapper>
+    );
+  }
+
+  private toggleShowLoginModal = () => {
+    this.setState({ showLoginModal: !this.state.showLoginModal });
+  };
+}
 
 export default HeaderNav;
