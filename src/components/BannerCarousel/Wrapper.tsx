@@ -20,6 +20,6 @@ const Wrapper = styled.div`
 
 
 
-  background-color: lightpink;
+  background-color: #eaeaea;
 `;
 export default Wrapper;
