@@ -1,9 +1,11 @@
 import styled from '../../theme/default/index';
 
 const Wrapper = styled.div`
+
     color: #393939;
-    border: 8px solid lightgray;
-    height: 424px;
+    background-color: lightskyblue;
+    height: 700px;
+    
 `;
 
 export default Wrapper;

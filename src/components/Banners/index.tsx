@@ -5,7 +5,7 @@ import BannerCarousel from '../BannerCarousel';
 import BannerBase from '../BannerBase';
 
 const Banners = () => (
-  <BannersWrapper>
+  <BannersWrapper id={'BannersWrapper'}>
     <BannerCarousel/>
     <BannerBase />
   </BannersWrapper>
