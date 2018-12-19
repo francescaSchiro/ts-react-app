@@ -2,7 +2,7 @@ import styled from '../../theme/default/index';
 
 // slider as in https://codepen.io/maxakohler/pen/pZoNGy and https://css-tricks.com/practical-css-scroll-snapping/
 
-const Wrapper = styled.div`
+const BannerCarouselWrapper = styled.div`
   display: block;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -22,4 +22,4 @@ const Wrapper = styled.div`
 
   background-color: #eaeaea;
 `;
-export default Wrapper;
+export default BannerCarouselWrapper;

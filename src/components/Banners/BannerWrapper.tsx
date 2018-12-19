@@ -3,7 +3,10 @@ import styled from '../../theme/default/index';
 // section as in https://codepen.io/maxakohler/pen/pZoNGy and https://css-tricks.com/practical-css-scroll-snapping/
 
 const BannerWrapper = styled.div`
-  display: inline-block;
+  display: inline-flex;
+  flex-direction:column;
+  /* align-items:center; */
+  justify-content: flex-start;
   background-color: white;
   height: 320px;
   width: 70%;
@@ -23,6 +26,7 @@ const BannerWrapper = styled.div`
   &:last-child {
     margin-right: 30%;
   }
+
 `;
 
 export default BannerWrapper;
