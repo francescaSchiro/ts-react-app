@@ -2,7 +2,7 @@ import styled from '../../theme/default/index';
 
 // slider as in https://codepen.io/maxakohler/pen/pZoNGy and https://css-tricks.com/practical-css-scroll-snapping/
 
-const BannerCarouselWrapper = styled.div`
+const BannerCarouselWrapper = styled.ul`
   display: block;
   overflow-x: scroll;
   overflow-y: hidden;

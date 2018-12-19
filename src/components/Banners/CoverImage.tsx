@@ -6,7 +6,7 @@ interface MyProps {
 
 const CoverImage = styled.div`
   background-image: ${(props: MyProps) => `url(${props.imgUrl})`};
-  height: 35%;
+  height: 40%;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

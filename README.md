@@ -9,10 +9,11 @@ I followed the starter template set up following the steps described here. [Type
 
 ## FIX
 
-- currentDay in _sportListItems.tsx_ with [luxon](https://moment.github.io/luxon/) library;
-- **In order to see Styled Components name while inspecting** Implement: [react-app-rewire-styled-components](https://github.com/withspectrum/react-app-rewire-styled-components) tthat adds the styled-components Babel plugin to your create-react-app app via react-app-rewired without ejecting. [to read](https://github.com/styled-components/babel-plugin-styled-components/issues/59)
+[] currentDay in _sportListItems.tsx_ with [luxon](https://moment.github.io/luxon/) library;
+[] **In order to see Styled Components name while inspecting** Implement: [react-app-rewire-styled-components](https://github.com/withspectrum/react-app-rewire-styled-components) tthat adds the styled-components Babel plugin to your create-react-app app via react-app-rewired without ejecting. [to read](https://github.com/styled-components/babel-plugin-styled-components/issues/59)
 [styledcomponents babel plugin docs](https://www.styled-components.com/docs/tooling#babel-plugin)
-- in cards game name goes on 2 lines not expanding card
-- grid gap adds 4 px to 1st winner odds area
-- transform gridColumn and gridRow passed props to just gridArea
-- make mainevnts tabs same from reusable components Tab and TabsContainer as in OtherEvents
+[] in cards game name goes on 2 lines not expanding card
+[] grid gap adds 4 px to 1st winner odds area
+[] transform gridColumn and gridRow passed props to just gridArea
+[] make mainevnts tabs same from reusable components Tab and TabsContainer as in OtherEvents
+[x] banner list not div!!

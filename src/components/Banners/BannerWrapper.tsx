@@ -2,7 +2,7 @@ import styled from '../../theme/default/index';
 
 // section as in https://codepen.io/maxakohler/pen/pZoNGy and https://css-tricks.com/practical-css-scroll-snapping/
 
-const BannerWrapper = styled.div`
+const BannerWrapper = styled.li`
   display: inline-flex;
   flex-direction:column;
   /* align-items:center; */
