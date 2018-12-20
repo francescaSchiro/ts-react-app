@@ -10,7 +10,7 @@ interface MyProps {
 
 const P = styled.p`
   display: ${(props:MyProps)=> props.display ? props.display : 'flex'};
-  color: black;
+  color: inherit;
   white-space:normal;
   text-align: ${(props:MyProps)=> props.textAlign ? props.textAlign : 'center' };
   margin: ${(props:MyProps)=> props.margin ? props.margin : '0' };

@@ -7,7 +7,7 @@ interface MyProps {
 
 const TitleWrapper = styled.div`
   width: auto;
-  height: 20px;
+  min-height: 20px; 
   padding: ${(props:MyProps)=> props.padding ? props.padding : '0px'};
   text-align: center;
   ${(props:MyProps) => `background-color: ${props.bg};`}

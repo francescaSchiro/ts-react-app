@@ -19,7 +19,7 @@ const BannerCarouselWrapper = styled.ul`
   }
 
 
-
+  color: #393939;
   background-color: #eaeaea;
 `;
 export default BannerCarouselWrapper;

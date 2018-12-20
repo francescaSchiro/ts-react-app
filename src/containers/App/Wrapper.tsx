@@ -10,7 +10,6 @@ const AppWrapper = styled.div`
     -moz-transition: all .3s ease;
     transition: all .3s ease;
     background-color: #EAEAEA;
-
 `
 
 export default AppWrapper;

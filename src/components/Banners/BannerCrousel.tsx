@@ -22,15 +22,15 @@ const BannerCarousel = () => (
   <BannerCarouselSlider id={'slider'}>
     {bannerItems.map(el=> (
     <BannerWrapper key={el.key}>
-      <TitleWrapper bg={'#eaeaea'} padding={'8px 0px 12px 0px'}>
-        <Title fontColor={'#393939'}>{el.mainTitle}</Title>
+      <TitleWrapper bg={'#eaeaea'} padding={'8px 0px 6px 0px'} >
+        <Title fontSize={'14px'} fontColor={'#393939'}>{el.mainTitle}</Title>
       </TitleWrapper>
       <CardWrapper>
         <CoverImage imgUrl={el.coverImageUrl}/>
         <TitleWrapper padding={'10px 10px 2px 10px'}>
-          <Title textAlign={'left'}>{el.secondaryTitle}</Title>
+          <Title fontSize={'14px'} textAlign={'left'}>{el.secondaryTitle}</Title>
         </TitleWrapper>
-        <MixedTextWrapper>
+        <MixedTextWrapper padding={'0 10px 10px 10px'}>
           <PLeftBanner> {el.description[0]}</PLeftBanner>
           <PLeftBanner fontWeight={700}> {el.description[1]}</PLeftBanner>
           <PLeftBanner> {el.description[2]}</PLeftBanner>
@@ -39,7 +39,7 @@ const BannerCarousel = () => (
         </MixedTextWrapper>
         <BannerButtonContainer>
           <BannerButton>
-            <Title>MAGGIORI INFORMAZIONI</Title>
+            <Title fontSize={'14px'} fontColor={'#393939'} >MAGGIORI INFORMAZIONI</Title>
           </BannerButton>
         </BannerButtonContainer>
       </CardWrapper>

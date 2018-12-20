@@ -17,7 +17,7 @@ import BestEventGameItemValue from './BestEventGameItemValue';
 const HomePage = () => (
   <HomePageWrapper id='HomePageWrapper'>
     <TitleWrapper padding={'10px 0 5px 0'}>
-      <Title>Incontri principali</Title>
+      <Title fontColor={'#777'}>Incontri principali</Title>
     </TitleWrapper>
     <BestEventsWrapper>
       {/* 1st card */}

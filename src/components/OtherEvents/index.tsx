@@ -14,7 +14,7 @@ const OtherEvents = () => (
   <OtherEventsWrapper>
 
     <TitleWrapper id='Title-Wrapper'  padding={'10px 0 0 0'}>
-      <Title>Top Manifestazioni</Title>
+      <Title fontColor={'#777'}>Top Manifestazioni</Title>
     </TitleWrapper>
 
     <TabsContainer>
