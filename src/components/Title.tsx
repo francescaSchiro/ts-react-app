@@ -7,7 +7,7 @@ interface MyProps {
 }
 
 const Title = styled.p`
-  font-size: 14px;
+  font-size: 15px;
   color: ${(props: MyProps) => props.fontColor ? props.fontColor : '#777'};
   font-weight: ${(props: MyProps) => props.fontWeight ? props.fontWeight : 700};
   ${(props : MyProps) => `text-align: ${props.textAlign};`}

@@ -13,7 +13,7 @@ import LeagueLabel from './LeagueLabel';
 const OtherEvents = () => (
   <OtherEventsWrapper>
 
-    <TitleWrapper id='Title-Wrapper'>
+    <TitleWrapper id='Title-Wrapper'  padding={'10px 0 0 0'}>
       <Title>Top Manifestazioni</Title>
     </TitleWrapper>
 
