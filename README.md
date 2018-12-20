@@ -1,5 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+## To Start
+
+Clone the repo. Move to `styled` branch.
+
+`yarn`
+`yarn start`
+
 ## To set up the file: 
 I followed the starter template set up following the steps described here. [TypeScript-React-Starter](https://github.com/Microsoft/TypeScript-React-Starter) 
 
