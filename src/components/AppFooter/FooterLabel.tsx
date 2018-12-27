@@ -6,6 +6,7 @@ const FooterLabel = styled.div`
   display: flex;
   justify-content: center;
   border-bottom: 1px solid white;
+  text-transform: uppercase;
 `;
 
 export default FooterLabel;
