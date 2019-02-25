@@ -1,6 +1,7 @@
 import styled from 'src/theme/default/index';
 
 const DeleteIcon = styled.div`
+   
     /* display: inline-flex; */
     width:12px;
     height:14px;

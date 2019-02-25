@@ -7,7 +7,8 @@ import BetslipBodyItem from './BetslipBodyItem/index';
 const BetslipBody = () => (
     <Wrapper>
         <BetslipBodyItem />
-
+        <BetslipBodyItem />
+        <BetslipBodyItem />
     </Wrapper>
 );
 

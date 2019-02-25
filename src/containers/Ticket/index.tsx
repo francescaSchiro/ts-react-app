@@ -8,7 +8,6 @@ const Ticket = () => (
     <Wrapper>
         <BetslipHead />
         <BetslipBody />
-        <BetslipBody />
     </Wrapper>
 );
 

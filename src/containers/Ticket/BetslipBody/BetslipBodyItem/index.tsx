@@ -10,6 +10,7 @@ import Title from './Title';
 import Info from './Info';
 import Game from './Game';
 import DeleteIcon from './DeleteIcon';
+import EditIcon from './EditIcon';
 import MicroGame from './MicroGame';
 import Odd from './Odd';
 
@@ -33,7 +34,11 @@ const BetslipBodyItem = () => (
             </BetDetail>
         </BetData>
 
-        <BetActions />
+        <BetActions>
+            <DeleteIcon />
+
+            <EditIcon />
+        </BetActions>
 
     </Wrapper>
 );
