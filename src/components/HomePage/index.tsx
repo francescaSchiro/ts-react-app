@@ -13,9 +13,17 @@ import BestEventData from './BestEventData';
 import Icon from './Icon';
 import BestEventGameItemLabel from './BestEventGameItemLabel';
 import BestEventGameItemValue from './BestEventGameItemValue';
+import AppFooter from 'src/components/AppFooter';
+import Banners from 'src/components/Banners';
+import AppSeo from 'src/components/AppSeo';
+import SportList from 'src/components/SportList';
+
+
 
 const HomePage = () => (
   <HomePageWrapper id='HomePageWrapper'>
+    <SportList />
+
     <TitleWrapper padding={'10px 0 5px 0'}>
       <Title fontColor={'#777'}>Incontri principali</Title>
     </TitleWrapper>
@@ -30,7 +38,7 @@ const HomePage = () => (
         <BestEventGameItemLabel gridColumn={'8/9'} rightBorder={true}>X</BestEventGameItemLabel>
         <BestEventGameItemLabel gridColumn={'9/10'} rightBorder={false}>2</BestEventGameItemLabel>
         <BestEventTime>
-          <div style={{  fontWeight: 700, paddingBottom: '2px'  }}>Mer</div>
+          <div style={{ fontWeight: 700, paddingBottom: '2px' }}>Mer</div>
           <div>18:55</div>
         </BestEventTime>
         <BestEventData>Real Madrid - CSKA Mosca</BestEventData>
@@ -48,7 +56,7 @@ const HomePage = () => (
         <BestEventGameItemLabel gridColumn={'8/9'} rightBorder={true}>X</BestEventGameItemLabel>
         <BestEventGameItemLabel gridColumn={'9/10'} rightBorder={false}>2</BestEventGameItemLabel>
         <BestEventTime>
-          <div style={{  fontWeight: 700, paddingBottom: '2px'  }}>Mer</div>
+          <div style={{ fontWeight: 700, paddingBottom: '2px' }}>Mer</div>
           <div>18:55</div>
         </BestEventTime>
         <BestEventData>Real Madrid - CSKA Mosca</BestEventData>
@@ -66,7 +74,7 @@ const HomePage = () => (
         <BestEventGameItemLabel gridColumn={'8/9'} rightBorder={true}>X</BestEventGameItemLabel>
         <BestEventGameItemLabel gridColumn={'9/10'} rightBorder={false}>2</BestEventGameItemLabel>
         <BestEventTime>
-          <div style={{  fontWeight: 700, paddingBottom: '2px'  }}>Mer</div>
+          <div style={{ fontWeight: 700, paddingBottom: '2px' }}>Mer</div>
           <div>18:55</div>
         </BestEventTime>
         <BestEventData>Real Madrid - CSKA Mosca</BestEventData>
@@ -77,6 +85,9 @@ const HomePage = () => (
     </BestEventsWrapper>
     <MainEvents />
     <OtherEvents />
+    <Banners />
+    <AppSeo />
+    <AppFooter />
   </HomePageWrapper>
 );
 

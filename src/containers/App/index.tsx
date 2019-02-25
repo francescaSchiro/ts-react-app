@@ -7,14 +7,13 @@ import { createStructuredSelector } from 'reselect';
 import { MssAction } from 'src/types/custom';
 import Api from 'src/utils/Api';
 import { getBaseData, GetBaseDataAction } from './actions';
+import { MemoryRouter as Router } from 'react-router-dom';
 
 import AppWrapper from './Wrapper';
+import Routes from './Routes';
 import HeaderNav from '../../components/HeaderNav/index';
-import SportList from 'src/components/SportList';
-import HomePage from 'src/components/HomePage';
-import AppFooter from 'src/components/AppFooter';
-import Banners from 'src/components/Banners';
-import AppSeo from 'src/components/AppSeo';
+// import HomePage from 'src/components/HomePage';
+// import Ticket from 'src/containers/Ticket';
 
 
 /**
@@ -48,15 +47,13 @@ class App extends PureComponent<Props> {
     }
 
     public render() {
-        return(
-        <AppWrapper id='AppWrapper'>
-            <HeaderNav/>           
-            <SportList/>
-            <HomePage/>
-            <Banners/>
-            <AppSeo />
-            <AppFooter />
-        </AppWrapper>
+        return (
+            <Router>
+                <AppWrapper id='AppWrapper'>
+                    <HeaderNav />
+                    <Routes />
+                </AppWrapper>
+            </Router>
         );
     }
 }

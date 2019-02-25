@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import HeaderNavWrapper from './Wrapper';
 import Logo from './Logo';
@@ -17,7 +18,10 @@ class HeaderNav extends React.Component<any, any> {
   public render() {
     return (
       <HeaderNavWrapper>
-        <Logo src='https://m.sisal.it/scommesse-matchpoint/content/img/logo.png?v=2.5.5' />
+        <NavLink to='/'>
+          <Logo src='https://m.sisal.it/scommesse-matchpoint/content/img/logo.png?v=2.6.8' />
+        </NavLink>
+
         <NavActionsWrapper>
           <DropDownLogin
             name='toggleLoginModal'
@@ -25,13 +29,15 @@ class HeaderNav extends React.Component<any, any> {
           >
             Accedi
           </DropDownLogin>
-          
-          <BigliettoNav />
+
+          <NavLink to='/ticket'>
+            <BigliettoNav />
+          </NavLink>
           <HamburgerNav />
         </NavActionsWrapper>
         <LoginModal id={'login-modal'} showModal={this.state.showLoginModal} />
         {/* <Sidebar /> */}
-      </HeaderNavWrapper>
+      </HeaderNavWrapper >
     );
   }
 
