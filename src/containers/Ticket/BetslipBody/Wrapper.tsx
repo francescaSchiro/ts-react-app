@@ -1,10 +1,12 @@
 import styled from '../../../theme/default/index';
 
 const Wrapper = styled.div`
+    display: flex;
+    flex-direction:column;
+    width: 100%;
 
-
-    background-color: limegreen;
+    border: 2px solid brown;
     color: black;
-`
 
+`
 export default Wrapper;

@@ -1,11 +1,12 @@
 import * as React from 'react';
 
 import Wrapper from './Wrapper';
+import BetslipBodyItem from './BetslipBodyItem/index';
 
 
 const BetslipBody = () => (
     <Wrapper>
-        This is my BetslipBody
+        <BetslipBodyItem />
     </Wrapper>
 );
 
