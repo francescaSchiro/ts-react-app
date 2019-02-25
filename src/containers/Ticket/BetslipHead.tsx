@@ -23,12 +23,6 @@ const BetslipHeadTabs = styled.div`
 
     padding: 0 1em;
     font-weight: bold;
-
-  
-
-
-
-
 `;
 
 const BetslipHeadTab = styled.div`
