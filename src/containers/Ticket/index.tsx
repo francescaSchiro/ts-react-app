@@ -1,6 +1,12 @@
 import * as React from 'react';
-import Wrapper from './Wrapper';
 
-const Ticket = () => <Wrapper>This is my ticket</Wrapper>
+import Wrapper from './Wrapper';
+import BetslipHead from './BetslipHead';
+
+const Ticket = () => (
+    <Wrapper>
+        <BetslipHead />
+    </Wrapper>
+);
 
 export default Ticket;

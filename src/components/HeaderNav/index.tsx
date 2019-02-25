@@ -18,7 +18,7 @@ class HeaderNav extends React.Component<any, any> {
   public render() {
     return (
       <HeaderNavWrapper>
-        <NavLink to='/'>
+        <NavLink exact={true} to='/'>
           <Logo src='https://m.sisal.it/scommesse-matchpoint/content/img/logo.png?v=2.6.8' />
         </NavLink>
 
