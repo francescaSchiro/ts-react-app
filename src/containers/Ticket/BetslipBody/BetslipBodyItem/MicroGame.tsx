@@ -8,8 +8,9 @@ const MicroGame = styled.div`
     font-size: 11px;
     font-style: italic;
     color: #393939;
-    background-color: #eaeaea;
     padding: 2px 10px;
     margin-top: 5px;
+    
+    background-color: #eaeaea;
 `
 export default MicroGame;

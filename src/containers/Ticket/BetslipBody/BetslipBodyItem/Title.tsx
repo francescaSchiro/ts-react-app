@@ -8,6 +8,6 @@ const Title = styled.div`
     font-size: 13px;
     font-weight: bold;
     padding-bottom: 10px;
-    background-color: papayawhip;
+    /* background-color: papayawhip; */
 `
 export default Title;

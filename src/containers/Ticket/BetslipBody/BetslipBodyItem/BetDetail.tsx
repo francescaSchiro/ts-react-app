@@ -5,6 +5,7 @@ const BetDetail = styled.div`
     flex-grow:1;
     flex-direction:column;
     justify-content: flex-start;
-    background-color: lightgrey;
+
+    /* background-color: lightgrey; */
 `
 export default BetDetail;

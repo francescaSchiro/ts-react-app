@@ -5,7 +5,7 @@ const Wrapper = styled.div`
     flex-direction:column;
     width: 100%;
 
-    border: 2px solid brown;
+    /* border: 2px solid brown; */
     color: black;
 
 `

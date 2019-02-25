@@ -7,7 +7,7 @@ const BetData = styled.div`
     display: flex;
     flex-direction:row;
     flex-wrap: flex-start;
-    border: 2px solid lightyellow;
 
+    /* border: 2px solid lightyellow; */
 `
 export default BetData;

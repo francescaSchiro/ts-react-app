@@ -11,6 +11,7 @@ import Info from './Info';
 import Game from './Game';
 import DeleteIcon from './DeleteIcon';
 import MicroGame from './MicroGame';
+import Odd from './Odd';
 
 
 const BetslipBodyItem = () => (
@@ -23,7 +24,10 @@ const BetslipBodyItem = () => (
                 <Title>Fiorentina - Atalanta</Title>
                 <Info>
                     <Game>
-                        <DeleteIcon /> Esito finale 1x2: <span style={{ fontWeight: 'bold' }}>2 (-)</span></Game>
+                        <DeleteIcon />
+                        Esito finale 1x2:
+                        <Odd> 2 (-)</Odd>
+                    </Game>
                     <MicroGame>Esito chiuso o sospeso</MicroGame>
                 </Info>
             </BetDetail>

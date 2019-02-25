@@ -8,6 +8,6 @@ const InfoTimezone = styled.div`
     font-size: 11px;
     padding: 8px 0;
 
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
 `
 export default InfoTimezone;

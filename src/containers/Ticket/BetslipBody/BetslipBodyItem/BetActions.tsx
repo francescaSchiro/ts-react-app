@@ -1,7 +1,8 @@
 import styled from 'src/theme/default/index';
 
 const BetActions = styled.div`
-    height: 100%;
+    /* height: 100%; */
+    width: 44px;
     padding:8x;
     display: flex;
     flex-direction:column;
@@ -9,7 +10,6 @@ const BetActions = styled.div`
     background-color: tomato;
 
     /*to remove after */
-    width: 44px;
-    height: 100%;
+
 `
 export default BetActions;
