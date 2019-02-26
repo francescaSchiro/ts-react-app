@@ -15,7 +15,7 @@ const BetslipHeadWrapper = styled.div`
 `;
 
 const BetslipHeadTabs = styled.div`
-    height: 100%;
+    height: 95%;
     display:flex;
     flex-direction: row;
     justify-content: flex-start;

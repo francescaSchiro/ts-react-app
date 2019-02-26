@@ -7,7 +7,7 @@ const BetExtra = styled.div`
     display: flex;
     flex-direction:column;
     flex-wrap: space-around;
-    background-color: tomato;
+    /* background-color: tomato; */
     padding:8x;
 
 `
