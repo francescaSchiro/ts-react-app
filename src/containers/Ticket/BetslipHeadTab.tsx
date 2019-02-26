@@ -2,7 +2,6 @@ import styled from 'src/theme/default/index';
 
 
 const BetslipHeadTab = styled.div`
-    box-sizing: border-box;
     height: 100%;
     display: flex;
     flex-direction:row;
@@ -15,8 +14,7 @@ const BetslipHeadTab = styled.div`
     
     &:not(:last-of-type){
         margin-right: 3.3em;
-      
-        /* border-bottom-color: #f7a81e; */
+
     }
     /* &:last-of-type {
         color: #909090;
