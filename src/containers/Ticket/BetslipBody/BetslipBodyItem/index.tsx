@@ -13,13 +13,22 @@ import DeleteIcon from './DeleteIcon';
 import EditIcon from './EditIcon';
 import MicroGame from './MicroGame';
 import Odd from './Odd';
+import Fixed from './Fixed';
+import FixedCheckbox from './FixedCheckbox';
+// import Span from './Span';
 
 
 const BetslipBodyItem = () => (
     <Wrapper>
 
         <BetData>
-            <BetExtra />
+            <BetExtra>
+                <Fixed>
+                    F
+                <FixedCheckbox type='checkbox' checked={true} />
+                </Fixed>
+
+            </BetExtra>
             <BetDetail>
                 <InfoTimezone>29091 - 6099 | 27/2/2019 ore 21:00</InfoTimezone>
                 <Title>Fiorentina - Atalanta</Title>
