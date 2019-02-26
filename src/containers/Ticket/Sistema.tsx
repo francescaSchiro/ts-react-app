@@ -2,13 +2,12 @@ import * as React from 'react';
 
 import Wrapper from './Wrapper';
 import BetslipHead from './BetslipHead';
-import Multipla from './Multipla';
 
-const Ticket = () => (
+
+const Sistema = () => (
     <Wrapper>
         <BetslipHead />
-        <Multipla />
     </Wrapper>
 );
 
-export default Ticket;
+export default Sistema;
