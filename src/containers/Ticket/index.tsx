@@ -5,6 +5,7 @@ import BetslipHead from './BetslipHead';
 import BetslipBody from './BetslipBody';
 import SettingsDefaultBlock from './SettingsDefaultBlock';
 import BetslipFooter from './BetslipFooter';
+import Buttons from './Buttons';
 
 const Ticket = () => (
     <Wrapper>
@@ -12,6 +13,7 @@ const Ticket = () => (
         <BetslipBody />
         <SettingsDefaultBlock />
         <BetslipFooter />
+        <Buttons />
     </Wrapper>
 );
 
