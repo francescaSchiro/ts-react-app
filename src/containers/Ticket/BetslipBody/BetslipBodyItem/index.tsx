@@ -25,7 +25,7 @@ const BetslipBodyItem = () => (
                 <Title>Fiorentina - Atalanta</Title>
                 <Info>
                     <Game>
-                        <DeleteIcon />
+                        <DeleteIcon display={true} />
                         Esito finale 1x2:
                         <Odd> 2 (-)</Odd>
                     </Game>
@@ -35,7 +35,7 @@ const BetslipBodyItem = () => (
         </BetData>
 
         <BetActions>
-            <DeleteIcon />
+            <DeleteIcon display={false} />
 
             <EditIcon />
         </BetActions>

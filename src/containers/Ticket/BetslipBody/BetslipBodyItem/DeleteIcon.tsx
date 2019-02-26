@@ -1,8 +1,12 @@
 import styled from 'src/theme/default/index';
 
+interface MyProps {
+    display?: boolean;
+}
+
 const DeleteIcon = styled.div`
    
-    /* display: inline-flex; */
+    display: ${(props: MyProps) => props.display ? 'block' : 'none'};
     width:12px;
     height:14px;
     margin-right: 8px;
