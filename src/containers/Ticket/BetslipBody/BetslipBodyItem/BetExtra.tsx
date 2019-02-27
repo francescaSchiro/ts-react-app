@@ -6,6 +6,5 @@ const BetExtra = styled.div`
     flex-direction:column;
     justify-content: flex-start;
     align-items: center;
-    /* padding:8x; */
 `
 export default BetExtra;

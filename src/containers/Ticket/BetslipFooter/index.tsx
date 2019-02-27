@@ -1,12 +1,12 @@
 import * as React from 'react';
 
 import Wrapper from './Wrapper';
-import RowWrapper from './RowWrapper';
-import StakeAction from './StakeAction';
-import StakeImport from './StakeImport';
 import Column from './Column';
 import Label from './Label';
 import Value from './Value';
+import RowWrapper from './RowWrapper';
+import StakeAction from './StakeAction';
+import StakeImport from './StakeImport';
 
 
 
