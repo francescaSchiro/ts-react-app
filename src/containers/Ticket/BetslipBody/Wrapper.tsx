@@ -1,12 +1,10 @@
 import styled from '../../../theme/default/index';
 
 const Wrapper = styled.div`
-    padding-top: 42px; 
+    padding-top: 42px; /* same as BetslipHeadWrapper height */
     display: flex;
     flex-direction:column;
     width: 100%;
-
-    /* border: 2px solid brown; */
     color: black;
 
 `

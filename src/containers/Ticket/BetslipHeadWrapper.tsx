@@ -3,7 +3,7 @@ import styled from '../../theme/default/index';
 
 const BetslipHeadWrapper = styled.div`
     position:fixed;
-    height:42px;
+    height:42px; /*same as BetslipBody padding-top*/
     width: 100%;
     display:flex;
     justify-content: space-between;

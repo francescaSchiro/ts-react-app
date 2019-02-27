@@ -3,8 +3,8 @@ import * as React from 'react';
 import Wrapper from './Wrapper';
 import BetslipBodyItem from './BetslipBodyItem';
 import BetslipSubhead from './BetslipSubhead';
-import InfoAlert from './InfoAlert';
-import InfoIcon from './InfoIcon';
+import InfoAlert from '../InfoAlert';
+import InfoIcon from '../InfoIcon';
 
 export interface IBetslipBody {
     sistema?: boolean;

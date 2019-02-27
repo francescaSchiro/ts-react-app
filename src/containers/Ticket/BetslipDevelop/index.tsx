@@ -9,9 +9,7 @@ const BetslipDevelop = () => (
     <Wrapper>
         <BetslipDevelopItem />
         <BetslipDevelopItem />
-
         <BetslipDevelopItem />
-
     </Wrapper>
 );
 

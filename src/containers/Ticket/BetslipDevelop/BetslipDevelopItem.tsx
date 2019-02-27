@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+
+import BetslipDevelopWrapper from './BetslipDevelopWrapper';
 import BetslipDevelopItemWrapper from './BetslipDevelopItemWrapper';
 import IconEye from './IconEye';
 import RowWrapper from './RowWrapper';
@@ -8,25 +10,30 @@ import StakeImport from './StakeImport';
 import NumberArrowWrapper from './NumberArrowWrapper';
 import ArrowDown from './ArrowDown';
 import DevelopNumber from './DevelopNumber';
+import BetslipDevelopItemInfo from './BetslipDevelopItemInfo';
 
 
 
 const BetslipDevelopItem = () => (
-    <BetslipDevelopItemWrapper>
-        <IconEye />
+    <BetslipDevelopWrapper>
 
-        <RowWrapper>
-            <StakeAction>-</StakeAction>
-            <StakeImport>€ 3,00</StakeImport>
-            <StakeAction>+</StakeAction>
-        </RowWrapper>
+        <BetslipDevelopItemWrapper>
+            <IconEye />
+            <RowWrapper>
+                <StakeAction>-</StakeAction>
+                <StakeImport>€ 3,00</StakeImport>
+                <StakeAction>+</StakeAction>
+            </RowWrapper>
 
-        <NumberArrowWrapper>
-            <DevelopNumber>x1</DevelopNumber>
-            <ArrowDown />
-        </NumberArrowWrapper>
+            <NumberArrowWrapper>
+                <DevelopNumber>x1</DevelopNumber>
+                <ArrowDown />
+            </NumberArrowWrapper>
+        </BetslipDevelopItemWrapper>
 
-    </BetslipDevelopItemWrapper>
+        <BetslipDevelopItemInfo />
+
+    </BetslipDevelopWrapper>
 );
 
 export default BetslipDevelopItem;

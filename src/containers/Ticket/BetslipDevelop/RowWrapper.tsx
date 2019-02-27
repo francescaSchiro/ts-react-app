@@ -2,7 +2,7 @@ import styled from 'src/theme/default/index';
 
 const RowWrapper = styled.div`
     width: 100%;
-    min-height: 50px;
+    /* min-height: 50px; */
 
     display:flex;
     flex-direction: row;

@@ -6,6 +6,8 @@ import Buttons from './Buttons';
 import BetslipBody, { IBetslipBody } from './BetslipBody';
 import SettingsDefaultBlock from './SettingsDefaultBlock';
 import BetslipDevelop from './BetslipDevelop';
+import InfoAlert from './InfoAlert';
+import InfoIcon from './InfoIcon';
 
 
 const Sistema: React.FC<IBetslipBody> = () => (
@@ -14,6 +16,11 @@ const Sistema: React.FC<IBetslipBody> = () => (
         <BetslipBody sistema={true} />
         <SettingsDefaultBlock />
         <BetslipDevelop />
+        <InfoAlert error={true}>
+            <InfoIcon />
+            Importo minimo non rispettato per la giocata sistemistica.
+        </InfoAlert>
+
 
         <Buttons />
     </Wrapper>
