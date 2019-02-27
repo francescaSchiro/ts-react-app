@@ -1,7 +1,10 @@
 import styled from 'src/theme/default/index';
 
+interface IFixed {
+    checked?: boolean,
+}
+
 const Fixed = styled.div`
-    position:relative;
     margin-top:8px;
     display: flex;
     justify-content: center;
@@ -10,7 +13,7 @@ const Fixed = styled.div`
     width: 16px;
     font-weight:bold;
     color: #fff;
-    background-color:#909090;
+    background-color: ${(props: IFixed) => props.checked ? '#186cb5' : '#909090'};
     border-radius: 2px 2px 0 0;
 `
 export default Fixed;

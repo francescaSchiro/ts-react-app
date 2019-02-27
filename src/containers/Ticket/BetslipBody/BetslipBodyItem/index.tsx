@@ -19,6 +19,7 @@ import FixedCheckbox from './FixedCheckbox';
 
 export interface BetslipBodyItem {
     sistema?: boolean;
+    checked?: boolean;
 }
 
 const BetslipBodyItem = (props: BetslipBodyItem) => (
@@ -27,10 +28,10 @@ const BetslipBodyItem = (props: BetslipBodyItem) => (
         <BetData>
             <BetExtra>
                 {props.sistema &&
-                    <Fixed>
-                        F
-                <FixedCheckbox type='checkbox' checked={true} />
-                    </Fixed>
+                    <>
+                        <Fixed checked={props.checked}>F</Fixed>
+                        <FixedCheckbox checked={props.checked} />
+                    </>
                 }
             </BetExtra>
             <BetDetail>
