@@ -17,17 +17,21 @@ import Fixed from './Fixed';
 import FixedCheckbox from './FixedCheckbox';
 // import Span from './Span';
 
+export interface BetslipBodyItem {
+    sistema?: boolean;
+}
 
-const BetslipBodyItem = () => (
+const BetslipBodyItem = (props: BetslipBodyItem) => (
     <Wrapper>
 
         <BetData>
             <BetExtra>
-                <Fixed>
-                    F
+                {props.sistema &&
+                    <Fixed>
+                        F
                 <FixedCheckbox type='checkbox' checked={true} />
-                </Fixed>
-
+                    </Fixed>
+                }
             </BetExtra>
             <BetDetail>
                 <InfoTimezone>29091 - 6099 | 27/2/2019 ore 21:00</InfoTimezone>

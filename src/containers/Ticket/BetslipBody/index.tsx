@@ -20,9 +20,9 @@ const BetslipBody = (props: IBetslipBody) => (
             </InfoAlert>
         }
         <BetslipSubhead> Cancella tutto </BetslipSubhead>
-        <BetslipBodyItem />
-        <BetslipBodyItem />
-        <BetslipBodyItem />
+        <BetslipBodyItem {...props} />
+        <BetslipBodyItem {...props} />
+        <BetslipBodyItem {...props} />
     </Wrapper>
 );
 
