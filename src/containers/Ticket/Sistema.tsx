@@ -3,13 +3,13 @@ import * as React from 'react';
 import Wrapper from './Wrapper';
 import BetslipHead from './BetslipHead';
 import Buttons from './Buttons';
-import BetslipBody from './BetslipBody';
+import BetslipBody, { IBetslipBody } from './BetslipBody';
 
 
-const Sistema = () => (
+const Sistema: React.FC<IBetslipBody> = () => (
     <Wrapper>
         <BetslipHead />
-        <BetslipBody />
+        <BetslipBody sistema={true} />
         <Buttons />
     </Wrapper>
 );
