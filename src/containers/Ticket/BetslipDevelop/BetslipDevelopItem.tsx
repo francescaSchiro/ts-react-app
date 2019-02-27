@@ -12,9 +12,11 @@ import ArrowDown from './ArrowDown';
 import DevelopNumber from './DevelopNumber';
 import BetslipDevelopItemInfo from './BetslipDevelopItemInfo';
 
+interface IBetslipDevelopItem {
+    infoToggle?: boolean;
+}
 
-
-const BetslipDevelopItem = () => (
+const BetslipDevelopItem = (props: IBetslipDevelopItem) => (
     <BetslipDevelopWrapper>
 
         <BetslipDevelopItemWrapper>
@@ -27,11 +29,11 @@ const BetslipDevelopItem = () => (
 
             <NumberArrowWrapper>
                 <DevelopNumber>x1</DevelopNumber>
-                <ArrowDown />
+                <ArrowDown infoToggle={props.infoToggle} />
             </NumberArrowWrapper>
         </BetslipDevelopItemWrapper>
+        {props.infoToggle && <BetslipDevelopItemInfo />}
 
-        <BetslipDevelopItemInfo />
 
     </BetslipDevelopWrapper>
 );

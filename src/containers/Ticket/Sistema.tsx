@@ -3,14 +3,14 @@ import * as React from 'react';
 import Wrapper from './Wrapper';
 import BetslipHead from './BetslipHead';
 import Buttons from './Buttons';
-import BetslipBody, { IBetslipBody } from './BetslipBody';
+import BetslipBody from './BetslipBody';
 import SettingsDefaultBlock from './SettingsDefaultBlock';
 import BetslipDevelop from './BetslipDevelop';
 import InfoAlert from './InfoAlert';
 import InfoIcon from './InfoIcon';
 
 
-const Sistema: React.FC<IBetslipBody> = () => (
+const Sistema = () => (
     <Wrapper>
         <BetslipHead />
         <BetslipBody sistema={true} />
@@ -20,8 +20,6 @@ const Sistema: React.FC<IBetslipBody> = () => (
             <InfoIcon />
             Importo minimo non rispettato per la giocata sistemistica.
         </InfoAlert>
-
-
         <Buttons />
     </Wrapper>
 );
