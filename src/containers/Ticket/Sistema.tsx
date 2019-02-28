@@ -8,6 +8,7 @@ import SettingsDefaultBlock from './SettingsDefaultBlock';
 import BetslipDevelop from './BetslipDevelop';
 import InfoAlert from './InfoAlert';
 import InfoIcon from './InfoIcon';
+import BetslipFooterRow from './BetslipFooterRow';
 
 
 const Sistema = () => (
@@ -20,6 +21,7 @@ const Sistema = () => (
             <InfoIcon />
             Importo minimo non rispettato per la giocata sistemistica.
         </InfoAlert>
+        <BetslipFooterRow />
         <Buttons />
     </Wrapper>
 );
