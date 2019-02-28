@@ -12,6 +12,7 @@ const ClusterItem = styled.div`
     white-space: nowrap;
     border-bottom:2px solid transparent;
     text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
     
     &:first-child {
         box-sizing:border-box;
@@ -19,10 +20,8 @@ const ClusterItem = styled.div`
         color: #b9d531;
         margin-left: 8px;
         padding:10px;
-        border-bottom: 2px solid  #b9d531;
+        border-bottom: 3px solid  #b9d531;
     }
 `
 
 export default ClusterItem;
-
-// color: #b9d531;
