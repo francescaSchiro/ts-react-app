@@ -1,6 +1,7 @@
 import styled from 'src/theme/default/index';
 
 const ModalBoxContainer = styled.div`
+    overflow: auto;
     max-height: 80%;
     position: absolute;
     display: block;

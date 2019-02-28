@@ -4,6 +4,7 @@ import Overlay from './Overlay';
 import ModalBoxContainer from './ModalBoxContainer';
 import ModalBoxHead from './ModalBoxHead';
 import ModalBoxBody from './ModalBoxBody';
+import ClusterSlider from './ClusterSlider';
 
 
 
@@ -12,6 +13,7 @@ const ModalBox = () => (
         <ModalBoxContainer>
             <ModalBoxHead />
             <ModalBoxBody />
+            <ClusterSlider />
         </ModalBoxContainer>
     </Overlay>
 );
