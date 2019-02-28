@@ -1,0 +1,25 @@
+const clusterAccordionItem = [
+    'Esito finale 1x2',
+    'Doppia chance',
+    'Goal/nogoal',
+    'Passaggio turno',
+    'Segna goal',
+    'Under/over',
+    'Somma goal finale',
+    'Somma goal (8 esiti)',
+    'Pari/dispari',
+    'Esito finale 1x2 handicap',
+    'Risultato esatto 26 esiti',
+    'Risultato esatto 1 tempo/finale',
+    'Risultato esatto a gruppi',
+    'Cluster risultati esatti',
+    'Esito 1 tempo/finale',
+    'Multigoal',
+    '1 tempo: esito 1x2',
+    '1 tempo: doppia chance',
+    '1 tempo: goal/nogoal',
+    '1 tempo: under/over',
+    '1 tempo: somma goal',
+];
+
+export default clusterAccordionItem;
