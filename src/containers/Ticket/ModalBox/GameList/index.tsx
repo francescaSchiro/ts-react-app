@@ -1,15 +1,13 @@
 import * as React from 'react';
 
 import Wrapper from './Wrapper';
-import Title from './Title';
-import Close from './Close';
+import GameName from './GameName';
 
 
-const ModalBoxHead = () => (
+const GameList = () => (
     <Wrapper>
-        <Title> Valencia - Real Betis </Title>
-        <Close> Chiudi </Close>
+        <GameName>ESITO FINALE 1x2</GameName>
     </Wrapper>
 );
 
-export default ModalBoxHead;
+export default GameList;

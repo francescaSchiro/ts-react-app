@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     align-items: center;
 
     height: 35px;
-    padding: 14px 10px;
+    padding: 14px 10px 20px 10px;
     background-color: #b9d531;
     color: #393939;
     font-size: 12px;

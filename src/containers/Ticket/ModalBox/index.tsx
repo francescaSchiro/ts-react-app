@@ -6,6 +6,8 @@ import ModalBoxHead from './ModalBoxHead';
 import ModalBoxBody from './ModalBoxBody';
 import ClusterSlider from './ClusterSlider';
 import ClusterChange from './ClusterChange';
+import GameList from './GameList';
+
 
 
 
@@ -16,6 +18,7 @@ const ModalBox = () => (
             <ModalBoxBody />
             <ClusterSlider />
             <ClusterChange />
+            <GameList />
         </ModalBoxContainer>
     </Overlay>
 );
