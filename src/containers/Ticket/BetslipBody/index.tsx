@@ -5,6 +5,7 @@ import BetslipBodyItem from './BetslipBodyItem';
 import BetslipSubhead from './BetslipSubhead';
 import InfoAlert from '../InfoAlert';
 import InfoIcon from '../InfoIcon';
+import AvvenimentoCancellato from '../AvvenimentoCancellato';
 
 export interface IBetslipBody {
     sistema?: boolean;
@@ -23,6 +24,7 @@ const BetslipBody = (props: IBetslipBody) => (
         <BetslipBodyItem {...props} checked={true} />
         <BetslipBodyItem {...props} checked={false} />
         <BetslipBodyItem {...props} checked={true} />
+        <AvvenimentoCancellato />
     </Wrapper>
 );
 
