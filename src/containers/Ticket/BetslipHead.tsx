@@ -14,7 +14,7 @@ const BetslipHead = (props: IBetslipHead) => (
         <BetslipHeadTabs>
 
             {props.empty ?
-                <NavLinkStyled to={'/sistema/'} activeStyle={{ color: '#f7a81e', borderBottomColor: '#f7a81e' }}>
+                <NavLinkStyled style={{ color: '#f7a81e', marginLeft: '27vw' }} to={'/multipla/'} activeStyle={{ color: '#f7a81e', borderBottomColor: '#f7a81e' }}>
                     IL TUO BIGLIETTO È VUOTO
             </NavLinkStyled> :
                 <>
