@@ -9,8 +9,6 @@ import ClusterChange from './ClusterChange';
 import GameList from './GameList';
 
 
-
-
 const ModalBox = () => (
     <Overlay>
         <ModalBoxContainer>

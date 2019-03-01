@@ -12,6 +12,8 @@ const ClusterAccordion = styled.div`
     justify-content: flex-start;
     align-items: center;
     background: #fff;
+    margin-bottom: 8px;
+
 `
 
 export default ClusterAccordion;
