@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-import Wrapper from './Wrapper';
-import BetslipHead from './BetslipHead';
+import Wrapper from '../Wrapper';
+import BetslipHead from '../BetslipHead';
 import BetslipEmptyMessage from './BetslipEmptyMessage';
 import BetslipEmptyCategory from './BetslipEmptyCategory';
 import BetslipEmptyLinkWrapper from './BetslipEmptyLinkWrapper';
 import BetslipEmptyLinkName from './BetslipEmptyLinkName';
 import BetslipEmptyLinkEvents from './BetslipEmptyLinkEvents';
-import BodyWrapper from './BetslipBody/Wrapper';
+import BodyWrapper from '../BetslipBody/Wrapper';
 
 
 
@@ -17,6 +17,7 @@ const BetslipEmpty = () => (
         <BodyWrapper>
             <BetslipEmptyMessage>
                 Naviga le sezioni Live, Scommesse e seleziona le scommesse toccando le quote.
+                Clicca sopra per MULTIPLA e SISTEMA.
             </BetslipEmptyMessage>
             {/* live */}
             <BetslipEmptyCategory>Live</BetslipEmptyCategory>
