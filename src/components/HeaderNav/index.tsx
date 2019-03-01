@@ -7,7 +7,7 @@ import DropDownLogin from './DropDownLogin';
 import BigliettoNav from './BigliettoNav';
 import HamburgerNav from './HamburgerNav';
 import NavActionsWrapper from './NavActionsWrapper';
-import LoginModal from './LoginModal';
+import LoginModal from './LoginModal/';
 
 class HeaderNav extends React.Component<any, any> {
   constructor(props: any) {
@@ -26,6 +26,8 @@ class HeaderNav extends React.Component<any, any> {
           <DropDownLogin
             name='toggleLoginModal'
             onClick={this.toggleShowLoginModal}
+            showModal={this.state.showLoginModal}
+
           >
             Accedi
           </DropDownLogin>
