@@ -15,9 +15,9 @@ const EventLeague = styled.div`
 
   &::before {
     content: '';
-    background-image: url(https://m.sisal.it/scommesse-matchpoint/content/img/icon_sport/1.png?v=2.5.6);
-    width: 15px;
-    height: 15px;
+    background-image: url('http://www.sandandsurfsoccer.com/wp-content/uploads/sites/1028/2019/01/icon-white-soccer.png');
+    width: 20px;
+    height: 20px;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;

@@ -28,7 +28,7 @@ const sportListItems: MySportListItems[] = [
     key: 2,
     label: 'SCOMMESSE',
     icon:
-      'https://m.sisal.it/scommesse-matchpoint/content/img/icon_sport/1.png?v=2.5.6',
+      'https://cdn1.iconfinder.com/data/icons/hawcons/32/699915-icon-6-soccer-ball-512.png',
     iconText: noDate
   },
   {
