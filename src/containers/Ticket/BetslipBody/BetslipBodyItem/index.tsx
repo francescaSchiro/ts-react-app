@@ -51,7 +51,7 @@ const BetslipBodyItem = (props: BetslipBodyItem) => (
         <BetActions>
             <DeleteIcon display={false} />
 
-            <EditIcon />
+            <EditIcon to={'/modal/'} />
         </BetActions>
 
     </Wrapper>
