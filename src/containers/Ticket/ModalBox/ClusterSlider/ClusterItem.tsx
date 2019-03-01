@@ -29,7 +29,6 @@ const ClusterItem = styled.div`
             bottom: -7px;
             background: #b9d531; 
         }
-       
     }
 `
 
