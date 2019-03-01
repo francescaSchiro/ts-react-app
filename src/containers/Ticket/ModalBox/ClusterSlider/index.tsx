@@ -7,7 +7,7 @@ import clusterItems from './clusterItems';
 
 const ClusterSlider = () => (
     <Wrapper>
-        {clusterItems.map(el => <ClusterItem key={el}>{el}</ClusterItem>)}
+        {clusterItems.map(el => <ClusterItem key={el}><span>{el}</span></ClusterItem>)}
     </Wrapper>
 );
 

@@ -2,6 +2,7 @@ import styled from 'src/theme/default/index';
 
 
 const ClusterItem = styled.div`
+
     box-sizing:border-box;
     height:100%;
     display:flex;
@@ -10,17 +11,25 @@ const ClusterItem = styled.div`
     padding:10px;
     font-size: 13px;
     white-space: nowrap;
-    border-bottom:2px solid transparent;
     text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
     
-    &:first-child {
+    &:first-child > span {
+        position: relative;
         box-sizing:border-box;
-        height:85%;
+        width:100%;
         color: #b9d531;
-        margin-left: 8px;
-        padding:10px;
-        border-bottom: 3px solid  #b9d531;
+     
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            left: 0;
+            bottom: -7px;
+            background: #b9d531; 
+        }
+       
     }
 `
 
