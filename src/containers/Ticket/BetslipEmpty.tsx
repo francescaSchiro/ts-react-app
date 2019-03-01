@@ -18,13 +18,33 @@ const BetslipEmpty = () => (
             <BetslipEmptyMessage>
                 Naviga le sezioni Live, Scommesse e seleziona le scommesse toccando le quote.
             </BetslipEmptyMessage>
-
+            {/* live */}
             <BetslipEmptyCategory>Live</BetslipEmptyCategory>
 
             <BetslipEmptyLinkWrapper>
                 <BetslipEmptyLinkName> Scommesse Live</BetslipEmptyLinkName>
                 <BetslipEmptyLinkEvents>(58)</BetslipEmptyLinkEvents>
             </BetslipEmptyLinkWrapper>
+            {/* scommesse */}
+            <BetslipEmptyCategory>Scommesse</BetslipEmptyCategory>
+            <BetslipEmptyLinkWrapper>
+                <BetslipEmptyLinkName>Calcio</BetslipEmptyLinkName>
+                <BetslipEmptyLinkEvents>(892)</BetslipEmptyLinkEvents>
+            </BetslipEmptyLinkWrapper>
+            <BetslipEmptyLinkWrapper>
+                <BetslipEmptyLinkName>Tennis</BetslipEmptyLinkName>
+                <BetslipEmptyLinkEvents>(52)</BetslipEmptyLinkEvents>
+            </BetslipEmptyLinkWrapper>
+            <BetslipEmptyLinkWrapper>
+                <BetslipEmptyLinkName>Basket</BetslipEmptyLinkName>
+                <BetslipEmptyLinkEvents>(93)</BetslipEmptyLinkEvents>
+            </BetslipEmptyLinkWrapper>
+            <BetslipEmptyLinkWrapper>
+                <BetslipEmptyLinkName>Volley</BetslipEmptyLinkName>
+                <BetslipEmptyLinkEvents>(53)</BetslipEmptyLinkEvents>
+            </BetslipEmptyLinkWrapper>
+
+
         </BodyWrapper>
     </Wrapper>
 );

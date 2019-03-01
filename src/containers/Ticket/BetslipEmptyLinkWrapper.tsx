@@ -12,6 +12,6 @@ const BetslipEmptyLinkWrapper = styled.div`
     background-position: 96% center;
     margin-left: 5px;
     margin-right: 5px;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid #dddddd;
 `
 export default BetslipEmptyLinkWrapper;
