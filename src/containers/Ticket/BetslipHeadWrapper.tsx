@@ -11,7 +11,7 @@ const BetslipHeadWrapper = styled.div`
     background: #222;
     border-bottom: 3px solid #f7a81e;
     color: white;
-    z-index: 10;
+    z-index: 2;
     font-size: 12px;
 `;
 export default BetslipHeadWrapper;
