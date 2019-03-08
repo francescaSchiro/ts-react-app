@@ -26,40 +26,41 @@ const EventContentWrapper = styled.div`
 
 const EventContent = () => (
   <EventContentWrapper id='Event-Content-Grid' >
-          <LiveScore id='LiveScore'>
-            <Score>1-0</Score>
-            <Time>1°T</Time>
-          </LiveScore>
-          <EventName id='Event-Name'>Atalanta - Brescia</EventName>
-          <div
-            style={{
-              gridColumn:'5/6',
-              gridRow: '1/2',
-              display: 'flex',
-              justifyContent:'flex-end',
-              alignItems: 'center'
-            }}
-          >
-          <ArrowRight width={'12px'} height={'12px'}  margin={'5px 10px 0 0'}/>
-          </div>
-          <GameName>ESITO FINALE 1X2</GameName>
-          <GameOutcome gridColumn={'1/3'}>
-            <OutcomeValue>1</OutcomeValue>
-            <OutcomeOdd>1.09</OutcomeOdd>
-          </GameOutcome>
-          <GameOutcome gridColumn={'3/4'}>
-            <OutcomeValue>X</OutcomeValue>
-            <OutcomeOdd>2.80</OutcomeOdd>
-          </GameOutcome>
-          <GameOutcome gridColumn={'4/5'}>
-            <OutcomeValue>2</OutcomeValue>
-            <OutcomeOdd>2.25</OutcomeOdd>
-          </GameOutcome>
-          <EventContentGameAccordionTrigger gridColumn={'5/6'}>
-            <HasMoreText>Altri esiti</HasMoreText>
-            <HasMoreNumberArrowDown>+39</HasMoreNumberArrowDown>
-          </EventContentGameAccordionTrigger>
-  </EventContentWrapper>  
+    <LiveScore id='LiveScore'>
+      <Score>1-0</Score>
+      <Time>1°T</Time>
+    </LiveScore>
+    <EventName id='Event-Name'>Atalanta - Brescia</EventName>
+    <div
+      id='ArrowRightWrapper'
+      style={{
+        gridColumn: '5/6',
+        gridRow: '1/2',
+        display: 'flex',
+        justifyContent: 'flex-end',
+        alignItems: 'center'
+      }}
+    >
+      <ArrowRight width={'12px'} height={'12px'} margin={'5px 10px 0 0'} />
+    </div>
+    <GameName>ESITO FINALE 1X2</GameName>
+    <GameOutcome gridColumn={'1/3'}>
+      <OutcomeValue>1</OutcomeValue>
+      <OutcomeOdd>1.09</OutcomeOdd>
+    </GameOutcome>
+    <GameOutcome gridColumn={'3/4'}>
+      <OutcomeValue>X</OutcomeValue>
+      <OutcomeOdd>2.80</OutcomeOdd>
+    </GameOutcome>
+    <GameOutcome gridColumn={'4/5'}>
+      <OutcomeValue>2</OutcomeValue>
+      <OutcomeOdd>2.25</OutcomeOdd>
+    </GameOutcome>
+    <EventContentGameAccordionTrigger gridColumn={'5/6'}>
+      <HasMoreText>Altri esiti</HasMoreText>
+      <HasMoreNumberArrowDown>+39</HasMoreNumberArrowDown>
+    </EventContentGameAccordionTrigger>
+  </EventContentWrapper>
 );
 
 export default EventContent;
