@@ -1,5 +1,5 @@
 import { takeLatest, put } from 'redux-saga/effects';
-import { getBaseData } from 'src/shared/api';
+import { getBaseData } from 'src/shared/Api';
 import { GET_BASE_DATA } from './constants';
 import { getBaseDataSuccess, getBaseDataError, GetBaseDataAction } from './actions';
 

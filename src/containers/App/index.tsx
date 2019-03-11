@@ -3,16 +3,22 @@ import { PureComponent } from 'react';
 import { Dispatch, compose } from 'redux';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 
-import Routes from 'src/core/routes';
+// import Routes from 'src/core/routes';
 import GlobalStyles from 'src/theme/GlobalStyle';
-import { ThemeProvider } from 'src/theme/default';
+// import { ThemeProvider } from 'src/theme/default';
 import { MssAction } from 'src/types/custom';
-import { getThemeByName } from 'src/shared/utils';
-import { getBaseData, GetBaseDataAction, SwitchThemeAction, switchTheme } from './actions';
-import messages from './messages';
-import { makeSelectThemeName } from './selectors';
+// import Api from 'src/utils/Api';
+import { getBaseData, GetBaseDataAction } from './actions';
+import { MemoryRouter as Router } from 'react-router-dom';
+
+import AppWrapper from './Wrapper';
+import Routes from './Routes';
+import HeaderNav from '../../components/HeaderNav/index';
+// import HomePage from 'src/components/HomePage';
+// import Ticket from 'src/containers/Ticket';
+
 
 /**
  * The type for the props provided by the parent component
@@ -24,13 +30,13 @@ import { makeSelectThemeName } from './selectors';
 // tslint:disable-next-line:no-empty-interface
 export interface OwnProps { }
 
-interface StateProps { 
+interface StateProps {
     themeName: string
 }
 
 interface DispatchProps {
     requestBaseData: () => GetBaseDataAction;
-    switchToDark: () => SwitchThemeAction;
+    // switchToDark: () => SwitchThemeAction;
 }
 
 type Props = StateProps & DispatchProps & OwnProps;
@@ -46,26 +52,20 @@ class App extends PureComponent<Props> {
     }
 
     public render() {
-        const { themeName, switchToDark } = this.props;
         return (
-            <ThemeProvider theme={getThemeByName(themeName)}>
-                <React.Fragment>
-                    <GlobalStyles />
-                    <button onClick={switchToDark}>
-                        <FormattedMessage {...messages.switchToDark} />
-                    </button>
-                    <button>
-                        <FormattedMessage {...messages.goToLives} />
-                    </button>
+            <Router>
+                <AppWrapper id='AppWrapper'>
+                    <HeaderNav />
                     <Routes />
-                </React.Fragment>
-            </ThemeProvider>
+                    <GlobalStyles />
+                </AppWrapper>
+            </Router>
         );
     }
 }
 
 const mapStateToProps = createStructuredSelector<StateProps, any>({
-    themeName: makeSelectThemeName()
+    // themeName: makeSelectThemeName()
 });
 
 const mapDispatchToProps = (
@@ -74,7 +74,7 @@ const mapDispatchToProps = (
 ): DispatchProps => {
     return {
         requestBaseData: () => dispatch(getBaseData()),
-        switchToDark: () => dispatch(switchTheme('DarkTheme'))
+        // switchToDark: () => dispatch(switchTheme('DarkTheme'))
     }
 }
 

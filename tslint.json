@@ -1,11 +1,12 @@
 {
   "extends": ["tslint:recommended", "tslint-config-prettier", "tslint-react"],
   "rules": {
-    // override tslint-react rules here
     "interface-name": false,
     "object-literal-sort-keys": false,
     "ordered-imports": false,
-    "quotemark": [true, "single"]
+    "quotemark": [true, "single"],
+    "jsx-no-multiline-js": false,
+    "no-console": false
   },
   "linterOptions": {
     "exclude": [
