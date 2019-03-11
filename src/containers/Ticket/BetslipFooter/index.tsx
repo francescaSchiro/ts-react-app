@@ -7,6 +7,7 @@ import Value from './Value';
 import RowWrapper from './RowWrapper';
 import StakeAction from './StakeAction';
 import StakeImport from './StakeImport';
+import BetslipKeypad from '../BetslipKeypad';
 
 
 
@@ -18,7 +19,7 @@ const BetslipFooter = () => (
             <StakeImport>€ 3,00</StakeImport>
             <StakeAction>+</StakeAction>
         </RowWrapper>
-
+        <BetslipKeypad />
         <RowWrapper>
             <Column>
                 <Label>Quota totale</Label>
