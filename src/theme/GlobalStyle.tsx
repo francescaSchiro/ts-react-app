@@ -5,6 +5,10 @@ v2.0 | 20110126
 License: none (public domain)
 */
 export default createGlobalStyle`
+* {
+    box-sizing:border-box;
+    -webkit-font-smoothing: antialiased;
+}
     html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
     a, abbr, acronym, address, big, cite, code,
@@ -48,4 +52,12 @@ export default createGlobalStyle`
      border-collapse: collapse;
      border-spacing: 0;
     }
+/*----------- End of reset style -----------*/
+     html,body {
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+        box-sizing: border-box;
+        margin:0;
+        padding: 0;
+} 
 `;

@@ -1,4 +1,4 @@
-import { get } from './httpClient';
+import { get } from './HttpClient';
 
 function getBaseData(): Promise<any> {
   const endpoint = 'getBaseData';
