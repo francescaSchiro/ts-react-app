@@ -21,9 +21,9 @@ const BetslipBody = (props: IBetslipBody) => (
             </InfoAlert>
         }
         <BetslipSubhead> Cancella tutto </BetslipSubhead>
-        <BetslipBodyItem {...props} checked={true} />
-        <BetslipBodyItem {...props} checked={false} />
-        <BetslipBodyItem {...props} checked={true} />
+        <BetslipBodyItem {...props} />
+        <BetslipBodyItem {...props} />
+        <BetslipBodyItem {...props} />
         <AvvenimentoCancellato />
     </Wrapper>
 );

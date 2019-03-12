@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import BetslipHeadWrapper from './BetslipHeadWrapper';
 import BetslipHeadTabs from './BetslipHeadTabs';
@@ -28,7 +29,11 @@ const BetslipHead = (props: IBetslipHead) => (
             }
 
         </BetslipHeadTabs>
-        <BetslipHeadBack> Chiudi </BetslipHeadBack>
+        <NavLink to={'/'} style={{ all: 'unset' }}>
+            <BetslipHeadBack>
+                Chiudi
+            </BetslipHeadBack>
+        </NavLink>
     </BetslipHeadWrapper>
 );
 

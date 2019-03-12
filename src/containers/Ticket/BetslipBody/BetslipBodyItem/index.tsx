@@ -17,44 +17,58 @@ import Fixed from './Fixed';
 import FixedCheckbox from './FixedCheckbox';
 // import Span from './Span';
 
-export interface BetslipBodyItem {
+export interface BetslipBodyItemState {
+    isChecked: boolean;
+}
+export interface BetslipBodyItemProps {
     sistema?: boolean;
-    checked?: boolean;
 }
 
-const BetslipBodyItem = (props: BetslipBodyItem) => (
-    <Wrapper>
+class BetslipBodyItem extends React.Component<BetslipBodyItemProps, BetslipBodyItemState>{
+    public state = { isChecked: false }
+    public render() {
+        const { sistema } = this.props;
+        const { isChecked } = this.state;
+        return (
+            <Wrapper>
 
-        <BetData>
-            <BetExtra>
-                {props.sistema &&
-                    <>
-                        <Fixed checked={props.checked}>F</Fixed>
-                        <FixedCheckbox checked={props.checked} />
-                    </>
-                }
-            </BetExtra>
-            <BetDetail>
-                <InfoTimezone>29091 - 6099 | 27/2/2019 ore 21:00</InfoTimezone>
-                <Title>Fiorentina - Atalanta</Title>
-                <Info>
-                    <Game>
-                        <DeleteIcon display={true} />
-                        Esito finale 1x2:
-                        <Odd> 2 (-)</Odd>
-                    </Game>
-                    <MicroGame>Esito chiuso o sospeso</MicroGame>
-                </Info>
-            </BetDetail>
-        </BetData>
+                <BetData>
+                    <BetExtra>
+                        {sistema &&
+                            < >
+                                <Fixed onClick={this.toggleFixed} checked={isChecked}>F</Fixed>
+                                <FixedCheckbox onClick={this.toggleFixed} checked={isChecked} />
+                            </>
+                        }
+                    </BetExtra>
+                    <BetDetail>
+                        <InfoTimezone>29091 - 6099 | 27/2/2019 ore 21:00</InfoTimezone>
+                        <Title>Fiorentina - Atalanta</Title>
+                        <Info>
+                            <Game>
+                                <DeleteIcon display={true} />
+                                Esito finale 1x2:
+                            <Odd> 2 (-)</Odd>
+                            </Game>
+                            <MicroGame>Esito chiuso o sospeso</MicroGame>
+                        </Info>
+                    </BetDetail>
+                </BetData>
 
-        <BetActions>
-            <DeleteIcon display={false} />
+                <BetActions>
+                    <DeleteIcon display={false} />
 
-            <EditIcon to={'/modal/'} />
-        </BetActions>
+                    <EditIcon to={'/modal/'} />
+                </BetActions>
 
-    </Wrapper>
-);
+            </Wrapper>
+
+        )
+    }
+    private toggleFixed = () => {
+        this.setState({ isChecked: !this.state.isChecked })
+    }
+}
+
 
 export default BetslipBodyItem;
