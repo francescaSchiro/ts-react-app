@@ -14,21 +14,15 @@ import BetslipDevelopItemInfo from './BetslipDevelopItemInfo';
 import BetslipKeypad from '../BetslipKeypad';
 import Overlay from '../BetslipKeypad/Overlay';
 
-
-interface IBetslipDevelopItemProps {
-    infoToggle?: boolean;
-}
-
 interface IBetslipDevelopItemState {
     showKeypad: boolean,
+    showInfo: boolean,
 }
 
-class BetslipDevelopItem extends React.Component<IBetslipDevelopItemProps, IBetslipDevelopItemState>{
-    public state = { showKeypad: false }
-
+class BetslipDevelopItem extends React.Component<{}, IBetslipDevelopItemState>{
+    public state = { showKeypad: false, showInfo: false }
     public render() {
-        const { showKeypad } = this.state;
-        const { infoToggle } = this.props;
+        const { showKeypad, showInfo } = this.state;
         return (
             <>{showKeypad &&
                 <Overlay />}
@@ -44,10 +38,10 @@ class BetslipDevelopItem extends React.Component<IBetslipDevelopItemProps, IBets
 
                         <NumberArrowWrapper>
                             <DevelopNumber>x1</DevelopNumber>
-                            <ArrowDown infoToggle={infoToggle} />
+                            <ArrowDown onClick={this.toggleInfo} showInfo={showInfo} />
                         </NumberArrowWrapper>
                     </BetslipDevelopItemWrapper>
-                    {infoToggle && <BetslipDevelopItemInfo />}
+                    {showInfo && <BetslipDevelopItemInfo />}
                 </BetslipDevelopWrapper>
                 {showKeypad &&
                     <>
@@ -60,6 +54,9 @@ class BetslipDevelopItem extends React.Component<IBetslipDevelopItemProps, IBets
     }
     private toggleKeypad = () => {
         this.setState({ showKeypad: !this.state.showKeypad })
+    }
+    private toggleInfo = () => {
+        this.setState({ showInfo: !this.state.showInfo })
     }
 }
 

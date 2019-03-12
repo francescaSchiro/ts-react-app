@@ -1,7 +1,7 @@
 import styled from 'src/theme/default/index';
 
 interface IArrowDown {
-    infoToggle?: boolean;
+    showInfo?: boolean;
 }
 
 const ArrowDown = styled.div`
@@ -12,7 +12,7 @@ const ArrowDown = styled.div`
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    transform: ${(props: IArrowDown) => props.infoToggle ? null : 'rotate(180deg)'};
+    transform: ${(props: IArrowDown) => props.showInfo ? null : 'rotate(180deg)'};
 `
 
 export default ArrowDown;
