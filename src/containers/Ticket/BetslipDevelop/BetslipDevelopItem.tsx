@@ -11,31 +11,49 @@ import NumberArrowWrapper from './NumberArrowWrapper';
 import ArrowDown from './ArrowDown';
 import DevelopNumber from './DevelopNumber';
 import BetslipDevelopItemInfo from './BetslipDevelopItemInfo';
+import BetslipKeypad from '../BetslipKeypad';
 
-interface IBetslipDevelopItem {
+
+interface IBetslipDevelopItemProps {
     infoToggle?: boolean;
 }
 
-const BetslipDevelopItem = (props: IBetslipDevelopItem) => (
-    <BetslipDevelopWrapper>
+interface IBetslipDevelopItemState {
+    showKeypad: boolean,
+}
 
-        <BetslipDevelopItemWrapper>
-            <IconEye />
-            <RowWrapper>
-                <StakeAction>-</StakeAction>
-                <StakeImport>€ 3,00</StakeImport>
-                <StakeAction>+</StakeAction>
-            </RowWrapper>
+class BetslipDevelopItem extends React.Component<IBetslipDevelopItemProps, IBetslipDevelopItemState>{
+    public state = { showKeypad: false }
 
-            <NumberArrowWrapper>
-                <DevelopNumber>x1</DevelopNumber>
-                <ArrowDown infoToggle={props.infoToggle} />
-            </NumberArrowWrapper>
-        </BetslipDevelopItemWrapper>
-        {props.infoToggle && <BetslipDevelopItemInfo />}
+    public render() {
+        const { showKeypad } = this.state;
+        const { infoToggle } = this.props;
+        return (
+            <>
+                <BetslipDevelopWrapper>
 
+                    <BetslipDevelopItemWrapper>
+                        <IconEye />
+                        <RowWrapper>
+                            <StakeAction>-</StakeAction>
+                            <StakeImport onClick={this.toggleKeypad}>€ 3,00</StakeImport>
+                            <StakeAction>+</StakeAction>
+                        </RowWrapper>
 
-    </BetslipDevelopWrapper>
-);
+                        <NumberArrowWrapper>
+                            <DevelopNumber>x1</DevelopNumber>
+                            <ArrowDown infoToggle={infoToggle} />
+                        </NumberArrowWrapper>
+                    </BetslipDevelopItemWrapper>
+                    {infoToggle && <BetslipDevelopItemInfo />}
+                </BetslipDevelopWrapper>
+                {showKeypad && <BetslipKeypad sistema={true} />}
+            </>
+        )
+    }
+    private toggleKeypad = () => {
+        this.setState({ showKeypad: !this.state.showKeypad })
+    }
+}
 
 export default BetslipDevelopItem;
