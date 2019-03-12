@@ -1,7 +1,11 @@
 import styled from 'src/theme/default/index';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
+// interface IEditIcon {
+//   onClick: () => void,
+// }
 
-const EditIcon = styled(NavLink)`
+
+const EditIcon = styled.div`
   /* display: inline-flex; */
   width:18px;
     height:18px;

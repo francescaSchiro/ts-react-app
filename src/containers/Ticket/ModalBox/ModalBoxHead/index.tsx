@@ -2,17 +2,16 @@ import * as React from 'react';
 
 import Wrapper from './Wrapper';
 import Title from './Title';
-// import Close from './Close';
-import NavLinkStyled from '../NavLinkStyled';
+import Close from './Close';
 
+interface IModalBoxHead {
+    onChiudiClick: () => void,
+}
 
-const ModalBoxHead = () => (
+const ModalBoxHead = (props: IModalBoxHead) => (
     <Wrapper>
         <Title> Valencia - Real Betis </Title>
-
-        {/* <Close> */}
-        <NavLinkStyled to={'/sistema/'} > Chiudi </NavLinkStyled>
-        {/* </Close> */}
+        <Close onClick={props.onChiudiClick} > Chiudi </Close>
     </Wrapper>
 );
 

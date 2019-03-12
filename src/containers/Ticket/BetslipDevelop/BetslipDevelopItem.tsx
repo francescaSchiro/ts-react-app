@@ -12,7 +12,7 @@ import ArrowDown from './ArrowDown';
 import DevelopNumber from './DevelopNumber';
 import BetslipDevelopItemInfo from './BetslipDevelopItemInfo';
 import BetslipKeypad from '../BetslipKeypad';
-import Overlay from '../BetslipKeypad/Overlay';
+import Overlay from '../Overlay';
 
 interface IBetslipDevelopItemState {
     showKeypad: boolean,

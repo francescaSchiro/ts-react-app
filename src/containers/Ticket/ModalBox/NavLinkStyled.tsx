@@ -1,8 +1,7 @@
 import styled from 'src/theme/default/index';
-import { NavLink } from 'react-router-dom';
 
 
-const NavLinkStyled = styled(NavLink)`
+const NavLinkStyled = styled.div`
     text-decoration: none;
     font-size: 12px;
     font-weight: normal;
