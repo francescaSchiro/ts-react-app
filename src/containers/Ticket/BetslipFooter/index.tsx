@@ -9,17 +9,21 @@ import StakeAction from './StakeAction';
 import StakeImport from './StakeImport';
 import BetslipKeypad from '../BetslipKeypad';
 
+interface IBetslipFooter {
+    onImportClick: () => void,
+    showKeypad: boolean,
 
+}
 
-const BetslipFooter = () => (
+const BetslipFooter = (props: IBetslipFooter) => (
     <Wrapper>
 
         <RowWrapper>
             <StakeAction>-</StakeAction>
-            <StakeImport>€ 3,00</StakeImport>
+            <StakeImport onClick={props.onImportClick}>€ 3,00</StakeImport>
             <StakeAction>+</StakeAction>
         </RowWrapper>
-        <BetslipKeypad />
+        {props.showKeypad && <BetslipKeypad />}
         <RowWrapper>
             <Column>
                 <Label>Quota totale</Label>

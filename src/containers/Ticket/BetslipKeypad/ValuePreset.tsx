@@ -17,10 +17,14 @@ const ValuePreset = styled.div`
         border-right: 0;
     }
 
-    &:nth-child(n+7):nth-child(-n+8) {
+    /*from 7th child on*/
+    &:nth-child(n+7){
         border-bottom: 0;
     }
 
+    /*from 7th to 8th child included 
+        &:nth-child(n+7):nth-child(-n+8)
+    */
 
 
 `

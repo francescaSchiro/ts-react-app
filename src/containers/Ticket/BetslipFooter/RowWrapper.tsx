@@ -8,7 +8,7 @@ const RowWrapper = styled.div`
     justify-content: center;
     align-items: center;
     padding: 10px 12px;
-    background-color: #393939;
+    background-color: #393939;   
 
 `
 

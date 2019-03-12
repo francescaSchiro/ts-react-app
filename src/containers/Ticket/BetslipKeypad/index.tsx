@@ -18,6 +18,7 @@ const valuePresets = [
 
 interface IBetslipKeypad {
     sistema?: boolean,
+    onConfermaClick?: () => void,
 }
 
 const BetslipKeypad = (props: IBetslipKeypad) => (
@@ -31,7 +32,7 @@ const BetslipKeypad = (props: IBetslipKeypad) => (
             </ValuesWrapper>
         </KeypadBodyWrapper>
         {props.sistema &&
-            <KeypadFooterButton>CONFERMA</KeypadFooterButton>
+            <KeypadFooterButton onClick={props.onConfermaClick}>CONFERMA</KeypadFooterButton>
         }
     </Wrapper>
 );

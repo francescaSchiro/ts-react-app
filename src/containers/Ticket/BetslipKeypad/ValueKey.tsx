@@ -16,7 +16,7 @@ const ValueKey = styled.div`
     &:nth-child(3n+0) {
         border-right: 0;
     }
-    &:nth-child(n+10):nth-child(-n+12) {
+    &:nth-child(n+10) {
         border-bottom: 0;
     }
 
