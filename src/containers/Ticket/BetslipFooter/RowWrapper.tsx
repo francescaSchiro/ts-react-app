@@ -9,7 +9,6 @@ const RowWrapper = styled.div`
     align-items: center;
     padding: 10px 12px;
     background-color: #393939;   
-
 `
 
 export default RowWrapper;

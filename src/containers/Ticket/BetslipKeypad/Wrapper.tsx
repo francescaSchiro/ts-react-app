@@ -6,7 +6,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     font-size: 17px;
-    z-index: 100;
+    z-index: 9000;
 `
 
 export default Wrapper;

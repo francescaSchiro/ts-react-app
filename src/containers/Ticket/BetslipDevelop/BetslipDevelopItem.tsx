@@ -24,8 +24,7 @@ class BetslipDevelopItem extends React.Component<{}, IBetslipDevelopItemState>{
     public render() {
         const { showKeypad, showInfo } = this.state;
         return (
-            <>{showKeypad &&
-                <Overlay />}
+            <>
                 <BetslipDevelopWrapper>
 
                     <BetslipDevelopItemWrapper>
@@ -45,7 +44,7 @@ class BetslipDevelopItem extends React.Component<{}, IBetslipDevelopItemState>{
                 </BetslipDevelopWrapper>
                 {showKeypad &&
                     <>
-
+                        <Overlay />
                         <BetslipKeypad onConfermaClick={this.toggleKeypad} sistema={true} />
                     </>
                 }

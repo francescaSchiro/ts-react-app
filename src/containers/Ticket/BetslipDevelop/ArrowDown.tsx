@@ -1,7 +1,8 @@
 import styled from 'src/theme/default/index';
 
 interface IArrowDown {
-    showInfo?: boolean;
+    showInfo: boolean;
+    onClick: () => void;
 }
 
 const ArrowDown = styled.div`

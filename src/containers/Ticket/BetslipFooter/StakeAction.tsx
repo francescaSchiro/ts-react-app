@@ -23,8 +23,9 @@ const StakeAction = styled.div`
         font-style: normal;
         font-size: 11px;
 
+        }
     }
-    }
+
 `
 
 export default StakeAction;

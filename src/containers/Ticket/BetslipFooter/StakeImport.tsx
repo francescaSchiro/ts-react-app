@@ -15,6 +15,7 @@ const StakeImport = styled.div`
     border-radius: 2px;
 
 
+
 `
 
 export default StakeImport;

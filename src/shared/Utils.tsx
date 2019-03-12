@@ -10,9 +10,9 @@ const findById = (array: WithId[], id: string): WithId | undefined => {
 const getThemeByName = (name: string): ThemeInterface => {
   const theme: ThemeInterface = themes[name];
   if (!theme) {
-      // tslint:disable-next-line:no-console
-      console.error('Theme not found, setting default!');
-      return themes.DefaultTheme;
+    // tslint:disable-next-line:no-console
+    console.error('Theme not found, setting default!');
+    return themes.DefaultTheme;
   }
   return theme;
 }
@@ -20,4 +20,10 @@ const getThemeByName = (name: string): ThemeInterface => {
 export {
   findById,
   getThemeByName
+}
+
+export const zIndex = {
+  modal: 9000,
+  overlay: 8000,
+  header: 70000,
 }
