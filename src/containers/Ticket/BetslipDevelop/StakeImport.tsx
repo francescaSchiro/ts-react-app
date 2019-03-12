@@ -13,6 +13,7 @@ const StakeImport = styled.div`
     font-size: 11px;
     font-weight: bold;
     border-radius: 2px;
+    z-index: 100;
 `
 
 export default StakeImport;

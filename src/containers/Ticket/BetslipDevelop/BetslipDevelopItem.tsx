@@ -30,7 +30,8 @@ class BetslipDevelopItem extends React.Component<IBetslipDevelopItemProps, IBets
         const { showKeypad } = this.state;
         const { infoToggle } = this.props;
         return (
-            <>
+            <>{showKeypad &&
+                <Overlay />}
                 <BetslipDevelopWrapper>
 
                     <BetslipDevelopItemWrapper>
@@ -50,7 +51,7 @@ class BetslipDevelopItem extends React.Component<IBetslipDevelopItemProps, IBets
                 </BetslipDevelopWrapper>
                 {showKeypad &&
                     <>
-                        <Overlay />
+
                         <BetslipKeypad onConfermaClick={this.toggleKeypad} sistema={true} />
                     </>
                 }

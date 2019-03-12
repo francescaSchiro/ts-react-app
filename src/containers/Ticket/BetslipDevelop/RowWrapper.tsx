@@ -8,6 +8,7 @@ const RowWrapper = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+ 
 `
 
 export default RowWrapper;
