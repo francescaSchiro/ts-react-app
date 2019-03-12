@@ -12,6 +12,7 @@ import ArrowDown from './ArrowDown';
 import DevelopNumber from './DevelopNumber';
 import BetslipDevelopItemInfo from './BetslipDevelopItemInfo';
 import BetslipKeypad from '../BetslipKeypad';
+import Overlay from '../BetslipKeypad/Overlay';
 
 
 interface IBetslipDevelopItemProps {
@@ -47,7 +48,12 @@ class BetslipDevelopItem extends React.Component<IBetslipDevelopItemProps, IBets
                     </BetslipDevelopItemWrapper>
                     {infoToggle && <BetslipDevelopItemInfo />}
                 </BetslipDevelopWrapper>
-                {showKeypad && <BetslipKeypad sistema={true} />}
+                {showKeypad &&
+                    <>
+                        <Overlay />
+                        <BetslipKeypad onConfermaClick={this.toggleKeypad} sistema={true} />
+                    </>
+                }
             </>
         )
     }
