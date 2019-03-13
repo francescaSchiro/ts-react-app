@@ -21,7 +21,7 @@ class Multipla extends React.PureComponent {
                 <InfoAlert error={true}>
                     <InfoIcon />
                     La puntata minima è di € 2,00
-            </InfoAlert>
+                </InfoAlert>
                 <SettingsDefaultBlock />
                 <BetslipFooter onImportClick={this.toggleKeypad} showKeypad={showKeypad} />
                 <Buttons />
