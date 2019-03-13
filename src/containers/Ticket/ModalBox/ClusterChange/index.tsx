@@ -14,23 +14,40 @@ import Span from './Span';
 import clusterAccordionItems from './clusterAccordionItems';
 
 
-const ClusterChange = () => (
-    <>
-        <Wrapper>
-            <LabelValueWrapper>
-                <Label>Tipo scommessa:</Label>
-                <Value>ESITO Finale 1x2</Value>
-            </LabelValueWrapper>
-            <ChangeArrowWrapper>
-                <Change>Cambia</Change>
-                <Arrow />
-            </ChangeArrowWrapper>
-        </Wrapper>
+interface IClusterChangeState {
+    showCambia: boolean,
+}
+class ClusterChange extends React.Component<{}, IClusterChangeState>{
+    public state = { showCambia: false };
+    public render() {
+        const { showCambia } = this.state;
+        return (
+            <>
+                <Wrapper>
+                    <LabelValueWrapper>
+                        <Label>Tipo scommessa:</Label>
+                        <Value>ESITO Finale 1x2</Value>
+                    </LabelValueWrapper>
+                    <ChangeArrowWrapper>
+                        <Change onClick={this.toggleCambia}>Cambia</Change>
+                        <Arrow showCambia={showCambia} />
+                    </ChangeArrowWrapper>
+                </Wrapper>
+                {showCambia &&
+                    <ClusterAccordion>
+                        {clusterAccordionItems.map(el => <ClusterAccordionItem key={el}><Span>{el}</Span></ClusterAccordionItem>)}
+                    </ClusterAccordion>
 
-        <ClusterAccordion>
-            {clusterAccordionItems.map(el => <ClusterAccordionItem key={el}><Span>{el}</Span></ClusterAccordionItem>)}
-        </ClusterAccordion>
-    </>
-);
+                }
+            </>
+
+        )
+    }
+
+    private toggleCambia = () => {
+        this.setState({ showCambia: !this.state.showCambia })
+    }
+}
+
 
 export default ClusterChange;

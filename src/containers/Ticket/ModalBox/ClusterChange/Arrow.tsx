@@ -1,5 +1,8 @@
 import styled from 'src/theme/default/index';
 
+interface IArrow {
+        showCambia: boolean,
+}
 
 const Arrow = styled.div`
         width: 7px;
@@ -9,7 +12,10 @@ const Arrow = styled.div`
 
         border-right: 2px solid #4a4a4a;
         border-bottom: 2px solid #4a4a4a;
-        transform: translate(-50%,0) rotate(-135deg);
+        transform: ${(props: IArrow) => props.showCambia
+                ? `translate(-50%,0) rotate(-135deg)` // upArrow
+                : `translate(-50%,-40%) rotate(45deg)` // downArrow
+        }
 `
 
 export default Arrow;
