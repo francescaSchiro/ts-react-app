@@ -1,6 +1,6 @@
 import styled from 'src/theme/default/index';
 
-const Info = styled.div`
+const InfoWrapper = styled.div`
     flex-direction:row;
     justify-content: flex-start;
     align-items: center;
@@ -9,4 +9,4 @@ const Info = styled.div`
 
     padding: 4px 0;
 `
-export default Info;
+export default InfoWrapper;
