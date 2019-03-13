@@ -13,6 +13,7 @@ const StakeAction = styled.div`
     border: 3px solid #fff;
     background: #389b05;
     font-size: 18px;
+    color: white;
 
     &:first-of-type{
         &::before {

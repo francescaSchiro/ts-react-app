@@ -37,7 +37,6 @@ class SettingsDefaultBlock extends React.Component<{}, ISettingsDefaultBlockStat
                     </>
                 }
                 {showChecklist &&
-
                     <ChecklistWrapper>
                         <RowWrapper>
                             <ChecklistInput type='radio' name='settings' value='alte' id='alte' checked={true} />
@@ -48,7 +47,6 @@ class SettingsDefaultBlock extends React.Component<{}, ISettingsDefaultBlockStat
                             <Label htmlFor='tutte'>Accetto tutte le variazioni di quote</Label>
                         </RowWrapper>
                     </ChecklistWrapper>
-
                 }
 
             </>
