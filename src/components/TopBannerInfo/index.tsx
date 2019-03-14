@@ -14,7 +14,7 @@ class TopBannerInfo extends React.Component<ITopBannerInfoProps, {}> {
     const { onCloseClick, description } = this.props;
     return (
       <Wrapper >
-        <div style={{ display: 'flex', height: '100%', flexGrow: 1, paddingRight: '16px', justifyContent: 'flex-start', alignItems: 'flex-start' }}>{description}</div>
+        <Description>{description}</Description>
         <CloseIcon onClick={onCloseClick} />
       </Wrapper>
     );
@@ -24,11 +24,19 @@ class TopBannerInfo extends React.Component<ITopBannerInfoProps, {}> {
 export default TopBannerInfo;
 
 const CloseIcon = styled.div`
-
     height: 50px;
     width: 40px;
     background-size: 16px;
     background-image: url('https://mtest-liferay.sisal.it/scommesse/content/img/chiudi_white.png?v=2.7.5.1');
     background-repeat: no-repeat;
     background-position: top;
+`
+
+const Description = styled.div`
+  display: flex;
+  height: 100%;
+  flex-grow: 1;
+  padding-right: 16px;
+  justify-content: flex-start;
+  align-items: flex-start;
 `
