@@ -21,9 +21,3 @@ export {
   findById,
   getThemeByName
 }
-
-export const zIndex = {
-  modal: 9000,
-  overlay: 8000,
-  header: 70000,
-}

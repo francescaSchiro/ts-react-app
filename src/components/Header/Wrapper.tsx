@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  z-index:7000;
+  z-index:1000;
 
   background-color: white;
 `;

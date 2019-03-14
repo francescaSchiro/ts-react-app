@@ -1,6 +1,6 @@
 import styled from 'src/theme/default/index';
 
-const LoginModalWrapper = styled.div`
+const Wrapper = styled.div`
   position: fixed;
   top:0;
   left:0;
@@ -13,4 +13,4 @@ const LoginModalWrapper = styled.div`
   
 `;
 
-export default LoginModalWrapper;
+export default Wrapper;

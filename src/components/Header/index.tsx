@@ -2,36 +2,37 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Wrapper from './Wrapper';
-import HeaderLogo from './HeaderLogo';
+import HeaderLogo from 'src/components/HeaderLogo';
 import HeaderLoginBtn from 'src/components/HeaderLoginBtn';
 import HeaderTicketBtn from 'src/components/HeaderTicketBtn';
-import HamburgerNav from './HamburgerNav';
-import NavActionsWrapper from './NavActionsWrapper';
-import LoginModal from './LoginModal/';
+import HeaderHamburger from 'src/components/HeaderHamburger';
 import HeaderBalance from 'src/components/HeaderBalance';
+import LoginModal from 'src/components/LoginModal/';
 
 interface IHeaderState {
   showLoginModal: boolean,
   isLogged: boolean,
-  balance: number | string
+  balance: number | string | null | undefined,
   betsCount: number | null | undefined | string,
 }
-// interface IHeaderProps {
-//   balance?: number | string,
-// }
 
 class Header extends React.Component<{}, IHeaderState> {
-  public state = { showLoginModal: false, isLogged: false, balance: '8.441,62', betsCount: 3 };
+  public state = {
+    showLoginModal: false,
+    isLogged: false,
+    balance: '8.441,62',
+    betsCount: 3
+  };
 
   public render() {
     const { showLoginModal, isLogged, balance, betsCount } = this.state;
     return (
       <Wrapper>
         <NavLink exact={true} to='/'>
-          <HeaderLogo src='https://m.sisal.it/scommesse-matchpoint/content/img/logo.png?v=2.6.8' />
+          <HeaderLogo />
         </NavLink>
 
-        <NavActionsWrapper>
+        <div style={{ display: 'flex' }}>
           {isLogged
             ? <HeaderBalance onClick={this.toggleShowLoginModal} balance={balance} />
             : <HeaderLoginBtn onClick={this.toggleShowLoginModal} showModal={showLoginModal} />
@@ -39,12 +40,11 @@ class Header extends React.Component<{}, IHeaderState> {
           <NavLink to='/ticket'>
             <HeaderTicketBtn betsCount={betsCount} />
           </NavLink>
-          <HamburgerNav />
-        </NavActionsWrapper>
+          <HeaderHamburger />
+        </div>
         {showLoginModal &&
           <LoginModal />
         }
-        {/* <Sidebar /> */}
       </Wrapper >
     );
   }
