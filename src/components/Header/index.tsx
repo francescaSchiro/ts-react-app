@@ -10,7 +10,7 @@ import HeaderBalance from 'src/components/HeaderBalance';
 import LoginModal from 'src/components/LoginModal/';
 
 interface IHeaderState {
-  showLoginModal: boolean,
+  isLoginOpen: boolean,
   isLogged: boolean,
   balance: number | string | null | undefined,
   betsCount: number | null | undefined | string,
@@ -18,14 +18,14 @@ interface IHeaderState {
 
 class Header extends React.Component<{}, IHeaderState> {
   public state = {
-    showLoginModal: false,
+    isLoginOpen: false,
     isLogged: false,
     balance: '8.441,62',
     betsCount: 3
   };
 
   public render() {
-    const { showLoginModal, isLogged, balance, betsCount } = this.state;
+    const { isLoginOpen, isLogged, balance, betsCount } = this.state;
     return (
       <Wrapper>
         <NavLink exact={true} to='/'>
@@ -35,14 +35,14 @@ class Header extends React.Component<{}, IHeaderState> {
         <div style={{ display: 'flex' }}>
           {isLogged
             ? <HeaderBalance onClick={this.toggleShowLoginModal} balance={balance} />
-            : <HeaderLoginBtn onClick={this.toggleShowLoginModal} showModal={showLoginModal} />
+            : <HeaderLoginBtn onClick={this.toggleShowLoginModal} showModal={isLoginOpen} />
           }
           <NavLink to='/ticket'>
             <HeaderTicketBtn betsCount={betsCount} />
           </NavLink>
           <HeaderHamburger />
         </div>
-        {showLoginModal &&
+        {isLoginOpen &&
           <LoginModal />
         }
       </Wrapper >
@@ -50,7 +50,7 @@ class Header extends React.Component<{}, IHeaderState> {
   }
 
   private toggleShowLoginModal = () => {
-    this.setState({ showLoginModal: !this.state.showLoginModal, isLogged: !this.state.isLogged });
+    this.setState({ isLoginOpen: !this.state.isLoginOpen, isLogged: !this.state.isLogged });
   };
 }
 
