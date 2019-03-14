@@ -2,47 +2,42 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Wrapper from './Wrapper';
-import Logo from './Logo';
-import DropDownLogin from './DropDownLogin';
-import BigliettoNav from './BigliettoNav';
+import HeaderLogo from './HeaderLogo';
+import HeaderLoginBtn from 'src/components/HeaderLoginBtn';
+import HeaderTicketBtn from 'src/components/HeaderTicketBtn';
 import HamburgerNav from './HamburgerNav';
 import NavActionsWrapper from './NavActionsWrapper';
 import LoginModal from './LoginModal/';
-import HeaderBalance from './HeaderBalance';
+import HeaderBalance from 'src/components/HeaderBalance';
 
 interface IHeaderState {
   showLoginModal: boolean,
   isLogged: boolean,
+  balance: number | string
+  betsCount: number | null | undefined | string,
 }
-interface IHeaderProps {
-  balance?: number,
-}
+// interface IHeaderProps {
+//   balance?: number | string,
+// }
 
-class Header extends React.Component<IHeaderProps, IHeaderState> {
-  public state = { showLoginModal: false, isLogged: false };
+class Header extends React.Component<{}, IHeaderState> {
+  public state = { showLoginModal: false, isLogged: false, balance: '8.441,62', betsCount: 3 };
 
   public render() {
-    const { showLoginModal, isLogged } = this.state;
-    const { balance } = this.props;
+    const { showLoginModal, isLogged, balance, betsCount } = this.state;
     return (
       <Wrapper>
         <NavLink exact={true} to='/'>
-          <Logo src='https://m.sisal.it/scommesse-matchpoint/content/img/logo.png?v=2.6.8' />
+          <HeaderLogo src='https://m.sisal.it/scommesse-matchpoint/content/img/logo.png?v=2.6.8' />
         </NavLink>
 
         <NavActionsWrapper>
           {isLogged
-            ? <HeaderBalance>Balance: €{balance}</HeaderBalance>
-            : <DropDownLogin
-              onClick={this.toggleShowLoginModal}
-              showModal={showLoginModal}
-            > Accedi
-            </DropDownLogin>
+            ? <HeaderBalance onClick={this.toggleShowLoginModal} balance={balance} />
+            : <HeaderLoginBtn onClick={this.toggleShowLoginModal} showModal={showLoginModal} />
           }
-
-
           <NavLink to='/ticket'>
-            <BigliettoNav />
+            <HeaderTicketBtn betsCount={betsCount} />
           </NavLink>
           <HamburgerNav />
         </NavActionsWrapper>
@@ -55,7 +50,7 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
   }
 
   private toggleShowLoginModal = () => {
-    this.setState({ showLoginModal: !this.state.showLoginModal });
+    this.setState({ showLoginModal: !this.state.showLoginModal, isLogged: !this.state.isLogged });
   };
 }
 
