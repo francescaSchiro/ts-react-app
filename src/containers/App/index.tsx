@@ -15,7 +15,7 @@ import { MemoryRouter as Router } from 'react-router-dom';
 
 import AppWrapper from './Wrapper';
 import Routes from './Routes';
-import HeaderNav from '../../components/HeaderNav/index';
+import Header from '../../components/Header/index';
 // import HomePage from 'src/components/HomePage';
 // import Ticket from 'src/containers/Ticket';
 
@@ -55,7 +55,7 @@ class App extends PureComponent<Props> {
         return (
             <Router>
                 <AppWrapper id='AppWrapper'>
-                    <HeaderNav />
+                    <Header />
                     <Routes />
                     <GlobalStyles />
                 </AppWrapper>
