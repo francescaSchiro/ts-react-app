@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import HomePageWrapper from './Wrapper';
 import Title from '../Title';
+import TopBanner from 'src/components/TopBanner';
 import BestEventsWrapper from './BestEventsWrapper';
 import MainEvents from '../MainEvents';
 import OtherEvents from '../OtherEvents';
@@ -23,6 +24,7 @@ import SportList from 'src/components/SportList';
 const HomePage = () => (
   <HomePageWrapper id='HomePageWrapper'>
     <SportList />
+    <TopBanner />
 
     <TitleWrapper padding={'10px 0 5px 0'}>
       <Title fontColor={'#777'}>Incontri principali</Title>
