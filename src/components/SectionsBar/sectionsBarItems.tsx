@@ -1,4 +1,4 @@
-interface MySportListItems {
+interface IsectionsBarItem {
   active: boolean;
   key: number;
   label: string;
@@ -6,7 +6,7 @@ interface MySportListItems {
   iconText: () => number | string;
 }
 
-const sectionsBarItems: MySportListItems[] = [
+const sectionsBarItems: IsectionsBarItem[] = [
   {
     active: true,
     key: 0,
