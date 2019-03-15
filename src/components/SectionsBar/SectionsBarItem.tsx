@@ -1,6 +1,6 @@
-import styled from '../../theme/default/index';
+import styled from 'src/theme/default/index';
 
-const SportListSection = styled.div`
+const SectionsBarItem = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,4 +9,4 @@ const SportListSection = styled.div`
   padding: .5em 1em;
 `;
 
-export default SportListSection;
+export default SectionsBarItem;

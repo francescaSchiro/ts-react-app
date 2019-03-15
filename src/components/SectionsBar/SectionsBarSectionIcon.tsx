@@ -1,11 +1,11 @@
-import styled from '../../theme/default/index';
+import styled from 'src/theme/default/index';
 
 interface MyProps {
   active: boolean;
   icon?: string;
 }
 
-const SectionsBarIcon = styled.div`
+const SectionsBarSectionIcon = styled.div`
   background-image: ${(props: MyProps) =>
     props.icon ? `url(${props.icon})` : undefined};
   width: 24px;
@@ -24,4 +24,4 @@ const SectionsBarIcon = styled.div`
   line-height: 1em;
 `;
 
-export default SectionsBarIcon;
+export default SectionsBarSectionIcon;
