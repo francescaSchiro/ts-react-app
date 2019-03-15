@@ -3,29 +3,27 @@ import styled from 'src/theme/default/index';
 
 import BestEventsItem from 'src/components/BestEventsItem';
 
+// TODO map from events the BestEventsItem
 const BestEvents = () => (
-    <>
-        <TitleWrapper>
-            <Title>Incontri principali</Title>
-        </TitleWrapper>
-        <BestEventsSlider>
-            <BestEventsItem />
-            <BestEventsItem />
-            <BestEventsItem />
-        </BestEventsSlider>
-    </>
+  <>
+    <Title>Incontri principali</Title>
+    <BestEventsSlider>
+      <BestEventsItem />
+      <BestEventsItem />
+    </BestEventsSlider>
+  </>
 );
 
 export default BestEvents;
 
-const TitleWrapper = styled.div`
-  width: auto;
-  min-height: 20px; 
-  padding: 15px 0 10px 0;
-  text-align: center;
-`;
 
-const Title = styled.p`
+const Title = styled.div`
+  width: 100%;
+  padding: 15px 0 10px 0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
   font-size: 15px;
   color: #777;
   font-weight: 700;

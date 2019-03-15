@@ -3,6 +3,7 @@ import * as React from 'react';
 import HomePageWrapper from './Wrapper';
 import TopBanner from 'src/components/TopBanner';
 import BestEvents from 'src/components/BestEvents';
+
 import MainEvents from '../MainEvents';
 import OtherEvents from '../OtherEvents';
 
