@@ -6,7 +6,7 @@ interface MySportListItems {
   iconText: () => number | string;
 }
 
-const sportListItems: MySportListItems[] = [
+const sectionsBarItems: MySportListItems[] = [
   {
     active: true,
     key: 0,
@@ -51,7 +51,7 @@ const sportListItems: MySportListItems[] = [
   }
 ];
 
-export default sportListItems;
+export default sectionsBarItems;
 
 function getCurrentDay(): number {
   return 12;

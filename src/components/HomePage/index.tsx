@@ -17,13 +17,13 @@ import BestEventGameItemValue from './BestEventGameItemValue';
 import AppFooter from 'src/components/AppFooter';
 import Banners from 'src/components/Banners';
 import AppSeo from 'src/components/AppSeo';
-import SportList from 'src/components/SportList';
+import SectionsBar from 'src/components/SectionsBar';
 
 
 
 const HomePage = () => (
-  <HomePageWrapper id='HomePageWrapper'>
-    <SportList />
+  <HomePageWrapper>
+    <SectionsBar />
     <TopBanner />
 
     <TitleWrapper padding={'10px 0 5px 0'}>

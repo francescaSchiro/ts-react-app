@@ -5,7 +5,7 @@ interface MyProps {
   icon?: string;
 }
 
-const SportListIcon = styled.div`
+const SectionsBarIcon = styled.div`
   background-image: ${(props: MyProps) =>
     props.icon ? `url(${props.icon})` : undefined};
   width: 24px;
@@ -24,4 +24,4 @@ const SportListIcon = styled.div`
   line-height: 1em;
 `;
 
-export default SportListIcon;
+export default SectionsBarIcon;
