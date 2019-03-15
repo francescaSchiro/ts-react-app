@@ -1,6 +1,6 @@
 import styled from 'src/theme/default/index';
 
-const SportListSearch = styled.div`
+const Wrapper = styled.div`
   position: relative;
   width: 45px;
   min-width: 45px;
@@ -23,4 +23,4 @@ const SportListSearch = styled.div`
   }
 `;
 
-export default SportListSearch;
+export default Wrapper;

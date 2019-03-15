@@ -4,7 +4,7 @@ import styled from 'src/theme/default/index';
 
 import Wrapper from './Wrapper';
 import SectionsBarItem from 'src/components/SectionsBarItem';
-import SportListSearch from './SportListSearch';
+import SectionsBarSearch from 'src/components/SectionsBarSearch';
 
 import sectionsBarItems from './sectionsBarItems';
 
@@ -15,7 +15,7 @@ const SectionsBar = () => (
         <SectionsBarItem key={el.key} active={el.active} icon={el.icon} label={el.label} iconText={el.iconText()} />
       ))}
     </SectionsBarSlider>
-    <SportListSearch />
+    <SectionsBarSearch />
   </Wrapper>
 );
 
