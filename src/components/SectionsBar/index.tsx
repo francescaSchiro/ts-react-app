@@ -1,10 +1,9 @@
 import * as React from 'react';
+import styled from 'src/theme/default/index';
+
 
 import Wrapper from './Wrapper';
-import SectionsBarSlider from './SectionsBarSlider';
-import SectionsBarItem from './SectionsBarItem';
-import SectionsBarSectionIcon from './SectionsBarSectionIcon';
-import SportListLabel from './SportListLabel';
+import SectionsBarItem from 'src/components/SectionsBarItem';
 import SportListSearch from './SportListSearch';
 
 import sectionsBarItems from './sectionsBarItems';
@@ -13,16 +12,7 @@ const SectionsBar = () => (
   <Wrapper>
     <SectionsBarSlider>
       {sectionsBarItems.map(el => (
-        <SectionsBarItem key={el.key}>
-          <SectionsBarSectionIcon
-            active={el.active}
-            icon={el.icon}
-          >
-            {el.iconText()}
-          </SectionsBarSectionIcon>
-          <SportListLabel active={el.active}> {el.label}
-          </SportListLabel>
-        </SectionsBarItem>
+        <SectionsBarItem key={el.key} active={el.active} icon={el.icon} label={el.label} iconText={el.iconText()} />
       ))}
     </SectionsBarSlider>
     <SportListSearch />
@@ -30,5 +20,17 @@ const SectionsBar = () => (
 );
 
 export default SectionsBar;
+
+const SectionsBarSlider = styled.div`
+  display: flex;
+  width: calc(100% - 45px);
+  height: 100%;
+  background-color: #222;
+  color: white;
+  overflow-x: auto;
+  ::-webkit-scrollbar { 
+    display: none; 
+}
+`;
 
 

@@ -1,6 +1,6 @@
 import styled from 'src/theme/default/index';
 
-const SectionsBarItem = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,4 +9,4 @@ const SectionsBarItem = styled.div`
   padding: .5em 1em;
 `;
 
-export default SectionsBarItem;
+export default Wrapper;
