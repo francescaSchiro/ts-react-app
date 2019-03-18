@@ -1,5 +1,9 @@
 import styled from 'src/theme/default/index';
 
+interface IWrapper {
+    imgUrl: string
+}
+
 const Wrapper = styled.div`
     position: relative;
 
@@ -9,7 +13,7 @@ const Wrapper = styled.div`
     justify-content: flex-end;
     align-items: flex-end;
     
-    background-image: url('https://www.clondalkinleisure.com/wp-content/uploads/2016/03/img-allweather-banner02.jpg');
+    background-image: url(${(props: IWrapper) => props.imgUrl});
     background-repeat: no-repeat;
     background-position: left center ;
     background-size: cover;
