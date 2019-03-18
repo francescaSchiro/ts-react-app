@@ -2,19 +2,7 @@ import * as React from 'react';
 import styled from 'src/theme/default/index';
 
 import BestEventsItem from 'src/components/BestEventsItem';
-
-// TODO map from events the BestEventsItem
-const BestEvents = () => (
-  <>
-    <Title>Incontri principali</Title>
-    <BestEventsSlider>
-      <BestEventsItem />
-      <BestEventsItem />
-    </BestEventsSlider>
-  </>
-);
-
-export default BestEvents;
+import bestEventsItems from './bestEventsItems';
 
 
 const Title = styled.div`
@@ -42,5 +30,25 @@ const BestEventsSlider = styled.div`
     }
 `;
 
+const BestEvents = () => (
+  <>
+    <Title>Incontri principali</Title>
+    <BestEventsSlider>
+      {bestEventsItems.map(el =>
+        <BestEventsItem
+          key={el.gameName}
+          iconUrl={el.iconUrl}
+          leagueLabel={el.leagueLabel}
+          gameLabels={el.gameLabels}
+          day={el.day}
+          time={el.time}
+          gameName={el.gameName}
+          oddValues={el.oddValues}
+        />
+      )}
+    </BestEventsSlider>
+  </>
+);
 
+export default BestEvents;
 
