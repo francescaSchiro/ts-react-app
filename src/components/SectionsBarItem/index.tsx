@@ -1,31 +1,7 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
-
 import Wrapper from './Wrapper';
-
-interface ISectionsBarItemProps {
-  key: number,
-  active: boolean,
-  icon?: string,
-  label: string,
-  iconText?: number | string
-}
-
-const SectionsBarItem = (props: ISectionsBarItemProps) => (
-  <Wrapper key={props.key}>
-    <SectionsBarItemIcon
-      active={props.active}
-      icon={props.icon}
-    >
-      {props.iconText}
-    </SectionsBarItemIcon>
-    <SectionsBarItemLabel active={props.active}> {props.label}
-    </SectionsBarItemLabel>
-  </Wrapper>
-);
-
-export default SectionsBarItem;
 
 interface ISectionsBarItemIconProps {
   active: boolean;
@@ -78,5 +54,25 @@ const SectionsBarItemLabel = styled('div') <ISectionsBarItemLabelProps>`
       : `&::after {
             content: '' }; `};
 `;
+interface ISectionsBarItemProps {
+  key: number,
+  active: boolean,
+  icon?: string,
+  label: string,
+  iconText?: number | string
+}
 
+const SectionsBarItem = (props: ISectionsBarItemProps) => (
+  <Wrapper key={props.key}>
+    <SectionsBarItemIcon
+      active={props.active}
+      icon={props.icon}
+    >
+      {props.iconText}
+    </SectionsBarItemIcon>
+    <SectionsBarItemLabel active={props.active}> {props.label}
+    </SectionsBarItemLabel>
+  </Wrapper>
+);
 
+export default SectionsBarItem;
