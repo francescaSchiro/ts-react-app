@@ -8,18 +8,6 @@ import SearchBtn from 'src/components/SearchBtn';
 
 import sectionsBarItems from './sectionsBarItems';
 
-const SectionsBar = () => (
-  <Wrapper>
-    <SectionsBarSlider>
-      {sectionsBarItems.map(el => (
-        <SectionsBarItem key={el.key} active={el.active} icon={el.icon} label={el.label} iconText={el.iconText()} />
-      ))}
-    </SectionsBarSlider>
-    <SearchBtn />
-  </Wrapper>
-);
-
-export default SectionsBar;
 
 const SectionsBarSlider = styled.div`
   display: flex;
@@ -33,4 +21,15 @@ const SectionsBarSlider = styled.div`
 }
 `;
 
+const SectionsBar = () => (
+  <Wrapper>
+    <SectionsBarSlider>
+      {sectionsBarItems.map(el => (
+        <SectionsBarItem key={el.key} active={el.active} icon={el.icon} label={el.label} iconText={el.iconText()} />
+      ))}
+    </SectionsBarSlider>
+    <SearchBtn />
+  </Wrapper>
+);
 
+export default SectionsBar;
