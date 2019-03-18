@@ -17,8 +17,6 @@ const Wrapper = styled.div`
     background-repeat: no-repeat;
     background-position: left center ;
     background-size: cover;
-
-    z-index: 900;
 `;
 
 export default Wrapper;

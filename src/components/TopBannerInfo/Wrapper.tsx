@@ -13,7 +13,6 @@ const Wrapper = styled.div`
     color: white;
     background-color: darkgray;
 
-    z-index: 950;
 `;
 
 export default Wrapper;
