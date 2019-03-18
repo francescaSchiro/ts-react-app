@@ -5,7 +5,9 @@ import styled from 'src/theme/default/index';
 import Wrapper from './Wrapper';
 import mainEventsTabs from './mainEventsTabs';
 
-
+// interface IMainEventsTabsProps {
+//     onTabClick: () => void,
+// }
 
 const MainEventsTabs = () => (
     <Wrapper>

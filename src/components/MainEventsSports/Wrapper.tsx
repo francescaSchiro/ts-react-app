@@ -1,6 +1,6 @@
-import styled from '../../theme/default/index';
+import styled from 'src/theme/default/index';
 
-const SportsContainer = styled.div`
+const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -12,4 +12,4 @@ const SportsContainer = styled.div`
 
 `;
 
-export default SportsContainer;
+export default Wrapper;

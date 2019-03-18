@@ -2,33 +2,33 @@ import * as React from 'react';
 
 import Wrapper from './Wrapper';
 import MainEventsTabs from 'src/components/MainEventsTabs';
+import MainEventsSports from 'src/components/MainEventsSports';
 
 import Redirect from '../Redirect';
 
 import EventsContainer from './EventsContainer';
-import SportsContainer from './SportsContainer';
-import SportsTab from './SportsTab';
 
-import sportTabItems from './sportsTabItems';
 import EventLeague from './EventLeague';
 import EventContent from './EventContent';
 import HR from '../HR';
 
+// interface IMainEventsState {
+//   mainEventsTab: string, // 'live' | 'pre match'
+//   mainEventsSportTab: string,  // 'calcio' | 'tennis' | 'basket' | 'volley'
+//   events: Event[],
+// }
 
-class MainEvents extends React.Component {
+class MainEvents extends React.Component<{}, {}> {
+  // public state = {
+  //   mainEventsTab: 'live',
+  //   mainEventsSportTab: 'calcio',
+  //   events: [],
+  // }
   public render() {
     return (
       <Wrapper>
         <MainEventsTabs />
-        {/* Sports Tabs */}
-
-        <SportsContainer>
-          {sportTabItems.map((el, i) => (
-            <SportsTab key={i} active={el.active}>
-              {el.label}
-            </SportsTab>
-          ))}
-        </SportsContainer>
+        <MainEventsSports />
 
         {/*Main-Events-Body*/}
         <Wrapper>
@@ -55,6 +55,9 @@ class MainEvents extends React.Component {
 
     )
   }
+  // private toggleMainEventsTab = () => {
+  //   this.setState({ mainEventsTab: tabName })
+  // }
 };
 
 export default MainEvents;

@@ -6,12 +6,12 @@ export interface MainEventTab {
 const mainEventsTabs: MainEventTab[] = [
   {
     tabName: 'live',
-    isTabActive: false,
+    isTabActive: true,
 
   },
   {
     tabName: 'pre match',
-    isTabActive: true,
+    isTabActive: false,
   }
 
 ];
