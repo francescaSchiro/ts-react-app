@@ -12,33 +12,33 @@ import mainEventsTabs from './mainEventsTabs';
 const MainEventsTabs = () => (
     <Wrapper>
         {mainEventsTabs.map(el => (
-            <Tab
+            <MainEventTab
                 isTabActive={el.isTabActive}
                 tabName={el.tabName}
             >{el.tabName}
-            </Tab>))
+            </MainEventTab>))
         }
     </Wrapper>
 );
 
 export default MainEventsTabs;
 
-interface Tab {
+interface IMainEventTabProps {
     isTabActive: boolean,
     tabName: string,
 }
 
-const Tab = styled.div`
+const MainEventTab = styled.div`
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 0 50%;
-    background-color: ${(props: Tab) => props.isTabActive ? 'white' : 'transparent'};
+    background-color: ${(props: IMainEventTabProps) => props.isTabActive ? 'white' : 'transparent'};
     font-weight: bold;
     text-transform: uppercase;
 
-    ${(props: Tab) => props.isTabActive
+    ${(props: IMainEventTabProps) => props.isTabActive
         ? getActiveStyle(props.tabName)
         : `
         border-top: 5px solid #cbcbcb;
