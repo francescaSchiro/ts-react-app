@@ -1,4 +1,4 @@
-import mainEventsEvents, { MainEventsEvent } from 'src/components/MainEventsEvent/mainEventsEvents';
+import { MainEventsEvent, mainEventsEvents1, mainEventsEvents2 } from 'src/components/MainEventsEvent/mainEventsEvents';
 
 
 export interface MainEventsLeague {
@@ -9,14 +9,14 @@ export interface MainEventsLeague {
 
 const mainEventsLeagues: MainEventsLeague[] = [
   {
-    leagueLabel: 'ITA Serie C',
+    leagueLabel: 'ITA Serie A',
     leagueIconUrl: 'http://www.sandandsurfsoccer.com/wp-content/uploads/sites/1028/2019/01/icon-white-soccer.png',
-    leagueEvents: mainEventsEvents,
+    leagueEvents: mainEventsEvents1,
   },
   {
-    leagueLabel: 'ITA Serie B',
+    leagueLabel: 'ESP IV Divisione',
     leagueIconUrl: 'http://www.sandandsurfsoccer.com/wp-content/uploads/sites/1028/2019/01/icon-white-soccer.png',
-    leagueEvents: mainEventsEvents,
+    leagueEvents: mainEventsEvents2,
   },
 
 ];

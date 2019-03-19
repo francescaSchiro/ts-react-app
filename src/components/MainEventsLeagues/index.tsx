@@ -22,8 +22,6 @@ const MainEventsLeagues = (props: IMainEventsLeaguesProps) => (
 );
 
 export default MainEventsLeagues;
-
-
 interface ILeagueProps {
     leagueIconUrl: string,
 }

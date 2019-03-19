@@ -1,5 +1,5 @@
 export interface MainEventsEvent {
-  live?: boolean,
+  // live?: boolean,
   score: string,
   time: string,
   // label?: string,
@@ -10,40 +10,55 @@ export interface MainEventsEvent {
   moreGamesNumber?: number,
 }
 
-const mainEventsEvents: MainEventsEvent[] = [
+export const mainEventsEvents1: MainEventsEvent[] = [
   {
-    // live: false,
-    score: '1-0',
-    time: '1°T',
-    // label: 'ITA Serie C',
-    eventName: 'Atalanta - Brescia',
+    score: '0-0',
+    time: '15:21',
+    eventName: 'Chievo Verona - Cagliari',
     gameName: 'ESITO FINALE 1X2',
     outcomeValue: ['1', 'X', '2'],
-    outcomeOdd: ['1.09', '2.80', '2.25'],
-    moreGamesNumber: 39,
+    outcomeOdd: ['2.90', '3.00', '2.70'],
+    moreGamesNumber: 256,
   },
   {
-    // live: false,
-    score: '0-2',
-    time: '51:46',
-    // label: 'EIR Leinster Cup',
-    eventName: 'Bray Wanderers - Cabinteely FC ',
+    score: '0-0',
+    time: '01:46',
+    eventName: 'Juventus - Empoli',
     gameName: 'ESITO FINALE 1X2',
     outcomeValue: ['1', 'X', '2'],
     outcomeOdd: ['1.22', '4.50', '15.00'],
-    moreGamesNumber: 14,
+    moreGamesNumber: 259,
   },
   {
-    // live: false,
-    score: '0-2',
-    time: '51:46',
-    // label: 'EIR Leinster Cup',
-    eventName: 'Bray Wanderers - Cabinteely FC ',
+
+    score: '0-1',
+    time: '10:02',
+    eventName: 'Udinese - Genoa',
     gameName: 'ESITO FINALE 1X2',
     outcomeValue: ['1', 'X', '2'],
-    outcomeOdd: ['1.22', '4.50', '15.00'],
-    moreGamesNumber: 14,
+    outcomeOdd: ['3.25', '3.00', '1.25'],
+    moreGamesNumber: 236,
   },
 ];
 
-export default mainEventsEvents;
+export const mainEventsEvents2: MainEventsEvent[] = [
+  {
+    score: '0-0',
+    time: '05:43',
+    eventName: 'Estudiantes De Murcia - Atletico Pulpileno',
+    gameName: 'ESITO FINALE 1X2',
+    outcomeValue: ['1', 'X', '2'],
+    outcomeOdd: ['5.50', '3.60', '1.55'],
+    moreGamesNumber: 26,
+  },
+  {
+    score: '0-0',
+    time: '31:05',
+    eventName: 'La Union - Real Murcia CF Imperial',
+    gameName: 'ESITO FINALE 1X2',
+    outcomeValue: ['1', 'X', '2'],
+    outcomeOdd: ['2.80', '3.25', '2.30'],
+    moreGamesNumber: 19,
+  },
+];
+
