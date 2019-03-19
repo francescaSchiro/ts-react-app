@@ -1,14 +1,14 @@
 import * as React from 'react';
 
-// import BannersWrapper from './Wrapper';
-import BannerCarousel from './BannerCrousel';
+import BannersCarousel from 'src/components/BannersCarousel';
 import BannerBase from './BannerBase';
+import bannerItems from './bannerItems';
 
 const Banners = () => (
-  <div datatype={'BannersWrapper'}>
-    <BannerCarousel />
+  <>
+    <BannersCarousel bannerItems={bannerItems} />
     <BannerBase />
-  </div>
+  </>
 );
 
 export default Banners;
