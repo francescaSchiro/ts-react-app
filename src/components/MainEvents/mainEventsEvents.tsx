@@ -12,8 +12,8 @@ export interface MainEventsEvent {
 
 export const mainEventsEvents1: MainEventsEvent[] = [
   {
-    score: '0-0',
-    time: '15:21',
+    score: '1-1',
+    time: '48:21',
     eventName: 'Chievo Verona - Cagliari',
     gameName: 'ESITO FINALE 1X2',
     outcomeValue: ['1', 'X', '2'],
@@ -43,8 +43,8 @@ export const mainEventsEvents1: MainEventsEvent[] = [
 
 export const mainEventsEvents2: MainEventsEvent[] = [
   {
-    score: '0-0',
-    time: '05:43',
+    score: '1-2',
+    time: '62:43',
     eventName: 'Estudiantes De Murcia - Atletico Pulpileno',
     gameName: 'ESITO FINALE 1X2',
     outcomeValue: ['1', 'X', '2'],

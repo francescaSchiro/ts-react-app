@@ -5,29 +5,19 @@ import MainEventsSports from 'src/components/MainEventsSports';
 import Redirect from 'src/components/Redirect';
 import MainEventsLeagues from 'src/components/MainEventsLeagues';
 import Wrapper from './Wrapper';
-import mainEventsLeagues, { MainEventsLeague } from './mainEventsLeagues';
+import mainEventsLeagues from './mainEventsLeagues';
+import mainEventsSports from './mainEventsSports';
+import mainEventsTabs from './mainEventsTabs';
 
-
-interface IMainEventsState {
-  leagues: MainEventsLeague[]
-}
-class MainEvents extends React.Component<{}, IMainEventsState> {
-  public state = {
-    leagues: mainEventsLeagues
-  }
-  public render() {
-    const { leagues } = this.state;
-    return (
-      <Wrapper>
-        <MainEventsTabs />
-        <MainEventsSports />
-        <Wrapper>
-          <MainEventsLeagues leagues={leagues} />
-        </Wrapper>
-        <Redirect />
-      </Wrapper>
-    )
-  }
-};
+const MainEvents = () => (
+  <Wrapper>
+    <MainEventsTabs mainEventsTabs={mainEventsTabs} />
+    <MainEventsSports mainEventsSports={mainEventsSports} />
+    <Wrapper>
+      <MainEventsLeagues mainEventsLeagues={mainEventsLeagues} />
+    </Wrapper>
+    <Redirect />
+  </Wrapper>
+);
 
 export default MainEvents;

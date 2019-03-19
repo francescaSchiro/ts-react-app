@@ -3,19 +3,18 @@ import styled from 'src/theme/default/index';
 
 import Wrapper from './Wrapper';
 import MainEventsEvent from 'src/components/MainEventsEvent';
-import { MainEventsLeague } from '../MainEvents/mainEventsLeagues';
+import { MainEventsLeague } from 'src/components/MainEvents/mainEventsLeagues';
 
 interface IMainEventsLeaguesProps {
-    leagues: MainEventsLeague[]
+    mainEventsLeagues: MainEventsLeague[]
 }
 
 const MainEventsLeagues = (props: IMainEventsLeaguesProps) => (
     <>
-        {props.leagues.map(el =>
+        {props.mainEventsLeagues.map(el =>
             <Wrapper key={el.leagueLabel}>
-
                 <League leagueIconUrl={el.leagueIconUrl}>{el.leagueLabel}</League>
-                <MainEventsEvent events={el.leagueEvents} />
+                <MainEventsEvent mainEventsEvents={el.leagueEvents} />
             </Wrapper>
         )}
     </>

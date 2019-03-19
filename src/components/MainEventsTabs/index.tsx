@@ -3,15 +3,15 @@ import styled from 'src/theme/default/index';
 
 
 import Wrapper from './Wrapper';
-import mainEventsTabs from './mainEventsTabs';
+import { MainEventTab } from 'src/components/MainEvents/mainEventsTabs';
 
-// interface IMainEventsTabsProps {
-//     onTabClick: () => void,
-// }
+interface IMainEventsTabsProps {
+    mainEventsTabs: MainEventTab[],
+};
 
-const MainEventsTabs = () => (
+const MainEventsTabs = (props: IMainEventsTabsProps) => (
     <Wrapper>
-        {mainEventsTabs.map(el => (
+        {props.mainEventsTabs.map(el => (
             <MainEventTab
                 isTabActive={el.isTabActive}
                 tabName={el.tabName}

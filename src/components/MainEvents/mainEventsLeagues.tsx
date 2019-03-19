@@ -1,4 +1,4 @@
-import { MainEventsEvent, mainEventsEvents1, mainEventsEvents2 } from 'src/components/MainEventsEvent/mainEventsEvents';
+import { MainEventsEvent, mainEventsEvents1, mainEventsEvents2 } from './mainEventsEvents';
 
 
 export interface MainEventsLeague {
