@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'src/theme/default/index';
 
 import Wrapper from './Wrapper';
-import { MainEventsEvent } from './mainEventsEvents';
+import { MainEventsEvent } from 'src/components/MainEvents/mainEventsEvents';
 import HR from 'src/components/HR';
 
 
@@ -169,12 +169,12 @@ const HasMoreNumberArrowDown = styled.div`
     }
 `;
 interface IMainEventsEventProps {
-    events: MainEventsEvent[]
+    mainEventsEvents: MainEventsEvent[]
 }
 
 const MainEventsEvent = (props: IMainEventsEventProps) => (
     <>
-        {props.events.map((el, i) => (
+        {props.mainEventsEvents.map((el, i) => (
             <>
                 <Wrapper key={i}>
                     <LiveScore>

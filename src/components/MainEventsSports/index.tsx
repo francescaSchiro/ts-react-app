@@ -2,12 +2,15 @@ import * as React from 'react';
 import styled from 'src/theme/default/index';
 
 import Wrapper from './Wrapper';
-import mainEventsSports from './mainEventsSports';
+import { MainEventSport } from 'src/components/MainEvents/mainEventsSports';
 
+interface IMainEventsSportsProps {
+    mainEventsSports: MainEventSport[],
+};
 
-const MainEventsSports = () => (
+const MainEventsSports = (props: IMainEventsSportsProps) => (
     <Wrapper>
-        {mainEventsSports.map((el, i) => (
+        {props.mainEventsSports.map((el, i) => (
             <MainEventsSportsItem key={i} isActive={el.isActive}>
                 {el.sportName}
             </MainEventsSportsItem>
