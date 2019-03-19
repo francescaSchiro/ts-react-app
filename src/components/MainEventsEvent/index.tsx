@@ -3,7 +3,6 @@ import styled from 'src/theme/default/index';
 
 import Wrapper from './Wrapper';
 import { MainEventsEvent } from 'src/components/MainEvents/mainEventsEvents';
-import HR from 'src/components/HR';
 
 
 const LiveScore = styled.div`
@@ -212,7 +211,6 @@ const MainEventsEvent = (props: IMainEventsEventProps) => (
                         <HasMoreNumberArrowDown>+{el.moreGamesNumber}</HasMoreNumberArrowDown>
                     </EventContentGameAccordionTrigger>
                 </Wrapper>
-                <HR />
             </>
         ))}
     </>

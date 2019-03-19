@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   border-bottom: 2px solid #0c468d;
   font-size: 1.2em;
   border-bottom: 5px solid #f6a81e;
+  border-top: 1px solid #cbcbcb
 `;
 
 export default Wrapper;
