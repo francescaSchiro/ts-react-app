@@ -28,6 +28,20 @@ const RightArrow = styled.div`
     border-bottom: 1px solid #4a4a4a;
     transform: translate(-50%, 18%) rotate(-45deg);
 `
+
+const InfoLinksWrapper = styled.div`
+    width: 100%;
+    padding: 10px 15px;
+    border-top: 1px solid #ececec;
+`
+const InfoLink = styled.a`
+    display: inline-flex;
+    width: calc(100% / 3);
+    font-size: 14px;
+    color: #666666;
+    padding: 6px 0;
+`
+
 class Footer extends React.Component {
     public render() {
         return (
@@ -36,6 +50,14 @@ class Footer extends React.Component {
                     <FooterInfo>Info</FooterInfo>
                     <RightArrow />
                 </InfoWrapper>
+                <InfoLinksWrapper>
+                    <InfoLink href='https://m.sisal.it/scommesse-matchpoint/scommesse-on-demand'>Scommesse on Demand</InfoLink>
+                    <InfoLink href='https://m.sisal.it/scommesse-matchpoint/promozioni'>Promozioni</InfoLink>
+                    <InfoLink href='https://m.sisal.it/scommesse-live'>Scommesse Live</InfoLink>
+                    <InfoLink href='https://m.sisal.it/scommesse-matchpoint/foglio-quote'>Foglio quote</InfoLink>
+                    <InfoLink href='https://m.sisal.it/scommesse'>Scommesse</InfoLink>
+                    <InfoLink href='https://m.sisal.it/scommesse-matchpoint/scommesse-matchpoint'>Palinsesto Scommesse</InfoLink>
+                </InfoLinksWrapper>
 
             </Wrapper >
         )
