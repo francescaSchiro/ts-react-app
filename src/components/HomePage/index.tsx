@@ -9,6 +9,7 @@ import OtherEvents from '../OtherEvents';
 
 import AppFooter from 'src/components/AppFooter';
 import Banners from 'src/components/Banners';
+import AllApps from 'src/components/AllApps';
 import AppSeo from 'src/components/AppSeo';
 import SectionsBar from 'src/components/SectionsBar';
 
@@ -22,6 +23,7 @@ const HomePage = () => (
     <MainEvents />
     <OtherEvents />
     <Banners />
+    <AllApps />
     <AppSeo />
     <AppFooter />
   </HomePageWrapper>
