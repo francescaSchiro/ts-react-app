@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import HomePageWrapper from './Wrapper';
+import SectionsBar from 'src/components/SectionsBar';
 import TopBanner from 'src/components/TopBanner';
 import BestEvents from 'src/components/BestEvents';
 import MainEvents from 'src/components/MainEvents';
@@ -10,8 +11,6 @@ import AllApps from 'src/components/AllApps';
 import AppSeo from 'src/components/AppSeo';
 import Footer from 'src/components/Footer';
 
-import AppFooter from 'src/components/AppFooter';
-import SectionsBar from 'src/components/SectionsBar';
 
 
 const HomePage = () => (
@@ -25,7 +24,6 @@ const HomePage = () => (
     <AllApps />
     <AppSeo />
     <Footer />
-    <AppFooter />
   </HomePageWrapper>
 );
 
