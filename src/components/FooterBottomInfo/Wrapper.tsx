@@ -8,6 +8,7 @@ const Wrapper = styled.div`
    align-items: center;
    background-color: #094A82;
    color: #ffffff;
+   padding-bottom: 7px;
 `;
 
 export default Wrapper;

@@ -5,6 +5,7 @@ import FooterInfo from 'src/components/FooterInfo';
 import FooterHelp from 'src/components/FooterHelp';
 import FooterLogos from 'src/components/FooterLogos';
 import FooterBottomInfo from 'src/components/FooterBottomInfo';
+import VersioneDesktopBtn from 'src/components/VersioneDesktopBtn';
 import footerInfoLinks from './footerInfoLinks';
 import footerHelpIcons from './footerHelpIcons';
 import footerLogos from './footerLogos';
@@ -17,6 +18,7 @@ class Footer extends React.Component {
                 <FooterHelp footerHelpIcons={footerHelpIcons} />
                 <FooterLogos footerLogos={footerLogos} />
                 <FooterBottomInfo />
+                <VersioneDesktopBtn />
             </Wrapper >
         )
     }
