@@ -1,4 +1,4 @@
-import styled from '../../theme/default/index';
+import styled from 'src/theme/default/index';
 
 const Wrapper = styled.div`
   background-color: white;
