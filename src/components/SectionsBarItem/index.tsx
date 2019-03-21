@@ -1,11 +1,33 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
+import { ISectionsBarItem } from 'src/models/ISectionBarItem';
+
 import Wrapper from './Wrapper';
 
+
+interface OwnProps {
+  item: ISectionsBarItem,
+}
+
+const SectionsBarItem: React.FC<OwnProps> = ({ item }) => {
+  const { active, icon, iconText, label } = item;
+  return (
+    <Wrapper key={label}>
+      <SectionsBarItemIcon
+        active={active}
+        icon={icon}
+      >
+        {iconText}
+      </SectionsBarItemIcon>
+      <SectionsBarItemLabel active={active}> {label}
+      </SectionsBarItemLabel>
+    </Wrapper>
+  )
+};
 interface ISectionsBarItemIconProps {
   active: boolean;
-  icon?: string;
+  icon?: string | null;
 }
 
 const SectionsBarItemIcon = styled.div`
@@ -19,7 +41,6 @@ const SectionsBarItemIcon = styled.div`
   background-repeat: no-repeat;
   opacity: ${(props: ISectionsBarItemIconProps) => (props.active ? '1' : '0.5')};
   filter: grayscale(${(props: ISectionsBarItemIconProps) => (props.active ? '0' : '100%')});
-
   font-size: 25px;
   font-weight: 700;
   width: 1.5em;
@@ -54,25 +75,5 @@ const SectionsBarItemLabel = styled('div') <ISectionsBarItemLabelProps>`
       : `&::after {
             content: '' }; `};
 `;
-interface ISectionsBarItemProps {
-  key: number,
-  active: boolean,
-  icon?: string,
-  label: string,
-  iconText?: number | string
-}
-
-const SectionsBarItem = (props: ISectionsBarItemProps) => (
-  <Wrapper key={props.key}>
-    <SectionsBarItemIcon
-      active={props.active}
-      icon={props.icon}
-    >
-      {props.iconText}
-    </SectionsBarItemIcon>
-    <SectionsBarItemLabel active={props.active}> {props.label}
-    </SectionsBarItemLabel>
-  </Wrapper>
-);
 
 export default SectionsBarItem;

@@ -9,9 +9,9 @@ import Banners from 'src/components/Banners';
 import AllApps from 'src/components/AllApps';
 import AppSeo from 'src/components/AppSeo';
 import Footer from 'src/components/Footer';
+import sectionsBarItems from 'src/mocks/sectionsBarItems';
 
 import HomePageWrapper from './Wrapper';
-import sectionsBarItems from './sectionsBarItems';
 import topBannerContent from './topBannerContent';
 import bestEventsItems from './bestEventsItems';
 

@@ -3,24 +3,20 @@ import styled from 'src/theme/default/index';
 
 import SectionsBarItem from 'src/components/SectionsBarItem';
 import SearchBtn from 'src/components/SearchBtn';
-import { ISectionsBarItem } from 'src/components/HomePage/sectionsBarItems';
+import { ISectionsBarItem } from 'src/models/ISectionBarItem';
 
 import Wrapper from './Wrapper';
 
-interface ISectionsBarProps {
+interface OwnProps {
   sectionsBarItems: ISectionsBarItem[]
 }
 
-const SectionsBar = (props: ISectionsBarProps) => (
+const SectionsBar: React.FC<OwnProps> = ({ sectionsBarItems }) => (
   <Wrapper>
     <SectionsBarSlider>
-      {props.sectionsBarItems.map((item: ISectionsBarItem) => (
+      {sectionsBarItems.map((item: ISectionsBarItem) => (
         <SectionsBarItem
-          key={item.key}
-          active={item.active}
-          icon={item.icon}
-          label={item.label}
-          iconText={item.iconText()}
+          item={item}
         />
       ))}
     </SectionsBarSlider>
