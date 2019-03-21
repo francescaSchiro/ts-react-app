@@ -1,13 +1,32 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
-
-import Wrapper from './Wrapper';
 import SectionsBarItem from 'src/components/SectionsBarItem';
 import SearchBtn from 'src/components/SearchBtn';
+import { ISectionsBarItem } from 'src/components/HomePage/sectionsBarItems';
 
-import sectionsBarItems from './sectionsBarItems';
+import Wrapper from './Wrapper';
 
+interface ISectionsBarProps {
+  sectionsBarItems: ISectionsBarItem[]
+}
+
+const SectionsBar = (props: ISectionsBarProps) => (
+  <Wrapper>
+    <SectionsBarSlider>
+      {props.sectionsBarItems.map((item: ISectionsBarItem) => (
+        <SectionsBarItem
+          key={item.key}
+          active={item.active}
+          icon={item.icon}
+          label={item.label}
+          iconText={item.iconText()}
+        />
+      ))}
+    </SectionsBarSlider>
+    <SearchBtn />
+  </Wrapper>
+);
 
 const SectionsBarSlider = styled.div`
   display: flex;
@@ -18,18 +37,7 @@ const SectionsBarSlider = styled.div`
   overflow-x: auto;
   ::-webkit-scrollbar { 
     display: none; 
-}
+  }
 `;
-
-const SectionsBar = () => (
-  <Wrapper>
-    <SectionsBarSlider>
-      {sectionsBarItems.map(el => (
-        <SectionsBarItem key={el.key} active={el.active} icon={el.icon} label={el.label} iconText={el.iconText()} />
-      ))}
-    </SectionsBarSlider>
-    <SearchBtn />
-  </Wrapper>
-);
 
 export default SectionsBar;

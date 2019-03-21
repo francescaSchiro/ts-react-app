@@ -1,4 +1,4 @@
-interface SectionsBarItem {
+export interface ISectionsBarItem {
   active: boolean;
   key: number;
   label: string;
@@ -6,7 +6,7 @@ interface SectionsBarItem {
   iconText: () => number | string;
 }
 
-const sectionsBarItems: SectionsBarItem[] = [
+const sectionsBarItems: ISectionsBarItem[] = [
   {
     active: true,
     key: 0,
