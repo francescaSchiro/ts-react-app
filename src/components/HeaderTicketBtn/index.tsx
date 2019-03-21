@@ -1,12 +1,21 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
-
 import Wrapper from './Wrapper';
 
-interface IHeaderTicketBtn {
-    betsCount: number | null | undefined | string,
+
+interface OwnProps {
+    betsCount: number,
 };
+
+const HeaderTicketBtn: React.FC<OwnProps> = ({ betsCount }) => (
+    <Wrapper>
+        {betsCount
+            ? <Div> {betsCount} </Div>
+            : null
+        }
+    </Wrapper>
+);
 
 const Div = styled.div`
     position: absolute;
@@ -23,14 +32,5 @@ const Div = styled.div`
     font-size: 9px;
 
 `;
-
-const HeaderTicketBtn = (props: IHeaderTicketBtn) => (
-    <Wrapper>
-        {props.betsCount
-            ? <Div> {props.betsCount} </Div>
-            : null
-        }
-    </Wrapper>
-);
 
 export default HeaderTicketBtn;

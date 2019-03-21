@@ -2,15 +2,14 @@ import * as React from 'react';
 
 import Wrapper from './Wrapper';
 
-interface IHeaderBalance {
+interface OwnProps {
     balance: number | string,
-    onClick: () => void,
 }
 
-const HeaderBalance = (props: IHeaderBalance) => (
-    <Wrapper onClick={props.onClick}>
+const HeaderBalance: React.FC<OwnProps> = ({ balance }) => (
+    <Wrapper>
         <div>Saldo</div>
-        <div style={{ fontSize: '11px', whiteSpace: 'nowrap', marginTop: '2px' }}>€ {props.balance}</div>
+        <div style={{ fontSize: '11px', whiteSpace: 'nowrap', marginTop: '2px' }}>€ {balance}</div>
     </Wrapper>
 );
 

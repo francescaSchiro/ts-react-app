@@ -13,12 +13,10 @@ import { MssAction } from 'src/types/custom';
 import { getBaseData, GetBaseDataAction } from './actions';
 import { MemoryRouter as Router } from 'react-router-dom';
 
+import Header from 'src/components/Header/index';
+
 import AppWrapper from './Wrapper';
 import Routes from './Routes';
-import Header from '../../components/Header/index';
-// import HomePage from 'src/components/HomePage';
-// import Ticket from 'src/containers/Ticket';
-
 
 /**
  * The type for the props provided by the parent component
@@ -55,7 +53,12 @@ class App extends PureComponent<Props> {
         return (
             <Router>
                 <AppWrapper id='AppWrapper'>
-                    <Header />
+                    <Header
+                        balance={844162}
+                        betsCount={3}
+                        isLoginOpen={false}
+                        isLogged={false}
+                    />
                     <Routes />
                     <GlobalStyles />
                 </AppWrapper>

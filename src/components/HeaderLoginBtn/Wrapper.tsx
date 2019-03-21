@@ -1,7 +1,7 @@
 import styled from 'src/theme/default/index';
 
 interface IWrapper {
-    showModal: boolean,
+  isLoginOpen: boolean,
 }
 
 const Wrapper = styled.button`
@@ -12,11 +12,11 @@ const Wrapper = styled.button`
   display: flex;
   align-items: center;
   font-size: 14px;
-  color: ${(props: IWrapper) => props.showModal ? 'white' : '#222'};
-  background-color:  ${(props: IWrapper) => props.showModal ? '#222' : 'white'};
+  color: ${(props: IWrapper) => props.isLoginOpen ? 'white' : '#222'};
+  background-color:  ${(props: IWrapper) => props.isLoginOpen ? '#222' : 'white'};
 
-  ${(props: IWrapper) => props.showModal ?
-        `  &::after {
+  ${(props: IWrapper) => props.isLoginOpen ?
+    `  &::after {
     content: '';
     display: inline-block;
     background-image: url('https://m.sisal.it/scommesse-matchpoint/content/img/icon_arrow_down_white.png?v=2.6.8');
@@ -28,7 +28,7 @@ const Wrapper = styled.button`
     min-height: 12px;
     margin: 0 0 0 4px;
      }` :
-        `  &::after {
+    `  &::after {
     content: '';
     display: inline-block;
     background-image: url('https://m.sisal.it/scommesse-matchpoint/content/img/icon_arrow_down_black.png?v=2.5.5');

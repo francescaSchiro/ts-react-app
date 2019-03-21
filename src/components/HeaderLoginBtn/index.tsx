@@ -2,13 +2,12 @@ import * as React from 'react';
 
 import Wrapper from './Wrapper';
 
-interface IHeaderLoginBtn {
-    showModal: boolean,
-    onClick: () => void,
+interface OwnProps {
+    isLoginOpen: boolean,
 };
 
-const HeaderLoginBtn = (props: IHeaderLoginBtn) => (
-    <Wrapper onClick={props.onClick} showModal={props.showModal}>
+const HeaderLoginBtn: React.FC<OwnProps> = ({ isLoginOpen }) => (
+    <Wrapper isLoginOpen={isLoginOpen}>
         Accedi
     </Wrapper>
 );
