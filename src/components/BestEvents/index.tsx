@@ -4,7 +4,6 @@ import styled from 'src/theme/default/index';
 import BestEventsItem from 'src/components/BestEventsItem';
 import { IBestEventsItem } from 'src/components/HomePage/bestEventsItems';
 
-
 interface IBestEventsProps {
   bestEventsItems: IBestEventsItem[]
 }
