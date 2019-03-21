@@ -13,13 +13,14 @@ import Footer from 'src/components/Footer';
 import HomePageWrapper from './Wrapper';
 import sectionsBarItems from './sectionsBarItems';
 import topBannerContent from './topBannerContent';
+import bestEventsItems from './bestEventsItems';
 
 
 const HomePage = () => (
   <HomePageWrapper>
     <SectionsBar sectionsBarItems={sectionsBarItems} />
     <TopBanner topBannerContent={topBannerContent} />
-    <BestEvents />
+    <BestEvents bestEventsItems={bestEventsItems} />
     <MainEvents />
     <OtherEvents />
     <Banners />

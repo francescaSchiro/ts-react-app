@@ -1,4 +1,4 @@
-export interface Event {
+export interface IBestEventsItem {
   iconUrl: string,
   leagueLabel: string,
   gameLabels: string[],
@@ -8,7 +8,7 @@ export interface Event {
   oddValues: string[],
 }
 
-const bestEventsItems: Event[] = [
+const bestEventsItems: IBestEventsItem[] = [
   {
     iconUrl: 'https://cdn1.iconfinder.com/data/icons/hawcons/32/699915-icon-6-soccer-ball-512.png',
     leagueLabel: 'INT Champions League',

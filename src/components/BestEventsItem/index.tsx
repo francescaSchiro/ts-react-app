@@ -1,8 +1,36 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
+import { IBestEventsItem } from 'src/components/HomePage/bestEventsItems';
+
 import Wrapper from './Wrapper';
 
+interface IBestEventsItemProps {
+    bestEventsItem: IBestEventsItem
+}
+
+const BestEventsItem = (props: IBestEventsItemProps) => {
+    const { iconUrl, leagueLabel, gameLabels, day, time, gameName, oddValues } = props.bestEventsItem;
+    return (
+        <Wrapper>
+            <League>
+                <Icon iconUrl={iconUrl} />
+                {leagueLabel}
+            </League>
+            <GameLabel gridColumn={'7/8'}>{gameLabels[0]}</GameLabel>
+            <GameLabel gridColumn={'8/9'}>{gameLabels[1]}</GameLabel>
+            <GameLabel gridColumn={'9/10'}>{gameLabels[2]}</GameLabel>
+            <TimeInfo>
+                <div style={{ fontWeight: 700, paddingBottom: '2px' }}>{day}</div>
+                <div>{time}</div>
+            </TimeInfo>
+            <GameName>{gameName}</GameName>
+            <OddValue gridColumn={'7/8'}>{oddValues[0]}</OddValue>
+            <OddValue gridColumn={'8/9'}>{oddValues[1]}</OddValue>
+            <OddValue gridColumn={'9/10'}>{oddValues[2]}</OddValue>
+        </Wrapper>
+    )
+};
 interface IIconProps {
     iconUrl: string,
 }
@@ -94,47 +122,5 @@ const GameName = styled.div`
     padding: .5em;
     color: #222;
 `
-interface IBestEventsItemProps {
-    iconUrl: string,
-    leagueLabel: string,
-    gameLabels: string[],
-    day: string,
-    time: string,
-    gameName: string,
-    oddValues: string[],
-}
-
-const BestEventsItem = (props: IBestEventsItemProps) => (
-    <Wrapper>
-        <League>
-            <Icon iconUrl={props.iconUrl} />
-            {props.leagueLabel}
-        </League>
-        <GameLabel gridColumn={'7/8'}>{props.gameLabels[0]}</GameLabel>
-        <GameLabel gridColumn={'8/9'}>{props.gameLabels[1]}</GameLabel>
-        <GameLabel gridColumn={'9/10'}>{props.gameLabels[2]}</GameLabel>
-        <TimeInfo>
-            <div style={{ fontWeight: 700, paddingBottom: '2px' }}>{props.day}</div>
-            <div>{props.time}</div>
-        </TimeInfo>
-        <GameName>{props.gameName}</GameName>
-        <OddValue gridColumn={'7/8'}>{props.oddValues[0]}</OddValue>
-        <OddValue gridColumn={'8/9'}>{props.oddValues[1]}</OddValue>
-        <OddValue gridColumn={'9/10'}>{props.oddValues[2]}</OddValue>
-    </Wrapper>
-);
 
 export default BestEventsItem;
-
-
-
-
-
-/*
-- leagueLabel
-- day
-- time
-- gameName
-- gameLabels
-- gameOdds
- */
