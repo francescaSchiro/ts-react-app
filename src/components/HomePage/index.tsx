@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import HomePageWrapper from './Wrapper';
 import SectionsBar from 'src/components/SectionsBar';
 import TopBanner from 'src/components/TopBanner';
 import BestEvents from 'src/components/BestEvents';
@@ -11,11 +10,13 @@ import AllApps from 'src/components/AllApps';
 import AppSeo from 'src/components/AppSeo';
 import Footer from 'src/components/Footer';
 
+import HomePageWrapper from './Wrapper';
+import sectionsBarItems from './sectionsBarItems';
 
 
 const HomePage = () => (
   <HomePageWrapper>
-    <SectionsBar />
+    <SectionsBar sectionsBarItems={sectionsBarItems} />
     <TopBanner />
     <BestEvents />
     <MainEvents />
