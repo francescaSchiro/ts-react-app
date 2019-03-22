@@ -1,16 +1,16 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
-import { IBestEventsItem } from 'src/components/HomePage/bestEventsItems';
+import { IEvent } from 'src/models/IEvent';
 
 import Wrapper from './Wrapper';
 
-interface IBestEventsItemProps {
-    bestEventsItem: IBestEventsItem
+interface Props {
+    event: IEvent
 }
 
-const BestEventsItem = (props: IBestEventsItemProps) => {
-    const { iconUrl, leagueLabel, gameLabels, day, time, gameName, oddValues } = props.bestEventsItem;
+const BestEventsItem: React.FC<Props> = ({ event }) => {
+    const { iconUrl, leagueLabel, gameLabels, day, time, gameName, oddValues } = event;
     return (
         <Wrapper>
             <League>

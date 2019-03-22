@@ -2,20 +2,20 @@ import * as React from 'react';
 import styled from 'src/theme/default/index';
 
 import BestEventsItem from 'src/components/BestEventsItem';
-import { IBestEventsItem } from 'src/components/HomePage/bestEventsItems';
+import { IEvent } from 'src/models/IEvent';
 
-interface IBestEventsProps {
-  bestEventsItems: IBestEventsItem[]
+interface Props {
+  events: IEvent[]
 }
 
-const BestEvents = (props: IBestEventsProps) => (
+const BestEvents: React.FC<Props> = ({ events }) => (
   <>
     <Title>Incontri principali</Title>
     <BestEventsSlider>
-      {props.bestEventsItems.map(item =>
+      {events.map(item =>
         <BestEventsItem
           key={item.gameName}
-          bestEventsItem={item}
+          event={item}
         />
       )}
     </BestEventsSlider>

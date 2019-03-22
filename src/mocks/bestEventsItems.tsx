@@ -1,14 +1,6 @@
-export interface IBestEventsItem {
-  iconUrl: string,
-  leagueLabel: string,
-  gameLabels: string[],
-  day: string,
-  time: string,
-  gameName: string,
-  oddValues: string[],
-}
+import { IEvent } from 'src/models/IEvent';
 
-const bestEventsItems: IBestEventsItem[] = [
+const bestEventsItems: IEvent[] = [
   {
     iconUrl: 'https://cdn1.iconfinder.com/data/icons/hawcons/32/699915-icon-6-soccer-ball-512.png',
     leagueLabel: 'INT Champions League',

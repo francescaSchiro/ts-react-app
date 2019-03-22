@@ -11,16 +11,16 @@ import AppSeo from 'src/components/AppSeo';
 import Footer from 'src/components/Footer';
 import items from 'src/mocks/sectionsBarItems';
 import content from 'src/mocks/topBannerContent';
+import events from 'src/mocks/bestEventsItems';
 
 import HomePageWrapper from './Wrapper';
-import bestEventsItems from './bestEventsItems';
 
 
 const HomePage = () => (
   <HomePageWrapper>
     <SectionsBar items={items} />
     <TopBanner content={content} />
-    <BestEvents bestEventsItems={bestEventsItems} />
+    <BestEvents events={events} />
     <MainEvents />
     <OtherEvents />
     <Banners />
