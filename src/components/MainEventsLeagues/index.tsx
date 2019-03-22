@@ -3,18 +3,18 @@ import styled from 'src/theme/default/index';
 
 import Wrapper from './Wrapper';
 import MainEventsEvent from 'src/components/MainEventsEvent';
-import { MainEventsLeague } from 'src/components/MainEvents/mainEventsLeagues';
+import { ILeague } from 'src/models/ILeague';
 
-interface IMainEventsLeaguesProps {
-    mainEventsLeagues: MainEventsLeague[]
+interface Props {
+    leagues: ILeague[]
 }
 
-const MainEventsLeagues = (props: IMainEventsLeaguesProps) => (
+const MainEventsLeagues: React.FC<Props> = ({ leagues }) => (
     <>
-        {props.mainEventsLeagues.map(el =>
-            <Wrapper key={el.leagueLabel}>
-                <League leagueIconUrl={el.leagueIconUrl}>{el.leagueLabel}</League>
-                <MainEventsEvent mainEventsEvents={el.leagueEvents} />
+        {leagues.map(league =>
+            <Wrapper key={league.id}>
+                <League iconUrl={league.iconUrl}>{league.name}</League>
+                <MainEventsEvent events={league.events} />
             </Wrapper>
         )}
     </>
@@ -22,7 +22,7 @@ const MainEventsLeagues = (props: IMainEventsLeaguesProps) => (
 
 export default MainEventsLeagues;
 interface ILeagueProps {
-    leagueIconUrl: string,
+    iconUrl: string,
 }
 
 const League = styled.div`
@@ -37,7 +37,7 @@ color: #fff;
 
 &::before {
   content: '';
-  background-image: url(${(props: ILeagueProps) => props.leagueIconUrl});
+  background-image: url(${(props: ILeagueProps) => props.iconUrl});
   width: 20px;
   height: 20px;
   background-size: 100%;

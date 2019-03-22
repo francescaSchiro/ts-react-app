@@ -2,21 +2,33 @@ import * as React from 'react';
 import styled from 'src/theme/default/index';
 
 import Wrapper from './Wrapper';
-import { MainEventSport } from 'src/components/MainEvents/mainEventsSports';
+import { ISport } from 'src/models/ISport';
 
-interface IMainEventsSportsProps {
-    mainEventsSports: MainEventSport[],
+interface Props {
+    sports: ISport[],
+    onSportClick: (e: any, sport: ISport) => void,
+};
+interface State {
+    currentSport: ISport,
 };
 
-const MainEventsSports = (props: IMainEventsSportsProps) => (
-    <Wrapper>
-        {props.mainEventsSports.map((el, i) => (
-            <MainEventsSportsItem key={i} isActive={el.isActive}>
-                {el.sportName}
-            </MainEventsSportsItem>
-        ))}
-    </Wrapper>
-);
+class MainEventsSports extends React.Component<Props, State>{
+    public state = { currentSport: this.props.sports[0] };
+    public render() {
+        const { sports, onSportClick } = this.props;
+        const { currentSport } = this.state;
+        return (
+            <Wrapper>
+                {sports.map((sport: ISport) => (
+                    <MainEventsSportsItem key={sport.id} isActive={currentSport === sport} onClick={onSportClick.bind(this, sport)}>
+                        {sport.name}
+                    </MainEventsSportsItem>
+                ))}
+            </Wrapper>
+
+        )
+    }
+}
 
 export default MainEventsSports;
 

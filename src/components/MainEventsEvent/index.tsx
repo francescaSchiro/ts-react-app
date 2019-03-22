@@ -2,8 +2,58 @@ import * as React from 'react';
 import styled from 'src/theme/default/index';
 
 import Wrapper from './Wrapper';
-import { MainEventsEvent } from 'src/components/MainEvents/mainEventsEvents';
+import { IEvent } from 'src/models/IEvent';
 
+interface Props {
+    events: IEvent[]
+}
+
+const MainEventsEvent: React.FC<Props> = ({ events }) => (
+    <>
+        {events.map((e: IEvent) => (
+            <>
+                <Wrapper key={e.id}>
+                    <LiveScore>
+                        <Score>{e.score}</Score>
+                        <Time>{e.time}</Time>
+                    </LiveScore>
+                    <EventName>{e.eventName}</EventName>
+                    <div
+                        id='ArrowRightWrapper'
+                        style={{
+                            gridColumn: '5/6',
+                            gridRow: '1/2',
+                            display: 'flex',
+                            justifyContent: 'flex-end',
+                            alignItems: 'center'
+                        }}
+                    >
+                        <ArrowRight />
+                    </div>
+                    <GameName>{e.gameName}</GameName>
+                    <GameOutcome gridColumn={'1/3'}>
+                        <OutcomeValue>{e.oddLabels[0]}</OutcomeValue>
+                        <OutcomeOdd>{e.oddValues[0]}</OutcomeOdd>
+                    </GameOutcome>
+                    <GameOutcome gridColumn={'3/4'}>
+                        <OutcomeValue>{e.oddLabels[1]}</OutcomeValue>
+                        <OutcomeOdd>{e.oddValues[1]}</OutcomeOdd>
+                    </GameOutcome>
+                    <GameOutcome gridColumn={'4/5'}>
+                        <OutcomeValue>{e.oddLabels[2]}</OutcomeValue>
+                        <OutcomeOdd>{e.oddValues[2]}</OutcomeOdd>
+                    </GameOutcome>
+                    <EventContentGameAccordionTrigger gridColumn={'5/6'}>
+                        <HasMoreText>Altri esiti</HasMoreText>
+                        <HasMoreNumberArrowDown>+{e.moreGamesNumber}</HasMoreNumberArrowDown>
+                    </EventContentGameAccordionTrigger>
+                </Wrapper>
+            </>
+        ))}
+    </>
+);
+
+export default MainEventsEvent;
 
 const LiveScore = styled.div`
     grid-column: 1 / 2;
@@ -167,53 +217,3 @@ const HasMoreNumberArrowDown = styled.div`
         transform: translate(-50%,-50%) rotate(45deg);
     }
 `;
-interface IMainEventsEventProps {
-    mainEventsEvents: MainEventsEvent[]
-}
-
-const MainEventsEvent = (props: IMainEventsEventProps) => (
-    <>
-        {props.mainEventsEvents.map((el, i) => (
-            <>
-                <Wrapper key={i}>
-                    <LiveScore>
-                        <Score>{el.score}</Score>
-                        <Time>{el.time}</Time>
-                    </LiveScore>
-                    <EventName>{el.eventName}</EventName>
-                    <div
-                        id='ArrowRightWrapper'
-                        style={{
-                            gridColumn: '5/6',
-                            gridRow: '1/2',
-                            display: 'flex',
-                            justifyContent: 'flex-end',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <ArrowRight />
-                    </div>
-                    <GameName>{el.gameName}</GameName>
-                    <GameOutcome gridColumn={'1/3'}>
-                        <OutcomeValue>{el.outcomeValue[0]}</OutcomeValue>
-                        <OutcomeOdd>{el.outcomeOdd[0]}</OutcomeOdd>
-                    </GameOutcome>
-                    <GameOutcome gridColumn={'3/4'}>
-                        <OutcomeValue>{el.outcomeValue[1]}</OutcomeValue>
-                        <OutcomeOdd>{el.outcomeOdd[1]}</OutcomeOdd>
-                    </GameOutcome>
-                    <GameOutcome gridColumn={'4/5'}>
-                        <OutcomeValue>{el.outcomeValue[2]}</OutcomeValue>
-                        <OutcomeOdd>{el.outcomeOdd[2]}</OutcomeOdd>
-                    </GameOutcome>
-                    <EventContentGameAccordionTrigger gridColumn={'5/6'}>
-                        <HasMoreText>Altri esiti</HasMoreText>
-                        <HasMoreNumberArrowDown>+{el.moreGamesNumber}</HasMoreNumberArrowDown>
-                    </EventContentGameAccordionTrigger>
-                </Wrapper>
-            </>
-        ))}
-    </>
-);
-
-export default MainEventsEvent;

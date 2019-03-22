@@ -12,9 +12,9 @@ const BestEvents: React.FC<Props> = ({ events }) => (
   <>
     <Title>Incontri principali</Title>
     <BestEventsSlider>
-      {events.map(item =>
+      {events.map((item: IEvent) =>
         <BestEventsItem
-          key={item.gameName}
+          key={item.id}
           event={item}
         />
       )}

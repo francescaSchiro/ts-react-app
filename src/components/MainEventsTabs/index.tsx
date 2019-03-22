@@ -3,19 +3,19 @@ import styled from 'src/theme/default/index';
 
 
 import Wrapper from './Wrapper';
-import { MainEventTab } from 'src/components/MainEvents/mainEventsTabs';
+import { IMainEventsTab } from 'src/models/IMainEventsTab';
 
-interface IMainEventsTabsProps {
-    mainEventsTabs: MainEventTab[],
+interface Props {
+    tabs: IMainEventsTab[],
 };
 
-const MainEventsTabs = (props: IMainEventsTabsProps) => (
+const MainEventsTabs: React.FC<Props> = ({ tabs }) => (
     <Wrapper>
-        {props.mainEventsTabs.map(el => (
+        {tabs.map((tab: IMainEventsTab) => (
             <MainEventTab
-                isTabActive={el.isTabActive}
-                tabName={el.tabName}
-            >{el.tabName}
+                isActive={tab.isActive}
+                name={tab.name}
+            >{tab.name}
             </MainEventTab>))
         }
     </Wrapper>
@@ -24,8 +24,8 @@ const MainEventsTabs = (props: IMainEventsTabsProps) => (
 export default MainEventsTabs;
 
 interface IMainEventTabProps {
-    isTabActive: boolean,
-    tabName: string,
+    isActive: boolean,
+    name: string,
 }
 
 const MainEventTab = styled.div`
@@ -34,12 +34,12 @@ const MainEventTab = styled.div`
     justify-content: center;
     align-items: center;
     flex: 0 50%;
-    background-color: ${(props: IMainEventTabProps) => props.isTabActive ? 'white' : 'transparent'};
+    background-color: ${(props: IMainEventTabProps) => props.isActive ? 'white' : 'transparent'};
     font-weight: bold;
     text-transform: uppercase;
 
-    ${(props: IMainEventTabProps) => props.isTabActive
-        ? getActiveStyle(props.tabName)
+    ${(props: IMainEventTabProps) => props.isActive
+        ? getActiveStyle(props.name)
         : `
         border-top: 5px solid #cbcbcb;
         color: #777;
@@ -47,8 +47,8 @@ const MainEventTab = styled.div`
     }
 `;
 
-const getActiveStyle = (tabName: string) => {
-    switch (tabName) {
+const getActiveStyle = (name: string) => {
+    switch (name) {
         case 'live':
             return `
                 border-top: 5px solid #f6a81e;

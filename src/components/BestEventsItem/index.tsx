@@ -10,16 +10,16 @@ interface Props {
 }
 
 const BestEventsItem: React.FC<Props> = ({ event }) => {
-    const { iconUrl, leagueLabel, gameLabels, day, time, gameName, oddValues } = event;
+    const { iconUrl, leagueLabel, oddLabels, day, time, gameName, oddValues } = event;
     return (
         <Wrapper>
             <League>
                 <Icon iconUrl={iconUrl} />
                 {leagueLabel}
             </League>
-            <GameLabel gridColumn={'7/8'}>{gameLabels[0]}</GameLabel>
-            <GameLabel gridColumn={'8/9'}>{gameLabels[1]}</GameLabel>
-            <GameLabel gridColumn={'9/10'}>{gameLabels[2]}</GameLabel>
+            <GameLabel gridColumn={'7/8'}>{oddLabels[0]}</GameLabel>
+            <GameLabel gridColumn={'8/9'}>{oddLabels[1]}</GameLabel>
+            <GameLabel gridColumn={'9/10'}>{oddLabels[2]}</GameLabel>
             <TimeInfo>
                 <div style={{ fontWeight: 700, paddingBottom: '2px' }}>{day}</div>
                 <div>{time}</div>
