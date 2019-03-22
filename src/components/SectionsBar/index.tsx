@@ -8,13 +8,13 @@ import { ISectionsBarItem } from 'src/models/ISectionBarItem';
 import Wrapper from './Wrapper';
 
 interface OwnProps {
-  sectionsBarItems: ISectionsBarItem[]
+  items: ISectionsBarItem[]
 }
 
-const SectionsBar: React.FC<OwnProps> = ({ sectionsBarItems }) => (
+const SectionsBar: React.FC<OwnProps> = ({ items }) => (
   <Wrapper>
     <SectionsBarSlider>
-      {sectionsBarItems.map((item: ISectionsBarItem) => (
+      {items.map((item: ISectionsBarItem) => (
         <SectionsBarItem
           item={item}
         />
