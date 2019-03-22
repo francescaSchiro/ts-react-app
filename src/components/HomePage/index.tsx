@@ -9,7 +9,7 @@ import Banners from 'src/components/Banners';
 import AllApps from 'src/components/AllApps';
 import AppSeo from 'src/components/AppSeo';
 import Footer from 'src/components/Footer';
-import sectionsBarItems from 'src/mocks/sectionsBarItems';
+import items from 'src/mocks/sectionsBarItems';
 import content from 'src/mocks/topBannerContent';
 
 import HomePageWrapper from './Wrapper';
@@ -18,7 +18,7 @@ import bestEventsItems from './bestEventsItems';
 
 const HomePage = () => (
   <HomePageWrapper>
-    <SectionsBar sectionsBarItems={sectionsBarItems} />
+    <SectionsBar items={items} />
     <TopBanner content={content} />
     <BestEvents bestEventsItems={bestEventsItems} />
     <MainEvents />
