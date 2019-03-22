@@ -1,27 +1,21 @@
 import * as React from 'react';
-import styled from 'src/theme/default/index';
 
+import styled from 'src/theme/default/index';
 
 import Wrapper from './Wrapper';
 
-interface ITopBannerInfoProps {
+
+interface Props {
   onCloseClick: () => void,
   description: string,
 }
 
-class TopBannerInfo extends React.Component<ITopBannerInfoProps, {}> {
-  public render() {
-    const { onCloseClick, description } = this.props;
-    return (
-      <Wrapper >
-        <Description>{description}</Description>
-        <CloseIcon onClick={onCloseClick} />
-      </Wrapper>
-    );
-  }
-}
-
-export default TopBannerInfo;
+const TopBannerInfo: React.FC<Props> = ({ onCloseClick, description }) => (
+  <Wrapper >
+    <Description>{description}</Description>
+    <CloseIcon onClick={onCloseClick} />
+  </Wrapper>
+);
 
 const CloseIcon = styled.div`
     height: 50px;
@@ -40,3 +34,5 @@ const Description = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
 `
+
+export default TopBannerInfo;

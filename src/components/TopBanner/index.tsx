@@ -2,22 +2,25 @@ import * as React from 'react';
 import styled from 'src/theme/default/index';
 
 import TopBannerInfo from 'src/components/TopBannerInfo';
-import { ITopBanner } from 'src/components/HomePage/topBannerContent';
+import { ITopBanner } from 'src/models/ITopBanner';
 
 import Wrapper from './Wrapper';
 
-interface ITopBannerState {
+
+interface State {
   isInfoOpen: boolean,
 }
-interface ITopBannerProps {
-  topBannerContent: ITopBanner,
+interface Props {
+  content: ITopBanner,
 }
 
-class TopBanner extends React.Component<ITopBannerProps, ITopBannerState> {
-  public state = { isInfoOpen: false };
+class TopBanner extends React.Component<Props, State> {
+  public state: State = {
+    isInfoOpen: false
+  };
   public render() {
     const { isInfoOpen } = this.state;
-    const { imgUrl, url, description } = this.props.topBannerContent;
+    const { imgUrl, url, description } = this.props.content;
     return (
       <Wrapper
         imgUrl={imgUrl}
