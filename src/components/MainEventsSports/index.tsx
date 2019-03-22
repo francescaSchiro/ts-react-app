@@ -6,7 +6,7 @@ import { ISport } from 'src/models/ISport';
 
 interface Props {
     sports: ISport[],
-    onSportClick: (e: any, sport: ISport) => void,
+    onSportClick: (sport: ISport) => void,
 };
 interface State {
     currentSport: ISport,

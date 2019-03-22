@@ -37,8 +37,7 @@ class MainEvents extends React.Component<Props, State> {
       </Wrapper>
     )
   }
-  private selectSport = (e: any, clickedSport: ISport) => {
-    e.stopPropagation();
+  private selectSport = (clickedSport: ISport) => {
     this.setState({ currentSport: clickedSport })
   }
 };

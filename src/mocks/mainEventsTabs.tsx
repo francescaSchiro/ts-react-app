@@ -180,7 +180,26 @@ const mainEventsTabs: IMainEventsTab[] = [
       {
         id: 1,
         name: 'tennis',
-        leagues: [],
+        leagues: [{
+          id: 0,
+          name: 'Atp/Wta Miami',
+          iconUrl: 'http://www.ymcamidtn.org/_assets/images/icons/icon-tennis-white.png',
+          events: [
+            {
+              id: 0,
+              iconUrl: 'http://www.ymcamidtn.org/_assets/images/icons/icon-tennis-white.png',
+              leagueLabel: 'Atp/Wta Miami',
+              day: 'Today',
+              time: '48:21',
+              score: '1-1',
+              eventName: 'Chievo Verona - Cagliari',
+              gameName: 'ESITO FINALE 1X2',
+              oddLabels: ['1', 'X', '2'],
+              oddValues: ['2.90', '3.00', '2.70'],
+              moreGamesNumber: 256,
+            },
+          ],
+        }],
       },
       {
         id: 2,
