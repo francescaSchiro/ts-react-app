@@ -41,7 +41,7 @@ class MainEvents extends React.Component<Props, State> {
         <Wrapper>
           <MainEventsLeagues leagues={leagues} />
         </Wrapper>
-        <Redirect />
+        <Redirect currentTab={this.state.currentTab} currentSport={this.state.currentSport} />
       </Wrapper>
     )
   }

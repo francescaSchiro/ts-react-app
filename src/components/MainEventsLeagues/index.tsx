@@ -6,7 +6,7 @@ import MainEventsEvent from 'src/components/MainEventsEvent';
 import { ILeague } from 'src/models/ILeague';
 
 interface Props {
-    leagues: ILeague[]
+    leagues: ILeague[],
 }
 
 const MainEventsLeagues: React.FC<Props> = ({ leagues }) => (
