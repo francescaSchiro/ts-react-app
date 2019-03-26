@@ -3,6 +3,7 @@ import styled from 'src/theme/default/index';
 
 import { ISport } from 'src/models/ISport';
 import { IMainEventsTab } from 'src/models/IMainEventsTab';
+
 import Wrapper from './Wrapper';
 
 

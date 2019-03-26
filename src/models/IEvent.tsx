@@ -10,8 +10,8 @@ export interface IEvent {
     oddLabels: string[],
     oddValues: string[],
     moreGamesNumber: number,
-
-}
+    streaming: boolean,
+};
 
 /*
 getEventsByParams?section=1&sport=1 {

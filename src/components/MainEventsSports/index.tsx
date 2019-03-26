@@ -1,8 +1,10 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
-import Wrapper from './Wrapper';
 import { ISport } from 'src/models/ISport';
+
+import Wrapper from './Wrapper';
+
 
 interface Props {
     sports: ISport[],
@@ -24,9 +26,7 @@ class MainEventsSports extends React.Component<Props>{
 
         )
     }
-}
-
-export default MainEventsSports;
+};
 
 interface IMainEventsSportsItemProps {
     isActive: boolean;
@@ -45,3 +45,5 @@ color: black;
 font-weight: bold;
 text-transform: capitalize;
 `;
+
+export default MainEventsSports;

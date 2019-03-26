@@ -17,7 +17,7 @@ const MainEventsEvent: React.FC<Props> = ({ events }) => (
                         <Score>{e.score}</Score>
                         <Time>{e.time}</Time>
                     </LiveScore>
-                    <EventName>{e.eventName}</EventName>
+                    <EventName streaming={e.streaming}>{e.eventName}</EventName>
                     <div
                         id='ArrowRightWrapper'
                         style={{
@@ -88,7 +88,12 @@ const Time = styled.div`
     padding-top:1px;
 `;
 
+interface IEventName {
+    streaming: boolean,
+};
+
 const EventName = styled.div`
+    position: relative;
     grid-column: 2 / 5;
     grid-row: 1 / 2;
     display: flex;
@@ -102,6 +107,21 @@ const EventName = styled.div`
     white-space: normal;
     word-wrap:break-word;
     line-height: 1.2em;
+    ${(props: IEventName) => props.streaming
+        ? `&::after {
+                position: absolute;
+                content:'';
+                width: 16px;
+                height: 16px;
+                top: 17%;
+                right: 4%;
+                background-image: url('https://image.flaticon.com/icons/png/512/31/31106.png');
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
+            }`
+        : null
+    };
 `;
 
 const ArrowRight = styled.div`

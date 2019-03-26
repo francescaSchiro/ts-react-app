@@ -13,6 +13,7 @@ const bestEventsItems: IEvent[] = [
     oddLabels: ['1', 'X', '2'],
     oddValues: ['1.25', '5.90', '12.50'],
     moreGamesNumber: 0,
+    streaming: false,
   },
   {
     id: 1,
@@ -26,6 +27,7 @@ const bestEventsItems: IEvent[] = [
     oddLabels: ['1', 'X', '2'],
     oddValues: ['1.40', '2.50', '3.15'],
     moreGamesNumber: 0,
+    streaming: false,
   },
   {
     id: 2,
@@ -39,6 +41,7 @@ const bestEventsItems: IEvent[] = [
     oddLabels: ['1', 'X', '2'],
     oddValues: ['2.10', '3.00', '3.75'],
     moreGamesNumber: 0,
+    streaming: false,
   },
 
 ];

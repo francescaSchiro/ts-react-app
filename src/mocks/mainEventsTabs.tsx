@@ -25,6 +25,7 @@ const mainEventsTabs: IMainEventsTab[] = [
                 oddLabels: ['1', 'X', '2'],
                 oddValues: ['2.90', '3.00', '2.70'],
                 moreGamesNumber: 256,
+                streaming: false,
               },
               {
                 id: 1,
@@ -38,6 +39,8 @@ const mainEventsTabs: IMainEventsTab[] = [
                 oddLabels: ['1', 'X', '2'],
                 oddValues: ['1.22', '4.50', '15.00'],
                 moreGamesNumber: 259,
+                streaming: true,
+
               },
               {
                 id: 2,
@@ -51,6 +54,8 @@ const mainEventsTabs: IMainEventsTab[] = [
                 oddLabels: ['1', 'X', '2'],
                 oddValues: ['3.25', '3.00', '1.25'],
                 moreGamesNumber: 236,
+                streaming: true,
+
               },
             ],
           },
@@ -71,6 +76,8 @@ const mainEventsTabs: IMainEventsTab[] = [
                 oddLabels: ['1', 'X', '2'],
                 oddValues: ['5.50', '3.60', '1.55'],
                 moreGamesNumber: 26,
+                streaming: false,
+
               },
               {
                 id: 4,
@@ -84,6 +91,7 @@ const mainEventsTabs: IMainEventsTab[] = [
                 oddLabels: ['1', 'X', '2'],
                 oddValues: ['2.80', '3.25', '2.30'],
                 moreGamesNumber: 19,
+                streaming: false,
               },
             ],
           },
@@ -110,6 +118,7 @@ const mainEventsTabs: IMainEventsTab[] = [
               oddLabels: ['1', 'X', '2'],
               oddValues: ['2.90', '3.00', '2.70'],
               moreGamesNumber: 256,
+              streaming: false,
             },
           ],
         }],
@@ -151,6 +160,8 @@ const mainEventsTabs: IMainEventsTab[] = [
                 oddLabels: [],
                 oddValues: [],
                 moreGamesNumber: 0,
+                streaming: false,
+
               }
 
             ],
@@ -179,6 +190,7 @@ const mainEventsTabs: IMainEventsTab[] = [
                 oddLabels: [],
                 oddValues: [],
                 moreGamesNumber: 0,
+                streaming: false,
               }
 
             ],
@@ -207,6 +219,8 @@ const mainEventsTabs: IMainEventsTab[] = [
                 oddLabels: [],
                 oddValues: [],
                 moreGamesNumber: 0,
+                streaming: false,
+
               }
 
             ],
@@ -235,6 +249,7 @@ const mainEventsTabs: IMainEventsTab[] = [
                 oddLabels: [],
                 oddValues: [],
                 moreGamesNumber: 0,
+                streaming: false,
               }
 
             ],

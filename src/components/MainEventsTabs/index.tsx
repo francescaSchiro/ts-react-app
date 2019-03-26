@@ -1,9 +1,10 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
+import { IMainEventsTab } from 'src/models/IMainEventsTab';
 
 import Wrapper from './Wrapper';
-import { IMainEventsTab } from 'src/models/IMainEventsTab';
+
 
 interface Props {
     tabs: IMainEventsTab[],
