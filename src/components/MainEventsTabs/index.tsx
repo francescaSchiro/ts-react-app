@@ -25,9 +25,6 @@ const MainEventsTabs: React.FC<Props> = ({ tabs, onTabClick, currentTab }) => (
         }
     </Wrapper>
 );
-
-export default MainEventsTabs;
-
 interface IMainEventTabProps {
     isActive: boolean,
     name: string,
@@ -56,20 +53,21 @@ const getActiveStyle = (name: string) => {
     switch (name) {
         case 'live':
             return `
-                border-top: 5px solid #f6a81e;
-                color: #f6a81e;
-            `;
+        border-top: 5px solid #f6a81e;
+        color: #f6a81e;
+        `;
         case 'pre match':
             return `
-                background-color: white;
-                border-top: 5px solid #0C468D;
-                color: #0C468D;
-            `;
+        background-color: white;
+        border-top: 5px solid #0C468D;
+        color: #0C468D;
+        `;
         default:
             return `
-                border-top: 5px solid #cbcbcb;
-                color: #777;
-            `
+        border-top: 5px solid #cbcbcb;
+        color: #777;
+        `
     }
 };
 
+export default MainEventsTabs;

@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   min-height: 30px;
   height: 30px;
   background-color: white;
+  overflow-x: auto;
 
 `;
 
