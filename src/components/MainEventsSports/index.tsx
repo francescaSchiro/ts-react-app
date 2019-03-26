@@ -7,20 +7,16 @@ import { ISport } from 'src/models/ISport';
 interface Props {
     sports: ISport[],
     onSportClick: (sport: ISport) => void,
-};
-interface State {
     currentSport: ISport,
 };
 
-class MainEventsSports extends React.Component<Props, State>{
-    public state = { currentSport: this.props.sports[0] };
+class MainEventsSports extends React.Component<Props>{
     public render() {
-        const { sports, onSportClick } = this.props;
-        const { currentSport } = this.state;
+        const { sports, currentSport, onSportClick } = this.props;
         return (
             <Wrapper>
                 {sports.map((sport: ISport) => (
-                    <MainEventsSportsItem key={sport.id} isActive={currentSport === sport} onClick={onSportClick.bind(this, sport)}>
+                    <MainEventsSportsItem key={sport.id} isActive={currentSport.name === sport.name} onClick={onSportClick.bind(this, sport)}>
                         {sport.name}
                     </MainEventsSportsItem>
                 ))}

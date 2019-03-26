@@ -7,15 +7,20 @@ import { IMainEventsTab } from 'src/models/IMainEventsTab';
 
 interface Props {
     tabs: IMainEventsTab[],
+    onTabClick: (tab: IMainEventsTab) => void,
+    currentTab: IMainEventsTab,
 };
 
-const MainEventsTabs: React.FC<Props> = ({ tabs }) => (
+const MainEventsTabs: React.FC<Props> = ({ tabs, onTabClick, currentTab }) => (
     <Wrapper>
         {tabs.map((tab: IMainEventsTab) => (
             <MainEventTab
-                isActive={tab.isActive}
+                key={tab.name}
+                isActive={tab === currentTab}
                 name={tab.name}
+                onClick={onTabClick.bind(null, tab)}
             >{tab.name}
+
             </MainEventTab>))
         }
     </Wrapper>

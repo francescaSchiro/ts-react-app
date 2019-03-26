@@ -28,8 +28,8 @@ class MainEvents extends React.Component<Props, State> {
     const { leagues } = this.state.currentSport;
     return (
       <Wrapper>
-        <MainEventsTabs tabs={tabs} />
-        <MainEventsSports sports={sports} onSportClick={this.selectSport} />
+        <MainEventsTabs tabs={tabs} onTabClick={this.selectTab} currentTab={this.state.currentTab} />
+        <MainEventsSports sports={sports} onSportClick={this.selectSport} currentSport={this.state.currentSport} />
         <Wrapper>
           <MainEventsLeagues leagues={leagues} />
         </Wrapper>
@@ -39,7 +39,10 @@ class MainEvents extends React.Component<Props, State> {
   }
   private selectSport = (clickedSport: ISport) => {
     this.setState({ currentSport: clickedSport })
-  }
+  };
+  private selectTab = (clickedTab: IMainEventsTab) => {
+    this.setState({ currentTab: clickedTab })
+  };
 };
 
 export default MainEvents;
