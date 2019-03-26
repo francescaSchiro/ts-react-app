@@ -1,9 +1,30 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
-import Wrapper from './Wrapper';
-import { OtherEventsLeague } from 'src/components/OtherEvents/otherEventsLeagues';
+import { ILeague } from 'src/models/ILeague';
 
+import Wrapper from './Wrapper';
+
+
+
+interface Props {
+    leagues: ILeague[]
+}
+
+const OtherEventsLeagues: React.FC<Props> = ({ leagues }) => (
+    <>
+        {leagues.map((league: ILeague) =>
+            <Wrapper key={league.name}>
+                <LeagueLabel>
+                    <LeagueFlag iconUrl={league.iconUrl} />
+                    {league.name}
+                </LeagueLabel>
+                <ArrowRight />
+            </Wrapper>
+        )
+        }
+    </>
+);
 
 const LeagueLabel = styled.p`
   display: flex;
@@ -33,25 +54,6 @@ const ArrowRight = styled.div`
   transform: rotate(-45deg);
   margin: 0 10px 0 0;
 `;
-
-interface IOtherEventsLeaguesProps {
-    otherEventsLeagues: OtherEventsLeague[]
-}
-
-const OtherEventsLeagues = (props: IOtherEventsLeaguesProps) => (
-    <>
-        {props.otherEventsLeagues.map(el =>
-            <Wrapper key={el.label}>
-                <LeagueLabel>
-                    <LeagueFlag iconUrl={el.iconUrl} />
-                    {el.label}
-                </LeagueLabel>
-                <ArrowRight />
-            </Wrapper>
-        )
-        }
-    </>
-);
 
 export default OtherEventsLeagues;
 
