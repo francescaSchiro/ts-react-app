@@ -1,8 +1,44 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
+import { IBanner } from 'src/models/IBanner';
+
 import Wrapper from './Wrapper';
-import { Banner } from 'src/components/Banners/bannerItems';
+
+
+interface Props {
+  bannerCarouselItems: IBanner[]
+}
+
+const BannersCarousel: React.FC<Props> = ({ bannerCarouselItems }) => (
+  <Wrapper>
+    {bannerCarouselItems.map((el: IBanner) => (
+      <BannerWrapper key={el.title}>
+        <CategoryWrapper>
+          <CategoryTitle>{el.category}</CategoryTitle>
+        </CategoryWrapper>
+        <CardWrapper>
+          <CoverImage imgUrl={el.imgUrl} />
+          <TitleWrapper>
+            <Title>{el.title}</Title>
+          </TitleWrapper>
+          <MixedTextWrapper>
+            <PLeftBanner> {el.description[0]}</PLeftBanner>
+            <PLeftBanner fontWeight={700}> {el.description[1]}</PLeftBanner>
+            <PLeftBanner> {el.description[2]}</PLeftBanner>
+            <PLeftBanner fontWeight={700}> {el.description[3]}</PLeftBanner>
+            <PLeftBanner> {el.description[4]}</PLeftBanner>
+          </MixedTextWrapper>
+          <BannerButtonContainer>
+            <BannerButton>
+              <BtnText>{el.btnText}</BtnText>
+            </BannerButton>
+          </BannerButtonContainer>
+        </CardWrapper>
+      </BannerWrapper>
+    ))}
+  </Wrapper>
+);
 
 const BannerWrapper = styled.li`
   display: inline-flex;
@@ -106,39 +142,5 @@ const BtnText = styled.p`
   white-space:normal;
   text-transform: uppercase;
 `;
-
-interface IBannerCarouselProps {
-  bannerItems: Banner[]
-}
-
-const BannersCarousel = (props: IBannerCarouselProps) => (
-  <Wrapper>
-    {props.bannerItems.map(el => (
-      <BannerWrapper key={el.title}>
-        <CategoryWrapper>
-          <CategoryTitle>{el.category}</CategoryTitle>
-        </CategoryWrapper>
-        <CardWrapper>
-          <CoverImage imgUrl={el.imgUrl} />
-          <TitleWrapper>
-            <Title>{el.title}</Title>
-          </TitleWrapper>
-          <MixedTextWrapper>
-            <PLeftBanner> {el.description[0]}</PLeftBanner>
-            <PLeftBanner fontWeight={700}> {el.description[1]}</PLeftBanner>
-            <PLeftBanner> {el.description[2]}</PLeftBanner>
-            <PLeftBanner fontWeight={700}> {el.description[3]}</PLeftBanner>
-            <PLeftBanner> {el.description[4]}</PLeftBanner>
-          </MixedTextWrapper>
-          <BannerButtonContainer>
-            <BannerButton>
-              <BtnText>{el.btnText}</BtnText>
-            </BannerButton>
-          </BannerButtonContainer>
-        </CardWrapper>
-      </BannerWrapper>
-    ))}
-  </Wrapper>
-);
 
 export default BannersCarousel;

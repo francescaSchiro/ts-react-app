@@ -2,13 +2,20 @@ import * as React from 'react';
 
 import BannersCarousel from 'src/components/BannersCarousel';
 import BannersBase from 'src/components/BannersBase';
-import bannerItems from './bannerItems';
+import { IBanners } from 'src/models/IBanners';
 
-const Banners = () => (
-  <>
-    <BannersCarousel bannerItems={bannerItems} />
-    <BannersBase imgUrl={'https://cdn-m.sisal.it/documents/1227501/5490368/anniversario_ondemand_card_novita.png/363e6e70-eba4-4dc0-912d-6210ae159c27?t=1542122191733'} />
-  </>
-);
+
+interface Props {
+  banners: IBanners;
+}
+const Banners: React.FC<Props> = ({ banners }) => {
+  const { bannerBase, bannerCarouselItems } = banners;
+  return (
+    <>
+      <BannersCarousel bannerCarouselItems={bannerCarouselItems} />
+      <BannersBase bannerBase={bannerBase} />
+    </>
+  )
+};
 
 export default Banners;

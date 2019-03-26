@@ -14,6 +14,7 @@ import content from 'src/mocks/topBannerContent';
 import events from 'src/mocks/bestEventsItems';
 import mainEventsTabs from 'src/mocks/mainEventsTabs';
 import otherEventsTabs from 'src/mocks/otherEventsTabs';
+import banners from 'src/mocks/banners';
 
 import HomePageWrapper from './Wrapper';
 
@@ -25,7 +26,7 @@ const HomePage = () => (
     <BestEvents events={events} />
     <MainEvents tabs={mainEventsTabs} />
     <OtherEvents tabs={otherEventsTabs} />
-    <Banners />
+    <Banners banners={banners} />
     <AllApps />
     <AppSeo />
     <Footer />
