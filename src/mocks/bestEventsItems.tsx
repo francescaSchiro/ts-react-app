@@ -22,7 +22,7 @@ const bestEventsItems: IEvent[] = [
     day: 'Lun',
     time: '20:30',
     score: '',
-    eventName: 'JAHN REGENSBURG - GREUTHER FURTH',
+    eventName: 'Jahn Regensburg - Greuther Furth',
     gameName: 'ESITO FINALE 1X2',
     oddLabels: ['1', 'X', '2'],
     oddValues: ['1.40', '2.50', '3.15'],
