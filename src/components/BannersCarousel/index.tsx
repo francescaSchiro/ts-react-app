@@ -7,12 +7,12 @@ import Wrapper from './Wrapper';
 
 
 interface Props {
-  bannerCarouselItems: IBanner[]
+  banners: IBanner[]
 }
 
-const BannersCarousel: React.FC<Props> = ({ bannerCarouselItems }) => (
+const BannersCarousel: React.FC<Props> = ({ banners }) => (
   <Wrapper>
-    {bannerCarouselItems.map((el: IBanner) => (
+    {banners.map((el: IBanner) => (
       <BannerWrapper key={el.title}>
         <CategoryWrapper>
           <CategoryTitle>{el.category}</CategoryTitle>

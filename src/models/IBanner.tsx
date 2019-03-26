@@ -4,4 +4,5 @@ export interface IBanner {
     title: string,
     description: string | string[],
     btnText: string,
+    url: string,
 };

@@ -1,17 +1,17 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
-import { IBannerBase } from 'src/models/IBannerBase';
+import { IBanner } from 'src/models/IBanner';
 
 import Wrapper from './Wrapper';
 
 
 interface Props {
-    bannerBase: IBannerBase,
+    banner: IBanner,
 }
 
-const BannersBase: React.FC<Props> = ({ bannerBase }) => {
-    const { imgUrl, url } = bannerBase;
+const BottomBanner: React.FC<Props> = ({ banner }) => {
+    const { imgUrl, url } = banner;
     return (
         <Wrapper>
             <a href={url} style={{ all: 'unset' }}>
@@ -38,4 +38,4 @@ const BannersBaseImg = styled.div`
             box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
         `;
 
-export default BannersBase;
+export default BottomBanner;
