@@ -1,8 +1,28 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
+import { IAppSeoContent } from 'src/models/IAppSeoContent';
+
 import Wrapper from './Wrapper';
 
+
+interface Props {
+  content: IAppSeoContent,
+};
+
+const AppSeo: React.FC<Props> = ({ content }) => {
+  const { title, description } = content;
+  return (
+    <Wrapper>
+      <TitleWrapper>
+        <Title> {title}</Title>
+      </TitleWrapper>
+      <Description>
+        {description}
+      </Description>
+    </Wrapper>
+  )
+};
 
 const TitleWrapper = styled.div`
   width: auto;
@@ -18,48 +38,15 @@ const Title = styled.p`
   white-space:normal;
 `;
 
-const MixedTextWrapper = styled.div`
-  display: block;
+const Description = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
   white-space: normal;
   text-align: left;
+  font-size: 11px;
   line-height: 1.3;
 `;
-
-interface IPLeftBannerProps {
-  fontWeight?: number,
-}
-const PLeftBanner = styled.p`
-  color: inherit;
-  white-space:normal;
-  font-size: 1em;
-  display: inline;
-  text-align: left;
-  font-size: 11px;
-  ${(props: IPLeftBannerProps) => `font-weight: ${props.fontWeight};`}
-`;
-
-const AppSeo = () => (
-  <Wrapper>
-    <TitleWrapper>
-      <Title> Prova il divertimento delle scommesse mobile di Sisal Matchpoint!</Title>
-    </TitleWrapper>
-    <MixedTextWrapper>
-      <PLeftBanner> Consulta il palinsesto degli eventi di giornata e</PLeftBanner>
-      <PLeftBanner fontWeight={700}> piazza la tua scommessa</PLeftBanner>
-      <PLeftBanner> direttamente da smartphone e tablet in pochi click!</PLeftBanner>
-      <br />
-      <PLeftBanner>Scegli di giocare su calcio, basket, tennis e tanti altri sport: l’offerta delle scommesse di Sisal.it è davvero ricca!</PLeftBanner>
-      <br />
-      <PLeftBanner>Puoi seguire i risultati degli incontri e</PLeftBanner>
-      <PLeftBanner fontWeight={700}> scommettere live </PLeftBanner>
-      <PLeftBanner>con le quote aggiornate o decidere di proporre una giocata che non trovi in palinsesto grazie alle</PLeftBanner>
-      <PLeftBanner fontWeight={700}> scommesse on demand.</PLeftBanner>
-      <br />
-      <PLeftBanner>Per accedere all’offerta delle scommesse di</PLeftBanner>
-      <PLeftBanner fontWeight={700}> Sisal Matchpoint</PLeftBanner>
-      <PLeftBanner> devi essere titolare di un conto di gioco personale: registrati al portale di gioco Sisal.it ed approfitta del welcome bonus per tentare i tuoi pronostici!</PLeftBanner>
-    </MixedTextWrapper>
-  </Wrapper>
-);
 
 export default AppSeo;

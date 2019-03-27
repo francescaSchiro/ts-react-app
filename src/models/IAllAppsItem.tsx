@@ -1,4 +1,4 @@
-export interface IAppItem {
+export interface IAllAppsItem {
     iconUrl: string,
     description: string,
     goToUrl: string,

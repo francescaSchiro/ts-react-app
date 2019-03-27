@@ -1,6 +1,6 @@
-import { IAppItem } from 'src/models/IAppItem';
+import { IAllAppsItem } from 'src/models/IAllAppsItem';
 
-const allAppsItems: IAppItem[] = [
+const allAppsItems: IAllAppsItem[] = [
   {
     iconUrl: 'https://cdn-m.sisal.it/documents/1227501/1310183/_0008_icona_app_sisal_matchpoint.png/c589d361-4993-442b-a857-774b9e79812b?t=1404729985216',
     description: 'Sisal Matchpoint',

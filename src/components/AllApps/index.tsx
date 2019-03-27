@@ -2,11 +2,11 @@ import * as React from 'react';
 import styled from 'src/theme/default/index';
 
 import Wrapper from './Wrapper';
-import { IAppItem } from 'src/models/IAppItem';
+import { IAllAppsItem } from 'src/models/IAllAppsItem';
 
 
 interface Props {
-    items: IAppItem[],
+    items: IAllAppsItem[],
 }
 class AllApps extends React.Component<Props> {
     public render() {
@@ -18,7 +18,7 @@ class AllApps extends React.Component<Props> {
                     <Link href='https://m.sisal.it/app-mobile'>Scopri tutte le App</Link>
                 </TitleLinkWrapper>
                 <IconsWrapper>
-                    {items.map((item: IAppItem) =>
+                    {items.map((item: IAllAppsItem) =>
                         <IconLabelWrapper key={item.description} onClick={this.goToUrl.bind(this, item.goToUrl)}>
                             <Icon src={item.iconUrl} />
                             <Description>{item.description}</Description>
