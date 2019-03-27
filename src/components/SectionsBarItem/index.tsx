@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
-import { ISectionsBarItem } from 'src/models/ISectionBarItem';
+import { ISectionsBarItem } from 'src/models/ISectionsBarItem';
 
 import Wrapper from './Wrapper';
 

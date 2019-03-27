@@ -1,4 +1,4 @@
-import { ISectionsBarItem } from 'src/models/ISectionBarItem';
+import { ISectionsBarItem } from 'src/models/ISectionsBarItem';
 
 const sectionsBarItems: ISectionsBarItem[] = [
     {

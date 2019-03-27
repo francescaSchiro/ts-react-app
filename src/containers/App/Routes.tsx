@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router';
 
-import HomePage from 'src/components/HomePage';
+import HomePage from 'src/containers/HomePage';
 
 import Ticket from 'src/containers/Ticket';
 import Multipla from 'src/containers/Ticket/Multipla';

@@ -4,4 +4,4 @@ export interface ISectionsBarItem {
     label: string;
     icon: string | null;
     iconText: number | string;
-}
+};

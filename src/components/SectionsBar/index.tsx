@@ -3,7 +3,7 @@ import styled from 'src/theme/default/index';
 
 import SectionsBarItem from 'src/components/SectionsBarItem';
 import SearchBtn from 'src/components/SearchBtn';
-import { ISectionsBarItem } from 'src/models/ISectionBarItem';
+import { ISectionsBarItem } from 'src/models/ISectionsBarItem';
 
 import Wrapper from './Wrapper';
 
