@@ -22,10 +22,7 @@ const BannersCarousel: React.FC<Props> = ({ banners }) => (
           <TitleWrapper>
             <Title>{el.title}</Title>
           </TitleWrapper>
-
           <Description>{el.description}</Description>
-
-
           <BannerButtonContainer>
             <BannerButton>
               <BtnText>{el.btnText}</BtnText>

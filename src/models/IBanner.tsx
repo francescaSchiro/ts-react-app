@@ -5,4 +5,5 @@ export interface IBanner {
     description: string,
     btnText: string,
     url: string,
+    infoIcon: string,
 };

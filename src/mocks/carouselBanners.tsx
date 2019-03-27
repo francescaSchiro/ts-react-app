@@ -8,6 +8,7 @@ const carouselBanners: IBanner[] = [
     description: 'Festeggia con noi il compleanno di questa grande, esclusiva Sisal Matchpoint, e partecipa al concorso! Tutte le settimane in palio 500€ di bonus scommesse,.',
     btnText: 'maggiori informazioni',
     url: '',
+    infoIcon: '',
   },
   {
 
@@ -17,6 +18,8 @@ const carouselBanners: IBanner[] = [
     description: 'Calcio, basket e tennis, eventi di sport e spettacolo: scegli l\'evento e scommetti con Sisal sui principali campionati.',
     btnText: 'maggiori informazioni',
     url: '',
+    infoIcon: '',
+
   },
   {
     category: 'SUPERCOMBO',
@@ -25,6 +28,7 @@ const carouselBanners: IBanner[] = [
     description: 'Scommetti e divertiti con, Sisal Matchpoint, con una, Welcome Bonus fino a 225€,! Registrati e avrai fino a 25€ alla prima giocata e 40 bonus settimanali!',
     btnText: 'vai a google',
     url: '',
+    infoIcon: '',
   }
 ];
 

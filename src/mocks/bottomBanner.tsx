@@ -7,6 +7,7 @@ const bottomBanner: IBanner = {
   description: '',
   btnText: '',
   url: 'https://m.sisal.it/scommesse-matchpoint/promozioni?prov=BNB_MOB_TUTTE_LE_PROMO',
+  infoIcon: '',
 };
 
 export default bottomBanner;

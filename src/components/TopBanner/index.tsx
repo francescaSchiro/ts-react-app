@@ -20,13 +20,13 @@ class TopBanner extends React.Component<Props, State> {
   };
   public render() {
     const { isInfoOpen } = this.state;
-    const { imgUrl, url, description } = this.props.banner;
+    const { imgUrl, url, description, infoIcon } = this.props.banner;
     return (
       <Wrapper
         imgUrl={imgUrl}
         onClick={this.goToUrl.bind(this, url)}
       >
-        <InfoIcon onClick={this.toggleInfoBanner} />
+        <InfoIcon onClick={this.toggleInfoBanner} infoIcon={infoIcon} />
         {isInfoOpen
           ? <TopBannerInfo
             onCloseClick={this.toggleInfoBanner}
@@ -46,11 +46,16 @@ class TopBanner extends React.Component<Props, State> {
   };
 }
 
+interface IInfoIconProps {
+  infoIcon: string,
+  onClick: () => void,
+}
+
 const InfoIcon = styled.div`
   height: 50px;
   width: 40px;
   background-size: 24px;
-  background-image: url('https://mtest-liferay.sisal.it/scommesse/content/img/ic_info.png?v=2.7.5.1');
+  background-image: url(${(props: IInfoIconProps) => props.infoIcon});
   background-position: center;
   background-repeat: no-repeat;
   background-position: center;
