@@ -17,6 +17,7 @@ import mainEventsTabs from 'src/mocks/mainEventsTabs';
 import otherEventsTabs from 'src/mocks/otherEventsTabs';
 import carouselBanners from 'src/mocks/carouselBanners';
 import bottomBanner from 'src/mocks/bottomBanner';
+import allAppsItems from 'src/mocks/allAppsItems';
 
 
 import HomePageWrapper from './Wrapper';
@@ -31,7 +32,7 @@ const HomePage = () => (
     <OtherEvents tabs={otherEventsTabs} />
     <BannersCarousel banners={carouselBanners} />
     <BottomBanner banner={bottomBanner} />
-    <AllApps />
+    <AllApps items={allAppsItems} />
     <AppSeo />
     <Footer />
   </HomePageWrapper>

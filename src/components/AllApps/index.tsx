@@ -2,8 +2,40 @@ import * as React from 'react';
 import styled from 'src/theme/default/index';
 
 import Wrapper from './Wrapper';
-import allAppsItems from './allAppsItems';
+import { IAppItem } from 'src/models/IAppItem';
 
+
+interface Props {
+    items: IAppItem[],
+}
+class AllApps extends React.Component<Props> {
+    public render() {
+        const { items } = this.props;
+        return (
+            <Wrapper>
+                <TitleLinkWrapper>
+                    <Title>Tutte le App Scommesse</Title>
+                    <Link href='https://m.sisal.it/app-mobile'>Scopri tutte le App</Link>
+                </TitleLinkWrapper>
+                <IconsWrapper>
+                    {items.map((item: IAppItem) =>
+                        <IconLabelWrapper key={item.description} onClick={this.goToUrl.bind(this, item.goToUrl)}>
+                            <Icon src={item.iconUrl} />
+                            <Description>{item.description}</Description>
+                        </IconLabelWrapper>
+                    )}
+                </IconsWrapper>
+            </Wrapper>
+        );
+    };
+
+    private goToUrl = (url: string) => {
+        window.open(
+            url,
+            '_blank'
+        )
+    };
+};
 
 const TitleLinkWrapper = styled.div`
     display:flex;
@@ -63,32 +95,5 @@ const Description = styled.div`
    color: #4a4a4a; 
    margin-top: 10px;
 `
-class AllApps extends React.Component {
-    public render() {
-        return (
-            <Wrapper>
-                <TitleLinkWrapper>
-                    <Title>Tutte le App Scommesse</Title>
-                    <Link href='https://m.sisal.it/app-mobile'>Scopri tutte le App</Link>
-                </TitleLinkWrapper>
-                <IconsWrapper>
-                    {allAppsItems.map(el =>
-                        <IconLabelWrapper key={el.description} onClick={this.goToUrl.bind(this, el.goToUrl)}>
-                            <Icon src={el.iconUrl} />
-                            <Description>{el.description}</Description>
-                        </IconLabelWrapper>
-                    )}
-                </IconsWrapper>
-            </Wrapper>
-        );
-    };
-
-    private goToUrl = (url: string) => {
-        window.open(
-            url,
-            '_blank'
-        )
-    };
-}
 
 export default AllApps;
