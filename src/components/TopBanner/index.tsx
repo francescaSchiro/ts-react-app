@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'src/theme/default/index';
 
 import TopBannerInfo from 'src/components/TopBannerInfo';
-import { ITopBanner } from 'src/models/ITopBanner';
+import { IBanner } from 'src/models/IBanner';
 
 import Wrapper from './Wrapper';
 
@@ -11,7 +11,7 @@ interface State {
   isInfoOpen: boolean,
 }
 interface Props {
-  content: ITopBanner,
+  banner: IBanner,
 }
 
 class TopBanner extends React.Component<Props, State> {
@@ -20,7 +20,7 @@ class TopBanner extends React.Component<Props, State> {
   };
   public render() {
     const { isInfoOpen } = this.state;
-    const { imgUrl, url, description } = this.props.content;
+    const { imgUrl, url, description } = this.props.banner;
     return (
       <Wrapper
         imgUrl={imgUrl}

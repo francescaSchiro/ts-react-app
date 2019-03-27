@@ -11,7 +11,7 @@ import AllApps from 'src/components/AllApps';
 import AppSeo from 'src/components/AppSeo';
 import Footer from 'src/components/Footer';
 import items from 'src/mocks/sectionsBarItems';
-import content from 'src/mocks/topBannerContent';
+import topBanner from 'src/mocks/topBanner';
 import events from 'src/mocks/bestEventsItems';
 import mainEventsTabs from 'src/mocks/mainEventsTabs';
 import otherEventsTabs from 'src/mocks/otherEventsTabs';
@@ -25,7 +25,7 @@ import HomePageWrapper from './Wrapper';
 const HomePage = () => (
   <HomePageWrapper>
     <SectionsBar items={items} />
-    <TopBanner content={content} />
+    <TopBanner banner={topBanner} />
     <BestEvents events={events} />
     <MainEvents tabs={mainEventsTabs} />
     <OtherEvents tabs={otherEventsTabs} />

@@ -22,13 +22,10 @@ const BannersCarousel: React.FC<Props> = ({ banners }) => (
           <TitleWrapper>
             <Title>{el.title}</Title>
           </TitleWrapper>
-          <MixedTextWrapper>
-            <PLeftBanner> {el.description[0]}</PLeftBanner>
-            <PLeftBanner fontWeight={700}> {el.description[1]}</PLeftBanner>
-            <PLeftBanner> {el.description[2]}</PLeftBanner>
-            <PLeftBanner fontWeight={700}> {el.description[3]}</PLeftBanner>
-            <PLeftBanner> {el.description[4]}</PLeftBanner>
-          </MixedTextWrapper>
+
+          <Description>{el.description}</Description>
+
+
           <BannerButtonContainer>
             <BannerButton>
               <BtnText>{el.btnText}</BtnText>
@@ -102,22 +99,16 @@ const Title = styled.p`
   text-align:left; 
   white-space:normal;
 `;
-const MixedTextWrapper = styled.div`
-  display: block;
+const Description = styled.div`
+  display: inline-flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: center;
   white-space: normal;
   text-align: left;
-  padding: 0 10px 10px 10px;
-`;
-interface IPLeftBannerProps {
-  fontWeight?: number;
-}
-const PLeftBanner = styled.p`
-    display: inline;
-    text-align: left;
-    font-size: 1.2em;
-    ${(props: IPLeftBannerProps) => `font-weight: ${props.fontWeight};`}
-    color: inherit;
-    white-space:normal;
+  padding: 0 10px;
+  font-size: 1.2em;
+
 `;
 
 const BannerButtonContainer = styled.div`
