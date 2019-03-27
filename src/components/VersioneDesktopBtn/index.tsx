@@ -1,6 +1,11 @@
 import * as React from 'react';
+
 import styled from 'src/theme/default/index';
 
+
+const VersioneDesktopBtn: React.FC = () => (
+    <Button href='https://www.sisal.it/scommesse-matchpoint'>Versione Desktop</Button>
+);
 
 const Button = styled.a`
     display: flex;
@@ -12,9 +17,4 @@ const Button = styled.a`
     background-color: #fafafa;
     padding: 12px 0;
 `
-
-const VersioneDesktopBtn = () => (
-    <Button href='https://www.sisal.it/scommesse-matchpoint'>Versione Desktop</Button>
-);
-
 export default VersioneDesktopBtn;

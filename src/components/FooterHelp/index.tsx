@@ -1,9 +1,32 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
-import Wrapper from './Wrapper';
-import { FooterHelpIcon } from 'src/components/Footer/footerHelpIcons';
+import { IFooterHelpIcon } from 'src/models/IFooterHelpIcon';
 
+import Wrapper from './Wrapper';
+
+
+interface Props {
+    icons: IFooterHelpIcon[],
+};
+
+const FooterHelp: React.FC<Props> = ({ icons }) => (
+    <Wrapper>
+        <HelpTitle>Cerchi Aiuto?</HelpTitle>
+        <IconsWrapper>
+            {icons.map((icon: IFooterHelpIcon) => {
+                const { url, label, iconId } = icon;
+                return (
+                    <IconLabelWrapper key={label} href={url}>
+                        <Icon iconId={iconId} />
+                        <Label>{label}</Label>
+                    </IconLabelWrapper>
+                )
+            }
+            )}
+        </IconsWrapper>
+    </Wrapper>
+);
 
 const HelpTitle = styled.div`
     font-size:16px;
@@ -48,24 +71,6 @@ const Label = styled.div`
     font-weight: normal;
     margin-top: 8px;
 `
-interface IFooterHelpProps {
-    footerHelpIcons: FooterHelpIcon[],
-}
-
-const FooterHelp = (props: IFooterHelpProps) => (
-    <Wrapper>
-        <HelpTitle>Cerchi Aiuto?</HelpTitle>
-        <IconsWrapper>
-            {props.footerHelpIcons.map(el => (
-                <IconLabelWrapper href={el.url}>
-                    <Icon iconId={el.iconId} />
-                    <Label>{el.label}</Label>
-                </IconLabelWrapper>
-            )
-            )}
-        </IconsWrapper>
-    </Wrapper>
-);
 
 export default FooterHelp;
 

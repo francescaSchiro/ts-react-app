@@ -1,9 +1,28 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
-import Wrapper from './Wrapper';
-import { FooterLogo } from 'src/components/Footer/footerLogos';
+import { IFooterLogo } from 'src/models/IFooterLogo';
 
+import Wrapper from './Wrapper';
+
+
+interface Props {
+    logos: IFooterLogo[],
+};
+
+const FooterLogos: React.FC<Props> = ({ logos }) => (
+    <Wrapper>
+        {logos.map((logo: IFooterLogo, i) => {
+            const { goToUrl, imgUrl } = logo;
+            return (
+                <Logo key={i} href={goToUrl} >
+                    <Img src={imgUrl} />
+                </Logo>
+            );
+        }
+        )}
+    </Wrapper>
+);
 
 const Logo = styled.a`
     all:unset;
@@ -12,20 +31,6 @@ const Logo = styled.a`
 const Img = styled.img`
 height: 23px;
 `
-
-interface IFooterLogosProps {
-    footerLogos: FooterLogo[],
-}
-
-const FooterLogos = (props: IFooterLogosProps) => (
-    <Wrapper>
-        {props.footerLogos.map((el, i) =>
-            <Logo key={i} href={el.goToUrl} >
-                <Img src={el.imgUrl} />
-            </Logo>
-        )}
-    </Wrapper>
-)
 
 export default FooterLogos;
 

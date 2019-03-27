@@ -1,9 +1,33 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
-import Wrapper from './Wrapper';
-import { FooterInfoLink } from 'src/components/Footer/footerInfoLinks';
+import { IFooterInfoLink } from 'src/models/IFooterInfoLink';
 
+import Wrapper from './Wrapper';
+
+
+interface Props {
+    links: IFooterInfoLink[],
+}
+
+const FooterInfo: React.FC<Props> = ({ links }) => (
+    <Wrapper>
+        <InfoWrapper href='https://m.sisal.it/scommesse-matchpoint/info'>
+            <Title>Info</Title>
+            <RightArrow />
+        </InfoWrapper>
+        <InfoLinksWrapper>
+            {links.map((link: IFooterInfoLink) => {
+                const { label, url } = link;
+                return (
+                    <InfoLink key={label} href={url}>{label}</InfoLink>
+                )
+            }
+            )}
+        </InfoLinksWrapper>
+    </Wrapper>
+
+)
 
 const InfoWrapper = styled.a`
     all:unset;
@@ -42,24 +66,5 @@ const InfoLink = styled.a`
     color: #666666;
     padding: 6px 0;
 `
-interface IFooterInfoProps {
-    footerInfoLinks: FooterInfoLink[],
-}
-
-const FooterInfo = (props: IFooterInfoProps) => (
-    <Wrapper>
-        <InfoWrapper href='https://m.sisal.it/scommesse-matchpoint/info'>
-            <Title>Info</Title>
-            <RightArrow />
-        </InfoWrapper>
-        <InfoLinksWrapper>
-            {props.footerInfoLinks.map(el =>
-                <InfoLink key={el.label} href={el.url}>{el.label}</InfoLink>
-            )}
-        </InfoLinksWrapper>
-    </Wrapper>
-
-)
-
 export default FooterInfo;
 

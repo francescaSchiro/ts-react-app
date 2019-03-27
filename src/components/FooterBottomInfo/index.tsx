@@ -2,7 +2,23 @@ import * as React from 'react';
 import styled from 'src/theme/default/index';
 
 import Wrapper from './Wrapper';
+import { IFooterBottomInfo } from 'src/models/IFooterBottomInfo';
 
+
+interface Props {
+    info: IFooterBottomInfo,
+}
+
+const FooterBottomInfo: React.FC<Props> = ({ info }) => {
+    const { title, copyright, cookiesText, cookiesLink } = info;
+    return (
+        <Wrapper>
+            <FooterBottomInfoItem style={{ textTransform: 'uppercase', paddingBottom: '5px', fontSize: '6px' }}>{title}</FooterBottomInfoItem>
+            <FooterBottomInfoItem>{copyright}</FooterBottomInfoItem>
+            <FooterBottomInfoItem>{cookiesText}<Link href={cookiesLink}>cookies</Link></FooterBottomInfoItem>
+        </Wrapper>
+    );
+};
 
 const FooterBottomInfoItem = styled.div`
     width: 100%;
@@ -16,16 +32,7 @@ const FooterBottomInfoItem = styled.div`
 `
 const Link = styled.a`
     color: white;
-
 `
-
-const FooterBottomInfo = () => (
-    <Wrapper>
-        <FooterBottomInfoItem style={{ textTransform: 'uppercase', paddingBottom: '5px', fontSize: '6px' }}>IL GIOCO é VIETATO AI MINORI E PUò CAUSARE DIPENDENZA PATOLOGICA</FooterBottomInfoItem>
-        <FooterBottomInfoItem>Sisal © Sisal Entertainment S.p.A. partita IVA 02433760135 - Conc. GAD: 15155></FooterBottomInfoItem>
-        <FooterBottomInfoItem>Questo sito e le piattaforme di gioco utilizzano <Link href='https://m.sisal.it/societa/cookies?backto=https://m.sisal.it/scommesse-matchpoint/&siteid=5'>cookies</Link></FooterBottomInfoItem>
-    </Wrapper>
-)
 
 export default FooterBottomInfo;
 
