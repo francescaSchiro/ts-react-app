@@ -1,7 +1,7 @@
-import styled from '../../theme/default/index';
+import styled from 'src/theme/default/index';
 
 
-const BetslipHeadWrapper = styled.div`
+const Wrapper = styled.div`
     position:fixed;
     height:42px; /*same as BetslipBody padding-top*/
     width: 100%;
@@ -11,7 +11,7 @@ const BetslipHeadWrapper = styled.div`
     background: #222;
     border-bottom: 3px solid #f7a81e;
     color: white;
-    z-index: 2;
     font-size: 12px;
+    z-index: 1000;
 `;
-export default BetslipHeadWrapper;
+export default Wrapper;

@@ -2,13 +2,11 @@ import * as React from 'react';
 import { Switch, Route } from 'react-router';
 
 import HomePage from 'src/containers/HomePage';
-
 import Ticket from 'src/containers/Ticket';
-import Multipla from 'src/containers/Ticket/Multipla';
-import Sistema from 'src/containers/Ticket/Sistema';
+import Multipla from 'src/containers/TicketSingolaMultipla';
+import Sistema from 'src/containers/TicketSistema';
+
 // import ModalBox from 'src/containers/Ticket/ModalBox';
-
-
 
 const Routes = () => (
     <Switch>

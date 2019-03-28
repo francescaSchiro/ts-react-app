@@ -1,22 +1,24 @@
 import * as React from 'react';
 
 import Wrapper from './Wrapper';
-import BetslipBody from './BetslipBody';
-import BetslipHead from './BetslipHead';
-import SettingsDefaultBlock from './SettingsDefaultBlock';
-import BetslipFooter from './BetslipFooter';
-import Buttons from './Buttons';
-import InfoAlert from './InfoAlert';
-import InfoIcon from './InfoIcon';
+import BetslipBody from '../Ticket/BetslipBody';
+import SettingsDefaultBlock from '../Ticket/SettingsDefaultBlock';
+import BetslipFooter from '../Ticket/BetslipFooter';
+import Buttons from '../Ticket/Buttons';
+import InfoAlert from '../Ticket/InfoAlert';
+import InfoIcon from '../Ticket/InfoIcon';
 
-class Multipla extends React.PureComponent {
-    public state = { showKeypad: false }
+
+interface State {
+    showKeypad: boolean,
+}
+class TicketSingolaMultipla extends React.PureComponent<{}, State> {
+    public state: State = { showKeypad: false }
 
     public render() {
         const { showKeypad } = this.state;
         return (
             <Wrapper>
-                <BetslipHead />
                 <BetslipBody />
                 <InfoAlert error={true}>
                     <InfoIcon />
@@ -33,4 +35,4 @@ class Multipla extends React.PureComponent {
     }
 };
 
-export default Multipla;
+export default TicketSingolaMultipla;
