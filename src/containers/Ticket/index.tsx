@@ -11,7 +11,7 @@ import Wrapper from './Wrapper';
 
 
 interface State {
-    ticketType: number, // 0 | 1 | 2 | 30 = empty, 1 = singola, 2 = multipla&sistema, 3 = onlysistema
+    ticketType: number, // 0 | 1 | 2 | 3 => 0 = empty, 1 = singola, 2 = multipla&sistema, 3 = onlysistema
 };
 
 interface Props {
