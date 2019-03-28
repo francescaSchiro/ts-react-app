@@ -23,7 +23,7 @@ class Ticket extends React.PureComponent<Props, State> {
         emptyContent: ticketEmptyContent,
     };
     public state: State = {
-        ticketType: 2,
+        ticketType: 0,
     };
 
     public render() {

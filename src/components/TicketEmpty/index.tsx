@@ -2,47 +2,46 @@ import * as React from 'react';
 import styled from 'src/theme/default/index';
 
 import { ITicketEmptyContent } from 'src/models/ITicketEmptyContent';
+import { ITicketEmptyContentCategory } from 'src/models/ITicketEmptyContentCategory';
+import { ITicketEmptyContentCategoryLink } from 'src/models/ITicketEmptyContentCategoryLink';
+
 import Wrapper from './Wrapper';
+
 
 interface Props {
     content: ITicketEmptyContent;
 }
 
-const TicketEmpty: React.FC<Props> = () => (
-    <Wrapper>
-        <BodyWrapper>
-            <Message>
-                Naviga le sezioni Live, Scommesse e seleziona le scommesse toccando le quote.
-                Clicca sopra per MULTIPLA e SISTEMA.
-            </Message>
-            {/* live */}
-            <Category>Live</Category>
-
-            <LinkWrapper>
-                <LinkName> Scommesse Live</LinkName>
-                <LinkEvents>(58)</LinkEvents>
-            </LinkWrapper>
-            {/* scommesse */}
-            <Category>Scommesse</Category>
-            <LinkWrapper>
-                <LinkName>Calcio</LinkName>
-                <LinkEvents>(892)</LinkEvents>
-            </LinkWrapper>
-            <LinkWrapper>
-                <LinkName>Tennis</LinkName>
-                <LinkEvents>(52)</LinkEvents>
-            </LinkWrapper>
-            <LinkWrapper>
-                <LinkName>Basket</LinkName>
-                <LinkEvents>(93)</LinkEvents>
-            </LinkWrapper>
-            <LinkWrapper>
-                <LinkName>Volley</LinkName>
-                <LinkEvents>(53)</LinkEvents>
-            </LinkWrapper>
-        </BodyWrapper>
-    </Wrapper>
-);
+const TicketEmpty: React.FC<Props> = ({ content }) => {
+    const { message, categories } = content;
+    return (
+        <Wrapper>
+            <BodyWrapper>
+                <Message>
+                    {message}
+                </Message>
+                {categories.map((cat: ITicketEmptyContentCategory) => {
+                    const { name, links } = cat;
+                    return (
+                        <>
+                            <Category>{name}</Category>
+                            {links.map((link: ITicketEmptyContentCategoryLink) => {
+                                const { linkName, eventsNumber, url } = link;
+                                return (
+                                    <LinkWrapper key={linkName} href={url}>
+                                        <LinkName>{linkName}</LinkName>
+                                        <LinkEvents>({eventsNumber})</LinkEvents>
+                                    </LinkWrapper>
+                                )
+                            })}
+                        </>
+                    );
+                }
+                )}
+            </BodyWrapper>
+        </Wrapper>
+    );
+};
 
 const BodyWrapper = styled.div`
     padding-top: 42px; /* same as BetslipHeadWrapper height */
@@ -68,7 +67,8 @@ const Category = styled.div`
     text-transform: uppercase;
 `;
 
-const LinkWrapper = styled.div`
+const LinkWrapper = styled.a`
+    all: unset;
     /* height: 46px; */
     display:flex;
     justify-content: flex-start;
