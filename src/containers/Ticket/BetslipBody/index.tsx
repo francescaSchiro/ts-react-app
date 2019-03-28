@@ -1,31 +1,35 @@
 import * as React from 'react';
 
+import { ITicketBodyContent } from 'src/models/ITicketBodyContent';
+
 import Wrapper from './Wrapper';
-import BetslipBodyItem from './BetslipBodyItem';
+import BetslipBodyItems from './BetslipBodyItems';
 import BetslipSubhead from './BetslipSubhead';
 import InfoAlert from '../InfoAlert';
 import InfoIcon from '../InfoIcon';
 import AvvenimentoCancellato from '../AvvenimentoCancellato';
 
-export interface IBetslipBody {
-    sistema?: boolean;
+export interface Props {
+    content: ITicketBodyContent;
 }
 
 
-const BetslipBody = (props: IBetslipBody) => (
-    <Wrapper>
-        {props.sistema &&
-            <InfoAlert>
-                <InfoIcon />
-                Per giocare un sistema inserisci almeno 2 esiti
+const TicketBody: React.FC<Props> = ({ content }) => {
+    const { sistema, pronosticoList } = content;
+    return (
+        <Wrapper>
+            {sistema
+                ? <InfoAlert>
+                    <InfoIcon />
+                    Per giocare un sistema inserisci almeno 2 esiti
             </InfoAlert>
-        }
-        <BetslipSubhead> Cancella tutto </BetslipSubhead>
-        <BetslipBodyItem {...props} />
-        <BetslipBodyItem {...props} />
-        <BetslipBodyItem {...props} />
-        <AvvenimentoCancellato />
-    </Wrapper>
-);
+                : null
+            }
+            <BetslipSubhead> Cancella tutto </BetslipSubhead>
+            <TicketBodyItems sistema={sistema} pronosticoList={pronosticoList} />
+            <AvvenimentoCancellato />
+        </Wrapper>
+    );
+}
 
 export default BetslipBody;

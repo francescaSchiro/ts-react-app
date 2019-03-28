@@ -5,7 +5,9 @@ import TicketEmpty from 'src/components/TicketEmpty';
 import TicketSingolaMultipla from 'src/containers/TicketSingolaMultipla';
 import TicketSistema from 'src/containers/TicketSistema';
 import ticketEmptyContent from 'src/mocks/ticketEmptyContent';
+import ticketBodyContent from 'src/mocks/ticketBodyContent';
 import { ITicketEmptyContent } from 'src/models/ITicketEmptyContent';
+import { ITicketBodyContent } from 'src/models/ITicketBodyContent';
 
 import Wrapper from './Wrapper';
 
@@ -16,23 +18,25 @@ interface State {
 
 interface Props {
     emptyContent: ITicketEmptyContent;
+    bodyContent: ITicketBodyContent;
 };
 
 class Ticket extends React.PureComponent<Props, State> {
     public static defaultProps = {
         emptyContent: ticketEmptyContent,
+        bodyContent: ticketBodyContent,
     };
     public state: State = {
-        ticketType: 0,
+        ticketType: 3,
     };
 
     public render() {
         const { ticketType } = this.state;
-        const { emptyContent } = this.props;
+        const { emptyContent, bodyContent } = this.props;
         return (
             <Wrapper>
                 <TicketTabs ticketType={ticketType} onTabClick={this.changeTicketType} />
-                {getTicketType(ticketType, emptyContent)}
+                {getTicketType(ticketType, emptyContent, bodyContent)}
             </Wrapper>
         )
     }
@@ -41,7 +45,7 @@ class Ticket extends React.PureComponent<Props, State> {
     );
 };
 
-const getTicketType = (ticketType: number, emptyContent: ITicketEmptyContent) => {
+const getTicketType = (ticketType: number, emptyContent: ITicketEmptyContent, bodyContent: ITicketBodyContent) => {
     switch (ticketType) {
         case 0: // empty
             return (
@@ -49,11 +53,11 @@ const getTicketType = (ticketType: number, emptyContent: ITicketEmptyContent) =>
             );
         case 1: // singola (tab sistema disabled)
             return (
-                <TicketSingolaMultipla />
+                <TicketSingolaMultipla content={bodyContent} />
             );
         case 2: // multipla e sistema (tabs attive)
             return (
-                <TicketSingolaMultipla />
+                <TicketSingolaMultipla content={bodyContent} />
             );
         case 3: // only sistema (tab multipla disabled)
             return (

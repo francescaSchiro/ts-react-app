@@ -1,5 +1,8 @@
 import * as React from 'react';
 
+
+import { ITicketBodyContent } from 'src/models/ITicketBodyContent';
+
 import Wrapper from './Wrapper';
 import BetslipBody from '../Ticket/BetslipBody';
 import SettingsDefaultBlock from '../Ticket/SettingsDefaultBlock';
@@ -11,15 +14,19 @@ import InfoIcon from '../Ticket/InfoIcon';
 
 interface State {
     showKeypad: boolean,
+};
+interface Props {
+    content: ITicketBodyContent,
 }
-class TicketSingolaMultipla extends React.PureComponent<{}, State> {
+class TicketSingolaMultipla extends React.PureComponent<Props, State> {
     public state: State = { showKeypad: false }
 
     public render() {
         const { showKeypad } = this.state;
+        const { content } = this.props;
         return (
             <Wrapper>
-                <BetslipBody />
+                <TicketBody content={content} />
                 <InfoAlert error={true}>
                     <InfoIcon />
                     La puntata minima è di € 2,00

@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { IPronosticoItem } from 'src/models/IPronosticoItem';
+
 import Wrapper from './Wrapper';
 import BetExtra from './BetExtra';
 import BetData from './BetData';
@@ -17,19 +19,20 @@ import ModalBox from '../../ModalBox';
 import Overlay from '../../Overlay';
 
 
-export interface BetslipBodyItemState {
+export interface State {
     isChecked: boolean,
     showModalBox: boolean,
 
 }
-export interface BetslipBodyItemProps {
-    sistema?: boolean;
+export interface Props {
+    sistema: boolean,
+    pronosticoList: IPronosticoItem[],
 }
 
-class BetslipBodyItem extends React.Component<BetslipBodyItemProps, BetslipBodyItemState>{
-    public state = { isChecked: false, showModalBox: false }
+class TicketBodyItems extends React.Component<Props, State>{
+    public state: State = { isChecked: false, showModalBox: false }
     public render() {
-        const { sistema } = this.props;
+        const { sistema, pronosticoList } = this.props;
         const { isChecked, showModalBox } = this.state;
         return (
             <>
@@ -37,16 +40,17 @@ class BetslipBodyItem extends React.Component<BetslipBodyItemProps, BetslipBodyI
 
                     <BetData>
                         <BetExtra>
-                            {sistema &&
-                                < >
+                            {sistema
+                                ? < >
                                     <Fixed onClick={this.toggleFixed} checked={isChecked}>F</Fixed>
                                     <FixedCheckbox onClick={this.toggleFixed} checked={isChecked} />
                                 </>
+                                : null
                             }
                         </BetExtra>
                         <BetDetail>
-                            <InfoTimezone>29091 - 6099 | 27/2/2019 ore 21:00</InfoTimezone>
-                            <Title>Fiorentina - Atalanta</Title>
+                            <InfoTimezone>{avvenimentoKey} | {formattedDataAvvenimento}</InfoTimezone>
+                            <Title>{descrizioneAvvenimento}</Title>
                             <Info />
                         </BetDetail>
                     </BetData>
@@ -73,4 +77,4 @@ class BetslipBodyItem extends React.Component<BetslipBodyItemProps, BetslipBodyI
 }
 
 
-export default BetslipBodyItem;
+export default TicketBodyItems;

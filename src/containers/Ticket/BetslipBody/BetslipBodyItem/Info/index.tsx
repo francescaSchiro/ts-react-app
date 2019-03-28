@@ -22,7 +22,10 @@ oddState: number {
 currentOddValue: number 
 oldOddValue: number // to print both in content string: `Quota cambiata da ${oldOddValue} a ${newOddValue}`
 */
-
+const getQuota = (quota: number) => {
+    const dividedQuota = quota / 100;
+    return dividedQuota;
+};
 class Info extends React.Component {
     public render() {
         return (
@@ -30,10 +33,10 @@ class Info extends React.Component {
             <Wrapper>
                 <Game>
                     <DeleteIcon display={true} />
-                    Esito finale 1x2:
+                    {descrizioneScommessa}
                     <Odd>
                         2 (-)
-                        <OddChange change={'positive'}>(1.28)</OddChange>
+                        <OddChange change={quotaVariata}>({getQuota(quota)})</OddChange>
                     </Odd>
                 </Game>
                 <MicroGame>Esito chiuso o sospeso</MicroGame>
