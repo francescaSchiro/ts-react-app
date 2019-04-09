@@ -3,7 +3,7 @@ import * as React from 'react';
 import Wrapper from './Wrapper';
 
 
-const AvvenimentoCancellato: React.FC = () => (
+const AvvenimentoCancellato = () => (
     <Wrapper>
         <span>Avvenimento Cancellato</span>
         <span>ANNULLA</span>

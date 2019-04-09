@@ -10,7 +10,7 @@ import Wrapper from './Wrapper';
 
 interface Props {
     content: ITicketEmptyContent;
-}
+};
 
 const TicketEmpty: React.FC<Props> = ({ content }) => {
     const { message, categories } = content;

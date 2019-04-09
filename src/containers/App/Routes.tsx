@@ -3,8 +3,8 @@ import { Switch, Route } from 'react-router';
 
 import HomePage from 'src/containers/HomePage';
 import Ticket from 'src/containers/Ticket';
-import Multipla from 'src/containers/TicketSingolaMultipla';
-import Sistema from 'src/containers/TicketSistema';
+import Multipla from 'src/components/TicketSingolaMultipla';
+import Sistema from 'src/components/TicketSistema';
 
 // import ModalBox from 'src/containers/Ticket/ModalBox';
 

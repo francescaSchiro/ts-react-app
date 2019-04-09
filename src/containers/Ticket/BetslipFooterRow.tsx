@@ -1,9 +1,11 @@
 import * as React from 'react';
+import styled from 'src/theme/default/index';
 
-import RowWrapper from './BetslipFooter/RowWrapper';
-import Column from './BetslipFooter/Column';
-import Label from './BetslipFooter/Label';
-import Value from './BetslipFooter/Value';
+
+// import RowWrapper from './BetslipFooter/RowWrapper';
+// import Column from './BetslipFooter/Column';
+// import Label from './BetslipFooter/Label';
+// import Value from './BetslipFooter/Value';
 
 
 const BetslipFooterRow = () => (
@@ -22,5 +24,38 @@ const BetslipFooterRow = () => (
         </Column>
     </RowWrapper>
 );
+
+const Column = styled.div`
+    width: calc(100% / 3);
+    padding: 5px;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
+const Label = styled.div`
+    box-sizing: border-box;
+    padding-bottom: 5px;
+    font-size: 11px;
+    color: #bbb;
+`;
+
+const Value = styled.div`
+    font-size: 11px;
+    color: #fafafa;
+    font-weight: bold;
+`;
+const RowWrapper = styled.div`
+    width: 100%;
+
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 12px;
+    background-color: #393939;   
+`;
 
 export default BetslipFooterRow;
