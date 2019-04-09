@@ -6,7 +6,7 @@ import TicketButtons from 'src/components/TicketButtons';
 import TicketBody from 'src/components/TicketBody';
 import TicketSettingsDefaultBlock from 'src/components/TicketSettings';
 import TicketDevelop from 'src/components/TicketDevelop';
-import BetslipFooterRow from 'src/containers/Ticket/BetslipFooterRow';
+import TicketFooterRow from 'src/components/TicketFooterRow';
 
 import Wrapper from './Wrapper';
 
@@ -23,7 +23,7 @@ const TicketSistema: React.FC<Props> = ({ content }) => (
             <InfoIcon />
             Importo minimo non rispettato per la giocata sistemistica.
         </InfoAlert>
-        <BetslipFooterRow />
+        <TicketFooterRow />
         <TicketButtons />
     </Wrapper>
 );

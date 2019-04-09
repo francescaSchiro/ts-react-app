@@ -1,7 +1,7 @@
 import { ITicketBodyContent } from 'src/models/ITicketBodyContent';
 
 const ticketBodyContent: ITicketBodyContent = {
-    sistema: false,
+    sistema: true,
     pronosticoList: [
         {
             avvenimentoKey: '29133-34934',

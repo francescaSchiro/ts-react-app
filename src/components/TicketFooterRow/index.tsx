@@ -1,15 +1,10 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
+import Wrapper from './Wrapper';
 
-// import RowWrapper from './BetslipFooter/RowWrapper';
-// import Column from './BetslipFooter/Column';
-// import Label from './BetslipFooter/Label';
-// import Value from './BetslipFooter/Value';
-
-
-const BetslipFooterRow = () => (
-    <RowWrapper>
+const TicketFooterRow = () => (
+    <Wrapper>
         <Column>
             <Label>Puntata</Label>
             <Value>€ 28,00</Value>
@@ -22,7 +17,7 @@ const BetslipFooterRow = () => (
             <Label>Vincita potenziale</Label>
             <Value>€ 597,50</Value>
         </Column>
-    </RowWrapper>
+    </Wrapper>
 );
 
 const Column = styled.div`
@@ -47,15 +42,6 @@ const Value = styled.div`
     color: #fafafa;
     font-weight: bold;
 `;
-const RowWrapper = styled.div`
-    width: 100%;
 
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 12px;
-    background-color: #393939;   
-`;
 
-export default BetslipFooterRow;
+export default TicketFooterRow;
