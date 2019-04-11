@@ -13,14 +13,14 @@ import Wrapper from './Wrapper';
 
 
 interface State {
-    ticketType: number, // 0 | 1 | 2 | 3 => 0 = empty, 1 = singola, 2 = multipla&sistema, 3 = onlysistema
+    ticketType: number, // 0 | 1 | 2  => 0 = empty, 1 = sigolaMultipla, 2 = sistema // 0 = empty, 1 = singola, 2 = multipla&sistema, 3 = onlysistema
     emptyContent: ITicketEmptyContent;
     bodyContent: ITicketBodyContent;
 };
 
 class Ticket extends React.PureComponent<State> {
     public state: State = {
-        ticketType: 2,
+        ticketType: 1,
         emptyContent: ticketEmptyContent,
         bodyContent: ticketBodyContent,
     };
@@ -45,18 +45,18 @@ const getTicketByType = (ticketType: number, emptyContent: ITicketEmptyContent, 
             return (
                 <TicketEmpty content={emptyContent} />
             );
-        case 1: // singola (tab sistema disabled)
+        case 1: // multipla e sistema (tabs attive)
             return (
                 <TicketSingolaMultipla content={bodyContent} />
             );
-        case 2: // multipla e sistema (tabs attive)
-            return (
-                <TicketSingolaMultipla content={bodyContent} />
-            );
-        case 3: // only sistema (tab multipla disabled)
+        case 2: // only sistema (tab multipla disabled)
             return (
                 <TicketSistema content={bodyContent} />
             );
+        // case 1: // singola (tab sistema disabled)
+        //     return (
+        //         <TicketSingolaMultipla content={bodyContent} />
+        //     );
         default:
             return null;
     };

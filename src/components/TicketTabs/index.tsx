@@ -4,6 +4,7 @@ import styled from 'src/theme/default/index';
 
 import Wrapper from './Wrapper';
 
+
 // betslipType: number, // 
 // 0=> empty, 
 // 1: singola sistema disabled, 
@@ -27,44 +28,32 @@ const getTicketHeaderType = (ticketType: number, onTabClick: (clickedTicketType:
                     </NavLink>
                 </TabsWrapperEmpty>
             );
-        case 1: // singola
+        case 1: // multipla e sistema
             return (
                 <TabsWrapper>
-                    <Tab style={{ color: '#f7a81e', borderBottomColor: '#f7a81e' }} onClick={onTabClick.bind(null, 2)}>
-                        SINGOLA
-                    </Tab>
-                    {/* should be disabled <Tab style={{ pointerEvents: 'none', }} onClick={onTabClick.bind(null, 3)}> */}
-                    <Tab style={{ pointerEvents: 'none', }} onClick={onTabClick.bind(null, 3)}>
-                        SISTEMA
-                    </Tab>
-                </TabsWrapper>
-            );
-        case 2: // multipla e sistema
-            return (
-                <TabsWrapper>
-                    <Tab style={{ color: '#f7a81e', borderBottomColor: '#f7a81e' }} onClick={onTabClick.bind(null, 2)}>
+                    <Tab style={{ color: '#f7a81e', borderBottomColor: '#f7a81e' }} onClick={onTabClick.bind(null, 1)}>
                         MULTIPLA
-                    </Tab>
-                    <Tab onClick={onTabClick.bind(null, 3)}>
+                        </Tab>
+                    <Tab onClick={onTabClick.bind(null, 2)}>
                         SISTEMA
-                    </Tab>
+                        </Tab>
 
                     <NavLink to={'/'} style={{ all: 'unset' }}>
                         <BetslipHeadBack>
                             Chiudi
-                        </BetslipHeadBack>
+                            </BetslipHeadBack>
                     </NavLink>
                 </TabsWrapper>
             );
-        case 3: // only sistema
+        case 2: // only sistema
             return (
                 <TabsWrapper>
                     {/*should be disabled <Tab style={{ pointerEvents: 'none', }} onClick={onTabClick.bind(null, 2)}> */}
-                    <Tab onClick={onTabClick.bind(null, 2)}>
+                    <Tab onClick={onTabClick.bind(null, 1)}>
                         MULTIPLA
                     </Tab>
 
-                    <Tab style={{ color: '#f7a81e', borderColor: '#f7a81e' }}>
+                    <Tab style={{ color: '#f7a81e', borderColor: '#f7a81e' }} onClick={onTabClick.bind(null, 2)}>
                         SISTEMA
                     </Tab>
 
@@ -75,6 +64,18 @@ const getTicketHeaderType = (ticketType: number, onTabClick: (clickedTicketType:
                     </NavLink>
                 </TabsWrapper>
             )
+        // case 1: // singola
+        //     return (
+        //         <TabsWrapper>
+        //             <Tab style={{ color: '#f7a81e', borderBottomColor: '#f7a81e' }} onClick={onTabClick.bind(null, 2)}>
+        //                 SINGOLA
+        //             </Tab>
+        //             {/* should be disabled <Tab style={{ pointerEvents: 'none', }} onClick={onTabClick.bind(null, 3)}> */}
+        //             <Tab style={{ pointerEvents: 'none', }} onClick={onTabClick.bind(null, 3)}>
+        //                 SISTEMA
+        //             </Tab>
+        //         </TabsWrapper>
+        //     );
         default:
             return null;
     }
