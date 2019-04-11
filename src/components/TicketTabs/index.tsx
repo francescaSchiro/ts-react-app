@@ -28,7 +28,7 @@ const getTicketHeaderType = (ticketType: number, onTabClick: (clickedTicketType:
                     </NavLink>
                 </TabsWrapperEmpty>
             );
-        case 1: // multipla e sistema
+        case 1: // singolaMultipla e sistema
             return (
                 <TabsWrapper>
                     <Tab style={{ color: '#f7a81e', borderBottomColor: '#f7a81e' }} onClick={onTabClick.bind(null, 1)}>
@@ -63,7 +63,7 @@ const getTicketHeaderType = (ticketType: number, onTabClick: (clickedTicketType:
                     </BetslipHeadBack>
                     </NavLink>
                 </TabsWrapper>
-            )
+            );
         // case 1: // singola
         //     return (
         //         <TabsWrapper>

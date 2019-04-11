@@ -16,6 +16,7 @@ interface State {
 
 interface Props {
     content: ITicketBodyContent,
+    sistema: boolean,
 };
 
 class TicketSingolaMultipla extends React.Component<Props, State> {
@@ -26,7 +27,7 @@ class TicketSingolaMultipla extends React.Component<Props, State> {
         const { content } = this.props;
         return (
             <Wrapper>
-                <TicketBody content={content} />
+                <TicketBody content={content} sistema={false} />
                 <InfoAlert error={true}>
                     <InfoIcon />
                     La puntata minima è di € 2,00

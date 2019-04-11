@@ -12,11 +12,12 @@ import Wrapper from './Wrapper';
 
 interface Props {
     content: ITicketBodyContent,
+    sistema: boolean,
 };
 
-const TicketSistema: React.FC<Props> = ({ content }) => (
+const TicketSistema: React.FC<Props> = ({ content, sistema }) => (
     <Wrapper>
-        <TicketBody content={content} />
+        <TicketBody content={content} sistema={sistema} />
         <TicketSettingsDefaultBlock />
         <TicketDevelop />
         <InfoAlert error={true}>

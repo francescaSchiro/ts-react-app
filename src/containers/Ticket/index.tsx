@@ -20,7 +20,7 @@ interface State {
 
 class Ticket extends React.PureComponent<State> {
     public state: State = {
-        ticketType: 1,
+        ticketType: 2,
         emptyContent: ticketEmptyContent,
         bodyContent: ticketBodyContent,
     };
@@ -45,13 +45,13 @@ const getTicketByType = (ticketType: number, emptyContent: ITicketEmptyContent, 
             return (
                 <TicketEmpty content={emptyContent} />
             );
-        case 1: // multipla e sistema (tabs attive)
+        case 1: // multipla e sistema
             return (
-                <TicketSingolaMultipla content={bodyContent} />
+                <TicketSingolaMultipla sistema={false} content={bodyContent} />
             );
-        case 2: // only sistema (tab multipla disabled)
+        case 2: // sistema
             return (
-                <TicketSistema content={bodyContent} />
+                <TicketSistema sistema={true} content={bodyContent} />
             );
         // case 1: // singola (tab sistema disabled)
         //     return (
