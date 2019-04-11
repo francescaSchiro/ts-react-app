@@ -17,14 +17,14 @@ interface State {
 interface Props {
     content: ITicketBodyContent,
     sistema: boolean,
+    betsCount: number,
 };
 
 class TicketSingolaMultipla extends React.Component<Props, State> {
     public state: State = { showKeypad: false }
-
     public render() {
         const { showKeypad } = this.state;
-        const { content } = this.props;
+        const { content, betsCount } = this.props;
         return (
             <Wrapper>
                 <TicketBody content={content} sistema={false} />
@@ -32,7 +32,11 @@ class TicketSingolaMultipla extends React.Component<Props, State> {
                     <InfoIcon />
                     La puntata minima è di € 2,00
                 </InfoAlert>
-                <TicketSettings />
+                {betsCount === 1
+                    ? null
+                    :
+                    <TicketSettings />
+                }
                 <TicketFooter
                     onImportClick={this.toggleKeypad}
                     showKeypad={showKeypad}

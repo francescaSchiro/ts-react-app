@@ -4,7 +4,7 @@ import styled from 'src/theme/default/index';
 import { ITicketBodyContent } from 'src/models/ITicketBodyContent';
 import TicketButtons from 'src/components/TicketButtons';
 import TicketBody from 'src/components/TicketBody';
-import TicketSettingsDefaultBlock from 'src/components/TicketSettings';
+import TicketSettings from 'src/components/TicketSettings';
 import TicketDevelop from 'src/components/TicketDevelop';
 import TicketFooterRow from 'src/components/TicketFooterRow';
 
@@ -18,7 +18,7 @@ interface Props {
 const TicketSistema: React.FC<Props> = ({ content, sistema }) => (
     <Wrapper>
         <TicketBody content={content} sistema={sistema} />
-        <TicketSettingsDefaultBlock />
+        <TicketSettings />
         <TicketDevelop />
         <InfoAlert error={true}>
             <InfoIcon />

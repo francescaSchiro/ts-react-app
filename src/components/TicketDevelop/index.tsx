@@ -8,7 +8,6 @@ const TicketDevelop = () => (
     <Wrapper>
         <BetslipDevelopItem />
         <BetslipDevelopItem />
-        <BetslipDevelopItem />
     </Wrapper>
 );
 

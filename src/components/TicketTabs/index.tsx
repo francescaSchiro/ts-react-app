@@ -5,35 +5,25 @@ import styled from 'src/theme/default/index';
 import Wrapper from './Wrapper';
 
 
-// betslipType: number, // 
-// 0=> empty, 
-// 1: singola sistema disabled, 
-// 2: multipla / sistema, 
-// 3: only sistema.
-// se betsCount === 0 scommesse: empty;
-// se betsCount === 1: singola. checkSistema(betslip) => se true mostra solo sistema e disabilita singola route.
-// se betsCount > 1: multipla. checkSistema(betslip) => se true mostra solo sistema e disabilita multipla route. se non mostra tutte e 2.
-const getTicketHeaderType = (ticketType: number, onTabClick: (clickedTicketType: number) => void) => {
+/* betslipType: number, // 
+ 0=> empty, 
+ 1: singola sistema disabled, 
+ 2: multipla / sistema, 
+ 3: only sistema.
+ se betsCount === 0 scommesse: empty;
+ se betsCount === 1: singola. checkSistema(betslip) => se true mostra solo sistema e disabilita singola route.
+ se betsCount > 1: multipla. checkSistema(betslip) => se true mostra solo sistema e disabilita multipla route. se non mostra tutte e 2. */
+const getTicketHeaderType = (ticketType: number, onTabClick: (clickedTicketType: number) => void, betsCount: number) => {
     switch (ticketType) {
-        case 0: // empty
-            return (
-                <TabsWrapperEmpty>
-                    <Tab style={{ color: '#f7a81e' }}>
-                        IL TUO BIGLIETTO È VUOTO
-                    </Tab>
-                    <NavLink to={'/'} style={{ all: 'unset' }}>
-                        <BetslipHeadBack>
-                            Chiudi
-                        </BetslipHeadBack>
-                    </NavLink>
-                </TabsWrapperEmpty>
-            );
         case 1: // singolaMultipla e sistema
             return (
                 <TabsWrapper>
                     <Tab style={{ color: '#f7a81e', borderBottomColor: '#f7a81e' }} onClick={onTabClick.bind(null, 1)}>
-                        MULTIPLA
-                        </Tab>
+                        {betsCount === 1
+                            ? 'SINGOLA'
+                            : 'MULTIPLA'
+                        }
+                    </Tab>
                     <Tab onClick={onTabClick.bind(null, 2)}>
                         SISTEMA
                         </Tab>
@@ -64,30 +54,31 @@ const getTicketHeaderType = (ticketType: number, onTabClick: (clickedTicketType:
                     </NavLink>
                 </TabsWrapper>
             );
-        // case 1: // singola
-        //     return (
-        //         <TabsWrapper>
-        //             <Tab style={{ color: '#f7a81e', borderBottomColor: '#f7a81e' }} onClick={onTabClick.bind(null, 2)}>
-        //                 SINGOLA
-        //             </Tab>
-        //             {/* should be disabled <Tab style={{ pointerEvents: 'none', }} onClick={onTabClick.bind(null, 3)}> */}
-        //             <Tab style={{ pointerEvents: 'none', }} onClick={onTabClick.bind(null, 3)}>
-        //                 SISTEMA
-        //             </Tab>
-        //         </TabsWrapper>
-        //     );
         default:
             return null;
     }
 };
 interface Props {
     ticketType: number,
-    onTabClick: (clickedTicketType: number) => void;
-};
+    onTabClick: (clickedTicketType: number) => void,
+    betsCount: number,
+}
 
-const TicketTabs: React.FC<Props> = ({ ticketType, onTabClick }) => (
+const TicketTabs: React.FC<Props> = ({ ticketType, onTabClick, betsCount }) => (
     <Wrapper>
-        {getTicketHeaderType(ticketType, onTabClick)}
+        {betsCount === 0
+            ? <TabsWrapperEmpty>
+                <Tab style={{ color: '#f7a81e' }}>
+                    IL TUO BIGLIETTO È VUOTO
+                </Tab>
+                <NavLink to={'/'} style={{ all: 'unset' }}>
+                    <BetslipHeadBack>
+                        Chiudi
+                    </BetslipHeadBack>
+                </NavLink>
+            </TabsWrapperEmpty>
+            : getTicketHeaderType(ticketType, onTabClick, betsCount)
+        }
     </Wrapper>
 );
 
