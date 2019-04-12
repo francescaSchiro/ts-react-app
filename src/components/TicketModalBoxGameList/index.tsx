@@ -77,7 +77,6 @@ const GameOutcomes = styled.div`
 interface IGameOutcomesProps {
     selected?: boolean,
 };
-
 const GameOutcome = styled.div`
     height: 40px;    
     flex-grow:1;

@@ -20,17 +20,14 @@ const TicketSistema: React.FC<Props> = ({ content, sistema }) => (
         <TicketBody content={content} sistema={sistema} />
         <TicketSettings />
         <TicketDevelop />
-        <TicketInfoAlert 
-            error={true} 
-            message={'Importo minimo non rispettato per la giocata sistemistica.'} 
+        <TicketInfoAlert
+            error={true}
+            message={'Importo minimo non rispettato per la giocata sistemistica.'}
             infoIconUrl={'https://m.sisal.it/scommesse-matchpoint/content/img/ic_info.png?v=2.6.8'}
         />
         <TicketFooterRow />
         <TicketButtons />
     </Wrapper>
 );
-
-
-
 
 export default TicketSistema;

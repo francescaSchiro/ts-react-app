@@ -19,29 +19,24 @@ const TicketFooterRow = () => (
         </Column>
     </Wrapper>
 );
-
 const Column = styled.div`
     width: calc(100% / 3);
     padding: 5px;
-
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 `;
-
 const Label = styled.div`
     box-sizing: border-box;
     padding-bottom: 5px;
     font-size: 11px;
     color: #bbb;
 `;
-
 const Value = styled.div`
     font-size: 11px;
     color: #fafafa;
     font-weight: bold;
 `;
-
 
 export default TicketFooterRow;

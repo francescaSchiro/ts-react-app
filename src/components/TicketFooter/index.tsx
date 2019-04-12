@@ -5,15 +5,14 @@ import TicketKeypad from 'src/components/TicketKeypad';
 
 import Wrapper from './Wrapper';
 
+
 interface Props {
     onImportClick: () => void,
     showKeypad: boolean,
-
-}
+};
 
 const TicketFooter: React.FC<Props> = ({ onImportClick, showKeypad }) => (
     <Wrapper>
-
         <RowWrapper>
             <StakeAction>-</StakeAction>
             <StakeImport onClick={onImportClick}>€ 3,00</StakeImport>
@@ -34,27 +33,23 @@ const TicketFooter: React.FC<Props> = ({ onImportClick, showKeypad }) => (
                 <Value>€ 8,10</Value>
             </Column>
         </RowWrapper>
-
     </Wrapper>
 );
 
 const Column = styled.div`
     width: calc(100% / 3);
     padding: 5px;
-
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 `;
-
 const Label = styled.div`
     box-sizing: border-box;
     padding-bottom: 5px;
     font-size: 11px;
     color: #bbb;
 `;
-
 const Value = styled.div`
     font-size: 11px;
     color: #fafafa;
@@ -62,7 +57,6 @@ const Value = styled.div`
 `;
 const RowWrapper = styled.div`
     width: 100%;
-
     display:flex;
     flex-direction: row;
     justify-content: center;
@@ -70,7 +64,6 @@ const RowWrapper = styled.div`
     padding: 10px 12px;
     background-color: #393939;   
 `;
-
 const StakeAction = styled.div`
     box-sizing: border-box;
     position:relative;
@@ -85,7 +78,6 @@ const StakeAction = styled.div`
     background: #389b05;
     font-size: 18px;
     color: white;
-
     &:first-of-type{
         &::before {
         content:'Puntata';
@@ -94,12 +86,9 @@ const StakeAction = styled.div`
         color: #bbb;
         font-style: normal;
         font-size: 11px;
-
         }
     }
-
 `;
-
 const StakeImport = styled.div`
     display:flex;
     justify-content:center;
