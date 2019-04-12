@@ -27,7 +27,6 @@ class TicketBodyItem extends React.Component<Props, State>{
         return (
             <>
                 <Wrapper>
-
                     <BetData>
                         <BetExtra>
                             {sistema
@@ -56,11 +55,9 @@ class TicketBodyItem extends React.Component<Props, State>{
                     </BetActions>
 
                 </Wrapper>
-
-
-                {showModalBox && <>
-                    <Overlay />
-                    <ModalBox onChiudiClick={this.toggleModalBox} /></>}
+                {showModalBox &&
+                    <ModalBox onChiudiClick={this.toggleModalBox} item={item} />
+                }
             </>
         )
     };
@@ -201,13 +198,6 @@ const FixedCheckbox = styled.div`
     }
 `;
 
-const Overlay = styled.div`
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    background: rgba(0,0,0,.75);
-    z-index: 8000;
-`;
+
 
 export default TicketBodyItem;

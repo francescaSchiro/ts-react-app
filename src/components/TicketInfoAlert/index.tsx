@@ -3,6 +3,7 @@ import styled from 'src/theme/default/index';
 
 import Wrapper from './Wrapper';
 
+
 interface Props {
     error?: boolean,
     message: string,

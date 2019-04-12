@@ -1,6 +1,6 @@
 import styled from 'src/theme/default/index';
 
-const ModalBoxContainer = styled.div`
+const Wrapper = styled.div`
     overflow: auto;
     max-height: 80%;
     position: absolute;
@@ -18,4 +18,4 @@ const ModalBoxContainer = styled.div`
     z-index: 9000;
 `
 
-export default ModalBoxContainer;
+export default Wrapper;
