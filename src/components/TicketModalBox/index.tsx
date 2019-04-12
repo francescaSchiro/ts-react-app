@@ -5,11 +5,14 @@ import { IPronosticoItem } from 'src/models/IPronosticoItem';
 import TicketModalBoxHead from 'src/components/TicketModalBoxHead';
 import TicketModalBoxBody from 'src/components/TicketModalBoxBody';
 import TicketModalBoxClusterSlider from 'src/components/TicketModalBoxClusterSlider';
+import TicketModalBoxClusterChange from 'src/components/TicketModalBoxClusterChange';
+import TicketModalBoxGameList from 'src/components/TicketModalBoxGameList';
 
 import Wrapper from './Wrapper';
 import clusterItems from 'src/mocks/clusterItems';
+import clusterAccordionItems from 'src/mocks/clusterAccordionItems';
 
-import ClusterChange from './ClusterChange';
+
 import GameList from './GameList';
 
 
@@ -37,8 +40,8 @@ const TicketModalBox: React.FC<Props> = ({ onChiudiClick, item }) => {
                     quota={quota}
                 />
                 <TicketModalBoxClusterSlider clusterItems={clusterItems} />
-                <ClusterChange />
-                <GameList />
+                <TicketModalBoxClusterChange clusterAccordionItems={clusterAccordionItems} />
+                <TicketModalBoxGameList />
             </Wrapper>
         </>
     )
