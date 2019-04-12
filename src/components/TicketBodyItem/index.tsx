@@ -4,25 +4,37 @@ import styled from 'src/theme/default/index';
 import { IPronosticoItem } from 'src/models/IPronosticoItem';
 import TicketInfo from 'src/components/TicketInfo';
 import TicketModalBox from 'src/components/TicketModalBox';
+import clusterItems from 'src/mocks/clusterItems';
+import clusterAccordionItems from 'src/mocks/clusterAccordionItems';
+import gameListItems from 'src/mocks/gameListItems';
 
 import Wrapper from './Wrapper';
+import { IGameListItem } from 'src/models/IGameListItem';
 
 
 export interface State {
     isChecked: boolean,
     showModalBox: boolean,
-
-}
+    items: string[],
+    accordionItems: string[],
+    gameItems: IGameListItem[]
+};
 export interface Props {
     sistema: boolean,
     item: IPronosticoItem,
 };
 
 class TicketBodyItem extends React.Component<Props, State>{
-    public state: State = { isChecked: false, showModalBox: false }
+    public state: State = {
+        isChecked: false,
+        showModalBox: false,
+        items: clusterItems,
+        accordionItems: clusterAccordionItems,
+        gameItems: gameListItems,
+    };
     public render() {
         const { item, sistema } = this.props;
-        const { isChecked, showModalBox } = this.state;
+        const { isChecked, showModalBox, items, accordionItems, gameItems } = this.state;
         return (
             <>
                 <Wrapper>
@@ -55,7 +67,13 @@ class TicketBodyItem extends React.Component<Props, State>{
 
                 </Wrapper>
                 {showModalBox &&
-                    <TicketModalBox onChiudiClick={this.toggleModalBox} item={item} />
+                    <TicketModalBox
+                        onChiudiClick={this.toggleModalBox}
+                        item={item}
+                        clusterItems={items}
+                        clusterAccordionItems={accordionItems}
+                        gameListItems={gameItems}
+                    />
                 }
             </>
         )

@@ -1,4 +1,4 @@
-const clusterAccordionItem = [
+const clusterAccordionItems: string[] = [
     'Esito finale 1x2',
     'Doppia chance',
     'Goal/nogoal',
@@ -22,4 +22,4 @@ const clusterAccordionItem = [
     '1 tempo: somma goal',
 ];
 
-export default clusterAccordionItem;
+export default clusterAccordionItems;

@@ -1,4 +1,4 @@
-const clusterItems = [
+const clusterItems: string[] = [
     'Tutte',
     'principali',
     'goal',

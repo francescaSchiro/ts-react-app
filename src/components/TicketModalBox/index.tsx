@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'src/theme/default/index';
 
 import { IPronosticoItem } from 'src/models/IPronosticoItem';
+import { IGameListItem } from 'src/models/IGameListItem';
 import TicketModalBoxHead from 'src/components/TicketModalBoxHead';
 import TicketModalBoxBody from 'src/components/TicketModalBoxBody';
 import TicketModalBoxClusterSlider from 'src/components/TicketModalBoxClusterSlider';
@@ -9,19 +10,17 @@ import TicketModalBoxClusterChange from 'src/components/TicketModalBoxClusterCha
 import TicketModalBoxGameList from 'src/components/TicketModalBoxGameList';
 
 import Wrapper from './Wrapper';
-import clusterItems from 'src/mocks/clusterItems';
-import clusterAccordionItems from 'src/mocks/clusterAccordionItems';
-
-
-import GameList from './GameList';
 
 
 interface Props {
     onChiudiClick: () => void,
-    item: IPronosticoItem
-}
+    item: IPronosticoItem,
+    clusterItems: string[],
+    clusterAccordionItems: string[],
+    gameListItems: IGameListItem[],
+};
 
-const TicketModalBox: React.FC<Props> = ({ onChiudiClick, item }) => {
+const TicketModalBox: React.FC<Props> = ({ onChiudiClick, item, clusterItems, clusterAccordionItems, gameListItems }) => {
     const { descrizioneAvvenimento,
         descrizioneScommessa,
         descrizioneEsito,
@@ -41,7 +40,10 @@ const TicketModalBox: React.FC<Props> = ({ onChiudiClick, item }) => {
                 />
                 <TicketModalBoxClusterSlider clusterItems={clusterItems} />
                 <TicketModalBoxClusterChange clusterAccordionItems={clusterAccordionItems} />
-                <TicketModalBoxGameList />
+                <TicketModalBoxGameList
+                    descrizioneScommessa={descrizioneScommessa}
+                    gameListItems={gameListItems}
+                />
             </Wrapper>
         </>
     )
