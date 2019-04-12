@@ -4,6 +4,7 @@ import styled from 'src/theme/default/index';
 import { ITicketBodyContent } from 'src/models/ITicketBodyContent';
 import TicketBodyItems from 'src/components/TicketBodyItems';
 import AvvenimentoCancellato from 'src/components/AvvenimentoCancellato';
+import TicketInfoAlert from 'src/components/TicketInfoAlert';
 
 import Wrapper from './Wrapper';
 
@@ -18,10 +19,10 @@ const TicketBody: React.FC<Props> = ({ content, sistema }) => {
     return (
         <Wrapper>
             {sistema
-                ? <InfoAlert>
-                    <InfoIcon />
-                    Per giocare un sistema inserisci almeno 2 esiti
-            </InfoAlert>
+                ? <TicketInfoAlert
+                    message={'Per giocare un sistema inserisci almeno 2 esiti'}
+                    infoIconUrl={'https://m.sisal.it/scommesse-matchpoint/content/img/ic_info.png?v=2.6.8'}
+                />
                 : null
             }
             <TicketSubhead> Cancella tutto </TicketSubhead>
@@ -42,32 +43,6 @@ const TicketSubhead = styled.div`
     font-size: 12px;
     font-weight: bold;
     color: #333;
-`;
-
-interface IInfoAlertProps {
-    error?: boolean;
-}
-
-const InfoAlert = styled.div`
-    width: 100%;
-    display:flex;
-    justify-content: flex-start;
-    align-items:center;
-    background-color: ${(props: IInfoAlertProps) => props.error ? '#D82600' : '#f7a81e'};
-    color: #fff;
-    padding: 6px 12px;
-    font-size: 11px;
-`;
-
-const InfoIcon = styled.div`
-    height: 15px;
-    width:15px;
-    opacity: .7;
-    background-image: url('https://m.sisal.it/scommesse-matchpoint/content/img/ic_info.png?v=2.6.8');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    margin: 0 6px 0 0;
-
 `;
 
 export default TicketBody;
