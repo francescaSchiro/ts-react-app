@@ -4,12 +4,13 @@ import styled from 'src/theme/default/index';
 import { IPronosticoItem } from 'src/models/IPronosticoItem';
 import TicketModalBoxHead from 'src/components/TicketModalBoxHead';
 import TicketModalBoxBody from 'src/components/TicketModalBoxBody';
+import TicketModalBoxClusterSlider from 'src/components/TicketModalBoxClusterSlider';
 
 import Wrapper from './Wrapper';
+import clusterItems from 'src/mocks/clusterItems';
 
-import ClusterSlider from '../../../components/TIcketModalBoxClusterSlider';
-import ClusterChange from '../../../components/TicketModalBoxClusterChange';
-import GameList from '../../../components/TicketModalBoxGameList';
+import ClusterChange from './ClusterChange';
+import GameList from './GameList';
 
 
 interface Props {
@@ -35,7 +36,7 @@ const TicketModalBox: React.FC<Props> = ({ onChiudiClick, item }) => {
                     descrizioneEsito={descrizioneEsito}
                     quota={quota}
                 />
-                <ClusterSlider />
+                <TicketModalBoxClusterSlider clusterItems={clusterItems} />
                 <ClusterChange />
                 <GameList />
             </Wrapper>

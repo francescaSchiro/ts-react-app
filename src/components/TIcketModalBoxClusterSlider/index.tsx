@@ -1,5 +1,18 @@
+import * as React from 'react';
 import styled from 'src/theme/default/index';
 
+import Wrapper from './Wrapper';
+
+
+interface Props {
+    clusterItems: string[],
+};
+
+const TicketModalBoxClusterSlider: React.FC<Props> = ({ clusterItems }) => (
+    <Wrapper>
+        {clusterItems.map(el => <ClusterItem key={el}><span>{el}</span></ClusterItem>)}
+    </Wrapper>
+);
 
 const ClusterItem = styled.div`
 
@@ -30,6 +43,6 @@ const ClusterItem = styled.div`
             background: #b9d531; 
         }
     }
-`
+`;
 
-export default ClusterItem;
+export default TicketModalBoxClusterSlider;

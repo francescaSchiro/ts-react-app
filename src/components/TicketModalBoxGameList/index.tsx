@@ -8,7 +8,7 @@ import Value from './Value';
 import Odd from './Odd';
 
 
-const GameList = () => (
+const TicketModalBoxGameList = () => (
     <Wrapper>
         <GameName>ESITO FINALE 1x2</GameName>
         <GameOutcomes>
@@ -28,4 +28,4 @@ const GameList = () => (
     </Wrapper>
 );
 
-export default GameList;
+export default TicketModalBoxGameList;

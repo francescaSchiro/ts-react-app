@@ -17,7 +17,7 @@ import clusterAccordionItems from './clusterAccordionItems';
 interface IClusterChangeState {
     showCambia: boolean,
 }
-class ClusterChange extends React.Component<{}, IClusterChangeState>{
+class TicketModalBoxClusterChange extends React.Component<{}, IClusterChangeState>{
     public state = { showCambia: false };
     public render() {
         const { showCambia } = this.state;
@@ -50,4 +50,4 @@ class ClusterChange extends React.Component<{}, IClusterChangeState>{
 }
 
 
-export default ClusterChange;
+export default TicketModalBoxClusterChange;

@@ -2,11 +2,10 @@ import * as React from 'react';
 import styled from 'src/theme/default/index';
 
 import { IPronosticoItem } from 'src/models/IPronosticoItem';
+import TicketInfo from 'src/components/TicketInfo';
+import TicketModalBox from 'src/components/TicketModalBox';
 
 import Wrapper from './Wrapper';
-import TicketInfo from 'src/components/TicketInfo';
-
-import ModalBox from 'src/containers/Ticket/ModalBox';
 
 
 export interface State {
@@ -56,7 +55,7 @@ class TicketBodyItem extends React.Component<Props, State>{
 
                 </Wrapper>
                 {showModalBox &&
-                    <ModalBox onChiudiClick={this.toggleModalBox} item={item} />
+                    <TicketModalBox onChiudiClick={this.toggleModalBox} item={item} />
                 }
             </>
         )
