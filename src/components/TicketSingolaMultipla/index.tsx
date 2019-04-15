@@ -5,7 +5,7 @@ import TicketBody from 'src/components/TicketBody';
 import TicketSettings from 'src/components/TicketSettings';
 import TicketFooter from 'src/components/TicketFooter';
 import TicketButtons from 'src/components/TicketButtons';
-import TicketInfoAlert from 'src/components/TicketInfoAlert';
+// import TicketInfoAlert from 'src/components/TicketInfoAlert';
 
 import Wrapper from './Wrapper';
 
@@ -16,23 +16,18 @@ interface State {
 
 interface Props {
     content: ITicketBodyContent,
-    sistema: boolean,
     betsCount: number,
+    sistema: boolean,
 };
 
 class TicketSingolaMultipla extends React.Component<Props, State> {
     public state: State = { showKeypad: false }
     public render() {
         const { showKeypad } = this.state;
-        const { content, betsCount } = this.props;
+        const { content, betsCount, sistema } = this.props;
         return (
             <Wrapper>
-                <TicketBody content={content} sistema={false} />
-                <TicketInfoAlert
-                    error={true}
-                    message={'La puntata minima è di € 2,00'}
-                    infoIconUrl={'https://m.sisal.it/scommesse-matchpoint/content/img/ic_info.png?v=2.6.8'}
-                />
+                <TicketBody content={content} sistema={sistema} />
                 {betsCount === 1
                     ? null
                     :
@@ -41,6 +36,7 @@ class TicketSingolaMultipla extends React.Component<Props, State> {
                 <TicketFooter
                     onImportClick={this.toggleKeypad}
                     showKeypad={showKeypad}
+                    sistema={sistema}
                 />
                 <TicketButtons />
             </Wrapper>

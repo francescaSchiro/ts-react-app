@@ -16,12 +16,12 @@ const valuePresets = [
     10, 20, 35, 50, 75, 100, 150, 200
 ]
 
-interface IBetslipKeypad {
-    sistema?: boolean,
+interface Props {
+    sistema: boolean,
     onConfermaClick?: () => void,
 }
 
-const TicketKeypad = (props: IBetslipKeypad) => (
+const TicketKeypad: React.FC<Props> = ({ sistema, onConfermaClick }) => (
     <Wrapper>
         <KeypadBodyWrapper>
             <ValuesWrapper width={60}>
@@ -31,8 +31,9 @@ const TicketKeypad = (props: IBetslipKeypad) => (
                 {valuePresets.map((el, i) => <ValuePreset key={i}>€ {el}</ValuePreset>)}
             </ValuesWrapper>
         </KeypadBodyWrapper>
-        {props.sistema &&
-            <KeypadFooterButton onClick={props.onConfermaClick}>CONFERMA</KeypadFooterButton>
+        {sistema 
+            ? <KeypadFooterButton onClick={onConfermaClick}>CONFERMA</KeypadFooterButton>
+            : null
         }
     </Wrapper>
 );

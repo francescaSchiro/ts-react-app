@@ -4,30 +4,41 @@ import { ITicketBodyContent } from 'src/models/ITicketBodyContent';
 import TicketButtons from 'src/components/TicketButtons';
 import TicketBody from 'src/components/TicketBody';
 import TicketSettings from 'src/components/TicketSettings';
-import TicketDevelop from 'src/components/TicketDevelop';
-import TicketFooterRow from 'src/components/TicketFooterRow';
-import TicketInfoAlert from 'src/components/TicketInfoAlert';
+import TicketFooter from 'src/components/TicketFooter';
 
 import Wrapper from './Wrapper';
+
 
 interface Props {
     content: ITicketBodyContent,
     sistema: boolean,
 };
 
-const TicketSistema: React.FC<Props> = ({ content, sistema }) => (
-    <Wrapper>
-        <TicketBody content={content} sistema={sistema} />
-        <TicketSettings />
-        <TicketDevelop />
-        <TicketInfoAlert
-            error={true}
-            message={'Importo minimo non rispettato per la giocata sistemistica.'}
-            infoIconUrl={'https://m.sisal.it/scommesse-matchpoint/content/img/ic_info.png?v=2.6.8'}
-        />
-        <TicketFooterRow />
-        <TicketButtons />
-    </Wrapper>
-);
+interface State {
+    showKeypad: boolean,
+};
+
+class TicketSistema extends React.Component<Props, State>  {
+    public state: State = { showKeypad: false };
+    public render() {
+        const { showKeypad } = this.state;
+        const { content, sistema } = this.props;
+        return (
+            <Wrapper>
+                <TicketBody content={content} sistema={sistema} />
+                <TicketSettings />
+                <TicketFooter
+                    onImportClick={this.toggleKeypad}
+                    showKeypad={showKeypad}
+                    sistema={sistema}
+                />
+                <TicketButtons />
+            </Wrapper >
+        );
+    }
+    private toggleKeypad = () => {
+        this.setState({ showKeypad: !this.state.showKeypad })
+    }
+};
 
 export default TicketSistema;

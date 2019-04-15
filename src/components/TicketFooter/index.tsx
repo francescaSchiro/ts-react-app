@@ -1,7 +1,10 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
+import TicketStakeSingMult from 'src/components/TicketStakeSingMult';
 import TicketKeypad from 'src/components/TicketKeypad';
+import TicketDevelopSistema from 'src/components/TicketDevelopSistema';
+
 
 import Wrapper from './Wrapper';
 
@@ -9,31 +12,34 @@ import Wrapper from './Wrapper';
 interface Props {
     onImportClick: () => void,
     showKeypad: boolean,
+    sistema: boolean,
 };
 
-const TicketFooter: React.FC<Props> = ({ onImportClick, showKeypad }) => (
+const TicketFooter: React.FC<Props> = ({ onImportClick, showKeypad, sistema }) => (
     <Wrapper>
-        <RowWrapper>
-            <StakeAction>-</StakeAction>
-            <StakeImport onClick={onImportClick}>€ 3,00</StakeImport>
-            <StakeAction>+</StakeAction>
-        </RowWrapper>
-        {showKeypad && <TicketKeypad />}
+        {sistema
+            ? <TicketDevelopSistema />
+            :
+            <TicketStakeSingMult onImportClick={onImportClick} />
+        }
+
+        {showKeypad && <TicketKeypad sistema={sistema} />}
+
         <RowWrapper>
             <Column>
-                <Label>Quota totale</Label>
-                <Value>2,70</Value>
+                <Label>{sistema ? 'Puntata' : 'Quota totale'}</Label>
+                <Value>{sistema ? '€ 28,00' : '2,70'}</Value>
             </Column>
             <Column>
-                <Label>Bonus multipla</Label>
-                <Value>€ 0,00</Value>
+                <Label>{sistema ? 'Vincita minima' : 'Bonus multipla'}</Label>
+                <Value>{sistema ? '€ 3,48' : '€ 0,00'}</Value>
             </Column>
             <Column>
                 <Label>Vincita potenziale</Label>
-                <Value>€ 8,10</Value>
+                <Value>{sistema ? '€ 597,50' : '€ 8,10'}</Value>
             </Column>
         </RowWrapper>
-    </Wrapper>
+    </Wrapper >
 );
 
 const Column = styled.div`
@@ -64,44 +70,6 @@ const RowWrapper = styled.div`
     padding: 10px 12px;
     background-color: #393939;   
 `;
-const StakeAction = styled.div`
-    box-sizing: border-box;
-    position:relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2px;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    background: #389b05;
-    font-size: 18px;
-    color: white;
-    &:first-of-type{
-        &::before {
-        content:'Puntata';
-        position: absolute;
-        left: -170%;
-        color: #bbb;
-        font-style: normal;
-        font-size: 11px;
-        }
-    }
-`;
-const StakeImport = styled.div`
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    background: #fff;
-    color: #393939;
-    height: 40px;
-    width: 76px;
-    margin-left: 5px;
-    margin-right: 5px;
-    font-size: 11px;
-    font-weight: bold;
-    border-radius: 2px;
-`;
+
 
 export default TicketFooter;
