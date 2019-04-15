@@ -4,61 +4,19 @@ import styled from 'src/theme/default/index';
 
 import Wrapper from './Wrapper';
 
-
-/* betslipType: number, // 
- 0=> empty, 
- 1: singola sistema disabled, 
- 2: multipla / sistema, 
- 3: only sistema.
- se betsCount === 0 scommesse: empty;
- se betsCount === 1: singola. checkSistema(betslip) => se true mostra solo sistema e disabilita singola route.
- se betsCount > 1: multipla. checkSistema(betslip) => se true mostra solo sistema e disabilita multipla route. se non mostra tutte e 2. */
-const getTicketHeaderType = (ticketType: number, onTabClick: (clickedTicketType: number) => void, betsCount: number) => {
-    switch (ticketType) {
-        case 1: // singolaMultipla e sistema
-            return (
-                <>
-                    <Tab active={true} onClick={onTabClick.bind(null, 1)}>
-                        {betsCount === 1
-                            ? 'SINGOLA'
-                            : 'MULTIPLA'
-                        }
-                    </Tab>
-                    <Tab active={false} onClick={onTabClick.bind(null, 2)}>
-                        SISTEMA
-                        </Tab>
-                </>
-            );
-        case 2: // only sistema
-            return (
-                <>
-                    {/*should be disabled <Tab style={{ pointerEvents: 'none', }} onClick={onTabClick.bind(null, 2)}> */}
-                    <Tab onClick={onTabClick.bind(null, 1)} active={false}>
-                        MULTIPLA
-                    </Tab>
-
-                    <Tab active={true} onClick={onTabClick.bind(null, 2)} >
-                        SISTEMA
-                    </Tab>
-                </>
-            );
-        default:
-            return null;
-    }
-};
 interface Props {
+    sistema: boolean,
     betsCount: number,
-    ticketType: number,
-    onTabClick: (clickedTicketType: number) => void,
+    onTabClick: (isSistema: boolean) => void,
 }
 
-const TicketTabs: React.FC<Props> = ({ ticketType, onTabClick, betsCount }) => {
+const TicketTabs: React.FC<Props> = ({ sistema, betsCount, onTabClick }) => {
 
     return (
         <Wrapper>
             {betsCount === 0
-            // Empty 
-                ? <TabsWrapperEmpty>
+                ? (
+                <TabsWrapperEmpty>
                     <Tab active={true} style={{ borderBottom: '0px' }}>
                         IL TUO BIGLIETTO È VUOTO
                     </Tab>
@@ -67,16 +25,24 @@ const TicketTabs: React.FC<Props> = ({ ticketType, onTabClick, betsCount }) => {
                             Chiudi
                         </BetslipHeadBack>
                     </NavLink>
-                </TabsWrapperEmpty>
-            // singola/multipla & sistema
-                : <TabsWrapper>
-                    {getTicketHeaderType(ticketType, onTabClick, betsCount)}
+                </TabsWrapperEmpty> )
+                : (
+                <TabsWrapper>
+                    <Tab active={!sistema} onClick={onTabClick.bind(null, false)}>
+                        {betsCount === 1
+                            ? 'SINGOLA'
+                            : 'MULTIPLA'
+                        }
+                    </Tab>
+                    <Tab active={sistema} onClick={onTabClick.bind(null, true)}>
+                        SISTEMA
+                    </Tab>
                     <NavLink to={'/'} style={{ all: 'unset' }}>
                         <BetslipHeadBack>
                             Chiudi
                         </BetslipHeadBack>
                     </NavLink>
-                </TabsWrapper>
+                </TabsWrapper> )
             }
         </Wrapper>
     );

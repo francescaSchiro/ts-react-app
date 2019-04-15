@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 import { ITicketBodyContent } from 'src/models/ITicketBodyContent';
-import TicketButtons from 'src/components/TicketButtons';
 import TicketBody from 'src/components/TicketBody';
 import TicketSettings from 'src/components/TicketSettings';
 import TicketFooter from 'src/components/TicketFooter';
+import TicketButtons from 'src/components/TicketButtons';
 
 import Wrapper from './Wrapper';
 
@@ -25,8 +25,8 @@ class TicketSistema extends React.Component<Props, State>  {
         const { sistema, content } = this.props;
         return (
             <Wrapper>
-                <TicketBody 
-                    sistema={sistema} 
+                <TicketBody
+                    sistema={sistema}
                     content={content}
                 />
                 <TicketSettings />

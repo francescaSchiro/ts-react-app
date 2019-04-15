@@ -3,18 +3,12 @@ import { Switch, Route } from 'react-router';
 
 import HomePage from 'src/containers/HomePage';
 import Ticket from 'src/containers/Ticket';
-import Multipla from 'src/components/TicketSingolaMultipla';
-import Sistema from 'src/components/TicketSistema';
 
-// import ModalBox from 'src/containers/Ticket/ModalBox';
 
 const Routes = () => (
     <Switch>
         <Route exact={true} path={'/'} component={HomePage} />
         <Route path={'/ticket/'} component={Ticket} />
-        <Route path={'/multipla/'} component={Multipla} />
-        <Route path={'/sistema/'} component={Sistema} />
-        {/* <Route path={'/modal/'} component={ModalBox} /> */}
     </Switch>
 )
 

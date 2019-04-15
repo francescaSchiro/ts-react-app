@@ -2,8 +2,7 @@ import * as React from 'react';
 
 import TicketTabs from 'src/components/TicketTabs';
 import TicketEmpty from 'src/components/TicketEmpty';
-import TicketSingolaMultipla from 'src/components/TicketSingolaMultipla';
-import TicketSistema from 'src/components/TicketSistema';
+import TicketSingolaMultiplaSistema from 'src/components/TicketSingolaMultiplaSistema';
 import ticketEmptyContent from 'src/mocks/ticketEmptyContent';
 import ticketBodyContent from 'src/mocks/ticketBodyContent';
 import { ITicketEmptyContent } from 'src/models/ITicketEmptyContent';
@@ -13,7 +12,7 @@ import Wrapper from './Wrapper';
 
 
 interface State {
-    ticketType: number, // 1 | 2  => 0 = empty, 1 = sigolaMultipla, 2 = sistema // 0 = empty, 1 = singola, 2 = multipla&sistema, 3 = onlysistema
+    sistema: boolean, // 1 | 2  => 0 = empty, 1 = sigolaMultipla, 2 = sistema // 0 = empty, 1 = singola, 2 = multipla&sistema, 3 = onlysistema
     emptyContent: ITicketEmptyContent;
     bodyContent: ITicketBodyContent;
     betsCount: number;
@@ -22,53 +21,35 @@ interface State {
 class Ticket extends React.PureComponent<State> {
     public state: State = {
         betsCount: 1,
-        ticketType: 2,
+        sistema: false,
         emptyContent: ticketEmptyContent,
         bodyContent: ticketBodyContent,
 
     };
 
     public render() {
-        const { ticketType, emptyContent, bodyContent, betsCount } = this.state;
+        const { sistema, emptyContent, bodyContent, betsCount } = this.state;
         return (
             <Wrapper>
                 <TicketTabs
                     betsCount={betsCount}
-                    ticketType={ticketType}
-                    onTabClick={this.changeTicketType}
+                    sistema={sistema}
+                    onTabClick={this.changeTab}
                 />
                 {betsCount === 0
                     ? <TicketEmpty content={emptyContent} />
-                    : getTicketByType(ticketType, bodyContent, betsCount)
+                    : <TicketSingolaMultiplaSistema
+                        sistema={sistema}
+                        betsCount={betsCount}
+                        content={bodyContent}
+                    />
                 }
             </Wrapper>
         )
     }
-    private changeTicketType = (clickedTicketType: number) => (
-        this.setState({ ticketType: clickedTicketType })
+    private changeTab = (isSistema: boolean) => (
+        this.setState({ sistema: isSistema })
     );
-};
-
-const getTicketByType = (ticketType: number, bodyContent: ITicketBodyContent, betsCount: number) => {
-    switch (ticketType) {
-        case 1:
-            return (
-                <TicketSingolaMultipla
-                    betsCount={betsCount}
-                    sistema={false}
-                    content={bodyContent}
-                />
-            );
-        case 2:
-            return (
-                <TicketSistema
-                    sistema={true}
-                    content={bodyContent}
-                />
-            );
-        default:
-            return null;
-    };
 };
 
 export default Ticket;
