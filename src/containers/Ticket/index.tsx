@@ -12,7 +12,7 @@ import Wrapper from './Wrapper';
 
 
 interface State {
-    sistema: boolean, // 1 | 2  => 0 = empty, 1 = sigolaMultipla, 2 = sistema // 0 = empty, 1 = singola, 2 = multipla&sistema, 3 = onlysistema
+    sistema: boolean, 
     emptyContent: ITicketEmptyContent;
     bodyContent: ITicketBodyContent;
     betsCount: number;
@@ -20,11 +20,10 @@ interface State {
 
 class Ticket extends React.PureComponent<State> {
     public state: State = {
-        betsCount: 1,
+        betsCount: 2,
         sistema: false,
         emptyContent: ticketEmptyContent,
         bodyContent: ticketBodyContent,
-
     };
 
     public render() {
