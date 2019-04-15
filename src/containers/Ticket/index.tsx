@@ -13,7 +13,7 @@ import Wrapper from './Wrapper';
 
 
 interface State {
-    ticketType: number, // 0 | 1 | 2  => 0 = empty, 1 = sigolaMultipla, 2 = sistema // 0 = empty, 1 = singola, 2 = multipla&sistema, 3 = onlysistema
+    ticketType: number, // 1 | 2  => 0 = empty, 1 = sigolaMultipla, 2 = sistema // 0 = empty, 1 = singola, 2 = multipla&sistema, 3 = onlysistema
     emptyContent: ITicketEmptyContent;
     bodyContent: ITicketBodyContent;
     betsCount: number;
@@ -21,17 +21,22 @@ interface State {
 
 class Ticket extends React.PureComponent<State> {
     public state: State = {
+        betsCount: 1,
         ticketType: 2,
         emptyContent: ticketEmptyContent,
         bodyContent: ticketBodyContent,
-        betsCount: 1,
+
     };
 
     public render() {
         const { ticketType, emptyContent, bodyContent, betsCount } = this.state;
         return (
             <Wrapper>
-                <TicketTabs betsCount={betsCount} ticketType={ticketType} onTabClick={this.changeTicketType} />
+                <TicketTabs
+                    betsCount={betsCount}
+                    ticketType={ticketType}
+                    onTabClick={this.changeTicketType}
+                />
                 {betsCount === 0
                     ? <TicketEmpty content={emptyContent} />
                     : getTicketByType(ticketType, bodyContent, betsCount)
@@ -48,11 +53,18 @@ const getTicketByType = (ticketType: number, bodyContent: ITicketBodyContent, be
     switch (ticketType) {
         case 1:
             return (
-                <TicketSingolaMultipla betsCount={betsCount} sistema={false} content={bodyContent} />
+                <TicketSingolaMultipla
+                    betsCount={betsCount}
+                    sistema={false}
+                    content={bodyContent}
+                />
             );
         case 2:
             return (
-                <TicketSistema sistema={true} content={bodyContent} />
+                <TicketSistema
+                    sistema={true}
+                    content={bodyContent}
+                />
             );
         default:
             return null;

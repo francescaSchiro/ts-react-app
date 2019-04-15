@@ -17,42 +17,30 @@ const getTicketHeaderType = (ticketType: number, onTabClick: (clickedTicketType:
     switch (ticketType) {
         case 1: // singolaMultipla e sistema
             return (
-                <TabsWrapper>
-                    <Tab style={{ color: '#f7a81e', borderBottomColor: '#f7a81e' }} onClick={onTabClick.bind(null, 1)}>
+                <>
+                    <Tab active={true} onClick={onTabClick.bind(null, 1)}>
                         {betsCount === 1
                             ? 'SINGOLA'
                             : 'MULTIPLA'
                         }
                     </Tab>
-                    <Tab onClick={onTabClick.bind(null, 2)}>
+                    <Tab active={false} onClick={onTabClick.bind(null, 2)}>
                         SISTEMA
                         </Tab>
-
-                    <NavLink to={'/'} style={{ all: 'unset' }}>
-                        <BetslipHeadBack>
-                            Chiudi
-                            </BetslipHeadBack>
-                    </NavLink>
-                </TabsWrapper>
+                </>
             );
         case 2: // only sistema
             return (
-                <TabsWrapper>
+                <>
                     {/*should be disabled <Tab style={{ pointerEvents: 'none', }} onClick={onTabClick.bind(null, 2)}> */}
-                    <Tab onClick={onTabClick.bind(null, 1)}>
+                    <Tab onClick={onTabClick.bind(null, 1)} active={false}>
                         MULTIPLA
                     </Tab>
 
-                    <Tab style={{ color: '#f7a81e', borderColor: '#f7a81e' }} onClick={onTabClick.bind(null, 2)}>
+                    <Tab active={true} onClick={onTabClick.bind(null, 2)} >
                         SISTEMA
                     </Tab>
-
-                    <NavLink to={'/'} style={{ all: 'unset' }}>
-                        <BetslipHeadBack>
-                            Chiudi
-                    </BetslipHeadBack>
-                    </NavLink>
-                </TabsWrapper>
+                </>
             );
         default:
             return null;
@@ -64,23 +52,33 @@ interface Props {
     betsCount: number,
 }
 
-const TicketTabs: React.FC<Props> = ({ ticketType, onTabClick, betsCount }) => (
-    <Wrapper>
-        {betsCount === 0
-            ? <TabsWrapperEmpty>
-                <Tab style={{ color: '#f7a81e' }}>
-                    IL TUO BIGLIETTO È VUOTO
-                </Tab>
-                <NavLink to={'/'} style={{ all: 'unset' }}>
-                    <BetslipHeadBack>
-                        Chiudi
-                    </BetslipHeadBack>
-                </NavLink>
-            </TabsWrapperEmpty>
-            : getTicketHeaderType(ticketType, onTabClick, betsCount)
-        }
-    </Wrapper>
-);
+const TicketTabs: React.FC<Props> = ({ ticketType, onTabClick, betsCount }) => {
+
+    return (
+        <Wrapper>
+            {betsCount === 0
+                ? <TabsWrapperEmpty>
+                    <Tab active={true} style={{ borderBottom: '0px' }}>
+                        IL TUO BIGLIETTO È VUOTO
+                    </Tab>
+                    <NavLink to={'/'} style={{ all: 'unset' }}>
+                        <BetslipHeadBack>
+                            Chiudi
+                        </BetslipHeadBack>
+                    </NavLink>
+                </TabsWrapperEmpty>
+                : <TabsWrapper>
+                    {getTicketHeaderType(ticketType, onTabClick, betsCount)}
+                    <NavLink to={'/'} style={{ all: 'unset' }}>
+                        <BetslipHeadBack>
+                            Chiudi
+                        </BetslipHeadBack>
+                    </NavLink>
+                </TabsWrapper>
+            }
+        </Wrapper>
+    );
+};
 
 const TabsWrapperEmpty = styled.div`
     position: relative;
@@ -109,7 +107,6 @@ const BetslipHeadBack = styled.div`
     position:absolute;
     top:0;
     right:0;
-    
     display:flex;
     flex-direction: row;
     justify-content: center;
@@ -118,16 +115,18 @@ const BetslipHeadBack = styled.div`
     font-weight: normal;
 `;
 
+interface ITabProps {
+    active: boolean,
+}
 const Tab = styled.div`
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #909090;
+    color: ${(props: ITabProps) => props.active ? '#f7a81e' : '#909090'};
     text-decoration: none;
     height:105%;
-    border-bottom: 3px solid #222; 
-
+    border-bottom: 3px solid ${(props: ITabProps) => props.active ? '#f7a81e' : '#222'}; 
     font-size: 12px;
     text-transform: uppercase;
 
