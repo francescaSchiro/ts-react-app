@@ -47,9 +47,9 @@ const getTicketHeaderType = (ticketType: number, onTabClick: (clickedTicketType:
     }
 };
 interface Props {
+    betsCount: number,
     ticketType: number,
     onTabClick: (clickedTicketType: number) => void,
-    betsCount: number,
 }
 
 const TicketTabs: React.FC<Props> = ({ ticketType, onTabClick, betsCount }) => {
@@ -57,6 +57,7 @@ const TicketTabs: React.FC<Props> = ({ ticketType, onTabClick, betsCount }) => {
     return (
         <Wrapper>
             {betsCount === 0
+            // Empty 
                 ? <TabsWrapperEmpty>
                     <Tab active={true} style={{ borderBottom: '0px' }}>
                         IL TUO BIGLIETTO È VUOTO
@@ -67,6 +68,7 @@ const TicketTabs: React.FC<Props> = ({ ticketType, onTabClick, betsCount }) => {
                         </BetslipHeadBack>
                     </NavLink>
                 </TabsWrapperEmpty>
+            // singola/multipla & sistema
                 : <TabsWrapper>
                     {getTicketHeaderType(ticketType, onTabClick, betsCount)}
                     <NavLink to={'/'} style={{ all: 'unset' }}>

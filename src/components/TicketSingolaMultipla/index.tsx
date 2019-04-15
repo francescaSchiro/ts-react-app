@@ -15,19 +15,22 @@ interface State {
 };
 
 interface Props {
-    content: ITicketBodyContent,
-    betsCount: number,
     sistema: boolean,
+    betsCount: number,
+    content: ITicketBodyContent,
 };
 
 class TicketSingolaMultipla extends React.Component<Props, State> {
     public state: State = { showKeypad: false }
     public render() {
         const { showKeypad } = this.state;
-        const { content, betsCount, sistema } = this.props;
+        const { sistema, betsCount, content } = this.props;
         return (
             <Wrapper>
-                <TicketBody content={content} sistema={sistema} />
+                <TicketBody
+                    sistema={sistema}
+                    content={content}
+                />
                 {betsCount === 1
                     ? null
                     :

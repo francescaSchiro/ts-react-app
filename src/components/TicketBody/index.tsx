@@ -10,11 +10,11 @@ import Wrapper from './Wrapper';
 
 
 interface Props {
-    content: ITicketBodyContent;
     sistema: boolean,
+    content: ITicketBodyContent;
 };
 
-const TicketBody: React.FC<Props> = ({ content, sistema }) => {
+const TicketBody: React.FC<Props> = ({ sistema, content }) => {
     const { pronosticoList } = content;
     return (
         <Wrapper>

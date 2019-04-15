@@ -10,8 +10,8 @@ import Wrapper from './Wrapper';
 
 
 interface Props {
-    content: ITicketBodyContent,
     sistema: boolean,
+    content: ITicketBodyContent,
 };
 
 interface State {
@@ -22,10 +22,13 @@ class TicketSistema extends React.Component<Props, State>  {
     public state: State = { showKeypad: false };
     public render() {
         const { showKeypad } = this.state;
-        const { content, sistema } = this.props;
+        const { sistema, content } = this.props;
         return (
             <Wrapper>
-                <TicketBody content={content} sistema={sistema} />
+                <TicketBody 
+                    sistema={sistema} 
+                    content={content}
+                />
                 <TicketSettings />
                 <TicketFooter
                     onImportClick={this.toggleKeypad}
