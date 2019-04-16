@@ -4,6 +4,7 @@ import styled from 'src/theme/default/index';
 import TicketStake from 'src/components/TicketStake';
 import TicketDevelopItemInfo from 'src/components/TicketDevelopItemInfo';
 import TicketKeypad from 'src/components/TicketKeypad';
+import TicketDettaglioSistema from 'src/components/TicketDettaglioSistema';
 
 import Wrapper from './Wrapper';
 
@@ -11,17 +12,19 @@ import Wrapper from './Wrapper';
 interface State {
     showKeypad: boolean,
     showInfo: boolean,
+    showDettaglioSistema: boolean,
 };
 
 class TicketDevelopItem extends React.Component<{}, State>{
-    public state: State = { showKeypad: false, showInfo: false }
+    public state: State = { showKeypad: false, showInfo: false, showDettaglioSistema: false, }
     public render() {
-        const { showKeypad, showInfo } = this.state;
+        const { showKeypad, showInfo, showDettaglioSistema } = this.state;
         return (
             <>
                 <Wrapper>
                     <ItemWrapper>
-                        <IconEye />
+                        <IconEye onClick={this.toggleDettaglio} />
+                        {showDettaglioSistema && <TicketDettaglioSistema onChiudiClick={this.toggleDettaglio} />}
                         <TicketStake
                             onImportClick={this.toggleKeypad}
                             error={false}
@@ -40,9 +43,9 @@ class TicketDevelopItem extends React.Component<{}, State>{
                 {showKeypad &&
                     <>
                         <Overlay />
-                        <TicketKeypad 
-                            onConfermaClick={this.toggleKeypad} 
-                            sistema={true} 
+                        <TicketKeypad
+                            onConfermaClick={this.toggleKeypad}
+                            sistema={true}
                         />
                     </>
                 }
@@ -54,6 +57,9 @@ class TicketDevelopItem extends React.Component<{}, State>{
     };
     private toggleInfo = () => {
         this.setState({ showInfo: !this.state.showInfo })
+    };
+    private toggleDettaglio = () => {
+        this.setState({ showDettaglioSistema: !this.state.showDettaglioSistema })
     };
 };
 

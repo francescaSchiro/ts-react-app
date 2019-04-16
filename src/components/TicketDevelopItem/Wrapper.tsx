@@ -1,6 +1,6 @@
 import styled from 'src/theme/default/index';
 
-const BetslipDevelopWrapper = styled.div`
+const Wrapper = styled.div`
     width: 100%;
     display:flex;
     flex-direction: column ;
@@ -9,6 +9,6 @@ const BetslipDevelopWrapper = styled.div`
     padding: 10px 12px;
     background-color: #4a4a4a;
     border-bottom: 1px solid #585858;
-`
+`;
 
-export default BetslipDevelopWrapper;
+export default Wrapper;
