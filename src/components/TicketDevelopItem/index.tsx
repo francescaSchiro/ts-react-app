@@ -2,11 +2,7 @@ import * as React from 'react';
 import styled from 'src/theme/default/index';
 
 import TicketStake from 'src/components/TicketStake';
-
-import NumberArrowWrapper from '../TicketDevelop/NumberArrowWrapper';
-import ArrowDown from '../TicketDevelop/ArrowDown';
-import DevelopNumber from '../TicketDevelop/DevelopNumber';
-import BetslipDevelopItemInfo from '../TicketDevelop/BetslipDevelopItemInfo';
+import TicketDevelopItemInfo from 'src/components/TicketDevelopItemInfo';
 import TicketKeypad from 'src/components/TicketKeypad';
 
 import Wrapper from './Wrapper';
@@ -27,13 +23,12 @@ class TicketDevelopItem extends React.Component<{}, State>{
                     <ItemWrapper>
                         <IconEye />
                         <TicketStake onImportClick={this.toggleKeypad} error={false} sistema={true} />
-
                         <NumberArrowWrapper>
                             <DevelopNumber>x1</DevelopNumber>
                             <ArrowDown onClick={this.toggleInfo} showInfo={showInfo} />
                         </NumberArrowWrapper>
                     </ItemWrapper>
-                    {showInfo && <BetslipDevelopItemInfo />}
+                    {showInfo && <TicketDevelopItemInfo />}
                 </Wrapper>
                 {showKeypad &&
                     <>
@@ -78,6 +73,37 @@ const Overlay = styled.div`
     background: rgba(0,0,0,.75);
     z-index: 8000;
 `;
+const NumberArrowWrapper = styled.div`
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+`;
+interface IArrowDown {
+    showInfo: boolean;
+};
+const ArrowDown = styled.div`
+    width: 10.2px;
+    height: 24px;
+    background-image:  url('https://m.sisal.it/scommesse-matchpoint/content/img/icon_pv_chevron.png?v=2.6.8');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: ${(props: IArrowDown) => props.showInfo ? null : 'rotate(180deg)'};
+`;
+const DevelopNumber = styled.div`
+    box-sizing:border-box;
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+    color: #fff;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-right: 12px;
+`;
+
+
+
 
 
 export default TicketDevelopItem;
