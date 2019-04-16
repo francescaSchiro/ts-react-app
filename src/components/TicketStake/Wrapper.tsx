@@ -1,19 +1,17 @@
 import styled from 'src/theme/default/index';
 
+
+interface IPropsWrapper {
+    sistema?: boolean,
+}
+
 const Wrapper = styled.div`
     width: 100%;
-    /* height:61px; */
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-
-
-    color: #d5d5d5;
-    background-color: #4a4a4a;
-    /* padding: 10px 12px; */
-
-   
-`
+    background-color: ${(props: IPropsWrapper) => props.sistema ? 'transparent' : '#393939'};   
+`;
 
 export default Wrapper;

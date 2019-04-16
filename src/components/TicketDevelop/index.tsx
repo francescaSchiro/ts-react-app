@@ -1,16 +1,17 @@
 import * as React from 'react';
 
 import TicketInfoAlert from 'src/components/TicketInfoAlert';
+import TicketDevelopItem from 'src/components/TicketDevelopItem';
 
 import Wrapper from './Wrapper';
-import BetslipDevelopItem from './BetslipDevelopItem';
 
 
-const TicketDevelopSistema = () => (
+
+const TicketDevelop = () => (
     <>
         <Wrapper>
-            <BetslipDevelopItem />
-            <BetslipDevelopItem />
+            <TicketDevelopItem />
+            <TicketDevelopItem />
         </Wrapper>
         <TicketInfoAlert
             error={true}
@@ -21,5 +22,5 @@ const TicketDevelopSistema = () => (
 );
 
 
-export default TicketDevelopSistema;
+export default TicketDevelop;
 

@@ -3,7 +3,7 @@ import styled from 'src/theme/default/index';
 
 import TicketStakeSingMult from 'src/components/TicketStakeSingMult';
 import TicketKeypad from 'src/components/TicketKeypad';
-import TicketDevelopSistema from 'src/components/TicketDevelopSistema';
+import TicketDevelop from 'src/components/TicketDevelop';
 
 
 import Wrapper from './Wrapper';
@@ -18,7 +18,7 @@ interface Props {
 const TicketFooter: React.FC<Props> = ({ onImportClick, showKeypad, sistema }) => (
     <Wrapper>
         {sistema
-            ? <TicketDevelopSistema />
+            ? <TicketDevelop />
             :
             <TicketStakeSingMult onImportClick={onImportClick} />
         }

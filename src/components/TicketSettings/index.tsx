@@ -3,14 +3,14 @@ import styled from 'src/theme/default/index';
 
 import Wrapper from './Wrapper';
 
-interface ISettingsDefaultBlockState {
+
+interface State {
     showInfo: boolean,
     showChecklist: boolean,
+};
 
-}
-
-class TicketSettings extends React.Component<{}, ISettingsDefaultBlockState> {
-    public state = { showInfo: false, showChecklist: false };
+class TicketSettings extends React.Component<{}, State> {
+    public state: State = { showInfo: false, showChecklist: false };
     public render() {
         const { showInfo, showChecklist } = this.state;
         return (
@@ -41,7 +41,6 @@ class TicketSettings extends React.Component<{}, ISettingsDefaultBlockState> {
                         </RowWrapper>
                     </ChecklistWrapper>
                 }
-
             </>
         )
     }
@@ -65,14 +64,11 @@ const Title = styled.div`
     flex-direction:row;
     justify-content:flex-start;
     align-items: center;
-
-
     background-color: #393939;
     color: #eaeaea;
     font-weight: bold;
     font-size:10px;
     padding-left: 8px;
-
     &::after {
         position: absolute;
         content:'i';
@@ -89,11 +85,9 @@ const Title = styled.div`
         border:1px solid white;
     }
 `;
-
 interface IDownArrowProps {
     showChecklist: boolean,
 };
-
 const DownArrow = styled.div`
     height: 8px;
     width: 15px;
@@ -103,6 +97,7 @@ const DownArrow = styled.div`
     background-size: 14px;
     margin-right: 8px;
 `;
+
 const ImpostazioniExpand = styled.div`
     box-sizing: border-box;
     width: 100%;
@@ -157,6 +152,5 @@ const RowWrapper = styled.div`
     padding: 5px 8px;
     white-space: pre-wrap;
 `;
-
 
 export default TicketSettings;

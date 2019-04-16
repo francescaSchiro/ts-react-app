@@ -8,8 +8,7 @@ const BetslipDevelopWrapper = styled.div`
     align-items: center;   
     padding: 10px 12px;
     background-color: #4a4a4a;
-
-
+    border-bottom: 1px solid #585858;
 `
 
 export default BetslipDevelopWrapper;
