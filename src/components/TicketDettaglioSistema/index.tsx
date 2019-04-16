@@ -8,13 +8,30 @@ interface Props {
     onChiudiClick: () => void,
 };
 
+const isCellHorizontal = () => {
+    if (window.innerWidth <= 800) {
+        return false;
+    } else {
+        return true;
+    };
+}
+
 // TODO add media query for horizontal view conditionally rendered
 const TicketDettaglioSistema: React.FC<Props> = ({ onChiudiClick }) => (
     <Wrapper>
-        <Close onClick={onChiudiClick}> chiudi</Close>
-        <Icon />
-        <Label>Ruota il tuo dispositivo</Label>
-        <Label>per visualizzare lo sviluppo del sistema</Label>
+
+        {isCellHorizontal()
+            ? <div>cell is HORIZONTAL</div>
+            : (
+                <>
+                    <Close onClick={onChiudiClick}> chiudi</Close>
+                    <Icon />
+                    <Label>Ruota il tuo dispositivo</Label>
+                    <Label>per visualizzare lo sviluppo del sistema</Label>
+                </>
+            )
+        }
+
     </Wrapper>
 );
 
