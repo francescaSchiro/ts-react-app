@@ -7,10 +7,11 @@ import TicketKeypad from 'src/components/TicketKeypad';
 
 import Wrapper from './Wrapper';
 
+
 interface State {
     showKeypad: boolean,
     showInfo: boolean,
-}
+};
 
 class TicketDevelopItem extends React.Component<{}, State>{
     public state: State = { showKeypad: false, showInfo: false }
@@ -19,13 +20,19 @@ class TicketDevelopItem extends React.Component<{}, State>{
         return (
             <>
                 <Wrapper>
-
                     <ItemWrapper>
                         <IconEye />
-                        <TicketStake onImportClick={this.toggleKeypad} error={false} sistema={true} />
+                        <TicketStake
+                            onImportClick={this.toggleKeypad}
+                            error={false}
+                            sistema={true}
+                        />
                         <NumberArrowWrapper>
                             <DevelopNumber>x1</DevelopNumber>
-                            <ArrowDown onClick={this.toggleInfo} showInfo={showInfo} />
+                            <ArrowDown
+                                onClick={this.toggleInfo}
+                                showInfo={showInfo}
+                            />
                         </NumberArrowWrapper>
                     </ItemWrapper>
                     {showInfo && <TicketDevelopItemInfo />}
@@ -33,7 +40,10 @@ class TicketDevelopItem extends React.Component<{}, State>{
                 {showKeypad &&
                     <>
                         <Overlay />
-                        <TicketKeypad onConfermaClick={this.toggleKeypad} sistema={true} />
+                        <TicketKeypad 
+                            onConfermaClick={this.toggleKeypad} 
+                            sistema={true} 
+                        />
                     </>
                 }
             </>
@@ -41,10 +51,10 @@ class TicketDevelopItem extends React.Component<{}, State>{
     }
     private toggleKeypad = () => {
         this.setState({ showKeypad: !this.state.showKeypad })
-    }
+    };
     private toggleInfo = () => {
         this.setState({ showInfo: !this.state.showInfo })
-    }
+    };
 };
 
 const ItemWrapper = styled.div`

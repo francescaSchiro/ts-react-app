@@ -7,10 +7,8 @@ const Wrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
-
     background-color: #393939;
     color: #eaeaea;
-`
+`;
 
 export default Wrapper;

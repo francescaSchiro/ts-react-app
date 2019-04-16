@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
-
 import { IGameListItem } from 'src/models/IGameListItem';
 
 import Wrapper from './Wrapper';
@@ -41,7 +40,6 @@ const GameName = styled.div`
     color: black;
     text-transform: uppercase;
 `;
-
 const Label = styled.div`
     width: 100%;
     display: flex;

@@ -4,7 +4,7 @@ import { IPronosticoItem } from 'src/models/IPronosticoItem';
 import TicketBodyItem from 'src/components/TicketBodyItem';
 
 
-export interface Props {
+interface Props {
     sistema: boolean,
     pronosticoList: IPronosticoItem[],
 };

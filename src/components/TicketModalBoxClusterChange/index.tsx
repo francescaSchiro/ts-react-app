@@ -9,10 +9,10 @@ interface State {
 };
 interface Props {
     clusterAccordionItems: string[],
-}
+};
 
 class TicketModalBoxClusterChange extends React.Component<Props, State>{
-    public state = { showCambia: false };
+    public state: State = { showCambia: false };
     public render() {
         const { showCambia } = this.state;
         const { clusterAccordionItems } = this.props;
@@ -35,18 +35,14 @@ class TicketModalBoxClusterChange extends React.Component<Props, State>{
                         )
                         )}
                     </ClusterAccordion>
-
                 }
             </>
-
         )
     };
-
     private toggleCambia = () => {
         this.setState({ showCambia: !this.state.showCambia })
     }
 };
-
 
 const LabelValueWrapper = styled.div`
     height: 35px;
@@ -81,8 +77,6 @@ const Change = styled.div`
 interface IArrowProps {
     showCambia: boolean,
 };
-
-
 const ClusterAccordion = styled.div`
     width:100%;
     max-height: 165px;
@@ -103,11 +97,9 @@ const ClusterAccordionItem = styled.div`
     width: 50%;
     height: 35px;
     padding: 0 10px;
-
     &:first-child > span{
         position:relative;
         font-weight: bold;
-
         &:after {
             content: '';
             position: absolute;
@@ -116,17 +108,15 @@ const ClusterAccordionItem = styled.div`
             left: 50%;
             bottom: -5px;
             background: #b9d531;
-         
             transform: translate(-50%,0);
         }
     }
-`
+`;
 const Span = styled.span`
     font-size: 12px;
     font-weight: normal;
     color: #333;
-`
-
+`;
 const Arrow = styled.div`
     width: 7px;
     height: 7px;
@@ -136,10 +126,9 @@ const Arrow = styled.div`
     border-bottom: 2px solid #4a4a4a;
     transform: ${(props: IArrowProps) => (
         props.showCambia
-            ? `translate(-50%,0) rotate(-135deg)` // upArrow
-            : `translate(-50%,-40%) rotate(45deg)` // downArrow
+            ? `translate(-50%,0) rotate(-135deg);` // upArrow
+            : `translate(-50%,-40%) rotate(45deg);` // downArrow
     )
     }`
-
 
 export default TicketModalBoxClusterChange;

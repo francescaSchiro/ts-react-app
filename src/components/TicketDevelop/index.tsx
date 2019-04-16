@@ -6,8 +6,7 @@ import TicketDevelopItem from 'src/components/TicketDevelopItem';
 import Wrapper from './Wrapper';
 
 
-
-const TicketDevelop = () => (
+const TicketDevelop: React.FC = () => (
     <>
         <Wrapper>
             <TicketDevelopItem />

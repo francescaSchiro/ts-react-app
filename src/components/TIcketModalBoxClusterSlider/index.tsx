@@ -15,7 +15,6 @@ const TicketModalBoxClusterSlider: React.FC<Props> = ({ clusterItems }) => (
 );
 
 const ClusterItem = styled.div`
-
     box-sizing:border-box;
     height:100%;
     display:flex;
@@ -26,13 +25,11 @@ const ClusterItem = styled.div`
     white-space: nowrap;
     text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
-    
     &:first-child > span {
         position: relative;
         box-sizing:border-box;
         width:100%;
         color: #b9d531;
-     
         &::after {
             content: '';
             position: absolute;

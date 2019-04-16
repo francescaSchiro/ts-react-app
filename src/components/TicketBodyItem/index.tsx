@@ -1,25 +1,25 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
-import { IPronosticoItem } from 'src/models/IPronosticoItem';
 import TicketInfo from 'src/components/TicketInfo';
 import TicketModalBox from 'src/components/TicketModalBox';
 import clusterItems from 'src/mocks/clusterItems';
 import clusterAccordionItems from 'src/mocks/clusterAccordionItems';
 import gameListItems from 'src/mocks/gameListItems';
+import { IGameListItem } from 'src/models/IGameListItem';
+import { IPronosticoItem } from 'src/models/IPronosticoItem';
 
 import Wrapper from './Wrapper';
-import { IGameListItem } from 'src/models/IGameListItem';
 
 
-export interface State {
+interface State {
     isChecked: boolean,
     showModalBox: boolean,
     items: string[],
     accordionItems: string[],
     gameItems: IGameListItem[]
 };
-export interface Props {
+interface Props {
     sistema: boolean,
     item: IPronosticoItem,
 };
@@ -33,7 +33,7 @@ class TicketBodyItem extends React.Component<Props, State>{
         gameItems: gameListItems,
     };
     public render() {
-        const { item, sistema } = this.props;
+        const { sistema, item } = this.props;
         const { isChecked, showModalBox, items, accordionItems, gameItems } = this.state;
         return (
             <>
@@ -41,7 +41,7 @@ class TicketBodyItem extends React.Component<Props, State>{
                     <BetData>
                         <BetExtra>
                             {sistema
-                                ? < >
+                                ? <>
                                     <Fixed onClick={this.toggleFixed} checked={isChecked}>F</Fixed>
                                     <FixedCheckbox onClick={this.toggleFixed} checked={isChecked} />
                                 </>
@@ -58,13 +58,10 @@ class TicketBodyItem extends React.Component<Props, State>{
                             />
                         </BetDetail>
                     </BetData>
-
                     <BetActions>
                         <DeleteIcon display={false} />
-
                         <EditIcon onClick={this.toggleModalBox} />
                     </BetActions>
-
                 </Wrapper>
                 {showModalBox &&
                     <TicketModalBox
@@ -78,13 +75,12 @@ class TicketBodyItem extends React.Component<Props, State>{
             </>
         )
     };
-
-    private toggleFixed = (e: any) => {
+    private toggleFixed = () => {
         this.setState({ isChecked: !this.state.isChecked })
-    }
+    };
     private toggleModalBox = () => {
         this.setState({ showModalBox: !this.state.showModalBox })
-    }
+    };
 };
 
 const BetData = styled.div`
@@ -141,8 +137,7 @@ const Title = styled.div`
 
 interface IDeleteIconProps {
     display?: boolean;
-}
-
+};
 const DeleteIcon = styled.div`
     display: ${(props: IDeleteIconProps) => props.display ? 'block' : 'none'};
     width:12px;
@@ -168,8 +163,7 @@ const EditIcon = styled.div`
 
 interface IFixedProps {
     checked?: boolean,
-}
-
+};
 const Fixed = styled.div`
     margin-top:8px;
     display: flex;
@@ -182,12 +176,9 @@ const Fixed = styled.div`
     background-color: ${(props: IFixedProps) => props.checked ? '#186cb5' : '#909090'};
     border-radius: 2px 2px 0 0;
 `;
-
-
 interface IFixedCheckboxProps {
     checked?: boolean,
-}
-
+};
 const FixedCheckbox = styled.div`
     position: relative;
     display: flex;
@@ -214,7 +205,5 @@ const FixedCheckbox = styled.div`
     }`: null
     }
 `;
-
-
 
 export default TicketBodyItem;
