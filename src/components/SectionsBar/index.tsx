@@ -14,8 +14,9 @@ interface OwnProps {
 const SectionsBar: React.FC<OwnProps> = ({ items }) => (
   <Wrapper>
     <SectionsBarSlider>
-      {items.map((item: ISectionsBarItem) => (
+      {items.map((item: ISectionsBarItem, i) => (
         <SectionsBarItem
+          key={i}
           item={item}
         />
       ))}

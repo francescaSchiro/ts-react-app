@@ -11,8 +11,8 @@ interface Props {
 const MainEventsEvent: React.FC<Props> = ({ events }) => (
     <>
         {events.map((e: IEvent) => (
-            <>
-                <Wrapper key={e.id}>
+            <React.Fragment key={e.id}>
+                <Wrapper>
                     <LiveScore>
                         <Score>{e.score}</Score>
                         <Time>{e.time}</Time>
@@ -48,7 +48,7 @@ const MainEventsEvent: React.FC<Props> = ({ events }) => (
                         <HasMoreNumberArrowDown>+{e.moreGamesNumber}</HasMoreNumberArrowDown>
                     </EventContentGameAccordionTrigger>
                 </Wrapper>
-            </>
+            </React.Fragment>
         ))}
     </>
 );

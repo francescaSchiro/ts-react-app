@@ -12,7 +12,7 @@ interface Props {
 const TicketBodyItems: React.FC<Props> = ({ sistema, pronosticoList }) => (
     <>
         {pronosticoList.map(item => (
-            <TicketBodyItem item={item} sistema={sistema} />
+            <TicketBodyItem key={item.avvenimentoKey} item={item} sistema={sistema} />
         ))}
     </>
 );

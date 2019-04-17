@@ -140,7 +140,7 @@ const mainEventsTabs: IMainEventsTab[] = [
     name: 'pre match',
     sports: [
       {
-        id: 10000,
+        id: 1,
         name: 'calcio',
         leagues: [
           {
@@ -170,7 +170,7 @@ const mainEventsTabs: IMainEventsTab[] = [
         ]
       },
       {
-        id: 10000,
+        id: 2,
         name: 'Tennis',
         leagues: [
           {
@@ -199,7 +199,7 @@ const mainEventsTabs: IMainEventsTab[] = [
         ]
       },
       {
-        id: 10000,
+        id: 3,
         name: 'Basket',
         leagues: [
           {
@@ -229,7 +229,7 @@ const mainEventsTabs: IMainEventsTab[] = [
         ]
       },
       {
-        id: 10000,
+        id: 4,
         name: 'Pallamano',
         leagues: [
           {
