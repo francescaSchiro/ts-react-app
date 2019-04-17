@@ -13,7 +13,7 @@ interface Props {
 const TicketStake: React.FC<Props> = ({ onImportClick, error, sistema }) => (
     <Wrapper sistema={sistema}>
         <StakeAction>-</StakeAction>
-        <StakeImport onClick={onImportClick} error={error}>{sistema ? '€3,00' : '€ 1,00'}</StakeImport>
+        <StakeImport onClick={onImportClick} error={error}>{sistema ? '€ 3,00' : '€ 1,00'}</StakeImport>
         <StakeAction>+</StakeAction>
     </Wrapper>
 );
@@ -31,28 +31,17 @@ const StakeAction = styled.div`
     border: 3px solid #fff;
     background: #389b05;
     font-size: 18px;
-    color: white;
-    &:first-of-type{
-        &::before {
-        content:'Puntata';
-        position: absolute;
-        left: -170%;
-        color: #bbb;
-        font-style: normal;
-        font-size: 11px;
-        }
-    }
+    color: white;    
 `;
-
 interface IStakeImportProps {
     error: boolean,
 };
 const StakeImport = styled.div`
-    display:flex;
-    justify-content:center;
+    display: flex;
+    justify-content: center;
     align-items: center;
     background: #fff;
-    color: ${(props: IStakeImportProps) => props.error ? 'red' : '#393939'};
+    color: ${ (props: IStakeImportProps) => props.error ? 'red' : '#393939'};
     height: 40px;
     width: 76px;
     margin-left: 5px;

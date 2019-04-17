@@ -12,18 +12,18 @@ interface Props {
 
 const TicketModalBoxBodyGame: React.FC<Props> = ({ descrizioneScommessa, descrizioneEsito, quota }) => (
     <Wrapper>
-        <DeleteIcon display={true} />
+        <DeleteIcon show={true} />
         <GameLabel>{descrizioneScommessa}:</GameLabel>
         <GameLabelDark>{descrizioneEsito} ({quota / 100})</GameLabelDark>
     </Wrapper>
 );
 
 interface IDeleteIconProps {
-    display?: boolean;
+    show?: boolean;
 };
 
 const DeleteIcon = styled.div`
-    display: ${(props: IDeleteIconProps) => props.display ? 'block' : 'none'};
+    display: ${(props: IDeleteIconProps) => props.show ? 'block' : 'none'};
     width:12px;
     height:14px;
     margin-right: 8px;

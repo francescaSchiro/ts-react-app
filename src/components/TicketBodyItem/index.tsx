@@ -59,7 +59,7 @@ class TicketBodyItem extends React.Component<Props, State>{
                         </BetDetail>
                     </BetData>
                     <BetActions>
-                        <DeleteIcon display={false} />
+                        <DeleteIcon show={false} />
                         <EditIcon onClick={this.toggleModalBox} />
                     </BetActions>
                 </Wrapper>
@@ -136,10 +136,10 @@ const Title = styled.div`
 `;
 
 interface IDeleteIconProps {
-    display?: boolean;
+    show?: boolean;
 };
 const DeleteIcon = styled.div`
-    display: ${(props: IDeleteIconProps) => props.display ? 'block' : 'none'};
+    display: ${(props: IDeleteIconProps) => props.show ? 'block' : 'none'};
     width:12px;
     height:14px;
     margin-right: 8px;

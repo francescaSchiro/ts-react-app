@@ -8,32 +8,53 @@ interface Props {
     onChiudiClick: () => void,
 };
 
-const isCellHorizontal = () => {
-    if (window.innerWidth <= 800) {
-        return false;
-    } else {
-        return true;
-    };
-}
+class TicketDettaglioSistema extends React.Component<Props, {}> {
 
-// TODO add media query for horizontal view conditionally rendered
-const TicketDettaglioSistema: React.FC<Props> = ({ onChiudiClick }) => (
-    <Wrapper>
+    public render() {
+        const { onChiudiClick } = this.props;
+        return (
+            <Wrapper id='dettaglioSistema'>
 
-        {isCellHorizontal()
-            ? <div>cell is HORIZONTAL</div>
-            : (
-                <>
+                <Portrait>
                     <Close onClick={onChiudiClick}> chiudi</Close>
                     <Icon />
                     <Label>Ruota il tuo dispositivo</Label>
                     <Label>per visualizzare lo sviluppo del sistema</Label>
-                </>
-            )
-        }
+                </Portrait>
 
-    </Wrapper>
-);
+                <Landscape>
+                    <DettaglioHeader>
+                        Dettaglio sistema
+                        <BackArrow onClick={onChiudiClick} />
+                    </DettaglioHeader>
+                </Landscape>
+
+            </Wrapper >
+        );
+
+    }
+};
+
+const DettaglioHeader = styled.div`
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+    background: #0095d6;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+`;
+const BackArrow = styled.div`
+    position:absolute;
+    left: 3%;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    padding: 5px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+`;
 
 const Close = styled.div`
     width: 100%;
@@ -42,14 +63,37 @@ const Close = styled.div`
     color: white;
     font-size: 14px;
 `;
-const Icon = styled.div`
+
+const Portrait = styled.div`
+    height: 100%;
     width: 100%;
-    max-width: 150px;
+    display: block;
+   @media screen and (orientation:landscape) { 
+       display: none;
+   };
+`;
+
+const Landscape = styled.div`
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: #393939;
+    overflow-y: hidden;
+
+   @media screen and (orientation:landscape) { 
+       display: flex;
+   };
+`;
+const Icon = styled.div`
+
     height: 30%;
     background: url('https://m.sisal.it/scommesse-matchpoint/content/img/rotate.png?v=2.7.5.3') center center no-repeat;
-    background-size: 70%;
+    background-size: 30%;
     margin-top: 40%;
-    padding-left: 12px;
 `;
 const Label = styled.div`
     width: 100%;

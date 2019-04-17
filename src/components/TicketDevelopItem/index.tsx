@@ -21,10 +21,11 @@ class TicketDevelopItem extends React.Component<{}, State>{
         const { showKeypad, showInfo, showDettaglioSistema } = this.state;
         return (
             <>
+                        {showDettaglioSistema && <TicketDettaglioSistema onChiudiClick={this.toggleDettaglio} />}
                 <Wrapper>
                     <ItemWrapper>
                         <IconEye onClick={this.toggleDettaglio} />
-                        {showDettaglioSistema && <TicketDettaglioSistema onChiudiClick={this.toggleDettaglio} />}
+                        <BetsCounter>1 su 2</BetsCounter>
                         <TicketStake
                             onImportClick={this.toggleKeypad}
                             error={false}
@@ -63,7 +64,18 @@ class TicketDevelopItem extends React.Component<{}, State>{
     };
 };
 
+const BetsCounter = styled.div`
+    position: absolute;
+    top: 0;
+    margin-top: 15px;
+    margin-left: 22px;
+    color: #bbb;
+    font-style: normal;
+    font-size: 11px;
+`;
+
 const ItemWrapper = styled.div`
+    position: relative;
     width: 100%;
     display:flex;
     flex-direction: row;

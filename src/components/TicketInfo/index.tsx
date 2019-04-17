@@ -19,7 +19,7 @@ const TicketInfo: React.FC<Props> = ({ descrizioneScommessa, quotaVariata, quota
     return (
         <Wrapper>
             <Game>
-                <DeleteIcon display={true} />
+                <DeleteIcon show={true} />
                 {descrizioneScommessa}
                 <Odd>
                     2 (-)
@@ -88,11 +88,11 @@ const OddChange = styled.span`
 `;
 
 interface IDeleteIconProps {
-    display?: boolean;
+    show?: boolean;
 };
 
 const DeleteIcon = styled.div`
-    display: ${ (props: IDeleteIconProps) => props.display ? 'block' : 'none'};
+    display: ${ (props: IDeleteIconProps) => props.show ? 'block' : 'none'};
     width: 12px;
     height: 14px;
     margin-right: 8px;
