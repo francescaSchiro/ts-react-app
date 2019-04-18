@@ -27,6 +27,16 @@ class TicketDettaglioSistema extends React.Component<Props, {}> {
                         Dettaglio sistema
                         <BackArrow onClick={onChiudiClick} />
                     </DettaglioHeader>
+                    <DettaglioBody>
+                        <TableEsiti>
+                            <TR>
+                                <TD>N</TD>
+                                <TD>fissa</TD>
+                                <TD>evento</TD>
+                                <TD>esito scommesso</TD>
+                            </TR>
+                        </TableEsiti>
+                    </DettaglioBody>
                 </Landscape>
 
             </Wrapper >
@@ -34,6 +44,48 @@ class TicketDettaglioSistema extends React.Component<Props, {}> {
 
     }
 };
+
+
+
+const TD = styled.td`
+    border-left: 1px solid #eaeaea;
+    padding: 0 8px;
+    min-width: 16px;
+    height: 35px;
+    min-height: 35px;
+    text-align: left;
+    vertical-align: middle;
+    &:first-child {
+        border-left: none;
+        width: 20%;
+        padding: 0 8px;
+    };
+`;
+const TR = styled.tr`
+    height: 35px;
+    min-height: 35px;
+    color: #393939;
+    border-bottom: 1px solid #eaeaea;
+    font-family: 'Roboto', sans-serif;
+    &:first-child {
+        background: #eaeaea;
+        font-weight: bold;
+        font-size: 11px;
+    };
+`;
+
+const TableEsiti = styled.table`
+    width: 100%;
+    background: #eaeaea;
+    font-family: RobotoMedium;
+    font-size: 11px;
+    text-transform: uppercase;
+`;
+const DettaglioBody = styled.div`
+    width: 100%;
+    padding: 8px;
+`;
+
 
 const DettaglioHeader = styled.div`
     position: relative;
@@ -48,7 +100,7 @@ const DettaglioHeader = styled.div`
 `;
 const BackArrow = styled.div`
     position:absolute;
-    left: 3%;
+    left: 16px;
     border: solid white;
     border-width: 0 2px 2px 0;
     padding: 5px;
@@ -89,7 +141,6 @@ const Landscape = styled.div`
    };
 `;
 const Icon = styled.div`
-
     height: 30%;
     background: url('https://m.sisal.it/scommesse-matchpoint/content/img/rotate.png?v=2.7.5.3') center center no-repeat;
     background-size: 30%;

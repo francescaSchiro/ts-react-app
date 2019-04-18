@@ -5,11 +5,11 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: calc(100% + 12px);
+    width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
-    left: -12px; /*Iconeye left padding*/
+    left: 0;
     background: rgba(0,0,0,.94);
     z-index: 8000;
     color: white;

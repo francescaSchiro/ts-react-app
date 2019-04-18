@@ -21,7 +21,7 @@ class TicketDevelopItem extends React.Component<{}, State>{
         const { showKeypad, showInfo, showDettaglioSistema } = this.state;
         return (
             <>
-                        {showDettaglioSistema && <TicketDettaglioSistema onChiudiClick={this.toggleDettaglio} />}
+                {showDettaglioSistema && <TicketDettaglioSistema onChiudiClick={this.toggleDettaglio} />}
                 <Wrapper>
                     <ItemWrapper>
                         <IconEye onClick={this.toggleDettaglio} />
@@ -60,7 +60,8 @@ class TicketDevelopItem extends React.Component<{}, State>{
         this.setState({ showInfo: !this.state.showInfo })
     };
     private toggleDettaglio = () => {
-        this.setState({ showDettaglioSistema: !this.state.showDettaglioSistema })
+        this.setState({ showDettaglioSistema: !this.state.showDettaglioSistema });
+        window.scrollTo(0, 0);
     };
 };
 
