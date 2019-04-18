@@ -5,6 +5,7 @@ import TicketStake from 'src/components/TicketStake';
 import TicketDevelopItemInfo from 'src/components/TicketDevelopItemInfo';
 import TicketKeypad from 'src/components/TicketKeypad';
 import TicketDettaglioSistema from 'src/components/TicketDettaglioSistema';
+// import ticketDettaglioSistema from 'src/mocks/ticketDettaglioSistema';
 
 import Wrapper from './Wrapper';
 

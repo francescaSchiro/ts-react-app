@@ -19,46 +19,19 @@ const TicketDettaglioSistemaTableQuotes: React.FC = () => (
             <TDQuote><Dot /></TDQuote>
             <TDQuote />
             <TDQuote><Dot /></TDQuote>
-            <TDQuote />
-            <TDQuote>2.63</TDQuote>
-            <TDQuote>€ 0,00</TDQuote>
-            <TDQuote>€ 0,00</TDQuote>
+            <TDQuote><Dot /></TDQuote>
+            <TDQuote>2.77</TDQuote>
+            <TDQuote>€ 0,50</TDQuote>
+            <TDQuote>€ 1,38</TDQuote>
         </TRQuote>
         <TRQuote>
             <TDQuote />
             <TDQuote><Dot /></TDQuote>
             <TDQuote><Dot /></TDQuote>
-            <TDQuote />
-            <TDQuote>22.33</TDQuote>
-            <TDQuote>€ 0,00</TDQuote>
-            <TDQuote>€ 0,00</TDQuote>
-        </TRQuote>
-        <TRQuote>
             <TDQuote><Dot /></TDQuote>
-            <TDQuote />
-            <TDQuote />
-            <TDQuote><Dot /></TDQuote>
-            <TDQuote>1.36</TDQuote>
-            <TDQuote>€ 0,00</TDQuote>
-            <TDQuote>€ 0,00</TDQuote>
-        </TRQuote>
-        <TRQuote>
-            <TDQuote />
-            <TDQuote><Dot /></TDQuote>
-            <TDQuote />
-            <TDQuote><Dot /></TDQuote>
-            <TDQuote>11.55</TDQuote>
-            <TDQuote>€ 0,00</TDQuote>
-            <TDQuote>€ 0,00</TDQuote>
-        </TRQuote>
-        <TRQuote>
-            <TDQuote />
-            <TDQuote />
-            <TDQuote><Dot /></TDQuote>
-            <TDQuote><Dot /></TDQuote>
-            <TDQuote>2.13</TDQuote>
-            <TDQuote>€ 0,00</TDQuote>
-            <TDQuote>€ 0,00</TDQuote>
+            <TDQuote>23.44</TDQuote>
+            <TDQuote>€ 0,50</TDQuote>
+            <TDQuote>€ 11,72</TDQuote>
         </TRQuote>
     </Wrapper>
 );
@@ -81,6 +54,7 @@ const TDQuote = styled.td`
 
     &:nth-child(-n+4) {
         width: 10%;
+        text-align:center;
     };
     &:nth-child(5) {
        width: 20%;
