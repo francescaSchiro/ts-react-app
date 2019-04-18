@@ -1,6 +1,9 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
+import TicketDettaglioSistemaTableEvent from 'src/components/TicketDettaglioSistemaTableEvent';
+import TicketDettaglioSistemaTableQuotes from 'src/components/TicketDettaglioSistemaTableQuotes';
+
 import Wrapper from './Wrapper';
 
 
@@ -28,14 +31,11 @@ class TicketDettaglioSistema extends React.Component<Props, {}> {
                         <BackArrow onClick={onChiudiClick} />
                     </DettaglioHeader>
                     <DettaglioBody>
-                        <TableEsiti>
-                            <TR>
-                                <TD>N</TD>
-                                <TD>fissa</TD>
-                                <TD>evento</TD>
-                                <TD>esito scommesso</TD>
-                            </TR>
-                        </TableEsiti>
+                        {/* table partia e esiti */}
+                        <TicketDettaglioSistemaTableEvent />
+
+                        {/* table QUOTE e vincite */}
+                        <TicketDettaglioSistemaTableQuotes />
                     </DettaglioBody>
                 </Landscape>
 
@@ -45,45 +45,12 @@ class TicketDettaglioSistema extends React.Component<Props, {}> {
     }
 };
 
-
-
-const TD = styled.td`
-    border-left: 1px solid #eaeaea;
-    padding: 0 8px;
-    min-width: 16px;
-    height: 35px;
-    min-height: 35px;
-    text-align: left;
-    vertical-align: middle;
-    &:first-child {
-        border-left: none;
-        width: 20%;
-        padding: 0 8px;
-    };
-`;
-const TR = styled.tr`
-    height: 35px;
-    min-height: 35px;
-    color: #393939;
-    border-bottom: 1px solid #eaeaea;
-    font-family: 'Roboto', sans-serif;
-    &:first-child {
-        background: #eaeaea;
-        font-weight: bold;
-        font-size: 11px;
-    };
-`;
-
-const TableEsiti = styled.table`
-    width: 100%;
-    background: #eaeaea;
-    font-family: RobotoMedium;
-    font-size: 11px;
-    text-transform: uppercase;
-`;
 const DettaglioBody = styled.div`
     width: 100%;
     padding: 8px;
+    & > :nth-child(2) {
+        margin-top:8px;
+    }
 `;
 
 
