@@ -1,40 +1,48 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
+import { ISviluppoSistemaExt } from 'src/models/ISviluppoSistemaExt';
+
 import Wrapper from './Wrapper';
 
+interface Props {
+    content: ISviluppoSistemaExt,
+};
 
-const TicketDettaglioSistemaTableQuotes: React.FC = () => (
-    <Wrapper>
-        <TRQuote>
-            <TDQuote>1</TDQuote>
-            <TDQuote>2</TDQuote>
-            <TDQuote>3</TDQuote>
-            <TDQuote>4</TDQuote>
-            <TDQuote>QUota</TDQuote>
-            <TDQuote>puntata</TDQuote>
-            <TDQuote>vincita</TDQuote>
-        </TRQuote>
-        <TRQuote>
-            <TDQuote><Dot /></TDQuote>
-            <TDQuote />
-            <TDQuote><Dot /></TDQuote>
-            <TDQuote><Dot /></TDQuote>
-            <TDQuote>2.77</TDQuote>
-            <TDQuote>€ 0,50</TDQuote>
-            <TDQuote>€ 1,38</TDQuote>
-        </TRQuote>
-        <TRQuote>
-            <TDQuote />
-            <TDQuote><Dot /></TDQuote>
-            <TDQuote><Dot /></TDQuote>
-            <TDQuote><Dot /></TDQuote>
-            <TDQuote>23.44</TDQuote>
-            <TDQuote>€ 0,50</TDQuote>
-            <TDQuote>€ 11,72</TDQuote>
-        </TRQuote>
-    </Wrapper>
-);
+const TicketDettaglioSistemaTableQuotes: React.FC<Props> = ({ content }) => {
+    const { singoloSviluppoList } = content;
+    return (
+        <Wrapper>
+            <TRQuote>
+                <TDQuote>1</TDQuote>
+                <TDQuote>2</TDQuote>
+                <TDQuote>3</TDQuote>
+                <TDQuote>4</TDQuote>
+                <TDQuote>QUOTA</TDQuote>
+                <TDQuote>PUNTATA</TDQuote>
+                <TDQuote>VINCITA</TDQuote>
+            </TRQuote>
+            <TRQuote>
+                <TDQuote><Dot /></TDQuote>
+                <TDQuote />
+                <TDQuote><Dot /></TDQuote>
+                <TDQuote><Dot /></TDQuote>
+                <TDQuote>{singoloSviluppoList[0].quotaTotale / 100}</TDQuote>
+                <TDQuote>€ {(singoloSviluppoList[0].importo / 100).toFixed(2).replace('.', ',')}</TDQuote>
+                <TDQuote>€ {(singoloSviluppoList[0].importoVincita / 100).toFixed(2).replace('.', ',')}</TDQuote>
+            </TRQuote>
+            <TRQuote>
+                <TDQuote />
+                <TDQuote><Dot /></TDQuote>
+                <TDQuote><Dot /></TDQuote>
+                <TDQuote><Dot /></TDQuote>
+                <TDQuote>{singoloSviluppoList[1].quotaTotale / 100}</TDQuote>
+                <TDQuote>€ {(singoloSviluppoList[1].importo / 100).toFixed(2).replace('.', ',')}</TDQuote>
+                <TDQuote>€ {(singoloSviluppoList[1].importoVincita / 100).toFixed(2).replace('.', ',')}</TDQuote>
+            </TRQuote>
+        </Wrapper>
+    );
+};
 
 const Dot = styled.div`
     width: 8px;
