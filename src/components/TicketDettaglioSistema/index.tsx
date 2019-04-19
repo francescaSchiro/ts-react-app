@@ -18,7 +18,7 @@ class TicketDettaglioSistema extends React.Component<Props, {}> {
     public render() {
         const { onChiudiClick, content } = this.props;
         return (
-            <Wrapper id='dettaglioSistema'>
+            <Wrapper>
 
                 <Portrait>
                     <Close onClick={onChiudiClick}> chiudi</Close>
@@ -50,9 +50,11 @@ class TicketDettaglioSistema extends React.Component<Props, {}> {
 const DettaglioBody = styled.div`
     width: 100%;
     padding: 8px;
+    overflow-y: auto;
     & > :nth-child(2) {
         margin-top:8px;
     }
+
 `;
 
 

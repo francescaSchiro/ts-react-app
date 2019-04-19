@@ -5,6 +5,7 @@ import { ISviluppoSistemaExt } from 'src/models/ISviluppoSistemaExt';
 
 import Wrapper from './Wrapper';
 
+
 interface Props {
     content: ISviluppoSistemaExt,
 };
@@ -90,6 +91,5 @@ const TRQuote = styled.tr`
         text-transform: uppercase;
     };
 `;
-
 
 export default TicketDettaglioSistemaTableQuotes;

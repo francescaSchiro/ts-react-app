@@ -11,7 +11,7 @@ interface Props {
 };
 
 const TicketDettaglioSistemaTableEvent: React.FC<Props> = ({ content }) => (
-    < Wrapper >
+    <Wrapper>
         <TR>
             <TD>N</TD>
             <TD>fissa</TD>
@@ -40,7 +40,7 @@ const TicketDettaglioSistemaTableEvent: React.FC<Props> = ({ content }) => (
             <TD>{content[3].descrizioneAvvenimento}</TD>
             <TD>{content[3].descrizioneScommessa}: {content[3].descrizioneEsito}</TD>
         </TR>
-    </Wrapper >
+    </Wrapper>
 
 );
 interface ITDProps {
@@ -60,7 +60,6 @@ const TD = styled.td`
     };
     &:nth-child(2) {
        width: 10%;
-       /* text-align: center; */
     };
     &:nth-child(3) {
        width: 35%;
