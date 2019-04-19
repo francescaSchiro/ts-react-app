@@ -194,14 +194,14 @@ const ticketDettaglioSistema: ITicketDettaglioSistema = {
       },
 
 
-    ]
+    ],
+    valido: true,
+    vincita: 0,
+    vincitaMassima: 1172,
+    vincitaMinima: 138,
+    vincitaTotale: 1172,
+    vincitaTotaleSistemaIntegrale: 1172,
   },
-  valido: true,
-  vincita: 0,
-  vincitaMassima: 1172,
-  vincitaMinima: 138,
-  vincitaTotale: 1172,
-  vincitaTotaleSistemaIntegrale: 1172,
 };
 
 export default ticketDettaglioSistema;
