@@ -3,18 +3,20 @@ import styled from 'src/theme/default/index';
 
 import TicketDettaglioSistemaTableEvent from 'src/components/TicketDettaglioSistemaTableEvent';
 import TicketDettaglioSistemaTableQuotes from 'src/components/TicketDettaglioSistemaTableQuotes';
+import { ITicketDettaglioSistema } from 'src/models/ITicketDettaglioSistema';
 
 import Wrapper from './Wrapper';
 
 
 interface Props {
     onChiudiClick: () => void,
+    content: ITicketDettaglioSistema,
 };
 
 class TicketDettaglioSistema extends React.Component<Props, {}> {
 
     public render() {
-        const { onChiudiClick } = this.props;
+        const { onChiudiClick, content } = this.props;
         return (
             <Wrapper id='dettaglioSistema'>
 
@@ -32,10 +34,10 @@ class TicketDettaglioSistema extends React.Component<Props, {}> {
                     </DettaglioHeader>
                     <DettaglioBody>
                         {/* table partia e esiti */}
-                        <TicketDettaglioSistemaTableEvent />
+                        <TicketDettaglioSistemaTableEvent content={content.pronosticoList} />
 
                         {/* table QUOTE e vincite */}
-                        <TicketDettaglioSistemaTableQuotes />
+                        <TicketDettaglioSistemaTableQuotes content={content.sviluppoSistemaExt} />
                     </DettaglioBody>
                 </Landscape>
 

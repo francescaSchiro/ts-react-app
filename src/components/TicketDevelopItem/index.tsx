@@ -5,7 +5,8 @@ import TicketStake from 'src/components/TicketStake';
 import TicketDevelopItemInfo from 'src/components/TicketDevelopItemInfo';
 import TicketKeypad from 'src/components/TicketKeypad';
 import TicketDettaglioSistema from 'src/components/TicketDettaglioSistema';
-// import ticketDettaglioSistema from 'src/mocks/ticketDettaglioSistema';
+import ticketDettaglioSistema from 'src/mocks/ticketDettaglioSistema';
+import { ITicketDettaglioSistema } from 'src/models/ITicketDettaglioSistema';
 
 import Wrapper from './Wrapper';
 
@@ -14,15 +15,21 @@ interface State {
     showKeypad: boolean,
     showInfo: boolean,
     showDettaglioSistema: boolean,
+    ticketDettaglioSistemaContent: ITicketDettaglioSistema,
 };
 
 class TicketDevelopItem extends React.Component<{}, State>{
-    public state: State = { showKeypad: false, showInfo: false, showDettaglioSistema: false, }
+    public state: State = {
+        showKeypad: false,
+        showInfo: false,
+        showDettaglioSistema: false,
+        ticketDettaglioSistemaContent: ticketDettaglioSistema
+    }
     public render() {
-        const { showKeypad, showInfo, showDettaglioSistema } = this.state;
+        const { showKeypad, showInfo, showDettaglioSistema, ticketDettaglioSistemaContent } = this.state;
         return (
             <>
-                {showDettaglioSistema && <TicketDettaglioSistema onChiudiClick={this.toggleDettaglio} />}
+                {showDettaglioSistema && <TicketDettaglioSistema content={ticketDettaglioSistemaContent} onChiudiClick={this.toggleDettaglio} />}
                 <Wrapper>
                     <ItemWrapper>
                         <IconEye onClick={this.toggleDettaglio} />

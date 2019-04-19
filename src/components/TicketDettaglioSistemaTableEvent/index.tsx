@@ -1,11 +1,17 @@
 import * as React from 'react';
 import styled from 'src/theme/default/index';
 
+import { IPronosticoItem } from 'src/models/IPronosticoItem';
+
 import Wrapper from './Wrapper';
 
 
-const TicketDettaglioSistemaTableEvent: React.FC = () => (
-    <Wrapper>
+interface Props {
+    content: IPronosticoItem[]
+};
+
+const TicketDettaglioSistemaTableEvent: React.FC<Props> = ({ content }) => (
+    < Wrapper >
         <TR>
             <TD>N</TD>
             <TD>fissa</TD>
@@ -15,28 +21,28 @@ const TicketDettaglioSistemaTableEvent: React.FC = () => (
         <TR>
             <TD> 1  </TD>
             <TD rowspan={2} />
-            <TD rowspan={2}>Chelsea - Slavia Praga</TD>
-            <TD> ESITO FINALE 1X2: 1 </TD>
+            <TD rowspan={2}>{content[0].descrizioneAvvenimento}</TD>
+            <TD> {content[0].descrizioneScommessa}: {content[0].descrizioneEsito} </TD>
         </TR>
         <TR>
             <TD> 2  </TD>
-            <TD> ESITO FINALE 1X2: 2 </TD>
+            <TD> {content[1].descrizioneScommessa}: {content[1].descrizioneEsito} </TD>
         </TR>
         <TR>
             <TD> 3  </TD>
             <TD />
-            <TD> Jung, Jason - Oliveira, Goncalo </TD>
-            <TD>TESTA A TESTA MATCH RISULTATO: 1</TD>
+            <TD> {content[2].descrizioneAvvenimento} </TD>
+            <TD>{content[2].descrizioneScommessa}: {content[2].descrizioneEsito}</TD>
         </TR>
         <TR>
             <TD>4  </TD>
             <TD />
-            <TD> Detkovskaya D / Kulambayeva Z - Dema V / Dmitrichenko Y </TD>
-            <TD>TESTA A TESTA MATCH RISULTATO: 2</TD>
+            <TD>{content[3].descrizioneAvvenimento}</TD>
+            <TD>{content[3].descrizioneScommessa}: {content[3].descrizioneEsito}</TD>
         </TR>
-    </Wrapper>
-);
+    </Wrapper >
 
+);
 interface ITDProps {
     rowspan?: number;
 }
