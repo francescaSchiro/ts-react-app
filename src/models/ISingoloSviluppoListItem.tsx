@@ -1,6 +1,3 @@
-interface IStatoMap {
-    [key: string]: number,
-}
 export interface ISingoloSviluppoListItem {
     bonusApplicato: boolean,
     giocabile: boolean,
@@ -8,6 +5,6 @@ export interface ISingoloSviluppoListItem {
     importoVincita: number,
     quotaTotale: number,
     stato: number,
-    statoMap: IStatoMap,
+    statoMap: { [key: string]: number },
     statoSviluppo: number,
 };
