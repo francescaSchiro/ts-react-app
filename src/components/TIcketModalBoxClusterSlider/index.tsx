@@ -5,12 +5,12 @@ import Wrapper from './Wrapper';
 
 
 interface Props {
-    clusterItems: string[],
+    clusterItems: any[],
 };
 
 const TicketModalBoxClusterSlider: React.FC<Props> = ({ clusterItems }) => (
     <Wrapper>
-        {clusterItems.map(el => <ClusterItem key={el}><span>{el}</span></ClusterItem>)}
+        {clusterItems.map(el => <ClusterItem key={el.idCluster}><span>{el.descrizione}</span></ClusterItem>)}
     </Wrapper>
 );
 

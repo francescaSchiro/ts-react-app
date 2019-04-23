@@ -8,7 +8,12 @@ interface State {
     showCambia: boolean,
 };
 interface Props {
-    clusterAccordionItems: string[],
+    clusterAccordionItems: any[],
+};
+
+interface IClasseDiEsitoItem {
+    descrizione: string,
+    idClasseEsito: string,
 };
 
 class TicketModalBoxClusterChange extends React.Component<Props, State>{
@@ -30,8 +35,8 @@ class TicketModalBoxClusterChange extends React.Component<Props, State>{
                 </Wrapper>
                 {showCambia &&
                     <ClusterAccordion>
-                        {clusterAccordionItems.map(el => (
-                            <ClusterAccordionItem key={el}><Span>{el}</Span></ClusterAccordionItem>
+                        {clusterAccordionItems[0].classeDiEsitoList.map((el: IClasseDiEsitoItem) => (
+                            <ClusterAccordionItem key={el.idClasseEsito}><Span>{el.descrizione}</Span></ClusterAccordionItem>
                         )
                         )}
                     </ClusterAccordion>

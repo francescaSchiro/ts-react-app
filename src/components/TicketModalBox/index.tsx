@@ -8,6 +8,7 @@ import TicketModalBoxBody from 'src/components/TicketModalBoxBody';
 import TicketModalBoxClusterSlider from 'src/components/TicketModalBoxClusterSlider';
 import TicketModalBoxClusterChange from 'src/components/TicketModalBoxClusterChange';
 import TicketModalBoxGameList from 'src/components/TicketModalBoxGameList';
+import getGamesByEventSchedina from 'src/mocks/getGamesByEventSchedina.json';
 
 import Wrapper from './Wrapper';
 
@@ -15,11 +16,11 @@ import Wrapper from './Wrapper';
 interface Props {
     onChiudiClick: () => void,
     item: IPronosticoItem,
-    clusterItems: string[],
-    clusterAccordionItems: string[],
+    clusterItems: any[],
+    clusterAccordionItems: any[],
     gameListItems: IGameListItem[],
 };
-/* chiamata @ click on TicketEvent Edit icon
+/* chiamata @ click on TicketEvent Edit icon                !!!!!!!!!!!! Esiti scommessi arrivano da pronosticoList[] !!!!!!!!!!!!
  getGamesByEventSchedina => avvenimentoView {
     clusterList: [
         0: {idCluster: 27, descrizione: "TUTTE", clusterDefault: true,…}
@@ -103,26 +104,27 @@ interface Props {
 };
 
 */
-const TicketModalBox: React.FC<Props> = ({ onChiudiClick, item, clusterItems, clusterAccordionItems, gameListItems }) => {
-    const { descrizioneAvvenimento,
+const TicketModalBox: React.FC<Props> = ({ onChiudiClick, item, gameListItems }) => {
+    const {
         descrizioneScommessa,
         descrizioneEsito,
         quota } = item;
+    const DATA = getGamesByEventSchedina;
     return (
         <>
             <Overlay />
             <Wrapper>
                 <TicketModalBoxHead
                     onChiudiClick={onChiudiClick}
-                    descrizioneAvvenimento={descrizioneAvvenimento}
+                    descrizioneAvvenimento={DATA.descrizione}
                 />
                 <TicketModalBoxBody
                     descrizioneScommessa={descrizioneScommessa}
                     descrizioneEsito={descrizioneEsito}
                     quota={quota}
                 />
-                <TicketModalBoxClusterSlider clusterItems={clusterItems} />
-                <TicketModalBoxClusterChange clusterAccordionItems={clusterAccordionItems} />
+                <TicketModalBoxClusterSlider clusterItems={DATA.clusterList} />
+                <TicketModalBoxClusterChange clusterAccordionItems={DATA.clusterList} />
                 <TicketModalBoxGameList
                     descrizioneScommessa={descrizioneScommessa}
                     gameListItems={gameListItems}
