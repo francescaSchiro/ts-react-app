@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## To Start
 
 - Clone the repo.
-- Move to `develop` branch.s
+- Move to `develop` branch.
 - `yarn`
 - `yarn start`
 
